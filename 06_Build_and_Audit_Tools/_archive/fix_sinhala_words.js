@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const rootDir = path.resolve(__dirname, '..');
-const siDir = path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML');
+const siDir = path.join(rootDir, '03_Sinhala_Study_Guides_HTML');
 
 const replacements = [
   // 1. Principles vs Laws

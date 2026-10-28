@@ -23,7 +23,7 @@ if (path.basename(rootDir) === '06_Build_and_Audit_Tools') {
 }
 
 const htmlEnDir = path.join(rootDir, '02_English_Study_Guides_HTML');
-const htmlSiDir = path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML');
+const htmlSiDir = path.join(rootDir, '03_Sinhala_Study_Guides_HTML');
 const pdfDir = path.join(rootDir, '04_Printable_PDF_Study_Guides');
 const tempDir = path.join(rootDir, '06_Build_and_Audit_Tools', '.edge-pdf-temp');
 

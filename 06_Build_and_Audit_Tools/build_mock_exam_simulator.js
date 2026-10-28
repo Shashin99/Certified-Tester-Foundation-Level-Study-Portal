@@ -1,6 +1,6 @@
 /**
  * ISTQB® CTFL v4.0.1 Interactive Mock Exam Simulator Generator
- * Builds a standalone, publication-grade, bilingual 40-question exam simulator.
+ * Builds a standalone, publication-grade, 40-question exam simulator.
  */
 
 const fs = require('fs');

@@ -11,7 +11,7 @@ const files = [
 ];
 for (let i = 1; i <= 6; i++) {
   files.push(`02_English_Study_Guides_HTML/istqb_ch${i}_study_guide.html`);
-  files.push(`03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch${i}_study_guide_sinhala.html`);
+  files.push(`03_Sinhala_Study_Guides_HTML/istqb_ch${i}_study_guide_sinhala.html`);
 }
 
 console.log('====================================================');

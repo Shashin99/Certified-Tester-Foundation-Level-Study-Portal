@@ -226,7 +226,7 @@ sTxt += '  - istqb_ch4_study_guide.html                 : Chapter 04 Test Analys
 sTxt += '  - istqb_ch5_study_guide.html                 : Chapter 05 Managing the Test Activities\n';
 sTxt += '  - istqb_ch6_study_guide.html                 : Chapter 06 Test Tools\n\n';
 
-sTxt += '03_Sinhala_Bilingual_Study_Guides_HTML/        (6 Sinhala Bilingual Web Guides)\n';
+sTxt += '03_Sinhala_Study_Guides_HTML/        (6 Sinhala Web Guides)\n';
 sTxt += '  - istqb_ch1_study_guide_sinhala.html         : Chapter 01 පරීක්ෂාවේ මූලධර්ම\n';
 sTxt += '  - istqb_ch2_study_guide_sinhala.html         : Chapter 02 SDLC තුළ පරීක්ෂාව\n';
 sTxt += '  - istqb_ch3_study_guide_sinhala.html         : Chapter 03 ස්ථිතික පරීක්ෂාව\n';
@@ -236,7 +236,7 @@ sTxt += '  - istqb_ch6_study_guide_sinhala.html         : Chapter 06 පරී�
 
 sTxt += '04_Printable_PDF_Study_Guides/                 (12 Ink-Friendly A4 Print Guides)\n';
 sTxt += '  - 6 English Printable PDFs (Chapters 01 - 06)\n';
-sTxt += '  - 6 Sinhala Bilingual Printable PDFs (Chapters 01 - 06)\n\n';
+sTxt += '  - 6 Sinhala Printable PDFs (Chapters 01 - 06)\n\n';
 
 sTxt += '05_Practice_Questions_and_Summaries/\n';
 sTxt += '  - istqb_mock_exam_simulator.html             : Full 40Q timed 60-min interactive exam simulator\n';

@@ -56,7 +56,7 @@ function auditDoc(label, ch, text, rawHtml) {
 
   const dirs = [
     ['EN-HTML', '02_English_Study_Guides_HTML', ch => `istqb_ch${ch}_study_guide.html`],
-    ['SI-HTML', '03_Sinhala_Bilingual_Study_Guides_HTML', ch => `istqb_ch${ch}_study_guide_sinhala.html`]
+    ['SI-HTML', '03_Sinhala_Study_Guides_HTML', ch => `istqb_ch${ch}_study_guide_sinhala.html`]
   ];
   const results = [];
   for (const [tag, dir, fn] of dirs) {

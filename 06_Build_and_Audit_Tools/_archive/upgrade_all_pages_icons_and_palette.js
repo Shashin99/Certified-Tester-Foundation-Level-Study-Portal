@@ -144,7 +144,7 @@ console.log('Upgrading 12 Study Guides...');
 for (let i = 1; i <= 6; i++) {
   const guidePaths = [
     path.join(rootDir, `02_English_Study_Guides_HTML/istqb_ch${i}_study_guide.html`),
-    path.join(rootDir, `03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch${i}_study_guide_sinhala.html`)
+    path.join(rootDir, `03_Sinhala_Study_Guides_HTML/istqb_ch${i}_study_guide_sinhala.html`)
   ];
 
   guidePaths.forEach(gp => {

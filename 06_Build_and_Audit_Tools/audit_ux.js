@@ -10,7 +10,7 @@ const pages = [
 ];
 for (let i = 1; i <= 6; i++) {
   pages.push(`02_English_Study_Guides_HTML/istqb_ch${i}_study_guide.html`);
-  pages.push(`03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch${i}_study_guide_sinhala.html`);
+  pages.push(`03_Sinhala_Study_Guides_HTML/istqb_ch${i}_study_guide_sinhala.html`);
 }
 
 console.log(`Auditing UX aspects across ${pages.length} pages:\n`);

@@ -12,7 +12,7 @@ const path = require('path');
 
 const rootDir = path.resolve(__dirname, '..');
 const enDir = path.join(rootDir, '02_English_Study_Guides_HTML');
-const siDir = path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML');
+const siDir = path.join(rootDir, '03_Sinhala_Study_Guides_HTML');
 
 function optimizeFile(filePath, isSinhala) {
   let content = fs.readFileSync(filePath, 'utf8');

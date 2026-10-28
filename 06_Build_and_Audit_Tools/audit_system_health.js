@@ -29,7 +29,7 @@ const testSuites = [
   { name: '24-Document Syllabus Compliance', script: 'audit_vs_syllabus.js' },
   { name: '71-Question Bank & Rationale Integrity', script: 'audit_all.js' },
   { name: 'Question Bank Question Key Verification', script: 'verify_all_questions.js' },
-  { name: 'Bilingual Sinhala Stem Completeness', script: 'test_sinhala_stems.js' },
+  { name: 'Sinhala Stem Completeness', script: 'test_sinhala_stems.js' },
   { name: '72 Core Syllabus Term Coverage', script: 'verify_syllabus_terms.js' },
   { name: 'Code Hygiene & Entity Integrity', script: 'deep_scan.js' },
   { name: 'Deep UX & Component Hygiene Scan', script: 'deep_ux_scan.js' },

@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const rootDir = path.resolve(__dirname, '..');
-const dirs = ['02_English_Study_Guides_HTML', '03_Sinhala_Bilingual_Study_Guides_HTML'];
+const dirs = ['02_English_Study_Guides_HTML', '03_Sinhala_Study_Guides_HTML'];
 
 dirs.forEach(dir => {
   const fullDir = path.join(rootDir, dir);

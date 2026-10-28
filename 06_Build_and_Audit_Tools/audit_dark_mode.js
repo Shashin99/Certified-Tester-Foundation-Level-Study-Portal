@@ -6,9 +6,9 @@ const enFiles = fs.readdirSync(path.join(rootDir, '02_English_Study_Guides_HTML'
   .filter(f => f.endsWith('.html'))
   .map(f => path.join(rootDir, '02_English_Study_Guides_HTML', f));
 
-const siFiles = fs.readdirSync(path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML'))
+const siFiles = fs.readdirSync(path.join(rootDir, '03_Sinhala_Study_Guides_HTML'))
   .filter(f => f.endsWith('.html'))
-  .map(f => path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML', f));
+  .map(f => path.join(rootDir, '03_Sinhala_Study_Guides_HTML', f));
 
 const allFiles = [...enFiles, ...siFiles];
 

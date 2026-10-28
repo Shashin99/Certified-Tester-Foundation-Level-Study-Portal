@@ -84,7 +84,7 @@ if (simRegex.test(simHtml)) {
   console.error('Failed to find const ALL_QUESTIONS in istqb_mock_exam_simulator.html');
 }
 
-// 4. Update 03_Sinhala_Bilingual_Study_Guides_HTML for Ch 1 - 4 questions
+// 4. Update 03_Sinhala_Study_Guides_HTML for Ch 1 - 4 questions
 function updateSinhalaStudyGuide(filePath, chNum) {
   let html = fs.readFileSync(filePath, 'utf8');
   let guideModified = 0;
@@ -120,10 +120,10 @@ function updateSinhalaStudyGuide(filePath, chNum) {
   }
 }
 
-updateSinhalaStudyGuide(path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML', 'istqb_ch1_study_guide_sinhala.html'), 1);
-updateSinhalaStudyGuide(path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML', 'istqb_ch2_study_guide_sinhala.html'), 2);
-updateSinhalaStudyGuide(path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML', 'istqb_ch3_study_guide_sinhala.html'), 3);
-updateSinhalaStudyGuide(path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML', 'istqb_ch4_study_guide_sinhala.html'), 4);
+updateSinhalaStudyGuide(path.join(rootDir, '03_Sinhala_Study_Guides_HTML', 'istqb_ch1_study_guide_sinhala.html'), 1);
+updateSinhalaStudyGuide(path.join(rootDir, '03_Sinhala_Study_Guides_HTML', 'istqb_ch2_study_guide_sinhala.html'), 2);
+updateSinhalaStudyGuide(path.join(rootDir, '03_Sinhala_Study_Guides_HTML', 'istqb_ch3_study_guide_sinhala.html'), 3);
+updateSinhalaStudyGuide(path.join(rootDir, '03_Sinhala_Study_Guides_HTML', 'istqb_ch4_study_guide_sinhala.html'), 4);
 
 // 5. Re-run build_txt_files.js to update question_bank.txt and study_map.txt
 require('./build_txt_files.js');

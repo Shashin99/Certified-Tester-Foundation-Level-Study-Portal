@@ -8,7 +8,7 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const enDir = path.join(root, '02_English_Study_Guides_HTML');
-const siDir = path.join(root, '03_Sinhala_Bilingual_Study_Guides_HTML');
+const siDir = path.join(root, '03_Sinhala_Study_Guides_HTML');
 
 const MARK_START = '<!-- PART2-QUESTIONS-START -->';
 const MARK_END = '<!-- PART2-QUESTIONS-END -->';

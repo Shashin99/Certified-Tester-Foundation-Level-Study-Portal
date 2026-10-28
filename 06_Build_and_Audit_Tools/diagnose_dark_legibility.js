@@ -118,6 +118,6 @@ function testFile(relPath) {
 }
 
 testFile('02_English_Study_Guides_HTML/istqb_ch1_study_guide.html');
-testFile('03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch1_study_guide_sinhala.html');
+testFile('03_Sinhala_Study_Guides_HTML/istqb_ch1_study_guide_sinhala.html');
 testFile('02_English_Study_Guides_HTML/istqb_ch5_study_guide.html');
-testFile('03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch5_study_guide_sinhala.html');
+testFile('03_Sinhala_Study_Guides_HTML/istqb_ch5_study_guide_sinhala.html');

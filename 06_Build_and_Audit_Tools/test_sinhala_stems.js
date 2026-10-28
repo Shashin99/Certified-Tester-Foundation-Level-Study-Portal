@@ -37,11 +37,11 @@ const siMatches2 = (txt2.match(/^STEM \(SI\): /gm) || []).length;
 console.log(`4. question_bank.txt (root): ${siMatches1}/${qb.length} questions include Sinhala stems`);
 console.log(`   question_bank.txt (subfolder): ${siMatches2}/${qb.length} questions include Sinhala stems`);
 
-// 5. Check 03_Sinhala_Bilingual_Study_Guides_HTML for all 6 chapters
+// 5. Check 03_Sinhala_Study_Guides_HTML for all 6 chapters
 console.log(`5. Sinhala Study Guides (Chapters 1 - 6):`);
 let totalGuidesMissing = 0;
 for (let c = 1; c <= 6; c++) {
-  const guidePath = path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML', `istqb_ch${c}_study_guide_sinhala.html`);
+  const guidePath = path.join(rootDir, '03_Sinhala_Study_Guides_HTML', `istqb_ch${c}_study_guide_sinhala.html`);
   const guideHtml = fs.readFileSync(guidePath, 'utf8');
   const subs = (guideHtml.match(/class="si-question-sub"/g) || []).length;
   const totalQ = (guideHtml.match(/class="quiz-card"/g) || []).length;

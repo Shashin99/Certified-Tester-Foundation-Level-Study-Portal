@@ -113,5 +113,5 @@ function testFile(relPath) {
 
 for (let ch = 1; ch <= 6; ch++) {
   testFile(`02_English_Study_Guides_HTML/istqb_ch${ch}_study_guide.html`);
-  testFile(`03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch${ch}_study_guide_sinhala.html`);
+  testFile(`03_Sinhala_Study_Guides_HTML/istqb_ch${ch}_study_guide_sinhala.html`);
 }

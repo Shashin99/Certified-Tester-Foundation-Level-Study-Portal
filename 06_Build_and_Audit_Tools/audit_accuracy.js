@@ -8,7 +8,7 @@ const kOf = {};
 [...syl.matchAll(/(FL-\d\.\d\.\d)\s*\(K(\d)\)/g)].forEach(m => kOf[m[1]] = m[2]);
 console.log('Official LOs:', Object.keys(kOf).length);
 
-const dirs = ['02_English_Study_Guides_HTML', '03_Sinhala_Bilingual_Study_Guides_HTML'];
+const dirs = ['02_English_Study_Guides_HTML', '03_Sinhala_Study_Guides_HTML'];
 let problems = 0;
 const report = m => { problems++; console.log('  [!]', m); };
 

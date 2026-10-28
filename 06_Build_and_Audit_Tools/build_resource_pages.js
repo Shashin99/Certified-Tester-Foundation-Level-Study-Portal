@@ -477,7 +477,7 @@ const qBankHtml = `<!DOCTYPE html>
     <div class="page-header">
       <div>
         <h1>Comprehensive Practice Question Repository</h1>
-        <p>71 verified practice questions with Learning Objectives, Cognitive K-Levels, bilingual stems, and official rationales.</p>
+        <p>71 verified practice questions with Learning Objectives, Cognitive K-Levels, Sinhala stems, and official rationales.</p>
       </div>
       <div class="stats-info" id="stats-counter">Showing 71 of 71 questions</div>
     </div>
@@ -1212,12 +1212,12 @@ const studyMapHtml = `<!DOCTYPE html>
           <div class="folder-header">🇱🇰 Sinhala Study Guides (පරිච්ඡේද 01 – 06)</div>
           <div class="folder-desc">සිංහල අධ්‍යයන මාර්ගෝපදේශ සහ විභාග ප්‍රශ්නාවලි (Audited technical Sinhala terminology).</div>
           <div class="folder-links">
-            <a href="03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch1_study_guide_sinhala.html" class="folder-link-item"><span>Ch 1: පරීක්ෂාවේ මූලධර්ම</span> <span>→</span></a>
-            <a href="03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch2_study_guide_sinhala.html" class="folder-link-item"><span>Ch 2: SDLC තුළ පරීක්ෂාව</span> <span>→</span></a>
-            <a href="03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch3_study_guide_sinhala.html" class="folder-link-item"><span>Ch 3: ස්ථිතික පරීක්ෂාව</span> <span>→</span></a>
-            <a href="03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch4_study_guide_sinhala.html" class="folder-link-item"><span>Ch 4: විශ්ලේෂණය සහ සැලසුම්කරණය</span> <span>→</span></a>
-            <a href="03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch5_study_guide_sinhala.html" class="folder-link-item"><span>Ch 5: පරීක්ෂණ කළමනාකරණය</span> <span>→</span></a>
-            <a href="03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch6_study_guide_sinhala.html" class="folder-link-item"><span>Ch 6: පරීක්ෂණ මෙවලම්</span> <span>→</span></a>
+            <a href="03_Sinhala_Study_Guides_HTML/istqb_ch1_study_guide_sinhala.html" class="folder-link-item"><span>Ch 1: පරීක්ෂාවේ මූලධර්ම</span> <span>→</span></a>
+            <a href="03_Sinhala_Study_Guides_HTML/istqb_ch2_study_guide_sinhala.html" class="folder-link-item"><span>Ch 2: SDLC තුළ පරීක්ෂාව</span> <span>→</span></a>
+            <a href="03_Sinhala_Study_Guides_HTML/istqb_ch3_study_guide_sinhala.html" class="folder-link-item"><span>Ch 3: ස්ථිතික පරීක්ෂාව</span> <span>→</span></a>
+            <a href="03_Sinhala_Study_Guides_HTML/istqb_ch4_study_guide_sinhala.html" class="folder-link-item"><span>Ch 4: විශ්ලේෂණය සහ සැලසුම්කරණය</span> <span>→</span></a>
+            <a href="03_Sinhala_Study_Guides_HTML/istqb_ch5_study_guide_sinhala.html" class="folder-link-item"><span>Ch 5: පරීක්ෂණ කළමනාකරණය</span> <span>→</span></a>
+            <a href="03_Sinhala_Study_Guides_HTML/istqb_ch6_study_guide_sinhala.html" class="folder-link-item"><span>Ch 6: පරීක්ෂණ මෙවලම්</span> <span>→</span></a>
           </div>
         </div>
 

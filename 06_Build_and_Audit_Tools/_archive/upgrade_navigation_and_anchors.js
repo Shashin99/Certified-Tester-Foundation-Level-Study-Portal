@@ -9,7 +9,7 @@ const path = require('path');
 
 const rootDir = path.resolve(__dirname, '..');
 const enDir = path.join(rootDir, '02_English_Study_Guides_HTML');
-const siDir = path.join(rootDir, '03_Sinhala_Bilingual_Study_Guides_HTML');
+const siDir = path.join(rootDir, '03_Sinhala_Study_Guides_HTML');
 
 const chaptersConfig = [
   {
@@ -1215,7 +1215,7 @@ function buildNavbar(ch, isSinhala) {
   const prevCh = ch.num > 1 ? chaptersConfig[ch.num - 2] : null;
   const nextCh = ch.num < 6 ? chaptersConfig[ch.num] : null;
 
-  const otherFolder = isSinhala ? '../02_English_Study_Guides_HTML' : '../03_Sinhala_Bilingual_Study_Guides_HTML';
+  const otherFolder = isSinhala ? '../02_English_Study_Guides_HTML' : '../03_Sinhala_Study_Guides_HTML';
   const otherFile = isSinhala ? ch.fileEn : ch.fileSi;
 
   const langLabel = isSinhala ? '🇬🇧 English Version' : '🇱🇰 සිංහල අනුවාදය';

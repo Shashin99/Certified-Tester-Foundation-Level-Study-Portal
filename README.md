@@ -25,7 +25,7 @@ The repository includes a dedicated interactive web simulator built specifically
 * **Passing Threshold:** 65% (26 out of 40 questions correct).
 * **Key Features:**
   * **Question Palette:** 1–40 visual grid tracking Answered, Unanswered, and Flagged questions.
-  * **Bilingual Switcher:** Instant toggle between English and Sinhala question stems.
+  * **Language Switcher:** Instant toggle between English and Sinhala question stems.
   * **Reading Modes:** Seamless toggle between Obsidian Dark Mode and Crisp Light Mode.
   * **Diagnostic Scorecard:** Breakdown of performance by Chapter (1–6) and Cognitive Level (K1: Remember, K2: Understand, K3: Apply).
   * **Comprehensive Review:** Detailed review of every question with official syllabus rationales explaining why correct answers are correct and distractors are incorrect.
@@ -52,14 +52,14 @@ Pure-content, print-optimized English Master Study Guides for all 6 chapters (fe
 
 ---
 
-### 3. [`03_Sinhala_Bilingual_Study_Guides_HTML/`](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Bilingual_Study_Guides_HTML)
-Bilingual Study Guides combining official English ISTQB technical terminology with comprehensive Sinhala explanations for deep conceptual understanding (audited for technical accuracy):
-* **Chapter 01:** [istqb_ch1_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch1_study_guide_sinhala.html) — *Fundamentals of Testing (පරීක්ෂාවේ මූලධර්ම)*
-* **Chapter 02:** [istqb_ch2_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch2_study_guide_sinhala.html) — *Testing Throughout the SDLC (මෘදුකාංග සංවර්ධන ජීවන චක්‍රය තුළ පරීක්ෂාව)*
-* **Chapter 03:** [istqb_ch3_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch3_study_guide_sinhala.html) — *Static Testing (ස්ථිතික පරීක්ෂාව)*
-* **Chapter 04:** [istqb_ch4_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch4_study_guide_sinhala.html) — *Test Analysis and Design (පරීක්ෂණ විශ්ලේෂණය සහ සැලසුම්කරණය)*
-* **Chapter 05:** [istqb_ch5_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch5_study_guide_sinhala.html) — *Managing the Test Activities (පරීක්ෂණ ක්‍රියාකාරකම් කළමනාකරණය)*
-* **Chapter 06:** [istqb_ch6_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch6_study_guide_sinhala.html) — *Test Tools (පරීක්ෂණ මෙවලම්)*
+### 3. [`03_Sinhala_Study_Guides_HTML/`](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Study_Guides_HTML)
+Sinhala Study Guides combining official English ISTQB technical terminology with comprehensive Sinhala explanations for deep conceptual understanding (audited for technical accuracy):
+* **Chapter 01:** [istqb_ch1_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Study_Guides_HTML/istqb_ch1_study_guide_sinhala.html) — *Fundamentals of Testing (පරීක්ෂාවේ මූලධර්ම)*
+* **Chapter 02:** [istqb_ch2_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Study_Guides_HTML/istqb_ch2_study_guide_sinhala.html) — *Testing Throughout the SDLC (මෘදුකාංග සංවර්ධන ජීවන චක්‍රය තුළ පරීක්ෂාව)*
+* **Chapter 03:** [istqb_ch3_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Study_Guides_HTML/istqb_ch3_study_guide_sinhala.html) — *Static Testing (ස්ථිතික පරීක්ෂාව)*
+* **Chapter 04:** [istqb_ch4_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Study_Guides_HTML/istqb_ch4_study_guide_sinhala.html) — *Test Analysis and Design (පරීක්ෂණ විශ්ලේෂණය සහ සැලසුම්කරණය)*
+* **Chapter 05:** [istqb_ch5_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Study_Guides_HTML/istqb_ch5_study_guide_sinhala.html) — *Managing the Test Activities (පරීක්ෂණ ක්‍රියාකාරකම් කළමනාකරණය)*
+* **Chapter 06:** [istqb_ch6_study_guide_sinhala.html](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/03_Sinhala_Study_Guides_HTML/istqb_ch6_study_guide_sinhala.html) — *Test Tools (පරීක්ෂණ මෙවලම්)*
 
 ---
 
@@ -74,7 +74,7 @@ High-contrast, ink-friendly PDFs optimized for physical printing on standard A4 
 * **Chapter 05:** [ISTQB_CTFL_v4.0.1_Chapter_05_Managing_Test_Activities_Study_Guide.pdf](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/04_Printable_PDF_Study_Guides/ISTQB_CTFL_v4.0.1_Chapter_05_Managing_Test_Activities_Study_Guide.pdf)
 * **Chapter 06:** [ISTQB_CTFL_v4.0.1_Chapter_06_Test_Tools_Study_Guide.pdf](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/04_Printable_PDF_Study_Guides/ISTQB_CTFL_v4.0.1_Chapter_06_Test_Tools_Study_Guide.pdf)
 
-#### Sinhala Bilingual Printable PDFs (සිංහල මුද්‍රිත පිටපත්):
+#### Sinhala Printable PDFs (සිංහල මුද්‍රිත පිටපත්):
 * **Chapter 01 (සිංහල):** [ISTQB_CTFL_v4.0.1_Chapter_01_Sinhala_Study_Guide.pdf](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/04_Printable_PDF_Study_Guides/ISTQB_CTFL_v4.0.1_Chapter_01_Sinhala_Study_Guide.pdf)
 * **Chapter 02 (සිංහල):** [ISTQB_CTFL_v4.0.1_Chapter_02_Sinhala_Study_Guide.pdf](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/04_Printable_PDF_Study_Guides/ISTQB_CTFL_v4.0.1_Chapter_02_Sinhala_Study_Guide.pdf)
 * **Chapter 03 (සිංහල):** [ISTQB_CTFL_v4.0.1_Chapter_03_Sinhala_Study_Guide.pdf](file:///c:/Users/Shashin.Kalpajith/Desktop/ISTQB/04_Printable_PDF_Study_Guides/ISTQB_CTFL_v4.0.1_Chapter_03_Sinhala_Study_Guide.pdf)

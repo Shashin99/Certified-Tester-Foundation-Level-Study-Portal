@@ -77,7 +77,7 @@ ec-notes" class="notes-box">
     <a href="../index.html" class="nav-footer-
 ...
 
-===== 03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch5_study_guide_sinhala.html @71586
+===== 03_Sinhala_Study_Guides_HTML/istqb_ch5_study_guide_sinhala.html @71586
 ox">
       <div class="notes-box-header">
         <span>STUDENT NOTES & EXAM FLASHCARD REMINDERS (ස්වයං සටහන් සඳහා ඉඩකඩ)</span>
@@ -132,7 +132,7 @@ ox">
     </div>
 
     <div class="footer-note">
-      ISTQB® Certified Tester Foundation Level (CTFL) v4.0.1 &bull; Chapter 5: Managing the Test Activities &bull; Bilingual Sinhala + English Guide &bull; Exam Success
+      ISTQB® Certified Tester Foundation Level (CTFL) v4.0.1 &bull; Chapter 5: Managing the Test Activities &bull; Sinhala + English Guide &bull; Exam Success
     </div>
   </div>
 

@@ -179,7 +179,7 @@ Root Directory & Interactive Hub:
   - istqb_ch5_study_guide.html                 : Chapter 05 Managing the Test Activities
   - istqb_ch6_study_guide.html                 : Chapter 06 Test Tools
 
-03_Sinhala_Bilingual_Study_Guides_HTML/        (6 Sinhala Bilingual Web Guides)
+03_Sinhala_Study_Guides_HTML/        (6 Sinhala Web Guides)
   - istqb_ch1_study_guide_sinhala.html         : Chapter 01 පරීක්ෂාවේ මූලධර්ම
   - istqb_ch2_study_guide_sinhala.html         : Chapter 02 SDLC තුළ පරීක්ෂාව
   - istqb_ch3_study_guide_sinhala.html         : Chapter 03 ස්ථිතික පරීක්ෂාව
@@ -189,7 +189,7 @@ Root Directory & Interactive Hub:
 
 04_Printable_PDF_Study_Guides/                 (12 Ink-Friendly A4 Print Guides)
   - 6 English Printable PDFs (Chapters 01 - 06)
-  - 6 Sinhala Bilingual Printable PDFs (Chapters 01 - 06)
+  - 6 Sinhala Printable PDFs (Chapters 01 - 06)
 
 05_Practice_Questions_and_Summaries/
   - istqb_mock_exam_simulator.html             : Full 40Q timed 60-min interactive exam simulator
