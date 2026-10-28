@@ -1,0 +1,1706 @@
+[
+  {
+    "id": "Q-CH1-1",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.1.1",
+    "kLevel": "K1",
+    "questionEn": "Which of the following is an official, recognized test objective according to the ISTQB syllabus?",
+    "questionSi": "Which of the following is an official, recognized test objective according to the ISTQB syllabus? (ISTQB විෂය නිර්දේශයට අනුව පහත සඳහන් දෑ අතුරින් නිල වශයෙන් පිළිගත් පරීක්ෂණ අරමුණක් (test objective) වන්නේ කුමක්ද?)",
+    "optionsEn": [
+      "A) Proving that the software contains zero remaining defects.",
+      "B) Diagnosing defect causes in the source code and removing them.",
+      "C) Providing information to stakeholders to allow them to make informed decisions.",
+      "D) Demonstrating that testing was performed exhaustively across all code paths."
+    ],
+    "optionsSi": [
+      "A) Proving that the software contains zero remaining defects.",
+      "B) Diagnosing defect causes in the source code and removing them.",
+      "C) Providing information to stakeholders to allow them to make informed decisions.",
+      "D) Demonstrating that testing was performed exhaustively across all code paths."
+    ],
+    "answer": "C",
+    "rationaleEn": "Providing information to stakeholders for informed decisions is explicitly one of the 9 official test objectives (Section 1.1.1). Option A violates Principle 1 (testing shows presence, not absence of defects). Option B is debugging (a development activity). Option D violates Principle 2 (exhaustive testing is impossible).",
+    "rationaleSi": "Providing information to stakeholders for informed decisions is explicitly one of the 9 official test objectives (Section 1.1.1). Option A violates Principle 1 (testing shows presence, not absence of defects). Option B is debugging (a development activity). Option D violates Principle 2 (exhaustive testing is impossible)."
+  },
+  {
+    "id": "Q-CH1-2",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.1.2",
+    "kLevel": "K2",
+    "questionEn": "How does dynamic testing fundamentally differ from debugging?",
+    "questionSi": "How does dynamic testing fundamentally differ from debugging? (ගතික පරීක්ෂාව (Dynamic testing) සහ දෝෂ නිරාකරණය (Debugging) අතර ඇති මූලික වෙනස කුමක්ද?)",
+    "optionsEn": [
+      "A) Dynamic testing directly detects defects in code, whereas debugging reproduces failures.",
+      "B) Dynamic testing triggers failures caused by defects, whereas debugging reproduces, diagnoses, and fixes the defects.",
+      "C) Testing is performed exclusively by developers, whereas debugging is performed by independent testers.",
+      "D) Testing eliminates defects from the software, whereas debugging measures statement coverage."
+    ],
+    "optionsSi": [
+      "A) Dynamic testing directly detects defects in code, whereas debugging reproduces failures.",
+      "B) Dynamic testing triggers failures caused by defects, whereas debugging reproduces, diagnoses, and fixes the defects.",
+      "C) Testing is performed exclusively by developers, whereas debugging is performed by independent testers.",
+      "D) Testing eliminates defects from the software, whereas debugging measures statement coverage."
+    ],
+    "answer": "B",
+    "rationaleEn": "Dynamic testing executes software to trigger failures caused by defects. Debugging is the subsequent development process: (1) reproduction of failure, (2) diagnosis (finding the defect), and (3) fixing the defect (Section 1.1.2).",
+    "rationaleSi": "Dynamic testing executes software to trigger failures caused by defects. Debugging is the subsequent development process: (1) reproduction of failure, (2) diagnosis (finding the defect), and (3) fixing the defect (Section 1.1.2)."
+  },
+  {
+    "id": "Q-CH1-3",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.2.3",
+    "kLevel": "K2",
+    "questionEn": "A programmer tired from excessive overtime mistypes a logical operator in an algorithm. As a result, when an eligible customer purchases goods, the system unexpectedly crashes at checkout. What are the ERROR, DEFECT, and FAILURE in this scenario?",
+    "questionSi": "A programmer tired from excessive overtime mistypes a logical operator in an algorithm. As a result, when an eligible customer purchases goods, the system unexpectedly crashes at checkout. What are the ERROR, DEFECT, and FAILURE in this scenario? (අධික වෙහෙස නිසා ක්‍රමලේඛකයෙකු ඇල්ගොරිතමයක තාර්කික මෙහෙයුම්කාරකයක් (logical operator) වැරදියට ටයිප් කරයි. මෙහි ප්‍රතිඵලයක් ලෙස පාරිභෝගිකයෙකු භාණ්ඩ මිලදී ගැනීමේදී පද්ධතිය අනපේක්ෂිත ලෙස බිඳවැටේ. මෙම අවස්ථාවේ ERROR (මිනිස් අතපසුවීම), DEFECT (කේතයේ දෝෂය), සහ FAILURE (පද්ධතියේ බිඳවැටීම) නිවැරදිව හඳුනාගන්න.)",
+    "optionsEn": [
+      "A) Error: Mistyping the operator; Defect: Flawed code in algorithm; Failure: System crash at checkout.",
+      "B) Error: Overtime fatigue; Defect: System crash; Failure: Mistyped operator.",
+      "C) Error: System crash; Defect: Mistyping the operator; Failure: Customer complaint.",
+      "D) Error: Flawed code; Defect: Mistyped operator; Failure: Customer purchases goods."
+    ],
+    "optionsSi": [
+      "A) Error: Mistyping the operator; Defect: Flawed code in algorithm; Failure: System crash at checkout.",
+      "B) Error: Overtime fatigue; Defect: System crash; Failure: Mistyped operator.",
+      "C) Error: System crash; Defect: Mistyping the operator; Failure: Customer complaint.",
+      "D) Error: Flawed code; Defect: Mistyped operator; Failure: Customer purchases goods."
+    ],
+    "answer": "A",
+    "rationaleEn": "The human mistake of mistyping the operator is the Error . The resulting flaw in the source code is the Defect . The observable system crash during execution is the Failure . (Overtime fatigue is a root cause) (Section 1.2.3).",
+    "rationaleSi": "The human mistake of mistyping the operator is the Error . The resulting flaw in the source code is the Defect . The observable system crash during execution is the Failure . (Overtime fatigue is a root cause) (Section 1.2.3)."
+  },
+  {
+    "id": "Q-CH1-4",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.3.1",
+    "kLevel": "K2",
+    "questionEn": "A project manager claims: \"Since our automated regression test suite executed all 500 test cases with a 100% pass rate, our application is guaranteed to satisfy all customer expectations and need not be tested further.\" Which TWO testing principles refute this claim?",
+    "questionSi": "A project manager claims: \"Since our automated regression test suite executed all 500 test cases with a 100% pass rate, our application is guaranteed to satisfy all customer expectations and need not be tested further.\" Which TWO testing principles refute this claim? (ව්‍යාපාරික කළමනාකරු පවසන්නේ 500ක් වූ automated regression tests 100% සමත් වූ නිසා පාරිභෝගික අපේක්ෂා සියල්ල ඉටුවන බවත් තවදුරටත් පරීක්ෂා කිරීම අවශ්‍ය නොවන බවත්ය. මෙම ප්‍රකාශය ප්‍රතික්ෂේප කරන පරීක්ෂණ මූලධර්ම (Testing Principles) දෙක කුමක්ද?)",
+    "optionsEn": [
+      "A) Early testing saves time and money & Defects cluster together.",
+      "B) Absence-of-defects fallacy & Testing shows presence, not absence of defects.",
+      "C) Tests wear out & Exhaustive testing is impossible.",
+      "D) Testing is context dependent & Early testing saves time and money."
+    ],
+    "optionsSi": [
+      "A) Early testing saves time and money & Defects cluster together.",
+      "B) Absence-of-defects fallacy & Testing shows presence, not absence of defects.",
+      "C) Tests wear out & Exhaustive testing is impossible.",
+      "D) Testing is context dependent & Early testing saves time and money."
+    ],
+    "answer": "B",
+    "rationaleEn": "Absence-of-defects fallacy (Principle 7) refutes the claim that passing tests ensures customer satisfaction (verification vs validation). Testing shows presence, not absence of defects (Principle 1) refutes the claim that 100% pass rate guarantees no remaining bugs exist.",
+    "rationaleSi": "Absence-of-defects fallacy (Principle 7) refutes the claim that passing tests ensures customer satisfaction (verification vs validation). Testing shows presence, not absence of defects (Principle 1) refutes the claim that 100% pass rate guarantees no remaining bugs exist."
+  },
+  {
+    "id": "Q-CH1-5",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.4.1",
+    "kLevel": "K2",
+    "questionEn": "In which test activity is the question \"WHAT to test\" answered in terms of measurable coverage criteria?",
+    "questionSi": "In which test activity is the question \"WHAT to test\" answered in terms of measurable coverage criteria? (මැනිය හැකි ආවරණ නිර්ණායක (measurable coverage criteria) අනුව \"කුමක් පරීක්ෂා කළ යුතුද?\" (WHAT to test) යන ප්‍රශ්නයට පිළිතුරු සපයන පරීක්ෂණ ක්‍රියාකාරකම කුමක්ද?)",
+    "optionsEn": [
+      "A) Test Planning",
+      "B) Test Design",
+      "C) Test Analysis",
+      "D) Test Implementation"
+    ],
+    "optionsSi": [
+      "A) Test Planning",
+      "B) Test Design",
+      "C) Test Analysis",
+      "D) Test Implementation"
+    ],
+    "answer": "C",
+    "rationaleEn": "Section 1.4.1 explicitly defines: \"Test analysis answers the question 'what to test?' in terms of measurable coverage criteria.\" Test design answers \"how to test?\".",
+    "rationaleSi": "Section 1.4.1 explicitly defines: \"Test analysis answers the question 'what to test?' in terms of measurable coverage criteria.\" Test design answers \"how to test?\"."
+  },
+  {
+    "id": "Q-CH1-6",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.4.3",
+    "kLevel": "K2",
+    "questionEn": "Which work product is correctly paired with the test activity that produces it?",
+    "questionSi": "Which work product is correctly paired with the test activity that produces it? (පහත සඳහන් කාර්ය ඵලයන් (work products) අතුරින් එය නිපදවන පරීක්ෂණ ක්‍රියාකාරකම සමඟ නිවැරදිව යුගලනය කර ඇත්තේ කුමක්ද?)",
+    "optionsEn": [
+      "A) Test Implementation &rarr; Prioritized test conditions and defect reports on test basis",
+      "B) Test Design &rarr; Prioritized test cases, coverage items, test data requirements",
+      "C) Test Analysis &rarr; Test procedures, automated test scripts, and test suites",
+      "D) Test Execution &rarr; Test completion report and lessons learned"
+    ],
+    "optionsSi": [
+      "A) Test Implementation &rarr; Prioritized test conditions and defect reports on test basis",
+      "B) Test Design &rarr; Prioritized test cases, coverage items, test data requirements",
+      "C) Test Analysis &rarr; Test procedures, automated test scripts, and test suites",
+      "D) Test Execution &rarr; Test completion report and lessons learned"
+    ],
+    "answer": "B",
+    "rationaleEn": "Test cases, coverage items, and test data requirements are generated in Test Design . Test conditions come from Test Analysis; test procedures and scripts come from Test Implementation; test completion reports come from Test Completion (Section 1.4.3).",
+    "rationaleSi": "Test cases, coverage items, and test data requirements are generated in Test Design . Test conditions come from Test Analysis; test procedures and scripts come from Test Implementation; test completion reports come from Test Completion (Section 1.4.3)."
+  },
+  {
+    "id": "Q-CH1-7",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.4.4",
+    "kLevel": "K2",
+    "questionEn": "What is a primary benefit of maintaining bidirectional traceability between test cases and requirements?",
+    "questionSi": "What is a primary benefit of maintaining bidirectional traceability between test cases and requirements? (Test cases සහ අවශ්‍යතා (Requirements) අතර ද්වි-දිශානුගත අනුහුරුතාව (Bidirectional Traceability) පවත්වා ගැනීමේ ප්‍රධාන වාසිය කුමක්ද?)",
+    "optionsEn": [
+      "A) It guarantees that automated test scripts execute without failures.",
+      "B) It enables coverage evaluation and facilitates change impact analysis when requirements change.",
+      "C) It eliminates the need for confirmation testing after defects are fixed.",
+      "D) It ensures developers take complete responsibility for test management."
+    ],
+    "optionsSi": [
+      "A) It guarantees that automated test scripts execute without failures.",
+      "B) It enables coverage evaluation and facilitates change impact analysis when requirements change.",
+      "C) It eliminates the need for confirmation testing after defects are fixed.",
+      "D) It ensures developers take complete responsibility for test management."
+    ],
+    "answer": "B",
+    "rationaleEn": "Traceability allows testers to determine coverage of requirements and conduct change impact analysis to identify which tests must be updated or re-executed when requirements change (Section 1.4.4).",
+    "rationaleSi": "Traceability allows testers to determine coverage of requirements and conduct change impact analysis to identify which tests must be updated or re-executed when requirements change (Section 1.4.4)."
+  },
+  {
+    "id": "Q-CH1-8",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.5.3",
+    "kLevel": "K2",
+    "questionEn": "What is a recognized DISADVANTAGE or risk of having an independent test team?",
+    "questionSi": "What is a recognized DISADVANTAGE or risk of having an independent test team? (ස්වාධීන පරීක්ෂණ කණ්ඩායමක් (Independent Test Team) සිටීමේ පිළිගත් අවාසියක් හෝ අවදානමක් වන්නේ කුමක්ද?)",
+    "optionsEn": [
+      "A) Independent testers share the exact same cognitive biases as software developers.",
+      "B) Independent testers may be isolated, leading to communication breakdowns and developers losing responsibility for quality.",
+      "C) Independent testers cannot verify or challenge assumptions made by stakeholders.",
+      "D) Independent testing eliminates the need for component testing and static analysis."
+    ],
+    "optionsSi": [
+      "A) Independent testers share the exact same cognitive biases as software developers.",
+      "B) Independent testers may be isolated, leading to communication breakdowns and developers losing responsibility for quality.",
+      "C) Independent testers cannot verify or challenge assumptions made by stakeholders.",
+      "D) Independent testing eliminates the need for component testing and static analysis."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 1.5.3 highlights that independent testers may become isolated from the development team, which may lead to communication problems, an adversarial relationship, and developers losing a sense of responsibility for quality.",
+    "rationaleSi": "Section 1.5.3 highlights that independent testers may become isolated from the development team, which may lead to communication problems, an adversarial relationship, and developers losing a sense of responsibility for quality."
+  },
+  {
+    "id": "Q-CH1-9",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.2.1",
+    "kLevel": "K2",
+    "questionEn": "Which example BEST illustrates why testing is necessary?",
+    "questionSi": "Which example BEST illustrates why testing is necessary? (පහත උදාහරණවලින් පරීක්ෂාව අවශ්‍ය වන්නේ ඇයිද යන්න වඩාත් හොඳින් පැහැදිලි කරන්නේ කුමක්ද?)",
+    "optionsEn": [
+      "A) Testing guarantees that the released system contains no remaining defects.",
+      "B) Testing a payment module before release detects a rounding defect that would have overcharged customers, reducing the risk of financial loss and reputation damage.",
+      "C) Testing replaces the need for requirements reviews and code reviews.",
+      "D) Testing is needed only because the contract says so, not because it reduces risk."
+    ],
+    "optionsSi": [
+      "A) Testing guarantees that the released system contains no remaining defects.",
+      "B) Testing a payment module before release detects a rounding defect that would have overcharged customers, reducing the risk of financial loss and reputation damage.",
+      "C) Testing replaces the need for requirements reviews and code reviews.",
+      "D) Testing is needed only because the contract says so, not because it reduces risk."
+    ],
+    "answer": "B",
+    "rationaleEn": "Testing, performed at appropriate points in the SDLC, detects defects before they become failures in operation, reducing risk and contributing to software quality (Section 1.2.1). Option A violates Principle 1 (testing cannot show the absence of defects). Option C is wrong because static testing (reviews) complements dynamic testing. Option D ignores the main purpose: risk reduction.",
+    "rationaleSi": "Testing, performed at appropriate points in the SDLC, detects defects before they become failures in operation, reducing risk and contributing to software quality (Section 1.2.1). Option A violates Principle 1 (testing cannot show the absence of defects). Option C is wrong because static testing (reviews) complements dynamic testing. Option D ignores the main purpose: risk reduction."
+  },
+  {
+    "id": "Q-CH1-10",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.2.2",
+    "kLevel": "K1",
+    "questionEn": "What is the relation between testing and quality assurance (QA)?",
+    "questionSi": "What is the relation between testing and quality assurance (QA)? (පරීක්ෂාව (testing) සහ තත්ත්ව සහතිකකරණය (Quality Assurance - QA) අතර සම්බන්ධය නිවැරදිව දක්වන්නේ කුමක්ද?)",
+    "optionsEn": [
+      "A) Testing and QA are the same activity; both are product-oriented and corrective.",
+      "B) QA is a product-oriented activity that is performed only after testing has finished.",
+      "C) Testing is a form of quality control (product-oriented, corrective) that supports quality assurance, which is process-oriented and preventive.",
+      "D) QA applies only to testers, while developers are responsible for quality control only."
+    ],
+    "optionsSi": [
+      "A) Testing and QA are the same activity; both are product-oriented and corrective.",
+      "B) QA is a product-oriented activity that is performed only after testing has finished.",
+      "C) Testing is a form of quality control (product-oriented, corrective) that supports quality assurance, which is process-oriented and preventive.",
+      "D) QA applies only to testers, while developers are responsible for quality control only."
+    ],
+    "answer": "C",
+    "rationaleEn": "Quality management includes QA and QC. QA is a process-oriented, preventive approach focused on implementing and improving processes. QC is a product-oriented, corrective approach, and testing is a major form of QC. Test results are used in QC to fix defects and in QA as feedback on how well the development and test processes perform (Section 1.2.2).",
+    "rationaleSi": "Quality management includes QA and QC. QA is a process-oriented, preventive approach focused on implementing and improving processes. QC is a product-oriented, corrective approach, and testing is a major form of QC. Test results are used in QC to fix defects and in QA as feedback on how well the development and test processes perform (Section 1.2.2)."
+  },
+  {
+    "id": "Q-CH1-11",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.4.2",
+    "kLevel": "K2",
+    "questionEn": "A company that normally builds web shops starts a safety-critical medical device project that is subject to strict regulation. According to the syllabus, how will this context most likely affect the test process?",
+    "questionSi": "A company that normally builds web shops starts a safety-critical medical device project that is subject to strict regulation. According to the syllabus, how will this context most likely affect the test process? (සාමාන්‍යයෙන් වෙබ් වෙළඳසැල් සංවර්ධනය කරන ආයතනයක් දැඩි නියාමන රීතිවලට යටත් ආරක්ෂාව-තීරණාත්මක (safety-critical) වෛද්‍ය උපකරණ ව්‍යාපෘතියක් ආරම්භ කරයි. විෂය නිර්දේශයට අනුව සන්දර්භය (context) පරීක්ෂණ ක්‍රියාවලියට බලපාන්නේ කෙසේද?)",
+    "optionsEn": [
+      "A) The test process stays identical, because test activities are generic.",
+      "B) Testing is reduced, because the regulator performs the verification.",
+      "C) The test process is adapted: for example more formal planning, stricter documentation and traceability, independent testing and stricter exit criteria.",
+      "D) Only the tools change; plans, techniques and criteria remain unchanged."
+    ],
+    "optionsSi": [
+      "A) The test process stays identical, because test activities are generic.",
+      "B) Testing is reduced, because the regulator performs the verification.",
+      "C) The test process is adapted: for example more formal planning, stricter documentation and traceability, independent testing and stricter exit criteria.",
+      "D) Only the tools change; plans, techniques and criteria remain unchanged."
+    ],
+    "answer": "C",
+    "rationaleEn": "There is no universal test process. It is tailored to the context: SDLC model, test levels and types, product and project risks, business domain, operational constraints (budget, resources, timescales, complexity, contractual and regulatory requirements), organizational policies and required standards (Section 1.4.2). A regulated safety-critical project therefore needs more rigor.",
+    "rationaleSi": "There is no universal test process. It is tailored to the context: SDLC model, test levels and types, product and project risks, business domain, operational constraints (budget, resources, timescales, complexity, contractual and regulatory requirements), organizational policies and required standards (Section 1.4.2). A regulated safety-critical project therefore needs more rigor."
+  },
+  {
+    "id": "Q-CH1-12",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.4.5",
+    "kLevel": "K2",
+    "questionEn": "Which activity is MOST typical of the test management role, as opposed to the testing role?",
+    "questionSi": "Which activity is MOST typical of the test management role, as opposed to the testing role? (පරීක්ෂණ කළමනාකරණ භූමිකාවට (test management role), පරීක්ෂණ භූමිකාවට (testing role) වඩා වඩාත් සාමාන්‍ය ක්‍රියාකාරකම කුමක්ද?)",
+    "optionsEn": [
+      "A) Planning, monitoring and controlling the test process, for example writing the test plan, tracking progress and initiating corrective actions.",
+      "B) Analyzing the test basis and designing test cases.",
+      "C) Implementing and running automated test scripts.",
+      "D) Setting up test environments and preparing test data."
+    ],
+    "optionsSi": [
+      "A) Planning, monitoring and controlling the test process, for example writing the test plan, tracking progress and initiating corrective actions.",
+      "B) Analyzing the test basis and designing test cases.",
+      "C) Implementing and running automated test scripts.",
+      "D) Setting up test environments and preparing test data."
+    ],
+    "answer": "A",
+    "rationaleEn": "The test management role takes overall responsibility for the test process, the test team and the leadership of test activities, mainly test planning, monitoring, control and completion. The testing role takes responsibility for the engineering (technical) aspects: analysis, design, implementation and execution. One person may hold both roles (Section 1.4.5).",
+    "rationaleSi": "The test management role takes overall responsibility for the test process, the test team and the leadership of test activities, mainly test planning, monitoring, control and completion. The testing role takes responsibility for the engineering (technical) aspects: analysis, design, implementation and execution. One person may hold both roles (Section 1.4.5)."
+  },
+  {
+    "id": "Q-CH1-13",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.5.1",
+    "kLevel": "K2",
+    "questionEn": "A tester wonders what happens if a user enters a negative quantity (not mentioned in the requirements), tries it, and then explains the resulting failure to the developer in a clear, non-confrontational way. Which generic testing skills is the tester mainly demonstrating?",
+    "questionSi": "A tester wonders what happens if a user enters a negative quantity (not mentioned in the requirements), tries it, and then explains the resulting failure to the developer in a clear, non-confrontational way. Which generic testing skills is the tester mainly demonstrating? (ටෙස්ටර් කෙනෙක්, අවශ්‍යතාවල සඳහන් නොවූවත් භාවිතාකරුවෙකු ඍණ ප්‍රමාණයක් ඇතුළත් කළහොත් කුමක් සිදුවේදැයි කුතුහලයෙන් එය අත්හදා බලා, එහි අසාර්ථකත්වය සංවර්ධකයාට පැහැදිලිව සහ ගැටුමකින් තොරව පහදා දෙයි. මෙහිදී ඔහු ප්‍රධාන වශයෙන් පෙන්වන සාමාන්‍ය (generic) කුසලතා මොනවාද?)",
+    "optionsEn": [
+      "A) Project budgeting and contract negotiation",
+      "B) Database administration and programming skills only",
+      "C) Legal expertise in the business domain",
+      "D) Curiosity, critical thinking and good communication skills"
+    ],
+    "optionsSi": [
+      "A) Project budgeting and contract negotiation",
+      "B) Database administration and programming skills only",
+      "C) Legal expertise in the business domain",
+      "D) Curiosity, critical thinking and good communication skills"
+    ],
+    "answer": "D",
+    "rationaleEn": "Generic skills required for testing include testing knowledge, thoroughness and attention to detail, curiosity, analytical and critical thinking, creativity, good communication (including active listening), being a team player, and technical and domain knowledge (Section 1.5.1). Trying an unspecified input shows curiosity and critical thinking; explaining the failure constructively shows communication skills.",
+    "rationaleSi": "Generic skills required for testing include testing knowledge, thoroughness and attention to detail, curiosity, analytical and critical thinking, creativity, good communication (including active listening), being a team player, and technical and domain knowledge (Section 1.5.1). Trying an unspecified input shows curiosity and critical thinking; explaining the failure constructively shows communication skills."
+  },
+  {
+    "id": "Q-CH1-14",
+    "chapter": 1,
+    "chapterTitle": "Chapter 01",
+    "lo": "FL-1.5.2",
+    "kLevel": "K1",
+    "questionEn": "Which of the following is an advantage of the whole team approach?",
+    "questionSi": "Which of the following is an advantage of the whole team approach? (සමස්ත කණ්ඩායම් ප්‍රවේශයේ (whole team approach) වාසියක් කුමක්ද?)",
+    "optionsEn": [
+      "A) Testers work in isolation from developers so that their independence is preserved at all times.",
+      "B) Team members with different skill sets collaborate, which improves communication and synergy, and quality becomes the responsibility of the whole team.",
+      "C) Developers no longer need to review or test their own work, because testers own all quality activities.",
+      "D) The testing role disappears, so test planning is no longer needed."
+    ],
+    "optionsSi": [
+      "A) Testers work in isolation from developers so that their independence is preserved at all times.",
+      "B) Team members with different skill sets collaborate, which improves communication and synergy, and quality becomes the responsibility of the whole team.",
+      "C) Developers no longer need to review or test their own work, because testers own all quality activities.",
+      "D) The testing role disappears, so test planning is no longer needed."
+    ],
+    "answer": "B",
+    "rationaleEn": "In the whole team approach, any team member with the necessary knowledge and skills can perform any task, and everyone is responsible for quality. Advantages: improved communication and collaboration, synergy from leveraging different skill sets, and quality becoming everyone's responsibility (Section 1.5.2).",
+    "rationaleSi": "In the whole team approach, any team member with the necessary knowledge and skills can perform any task, and everyone is responsible for quality. Advantages: improved communication and collaboration, synergy from leveraging different skill sets, and quality becoming everyone's responsibility (Section 1.5.2)."
+  },
+  {
+    "id": "Q-CH2-1",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.1.1",
+    "kLevel": "K2",
+    "questionEn": "How does testing in an Agile development model typically differ from testing in a sequential V-model?",
+    "questionSi": "How does testing in an Agile development model typically differ from testing in a sequential V-model? (Agile සංවර්ධන ආකෘතියක පරීක්ෂාව සහ අනුක්‍රමික V-ආකෘතියක (Sequential V-Model) පරීක්ෂාව අතර ඇති ප්‍රධාන වෙනස කුමක්ද?)",
+    "optionsEn": [
+      "A) Agile testing produces more comprehensive test documentation than sequential testing.",
+      "B) In Agile, dynamic testing is executed at all test levels in each iteration, whereas in sequential models, dynamic testing occurs mainly in later phases.",
+      "C) Agile projects do not require regression testing, whereas sequential projects automate all regression tests.",
+      "D) In sequential models, testers perform only non-functional testing, while developers perform functional testing."
+    ],
+    "optionsSi": [
+      "A) Agile testing produces more comprehensive test documentation than sequential testing.",
+      "B) In Agile, dynamic testing is executed at all test levels in each iteration, whereas in sequential models, dynamic testing occurs mainly in later phases.",
+      "C) Agile projects do not require regression testing, whereas sequential projects automate all regression tests.",
+      "D) In sequential models, testers perform only non-functional testing, while developers perform functional testing."
+    ],
+    "answer": "B",
+    "rationaleEn": "In iterative/Agile models, each iteration produces a working increment, meaning static and dynamic testing occur at all test levels in every iteration (Section 2.1.1). Sequential models defer dynamic testing until executable code is built in later phases.",
+    "rationaleSi": "In iterative/Agile models, each iteration produces a working increment, meaning static and dynamic testing occur at all test levels in every iteration (Section 2.1.1). Sequential models defer dynamic testing until executable code is built in later phases."
+  },
+  {
+    "id": "Q-CH2-2",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.1.2",
+    "kLevel": "K1",
+    "questionEn": "Which of the following is a recognized GOOD TESTING PRACTICE that applies to ALL software development lifecycles?",
+    "questionSi": "Which of the following is a recognized GOOD TESTING PRACTICE that applies to ALL software development lifecycles? (සියලුම මෘදුකාංග සංවර්ධන ජීවන චක්‍රයන්ට (SDLCs) අදාළ වන පිළිගත් යහපත් පරීක්ෂණ පිළිවෙතක් (Good Testing Practice) වන්නේ කුමක්ද?)",
+    "optionsEn": [
+      "A) Test execution must be completely automated before coding starts.",
+      "B) Different test levels must have identical test objectives to ensure complete overlap.",
+      "C) For every software development activity, there is a corresponding test activity.",
+      "D) Non-functional testing should only be performed during User Acceptance Testing."
+    ],
+    "optionsSi": [
+      "A) Test execution must be completely automated before coding starts.",
+      "B) Different test levels must have identical test objectives to ensure complete overlap.",
+      "C) For every software development activity, there is a corresponding test activity.",
+      "D) Non-functional testing should only be performed during User Acceptance Testing."
+    ],
+    "answer": "C",
+    "rationaleEn": "Section 2.1.2 explicitly identifies that a universal practice across all SDLCs is: \"For every software development activity, there is a corresponding test activity, so that all development activities are subject to quality control.\"",
+    "rationaleSi": "Section 2.1.2 explicitly identifies that a universal practice across all SDLCs is: \"For every software development activity, there is a corresponding test activity, so that all development activities are subject to quality control.\""
+  },
+  {
+    "id": "Q-CH2-3",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.1.3",
+    "kLevel": "K1",
+    "questionEn": "In which test-first approach are test cases written in a simple natural language using the Given/When/Then format?",
+    "questionSi": "In which test-first approach are test cases written in a simple natural language using the Given/When/Then format? (Given/When/Then ආකෘතිය භාවිතයෙන් සරල ස්වභාවික භාෂාවෙන් Test cases ලියනු ලබන test-first ප්‍රවේශය කුමක්ද?)",
+    "optionsEn": [
+      "A) Test-Driven Development (TDD)",
+      "B) Behavior-Driven Development (BDD)",
+      "C) Acceptance Test-Driven Development (ATDD)",
+      "D) Feature-Driven Development (FDD)"
+    ],
+    "optionsSi": [
+      "A) Test-Driven Development (TDD)",
+      "B) Behavior-Driven Development (BDD)",
+      "C) Acceptance Test-Driven Development (ATDD)",
+      "D) Feature-Driven Development (FDD)"
+    ],
+    "answer": "B",
+    "rationaleEn": "BDD (Behavior-Driven Development) expresses the desired behavior of an application with test cases written in natural language using the Given/When/Then format (Chelimsky 2010, Section 2.1.3).",
+    "rationaleSi": "BDD (Behavior-Driven Development) expresses the desired behavior of an application with test cases written in natural language using the Given/When/Then format (Chelimsky 2010, Section 2.1.3)."
+  },
+  {
+    "id": "Q-CH2-4",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.1.5",
+    "kLevel": "K2",
+    "questionEn": "Which of the following actions is an example of applying the \"SHIFT LEFT\" approach in testing?",
+    "questionSi": "Which of the following actions is an example of applying the \"SHIFT LEFT\" approach in testing? (පරීක්ෂාවේදී \"SHIFT LEFT\" ප්‍රවේශය භාවිත කිරීමට උදාහරණයක් වන්නේ පහත කුමන ක්‍රියාවද?)",
+    "optionsEn": [
+      "A) Postponing performance testing until the entire system is deployed to production.",
+      "B) Reviewing requirements and user stories from a tester's perspective before code implementation begins.",
+      "C) Replacing all automated regression testing with manual user acceptance testing.",
+      "D) Having developers execute system integration testing without requirements."
+    ],
+    "optionsSi": [
+      "A) Postponing performance testing until the entire system is deployed to production.",
+      "B) Reviewing requirements and user stories from a tester's perspective before code implementation begins.",
+      "C) Replacing all automated regression testing with manual user acceptance testing.",
+      "D) Having developers execute system integration testing without requirements."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 2.1.5 lists reviewing specifications from the perspective of testers early in the SDLC as a prime example of achieving shift left to detect defects before code is written.",
+    "rationaleSi": "Section 2.1.5 lists reviewing specifications from the perspective of testers early in the SDLC as a prime example of achieving shift left to detect defects before code is written."
+  },
+  {
+    "id": "Q-CH2-5",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.2.1",
+    "kLevel": "K2",
+    "questionEn": "Which test level focuses specifically on testing the interactions between the system under test and other external systems and cloud services?",
+    "questionSi": "Which test level focuses specifically on testing the interactions between the system under test and other external systems and cloud services? (පරීක්ෂාවට ලක්වන පද්ධතිය සහ බාහිර පද්ධති හෝ cloud සේවාවන් අතර අන්තර්ක්‍රියා පරීක්ෂා කිරීම කෙරෙහි විශේෂයෙන් අවධානය යොමු කරන පරීක්ෂණ මට්ටම (Test Level) කුමක්ද?)",
+    "optionsEn": [
+      "A) Component Testing",
+      "B) Component Integration Testing",
+      "C) System Integration Testing",
+      "D) User Acceptance Testing"
+    ],
+    "optionsSi": [
+      "A) Component Testing",
+      "B) Component Integration Testing",
+      "C) System Integration Testing",
+      "D) User Acceptance Testing"
+    ],
+    "answer": "C",
+    "rationaleEn": "Section 2.2.1 states: \"System integration testing focuses on testing the interfaces of the system under test and other systems and external services.\" Component integration tests interfaces between internal components.",
+    "rationaleSi": "Section 2.2.1 states: \"System integration testing focuses on testing the interfaces of the system under test and other systems and external services.\" Component integration tests interfaces between internal components."
+  },
+  {
+    "id": "Q-CH2-6",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.2.2",
+    "kLevel": "K2",
+    "questionEn": "Which of the following statements about test types is TRUE?",
+    "questionSi": "Which of the following statements about test types is TRUE? (පරීක්ෂණ වර්ග (Test Types) පිළිබඳ පහත සඳහන් ප්‍රකාශ අතුරින් සත්‍ය වන්නේ කුමක්ද?)",
+    "optionsEn": [
+      "A) Functional testing evaluates how well the system behaves, while non-functional testing evaluates what it does.",
+      "B) Non-functional testing can only be conducted during system testing.",
+      "C) Black-box, white-box, functional, and non-functional testing can all be applied at all test levels.",
+      "D) White-box testing derives test cases from user stories and business requirements."
+    ],
+    "optionsSi": [
+      "A) Functional testing evaluates how well the system behaves, while non-functional testing evaluates what it does.",
+      "B) Non-functional testing can only be conducted during system testing.",
+      "C) Black-box, white-box, functional, and non-functional testing can all be applied at all test levels.",
+      "D) White-box testing derives test cases from user stories and business requirements."
+    ],
+    "answer": "C",
+    "rationaleEn": "Section 2.2.2 explicitly affirms: \"All the four above mentioned test types can be applied to all test levels, although the focus will be different at each level.\"",
+    "rationaleSi": "Section 2.2.2 explicitly affirms: \"All the four above mentioned test types can be applied to all test levels, although the focus will be different at each level.\""
+  },
+  {
+    "id": "Q-CH2-7",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.2.3",
+    "kLevel": "K2",
+    "questionEn": "A tester executes a test case that previously failed to confirm that a bug fix resolved the issue. Simultaneously, an automated test suite executes across the entire application to ensure unchanged modules were not corrupted. What types of testing are being performed?",
+    "questionSi": "A tester executes a test case that previously failed to confirm that a bug fix resolved the issue. Simultaneously, an automated test suite executes across the entire application to ensure unchanged modules were not corrupted. What types of testing are being performed? (දෝෂ නිවැරදි කිරීමක් තහවුරු කිරීමට ටෙස්ටර් කෙනෙක් කලින් අසමත් වූ test case එකක් නැවත ක්‍රියාත්මක කරයි. ඒ සමඟම වෙනස් නොකළ කොටස්වලට හානියක් වී නැති බව තහවුරු කිරීමට automated test suite එකක් ක්‍රියාත්මක කරයි. මෙහිදී සිදුකරන පරීක්ෂණ වර්ග මොනවාද?)",
+    "optionsEn": [
+      "A) Regression testing followed by maintenance testing.",
+      "B) Confirmation testing and regression testing, respectively.",
+      "C) System integration testing and alpha testing.",
+      "D) Non-functional testing and confirmation testing."
+    ],
+    "optionsSi": [
+      "A) Regression testing followed by maintenance testing.",
+      "B) Confirmation testing and regression testing, respectively.",
+      "C) System integration testing and alpha testing.",
+      "D) Non-functional testing and confirmation testing."
+    ],
+    "answer": "B",
+    "rationaleEn": "Testing to confirm that an original defect was fixed is Confirmation Testing (re-testing) . Running tests to ensure no adverse consequences affected unchanged code is Regression Testing (Section 2.2.3).",
+    "rationaleSi": "Testing to confirm that an original defect was fixed is Confirmation Testing (re-testing) . Running tests to ensure no adverse consequences affected unchanged code is Regression Testing (Section 2.2.3)."
+  },
+  {
+    "id": "Q-CH2-8",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.3.1",
+    "kLevel": "K2",
+    "questionEn": "An enterprise migrates its customer database from an on-premise Oracle server to an AWS cloud-hosted PostgreSQL database. Which type of testing is triggered, and what is its primary focus?",
+    "questionSi": "An enterprise migrates its customer database from an on-premise Oracle server to an AWS cloud-hosted PostgreSQL database. Which type of testing is triggered, and what is its primary focus? (ආයතනයක් තම පාරිභෝගික දත්ත ගබඩාව On-premise Oracle සේවාදායකයක සිට AWS Cloud PostgreSQL දත්ත ගබඩාවකට සංක්‍රමණය (migrate) කරයි. මෙහිදී ආරම්භ වන පරීක්ෂණ වර්ගය සහ එහි ප්‍රධාන අවධානය කුමක්ද?)",
+    "optionsEn": [
+      "A) Component testing to rewrite database algorithms.",
+      "B) Maintenance testing triggered by an upgrade/migration, focusing on tests of the new environment and data conversion.",
+      "C) Retirement testing to delete legacy customer data permanently.",
+      "D) System integration testing focused exclusively on user interface styling."
+    ],
+    "optionsSi": [
+      "A) Component testing to rewrite database algorithms.",
+      "B) Maintenance testing triggered by an upgrade/migration, focusing on tests of the new environment and data conversion.",
+      "C) Retirement testing to delete legacy customer data permanently.",
+      "D) System integration testing focused exclusively on user interface styling."
+    ],
+    "answer": "B",
+    "rationaleEn": "Operational environment migrations/upgrades are a primary trigger for maintenance testing, requiring testing of the new environment and data conversion/migration validation (Section 2.3).",
+    "rationaleSi": "Operational environment migrations/upgrades are a primary trigger for maintenance testing, requiring testing of the new environment and data conversion/migration validation (Section 2.3)."
+  },
+  {
+    "id": "Q-CH2-9",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.1.4",
+    "kLevel": "K2",
+    "questionEn": "Which of the following is a typical impact of DevOps on testing?",
+    "questionSi": "Which of the following is a typical impact of DevOps on testing? (DevOps මගින් පරීක්ෂාවට ඇතිවන සාමාන්‍ය බලපෑමක් කුමක්ද?)",
+    "optionsEn": [
+      "A) Automated regression tests in the CI/CD pipeline give fast feedback on quality and reduce the risk of regression defects.",
+      "B) Because deployment is continuous, non-functional characteristics no longer need to be tested.",
+      "C) Test automation is no longer necessary because the pipeline tests itself.",
+      "D) Testing is moved to the very end of the pipeline so that development is never slowed down."
+    ],
+    "optionsSi": [
+      "A) Automated regression tests in the CI/CD pipeline give fast feedback on quality and reduce the risk of regression defects.",
+      "B) Because deployment is continuous, non-functional characteristics no longer need to be tested.",
+      "C) Test automation is no longer necessary because the pipeline tests itself.",
+      "D) Testing is moved to the very end of the pipeline so that development is never slowed down."
+    ],
+    "answer": "A",
+    "rationaleEn": "DevOps benefits for testing: fast feedback on quality, CI promoting shift-left, stable test environments through CI/CD automation, more focus on non-functional characteristics (e.g. performance, reliability), less repetitive manual testing and a lower regression risk. Risks: the delivery pipeline must be defined and established, CI/CD tools must be introduced and maintained, and test automation needs extra resources and can be hard to build and maintain (Section 2.1.4).",
+    "rationaleSi": "DevOps benefits for testing: fast feedback on quality, CI promoting shift-left, stable test environments through CI/CD automation, more focus on non-functional characteristics (e.g. performance, reliability), less repetitive manual testing and a lower regression risk. Risks: the delivery pipeline must be defined and established, CI/CD tools must be introduced and maintained, and test automation needs extra resources and can be hard to build and maintain (Section 2.1.4)."
+  },
+  {
+    "id": "Q-CH2-10",
+    "chapter": 2,
+    "chapterTitle": "Chapter 02",
+    "lo": "FL-2.1.6",
+    "kLevel": "K2",
+    "questionEn": "How can retrospectives be used as a mechanism for process improvement?",
+    "questionSi": "How can retrospectives be used as a mechanism for process improvement? (ක්‍රියාවලි වැඩිදියුණු කිරීමේ යාන්ත්‍රණයක් ලෙස retrospectives භාවිත වන්නේ කෙසේද?)",
+    "optionsEn": [
+      "A) Management alone holds them before the project starts in order to assign blame for earlier failures.",
+      "B) They automatically re-run all regression tests to compare the results of two iterations.",
+      "C) The team discusses what was successful and what could be improved, agrees how to incorporate improvements, and records the results (for example in the test completion report).",
+      "D) They replace test completion reports and are never documented."
+    ],
+    "optionsSi": [
+      "A) Management alone holds them before the project starts in order to assign blame for earlier failures.",
+      "B) They automatically re-run all regression tests to compare the results of two iterations.",
+      "C) The team discusses what was successful and what could be improved, agrees how to incorporate improvements, and records the results (for example in the test completion report).",
+      "D) They replace test completion reports and are never documented."
+    ],
+    "answer": "C",
+    "rationaleEn": "Retrospectives are held at the end of a project or iteration, at a release milestone, or when needed. Participants discuss what to retain, what to improve and how to incorporate improvements; the results should be recorded, typically in the test completion report. Benefits for testing: higher test effectiveness and efficiency, better testware quality, team bonding and learning, better test basis quality and better cooperation between development and testing (Section 2.1.6).",
+    "rationaleSi": "Retrospectives are held at the end of a project or iteration, at a release milestone, or when needed. Participants discuss what to retain, what to improve and how to incorporate improvements; the results should be recorded, typically in the test completion report. Benefits for testing: higher test effectiveness and efficiency, better testware quality, team bonding and learning, better test basis quality and better cooperation between development and testing (Section 2.1.6)."
+  },
+  {
+    "id": "Q-CH3-1",
+    "chapter": 3,
+    "chapterTitle": "Chapter 03",
+    "lo": "FL-3.1.1",
+    "kLevel": "K1",
+    "questionEn": "Which of the following work products is LEAST APPROPRIATE for examination using static testing?",
+    "questionSi": "Which of the following work products is LEAST APPROPRIATE for examination using static testing? (ස්ථිතික පරීක්ෂාව (Static Testing) මගින් පරීක්ෂා කිරීමට අවම වශයෙන් සුදුසු කාර්ය ඵලය (Work Product) කුමක්ද?)",
+    "optionsEn": [
+      "A) A software architecture diagram detailing microservice dependencies.",
+      "B) A third-party proprietary compiled executable binary where source code is legally inaccessible.",
+      "C) A product backlog containing user stories and acceptance criteria.",
+      "D) An automated test execution script written in Python."
+    ],
+    "optionsSi": [
+      "A) A software architecture diagram detailing microservice dependencies.",
+      "B) A third-party proprietary compiled executable binary where source code is legally inaccessible.",
+      "C) A product backlog containing user stories and acceptance criteria.",
+      "D) An automated test execution script written in Python."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 3.1.1 explicitly states that work products not appropriate for static testing are those that are difficult to interpret by humans and should not be analyzed by tools, such as third-party executable code due to legal restrictions. Architecture, user stories, and test scripts are all prime candidates for static testing.",
+    "rationaleSi": "Section 3.1.1 explicitly states that work products not appropriate for static testing are those that are difficult to interpret by humans and should not be analyzed by tools, such as third-party executable code due to legal restrictions. Architecture, user stories, and test scripts are all prime candidates for static testing."
+  },
+  {
+    "id": "Q-CH3-2",
+    "chapter": 3,
+    "chapterTitle": "Chapter 03",
+    "lo": "FL-3.1.2",
+    "kLevel": "K2",
+    "questionEn": "Which of the following defects is TYPICALLY detected by static testing but CANNOT be detected by dynamic testing?",
+    "questionSi": "Which of the following defects is TYPICALLY detected by static testing but CANNOT be detected by dynamic testing? (සාමාන්‍යයෙන් ස්ථිතික පරීක්ෂාවෙන් හඳුනාගත හැකි නමුත් ගතික පරීක්ෂාවෙන් (Dynamic Testing) හඳුනාගත නොහැකි දෝෂය කුමක්ද?)",
+    "optionsEn": [
+      "A) Excessive memory leakage occurring after 48 hours of continuous server load.",
+      "B) An unreachable block of dead source code that can never be executed.",
+      "C) Slow database query response times during peak holiday transaction traffic.",
+      "D) Inaccurate calculations triggered by unexpected floating-point precision errors during runtime."
+    ],
+    "optionsSi": [
+      "A) Excessive memory leakage occurring after 48 hours of continuous server load.",
+      "B) An unreachable block of dead source code that can never be executed.",
+      "C) Slow database query response times during peak holiday transaction traffic.",
+      "D) Inaccurate calculations triggered by unexpected floating-point precision errors during runtime."
+    ],
+    "answer": "B",
+    "rationaleEn": "Dynamic testing requires code execution; therefore, code that is unreachable (dead code) can never be executed or detected dynamically. Static analysis identifies dead code directly without execution (Section 3.1.2). Memory leaks, response times, and calculation errors during execution are dynamic phenomena.",
+    "rationaleSi": "Dynamic testing requires code execution; therefore, code that is unreachable (dead code) can never be executed or detected dynamically. Static analysis identifies dead code directly without execution (Section 3.1.2). Memory leaks, response times, and calculation errors during execution are dynamic phenomena."
+  },
+  {
+    "id": "Q-CH3-3",
+    "chapter": 3,
+    "chapterTitle": "Chapter 03",
+    "lo": "FL-3.1.3",
+    "kLevel": "K2",
+    "questionEn": "How does static testing fundamentally differ from dynamic testing regarding defect detection?",
+    "questionSi": "How does static testing fundamentally differ from dynamic testing regarding defect detection? (දෝෂ හඳුනාගැනීම සම්බන්ධයෙන් ස්ථිතික පරීක්ෂාව සහ ගතික පරීක්ෂාව අතර ඇති මූලික වෙනස කුමක්ද?)",
+    "optionsEn": [
+      "A) Static testing triggers failures from which defects are diagnosed, whereas dynamic testing identifies defects directly.",
+      "B) Static testing finds defects directly in work products, whereas dynamic testing causes runtime failures from which defects are determined.",
+      "C) Static testing can only be applied to executable code, whereas dynamic testing applies to documentation.",
+      "D) Static testing measures performance efficiency, whereas dynamic testing evaluates code maintainability."
+    ],
+    "optionsSi": [
+      "A) Static testing triggers failures from which defects are diagnosed, whereas dynamic testing identifies defects directly.",
+      "B) Static testing finds defects directly in work products, whereas dynamic testing causes runtime failures from which defects are determined.",
+      "C) Static testing can only be applied to executable code, whereas dynamic testing applies to documentation.",
+      "D) Static testing measures performance efficiency, whereas dynamic testing evaluates code maintainability."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 3.1.3 explains that static testing detects defects directly in the examined artifact, whereas dynamic testing triggers observable runtime failures, requiring subsequent debugging to isolate the defect.",
+    "rationaleSi": "Section 3.1.3 explains that static testing detects defects directly in the examined artifact, whereas dynamic testing triggers observable runtime failures, requiring subsequent debugging to isolate the defect."
+  },
+  {
+    "id": "Q-CH3-4",
+    "chapter": 3,
+    "chapterTitle": "Chapter 03",
+    "lo": "FL-3.2.1",
+    "kLevel": "K1",
+    "questionEn": "What is a primary benefit of gathering early and frequent stakeholder feedback during the SDLC?",
+    "questionSi": "What is a primary benefit of gathering early and frequent stakeholder feedback during the SDLC? (SDLC තුළ මුල් අවධියේදීම සහ නිරන්තරයෙන් Stakeholder ප්‍රතිපෝෂණ (Feedback) ලබාගැනීමේ ප්‍රධාන වාසිය කුමක්ද?)",
+    "optionsEn": [
+      "A) It guarantees that the system will achieve 100% statement and branch code coverage.",
+      "B) It eliminates the need to perform component and system integration testing.",
+      "C) It prevents misunderstandings regarding requirements and ensures changes are implemented before expensive rework is required.",
+      "D) It ensures that the author of the code acts as both moderator and scribe during formal reviews."
+    ],
+    "optionsSi": [
+      "A) It guarantees that the system will achieve 100% statement and branch code coverage.",
+      "B) It eliminates the need to perform component and system integration testing.",
+      "C) It prevents misunderstandings regarding requirements and ensures changes are implemented before expensive rework is required.",
+      "D) It ensures that the author of the code acts as both moderator and scribe during formal reviews."
+    ],
+    "answer": "C",
+    "rationaleEn": "Frequent feedback prevents misunderstandings about requirements, ensures changes are understood earlier, and avoids costly rework and missed deadlines (Section 3.2.1).",
+    "rationaleSi": "Frequent feedback prevents misunderstandings about requirements, ensures changes are understood earlier, and avoids costly rework and missed deadlines (Section 3.2.1)."
+  },
+  {
+    "id": "Q-CH3-5",
+    "chapter": 3,
+    "chapterTitle": "Chapter 03",
+    "lo": "FL-3.2.2",
+    "kLevel": "K2",
+    "questionEn": "During which activity of the review process (ISO/IEC 20246) are anomalies discussed, their status decided, and ownership assigned?",
+    "questionSi": "During which activity of the review process (ISO/IEC 20246) are anomalies discussed, their status decided, and ownership assigned? (ISO/IEC 20246 සමාලෝචන ක්‍රියාවලියේදී විෂමතා (Anomalies) සාකච්ඡා කර, ඒවායේ තත්ත්වය තීරණය කර, විසඳීමේ වගකීම පවරනු ලබන්නේ කුමන ක්‍රියාකාරකමේදීද?)",
+    "optionsEn": [
+      "A) Review initiation",
+      "B) Individual review",
+      "C) Communication and analysis",
+      "D) Planning"
+    ],
+    "optionsSi": [
+      "A) Review initiation",
+      "B) Individual review",
+      "C) Communication and analysis",
+      "D) Planning"
+    ],
+    "answer": "C",
+    "rationaleEn": "Section 3.2.2 explicitly defines that during Communication and analysis , participants analyze and discuss logged anomalies, make decisions on their status and ownership, and decide on necessary corrective actions.",
+    "rationaleSi": "Section 3.2.2 explicitly defines that during Communication and analysis , participants analyze and discuss logged anomalies, make decisions on their status and ownership, and decide on necessary corrective actions."
+  },
+  {
+    "id": "Q-CH3-6",
+    "chapter": 3,
+    "chapterTitle": "Chapter 03",
+    "lo": "FL-3.2.3",
+    "kLevel": "K1",
+    "questionEn": "In an inspection, which two roles MUST NOT be performed by the author of the work product?",
+    "questionSi": "In an inspection, which two roles MUST NOT be performed by the author of the work product? (විධිමත් පරීක්ෂාවකදී (Inspection) කාර්ය ඵලයේ කතුවරයා (Author) විසින් සිදු නොකළ යුතු භූමිකා (Roles) දෙක කුමක්ද?)",
+    "optionsEn": [
+      "A) Reviewer and Manager",
+      "B) Review Leader and Scribe",
+      "C) Moderator and Reviewer",
+      "D) Scribe and Reviewer"
+    ],
+    "optionsSi": [
+      "A) Reviewer and Manager",
+      "B) Review Leader and Scribe",
+      "C) Moderator and Reviewer",
+      "D) Scribe and Reviewer"
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 3.2.4 strictly stipulates: \"In inspections, the author cannot act as the review leader or scribe.\" This prevents conflict of interest and ensures impartial documentation of defects.",
+    "rationaleSi": "Section 3.2.4 strictly stipulates: \"In inspections, the author cannot act as the review leader or scribe.\" This prevents conflict of interest and ensures impartial documentation of defects."
+  },
+  {
+    "id": "Q-CH3-7",
+    "chapter": 3,
+    "chapterTitle": "Chapter 03",
+    "lo": "FL-3.2.4",
+    "kLevel": "K2",
+    "questionEn": "Which review type is led by the AUTHOR of the work product and has multiple objectives including educating reviewers, building consensus, and gathering new ideas?",
+    "questionSi": "Which review type is led by the AUTHOR of the work product and has multiple objectives including educating reviewers, building consensus, and gathering new ideas? (කතුවරයා විසින් මෙහෙයවනු ලබන, සමාලෝචකයින් දැනුවත් කිරීම, එකඟතාව ගොඩනැගීම සහ නව අදහස් ලබාගැනීම අරමුණු කරගත් සමාලෝචන වර්ගය (Review Type) කුමක්ද?)",
+    "optionsEn": [
+      "A) Walkthrough",
+      "B) Inspection",
+      "C) Technical Review",
+      "D) Informal Review"
+    ],
+    "optionsSi": [
+      "A) Walkthrough",
+      "B) Inspection",
+      "C) Technical Review",
+      "D) Informal Review"
+    ],
+    "answer": "A",
+    "rationaleEn": "Section 3.2.4 defines a Walkthrough as being led by the author, serving objectives such as educating reviewers, building consensus, generating new ideas, and detecting anomalies.",
+    "rationaleSi": "Section 3.2.4 defines a Walkthrough as being led by the author, serving objectives such as educating reviewers, building consensus, generating new ideas, and detecting anomalies."
+  },
+  {
+    "id": "Q-CH3-8",
+    "chapter": 3,
+    "chapterTitle": "Chapter 03",
+    "lo": "FL-3.2.5",
+    "kLevel": "K1",
+    "questionEn": "Which of the following is an ANTI-PATTERN that directly undermines the success of a review program?",
+    "questionSi": "Which of the following is an ANTI-PATTERN that directly undermines the success of a review program? (සමාලෝචන වැඩසටහනක සාර්ථකත්වයට සෘජුවම බාධා පමුණුවන ප්‍රති-රටාවක් (Anti-pattern) වන්නේ කුමක්ද?)",
+    "optionsEn": [
+      "A) Conducting reviews on small chunks to avoid reviewer fatigue.",
+      "B) Using defect metrics gathered from reviews to evaluate the performance of participating authors.",
+      "C) Providing adequate preparation time for participants to perform individual reviews.",
+      "D) Having a trained moderator facilitate review meetings to maintain a safe environment."
+    ],
+    "optionsSi": [
+      "A) Conducting reviews on small chunks to avoid reviewer fatigue.",
+      "B) Using defect metrics gathered from reviews to evaluate the performance of participating authors.",
+      "C) Providing adequate preparation time for participants to perform individual reviews.",
+      "D) Having a trained moderator facilitate review meetings to maintain a safe environment."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 3.2.5 explicitly emphasizes: \"Evaluation of participants should never be an objective.\" Using reviews to appraise employee performance creates fear and ruins the review culture.",
+    "rationaleSi": "Section 3.2.5 explicitly emphasizes: \"Evaluation of participants should never be an objective.\" Using reviews to appraise employee performance creates fear and ruins the review culture."
+  },
+  {
+    "id": "Q-CH4-1",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.2.1",
+    "kLevel": "K3",
+    "questionEn": "An insurance application accepts an applicant's age as an integer input. Valid ages for coverage are from 18 to 65 inclusive. Ages under 18 are rejected with \"Too young\", and ages over 65 are rejected with \"Too old\". Inputs must be positive integers up to 120. Using Equivalence Partitioning, what is the MINIMUM number of test cases required to achieve 100% equivalence partition coverage?",
+    "questionSi": "An insurance application accepts an applicant's age as an integer input. Valid ages for coverage are from 18 to 65 inclusive. Ages under 18 are rejected with \"Too young\", and ages over 65 are rejected with \"Too old\". Inputs must be positive integers up to 120. Using Equivalence Partitioning, what is the MINIMUM number of test cases required to achieve 100% equivalence partition coverage? (රක්ෂණ යෙදුමක වයස 18 සිට 65 දක්වා වලංගු වේ. 18ට අඩු අගයන් \"Too young\" ලෙසද, 65ට වැඩි අගයන් \"Too old\" ලෙසද ප්‍රතික්ෂේප වේ (උපරිම 120 දක්වා). Equivalence Partitioning ක්‍රමයට අනුව 100% coverage ලබාගැනීමට අවශ්‍ය අවම Test cases ගණන කීයද?)",
+    "optionsEn": [
+      "A) 2 test cases",
+      "B) 3 test cases",
+      "C) 4 test cases",
+      "D) 6 test cases"
+    ],
+    "optionsSi": [
+      "A) 2 test cases",
+      "B) 3 test cases",
+      "C) 4 test cases",
+      "D) 6 test cases"
+    ],
+    "answer": "B",
+    "rationaleEn": "The input range [1 to 120] is partitioned into: (1) Invalid partition: 1 to 17 (\"Too young\"), (2) Valid partition: 18 to 65 (\"Accepted\"), and (3) Invalid partition: 66 to 120 (\"Too old\"). To achieve 100% EP coverage, one test case from each of the 3 identified partitions is required: e.g., 10, 30, and 70 (Section 4.2.1).",
+    "rationaleSi": "The input range [1 to 120] is partitioned into: (1) Invalid partition: 1 to 17 (\"Too young\"), (2) Valid partition: 18 to 65 (\"Accepted\"), and (3) Invalid partition: 66 to 120 (\"Too old\"). To achieve 100% EP coverage, one test case from each of the 3 identified partitions is required: e.g., 10, 30, and 70 (Section 4.2.1)."
+  },
+  {
+    "id": "Q-CH4-2",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.2.2",
+    "kLevel": "K3",
+    "questionEn": "For the age requirement above (valid range 18 to 65 inclusive), which set of test values achieves 100% coverage using 2-VALUE Boundary Value Analysis (BVA)?",
+    "questionSi": "For the age requirement above (valid range 18 to 65 inclusive), which set of test values achieves 100% coverage using 2-VALUE Boundary Value Analysis (BVA)? (ඉහත වයස් සීමාව සඳහා (18 සිට 65 දක්වා වලංගු වේ), 2-Value Boundary Value Analysis (BVA) ක්‍රමවේදය භාවිතයෙන් 100% ආවරණයක් ලබාදෙන පරීක්ෂණ අගයන් කට්ටලය කුමක්ද?)",
+    "optionsEn": [
+      "A) 17, 18, 65, 66",
+      "B) 17, 18, 19, 64, 65, 66",
+      "C) 18, 65",
+      "D) 0, 18, 65, 120"
+    ],
+    "optionsSi": [
+      "A) 17, 18, 65, 66",
+      "B) 17, 18, 19, 64, 65, 66",
+      "C) 18, 65",
+      "D) 0, 18, 65, 120"
+    ],
+    "answer": "A",
+    "rationaleEn": "In 2-value BVA, each boundary requires testing the boundary value and its closest neighbor in the adjacent partition. For the lower boundary (18): 18 (valid) and 17 (invalid). For the upper boundary (65): 65 (valid) and 66 (invalid). Thus, {17, 18, 65, 66} provides 100% 2-value BVA coverage (Section 4.2.2).",
+    "rationaleSi": "In 2-value BVA, each boundary requires testing the boundary value and its closest neighbor in the adjacent partition. For the lower boundary (18): 18 (valid) and 17 (invalid). For the upper boundary (65): 65 (valid) and 66 (invalid). Thus, {17, 18, 65, 66} provides 100% 2-value BVA coverage (Section 4.2.2)."
+  },
+  {
+    "id": "Q-CH4-3",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.2.2",
+    "kLevel": "K3",
+    "questionEn": "Which set of test values represents 3-VALUE Boundary Value Analysis for the lower boundary (18) of the valid range [18 to 65]?",
+    "questionSi": "Which set of test values represents 3-VALUE Boundary Value Analysis for the lower boundary (18) of the valid range [18 to 65]? ([18 සිට 65] වලංගු පරාසයේ පහළ මායිම (18) සඳහා 3-Value Boundary Value Analysis (BVA) අගයන් නියෝජනය කරන්නේ කුමන අගයන් කට්ටලයද?)",
+    "optionsEn": [
+      "A) 17 and 18",
+      "B) 17, 18, and 19",
+      "C) 16, 17, and 18",
+      "D) 18, 19, and 20"
+    ],
+    "optionsSi": [
+      "A) 17 and 18",
+      "B) 17, 18, and 19",
+      "C) 16, 17, and 18",
+      "D) 18, 19, and 20"
+    ],
+    "answer": "B",
+    "rationaleEn": "3-value BVA requires exercising the boundary value itself and both of its immediate neighbors. For the boundary 18, the values are 17 (left neighbor), 18 (boundary value), and 19 (right neighbor) (Section 4.2.2).",
+    "rationaleSi": "3-value BVA requires exercising the boundary value itself and both of its immediate neighbors. For the boundary 18, the values are 17 (left neighbor), 18 (boundary value), and 19 (right neighbor) (Section 4.2.2)."
+  },
+  {
+    "id": "Q-CH4-4",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.3.2",
+    "kLevel": "K2",
+    "questionEn": "A program contains a single `if...then` decision statement with no `else` block. A single test case executes the condition such that it evaluates to TRUE, running the inner code. What are the resulting Statement Coverage and Branch Coverage percentages?",
+    "questionSi": "A program contains a single if...then decision statement with no else block. A single test case executes the condition such that it evaluates to TRUE, running the inner code. What are the resulting Statement Coverage and Branch Coverage percentages? (ක්‍රමලේඛයක else කොටසක් නොමැති තනි if...then තීරණයක් ඇත. තනි test case එකකින් කොන්දේසිය TRUE වී අභ්‍යන්තර කේතය ක්‍රියාත්මක වේ නම්, Statement Coverage සහ Branch Coverage ප්‍රතිශත පිළිවෙළින් කොපමණද?)",
+    "optionsEn": [
+      "A) 100% Statement Coverage, 100% Branch Coverage",
+      "B) 100% Statement Coverage, 50% Branch Coverage",
+      "C) 50% Statement Coverage, 50% Branch Coverage",
+      "D) 50% Statement Coverage, 100% Branch Coverage"
+    ],
+    "optionsSi": [
+      "A) 100% Statement Coverage, 100% Branch Coverage",
+      "B) 100% Statement Coverage, 50% Branch Coverage",
+      "C) 50% Statement Coverage, 50% Branch Coverage",
+      "D) 50% Statement Coverage, 100% Branch Coverage"
+    ],
+    "answer": "B",
+    "rationaleEn": "All executable statements inside the `if` block were executed (100% Statement Coverage). However, an `if` decision has TWO branch outcomes: True and False. Since only the True branch was exercised, only 1 of 2 branches was covered (50% Branch Coverage). This demonstrates why 100% statement coverage does not imply 100% branch coverage (Section 4.3.2).",
+    "rationaleSi": "All executable statements inside the `if` block were executed (100% Statement Coverage). However, an `if` decision has TWO branch outcomes: True and False. Since only the True branch was exercised, only 1 of 2 branches was covered (50% Branch Coverage). This demonstrates why 100% statement coverage does not imply 100% branch coverage (Section 4.3.2)."
+  },
+  {
+    "id": "Q-CH4-5",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.2.4",
+    "kLevel": "K3",
+    "questionEn": "A digital banking account has three states: [Open], [Overdrawn], and [Suspended]. The system allows valid transitions: Open &rarr; Overdrawn, Overdrawn &rarr; Open, Overdrawn &rarr; Suspended, and Suspended &rarr; Open. What is the MINIMUM number of valid transitions that must be exercised to achieve 100% Valid Transitions Coverage (0-Switch)?",
+    "questionSi": "A digital banking account has three states: [Open], [Overdrawn], and [Suspended]. The system allows valid transitions: Open -> Overdrawn, Overdrawn -> Open, Overdrawn -> Suspended, and Suspended -> Open. What is the MINIMUM number of valid transitions that must be exercised to achieve 100% Valid Transitions Coverage (0-Switch)? (ඩිජිටල් බැංකු ගිණුමක [Open], [Overdrawn], සහ [Suspended] යන තත්ත්ව 3ක් ඇත. වලංගු සංක්‍රාන්ති (Transitions) 4ක් පවතී: Open -> Overdrawn, Overdrawn -> Open, Overdrawn -> Suspended, සහ Suspended -> Open. 100% Valid Transitions Coverage (0-Switch) ලබාගැනීමට පරීක්ෂා කළ යුතු අවම සංක්‍රාන්ති සංඛ්‍යාව කීයද?)",
+    "optionsEn": [
+      "A) 3 transitions",
+      "B) 4 transitions",
+      "C) 6 transitions",
+      "D) 9 transitions"
+    ],
+    "optionsSi": [
+      "A) 3 transitions",
+      "B) 4 transitions",
+      "C) 6 transitions",
+      "D) 9 transitions"
+    ],
+    "answer": "B",
+    "rationaleEn": "Valid transitions coverage (0-switch) requires exercising all single valid transitions. Since there are exactly 4 defined valid transitions (Open &rarr; Overdrawn, Overdrawn &rarr; Open, Overdrawn &rarr; Suspended, Suspended &rarr; Open), all 4 must be executed to achieve 100% valid transitions coverage (Section 4.2.4).",
+    "rationaleSi": "Valid transitions coverage (0-switch) requires exercising all single valid transitions. Since there are exactly 4 defined valid transitions (Open &rarr; Overdrawn, Overdrawn &rarr; Open, Overdrawn &rarr; Suspended, Suspended &rarr; Open), all 4 must be executed to achieve 100% valid transitions coverage (Section 4.2.4)."
+  },
+  {
+    "id": "Q-CH4-6",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.3.3",
+    "kLevel": "K2",
+    "questionEn": "What is a primary limitation of white-box test techniques?",
+    "questionSi": "What is a primary limitation of white-box test techniques? (ශ්වේත-පෙට්ටි පරීක්ෂණ තාක්ෂණයේ (White-box test techniques) ප්‍රධාන සීමාවක් හෝ අවාසියක් වන්නේ කුමක්ද?)",
+    "optionsEn": [
+      "A) They cannot provide an objective measurement of code coverage.",
+      "B) They cannot detect defects of omission where requirements were never implemented in the code.",
+      "C) They cannot be applied during static code reviews or dry runs.",
+      "D) They are independent of how the software is designed or implemented."
+    ],
+    "optionsSi": [
+      "A) They cannot provide an objective measurement of code coverage.",
+      "B) They cannot detect defects of omission where requirements were never implemented in the code.",
+      "C) They cannot be applied during static code reviews or dry runs.",
+      "D) They are independent of how the software is designed or implemented."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 4.3.3 highlights Watson (1996): white-box testing derives tests exclusively from existing implementation; therefore, if a requirement was completely omitted by developers, white-box testing cannot detect the omission.",
+    "rationaleSi": "Section 4.3.3 highlights Watson (1996): white-box testing derives tests exclusively from existing implementation; therefore, if a requirement was completely omitted by developers, white-box testing cannot detect the omission."
+  },
+  {
+    "id": "Q-CH4-7",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.4.2",
+    "kLevel": "K2",
+    "questionEn": "In session-based exploratory testing, what document provides the tester with high-level test objectives to guide their time-boxed exploration?",
+    "questionSi": "In session-based exploratory testing, what document provides the tester with high-level test objectives to guide their time-boxed exploration? (Session-based exploratory testing හිදී, කාල සීමා සහිත ගවේෂණය මෙහෙයවීම සඳහා ටෙස්ටර්ට ඉහළ මට්ටමේ පරීක්ෂණ අරමුණු සපයන ලේඛනය කුමක්ද?)",
+    "optionsEn": [
+      "A) Detailed Test Procedure",
+      "B) Test Charter",
+      "C) Decision Table",
+      "D) Traceability Matrix"
+    ],
+    "optionsSi": [
+      "A) Detailed Test Procedure",
+      "B) Test Charter",
+      "C) Decision Table",
+      "D) Traceability Matrix"
+    ],
+    "answer": "B",
+    "rationaleEn": "In session-based exploratory testing, the tester uses a test charter containing test objectives to guide the exploration within a defined time box (Section 4.4.2).",
+    "rationaleSi": "In session-based exploratory testing, the tester uses a test charter containing test objectives to guide the exploration within a defined time box (Section 4.4.2)."
+  },
+  {
+    "id": "Q-CH4-8",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.5.3",
+    "kLevel": "K3",
+    "questionEn": "When using Acceptance Test-Driven Development (ATDD), in what order should the team derive and design test cases?",
+    "questionSi": "When using Acceptance Test-Driven Development (ATDD), in what order should the team derive and design test cases? (Acceptance Test-Driven Development (ATDD) භාවිතයේදී, කණ්ඩායම විසින් test cases සැලසුම් කළ යුතු නිවැරදි අනුපිළිවෙළ කුමක්ද?)",
+    "optionsEn": [
+      "A) Non-functional tests &rarr; Negative tests &rarr; Positive tests",
+      "B) Negative tests &rarr; Positive tests &rarr; White-box branch tests",
+      "C) Positive tests &rarr; Negative tests &rarr; Non-functional tests",
+      "D) Exploratory tests &rarr; Fault attacks &rarr; Acceptance tests"
+    ],
+    "optionsSi": [
+      "A) Non-functional tests &rarr; Negative tests &rarr; Positive tests",
+      "B) Negative tests &rarr; Positive tests &rarr; White-box branch tests",
+      "C) Positive tests &rarr; Negative tests &rarr; Non-functional tests",
+      "D) Exploratory tests &rarr; Fault attacks &rarr; Acceptance tests"
+    ],
+    "answer": "C",
+    "rationaleEn": "Section 4.5.3 explicitly states that in ATDD: \"Typically, the first test cases are positive... After the positive test cases are done, the team should perform negative testing. Finally, the team should cover non-functional quality characteristics.\"",
+    "rationaleSi": "Section 4.5.3 explicitly states that in ATDD: \"Typically, the first test cases are positive... After the positive test cases are done, the team should perform negative testing. Finally, the team should cover non-functional quality characteristics.\""
+  },
+  {
+    "id": "Q-CH4-9",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.1.1",
+    "kLevel": "K2",
+    "questionEn": "A tester designs tests from personal experience of defects found in similar applications and knowledge of typical developer mistakes, without deriving the tests from a formal model or from the code structure. Which category of test techniques is this?",
+    "questionSi": "A tester designs tests from personal experience of defects found in similar applications and knowledge of typical developer mistakes, without deriving the tests from a formal model or from the code structure. Which category of test techniques is this? (සමාන යෙදුම්වල සොයාගත් දෝෂ පිළිබඳ පෞද්ගලික අත්දැකීම් සහ සංවර්ධකයින්ගේ සාමාන්‍ය වැරදි පිළිබඳ දැනුම මත පදනම්ව, විධිමත් ආකෘතියකින් හෝ code ව්‍යුහයෙන් පරීක්ෂණ ව්‍යුත්පන්න නොකර, ටෙස්ටර් කෙනෙක් පරීක්ෂණ සැලසුම් කරයි. මෙය කුමන වර්ගයේ පරීක්ෂණ තාක්ෂණයක්ද?)",
+    "optionsEn": [
+      "A) Black-box test techniques, because the tester does not look at the code.",
+      "B) White-box test techniques, because the tester uses knowledge of defects.",
+      "C) Experience-based test techniques.",
+      "D) Static test techniques."
+    ],
+    "optionsSi": [
+      "A) Black-box test techniques, because the tester does not look at the code.",
+      "B) White-box test techniques, because the tester uses knowledge of defects.",
+      "C) Experience-based test techniques.",
+      "D) Static test techniques."
+    ],
+    "answer": "C",
+    "rationaleEn": "Black-box techniques derive tests from specifications and models without referring to the internal structure. White-box techniques derive tests from the structure (code, architecture, detailed design). Experience-based techniques use the knowledge and experience of testers, developers, users and other stakeholders. Static techniques evaluate work products without executing code (Section 4.1).",
+    "rationaleSi": "Black-box techniques derive tests from specifications and models without referring to the internal structure. White-box techniques derive tests from the structure (code, architecture, detailed design). Experience-based techniques use the knowledge and experience of testers, developers, users and other stakeholders. Static techniques evaluate work products without executing code (Section 4.1)."
+  },
+  {
+    "id": "Q-CH4-10",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.2.3",
+    "kLevel": "K3",
+    "questionEn": "A decision table for ATM cash withdrawal uses the conditions C1 \"Card valid?\", C2 \"PIN correct?\" and C3 \"Sufficient balance?\". Rules: R1 (C1=Y, C2=Y, C3=Y) dispense cash; R2 (Y, Y, N) show \"insufficient funds\"; R3 (Y, N, &ndash;) reject the PIN; R4 (N, &ndash;, &ndash;) retain the card. The \"&ndash;\" means the condition is irrelevant for that rule. What is the minimum number of test cases needed to achieve 100% decision table coverage?",
+    "questionSi": "A decision table for ATM cash withdrawal uses the conditions C1 \"Card valid?\", C2 \"PIN correct?\" and C3 \"Sufficient balance?\". Rules: R1 (C1=Y, C2=Y, C3=Y) dispense cash; R2 (Y, Y, N) show \"insufficient funds\"; R3 (Y, N, &ndash;) reject the PIN; R4 (N, &ndash;, &ndash;) retain the card. The \"&ndash;\" means the condition is irrelevant for that rule. What is the minimum number of test cases needed to achieve 100% decision table coverage? (ATM මුදල් ආපසු ගැනීම සඳහා decision table එකක conditions: C1 \"කාඩ්පත වලංගුද?\", C2 \"PIN නිවැරදිද?\", C3 \"ප්‍රමාණවත් ශේෂයක් තිබේද?\". රීති: R1 (Y,Y,Y) මුදල් නිකුත් කරයි; R2 (Y,Y,N) \"ශේෂය ප්‍රමාණවත් නොවේ\" පණිවිඩය; R3 (Y,N,&ndash;) PIN ප්‍රතික්ෂේප කරයි; R4 (N,&ndash;,&ndash;) කාඩ්පත රඳවා ගනී (\"&ndash;\" යනු එම රීතියට එම condition එක අදාළ නොවන බවයි). 100% decision table coverage ලබා ගැනීමට අවශ්‍ය අවම පරීක්ෂණ ගණන කොපමණද?)",
+    "optionsEn": [
+      "A) 3",
+      "B) 4",
+      "C) 5",
+      "D) 8"
+    ],
+    "optionsSi": [
+      "A) 3",
+      "B) 4",
+      "C) 5",
+      "D) 8"
+    ],
+    "answer": "B",
+    "rationaleEn": "Decision table coverage = number of rules (columns) exercised by at least one test case / total number of feasible rules. The table has 4 rules (the \"&ndash;\" values collapse the 2 3 = 8 possible combinations into 4 rules), so one test per rule gives 100% coverage: 4 test cases (Section 4.2.3).",
+    "rationaleSi": "Decision table coverage = number of rules (columns) exercised by at least one test case / total number of feasible rules. The table has 4 rules (the \"&ndash;\" values collapse the 2 3 = 8 possible combinations into 4 rules), so one test per rule gives 100% coverage: 4 test cases (Section 4.2.3)."
+  },
+  {
+    "id": "Q-CH4-11",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.3.1",
+    "kLevel": "K2",
+    "questionEn": "Which statement about statement testing is correct?",
+    "questionSi": "Which statement about statement testing is correct? (Statement testing පිළිබඳ නිවැරදි ප්‍රකාශය කුමක්ද?)",
+    "optionsEn": [
+      "A) 100% statement coverage means every executable statement was executed at least once, but a decision's False outcome may never have been exercised.",
+      "B) 100% statement coverage guarantees that every outcome of every decision was exercised.",
+      "C) Statement coverage is the percentage of test cases that executed without failure.",
+      "D) Statement testing can only be applied to specifications, not to source code."
+    ],
+    "optionsSi": [
+      "A) 100% statement coverage means every executable statement was executed at least once, but a decision's False outcome may never have been exercised.",
+      "B) 100% statement coverage guarantees that every outcome of every decision was exercised.",
+      "C) Statement coverage is the percentage of test cases that executed without failure.",
+      "D) Statement testing can only be applied to specifications, not to source code."
+    ],
+    "answer": "A",
+    "rationaleEn": "Statement coverage = number of statements executed by the tests / total number of executable statements (as a percentage). With 100% statement coverage every executable statement has been executed at least once, but this does not guarantee that all decision outcomes were tested (that requires branch coverage) and it may not detect defects that depend on particular data (Section 4.3.1).",
+    "rationaleSi": "Statement coverage = number of statements executed by the tests / total number of executable statements (as a percentage). With 100% statement coverage every executable statement has been executed at least once, but this does not guarantee that all decision outcomes were tested (that requires branch coverage) and it may not detect defects that depend on particular data (Section 4.3.1)."
+  },
+  {
+    "id": "Q-CH4-12",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.4.1",
+    "kLevel": "K2",
+    "questionEn": "A tester prepares a list of likely faults from experience (division by zero, empty input, leap-year dates, null values) and designs tests to trigger them. Which technique is this?",
+    "questionSi": "A tester prepares a list of likely faults from experience (division by zero, empty input, leap-year dates, null values) and designs tests to trigger them. Which technique is this? (ටෙස්ටර් කෙනෙක් අත්දැකීම් මත පදනම්ව ඇතිවිය හැකි දෝෂ ලැයිස්තුවක් (බිංදුවෙන් බෙදීම, හිස් ආදාන, සමවත්සර දින, null අගයන්) සකසා ඒවා අවුලුවන පරීක්ෂණ සැලසුම් කරයි. මෙය කුමන තාක්ෂණයද?)",
+    "optionsEn": [
+      "A) Boundary value analysis, because the tests target typical limits.",
+      "B) State transition testing, because the tester models states.",
+      "C) Statement testing, because the tester examines the code.",
+      "D) Error guessing (using a fault attack), because the tester anticipates defects from experience and designs tests to expose them."
+    ],
+    "optionsSi": [
+      "A) Boundary value analysis, because the tests target typical limits.",
+      "B) State transition testing, because the tester models states.",
+      "C) Statement testing, because the tester examines the code.",
+      "D) Error guessing (using a fault attack), because the tester anticipates defects from experience and designs tests to expose them."
+    ],
+    "answer": "D",
+    "rationaleEn": "Error guessing is a technique in which testers anticipate errors, defects and failures based on their knowledge: how the application has worked in the past, the types of errors developers make, and failures seen in other applications. A systematic approach is the fault attack: list possible errors, defects and failures, then design tests that expose them (Section 4.4.1).",
+    "rationaleSi": "Error guessing is a technique in which testers anticipate errors, defects and failures based on their knowledge: how the application has worked in the past, the types of errors developers make, and failures seen in other applications. A systematic approach is the fault attack: list possible errors, defects and failures, then design tests that expose them (Section 4.4.1)."
+  },
+  {
+    "id": "Q-CH4-13",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.4.3",
+    "kLevel": "K2",
+    "questionEn": "Which statement about checklist-based testing is TRUE?",
+    "questionSi": "Which statement about checklist-based testing is TRUE? (Checklist-based testing පිළිබඳ සත්‍ය ප්‍රකාශය කුමක්ද?)",
+    "optionsEn": [
+      "A) Checklist items should be very general so that the checklist never needs updating.",
+      "B) A checklist can be derived from experience, from knowledge of what matters to users and from knowledge of how software fails; its items should be phrased so that they can be checked independently, often as questions.",
+      "C) The checklist must be completed once before testing starts and must never be changed.",
+      "D) Checklist-based testing provides precise, repeatable coverage metrics."
+    ],
+    "optionsSi": [
+      "A) Checklist items should be very general so that the checklist never needs updating.",
+      "B) A checklist can be derived from experience, from knowledge of what matters to users and from knowledge of how software fails; its items should be phrased so that they can be checked independently, often as questions.",
+      "C) The checklist must be completed once before testing starts and must never be changed.",
+      "D) Checklist-based testing provides precise, repeatable coverage metrics."
+    ],
+    "answer": "B",
+    "rationaleEn": "Checklists are built from experience, user priorities and understanding of why and how software fails. Good items are phrased as questions, are independently verifiable, do not overlap and are not too general; items that automated tools can check or that are better as entry/exit criteria should be excluded. Checklists should be updated regularly. Because checklists are high-level, repeatability and measurable coverage are limited (Section 4.4.3).",
+    "rationaleSi": "Checklists are built from experience, user priorities and understanding of why and how software fails. Good items are phrased as questions, are independently verifiable, do not overlap and are not too general; items that automated tools can check or that are better as entry/exit criteria should be excluded. Checklists should be updated regularly. Because checklists are high-level, repeatability and measurable coverage are limited (Section 4.4.3)."
+  },
+  {
+    "id": "Q-CH4-14",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.5.1",
+    "kLevel": "K2",
+    "questionEn": "Which of the following is a well-formed user story?",
+    "questionSi": "Which of the following is a well-formed user story? (පහත සඳහන් ඒවායින් නිවැරදිව ගොඩනගන ලද user story එක කුමක්ද?)",
+    "optionsEn": [
+      "A) \"The system shall store passwords in a relational database.\"",
+      "B) \"Implement the password reset service using SHA-256 during sprint 3.\"",
+      "C) \"As a registered customer, I want to reset my password by e-mail so that I can regain access without calling support.\"",
+      "D) \"Testers must manually verify the reset feature before every release.\""
+    ],
+    "optionsSi": [
+      "A) \"The system shall store passwords in a relational database.\"",
+      "B) \"Implement the password reset service using SHA-256 during sprint 3.\"",
+      "C) \"As a registered customer, I want to reset my password by e-mail so that I can regain access without calling support.\"",
+      "D) \"Testers must manually verify the reset feature before every release.\""
+    ],
+    "answer": "C",
+    "rationaleEn": "A user story has three key elements: the role, the goal (functionality) and the business value. Good user stories follow INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable) and the 3 Cs: Card, Conversation, Confirmation. Writing stories collaboratively with developers, business representatives and testers makes them testable (Section 4.5.1).",
+    "rationaleSi": "A user story has three key elements: the role, the goal (functionality) and the business value. Good user stories follow INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable) and the 3 Cs: Card, Conversation, Confirmation. Writing stories collaboratively with developers, business representatives and testers makes them testable (Section 4.5.1)."
+  },
+  {
+    "id": "Q-CH4-15",
+    "chapter": 4,
+    "chapterTitle": "Chapter 04",
+    "lo": "FL-4.5.2",
+    "kLevel": "K2",
+    "questionEn": "The acceptance criterion \"Given a registered user with a valid password, When the user logs in, Then the dashboard is displayed\" is written in which format?",
+    "questionSi": "The acceptance criterion \"Given a registered user with a valid password, When the user logs in, Then the dashboard is displayed\" is written in which format? (\"ලියාපදිංචි පරිශීලකයෙකු වලංගු මුරපදයක් සහිතව සිටී (Given), ඔහු ලොග් වේ (When), එවිට dashboard එක ප්‍රදර්ශනය වේ (Then)\" යන පිළිගැනීමේ නිර්ණායකය (acceptance criterion) ලියා ඇත්තේ කුමන ආකෘතියෙන්ද?)",
+    "optionsEn": [
+      "A) Scenario-oriented acceptance criteria (Given/When/Then).",
+      "B) Rule-oriented acceptance criteria written as a bullet list of rules.",
+      "C) Rule-oriented acceptance criteria written as an input/output table.",
+      "D) It is not an acceptance criterion; it is a unit test case."
+    ],
+    "optionsSi": [
+      "A) Scenario-oriented acceptance criteria (Given/When/Then).",
+      "B) Rule-oriented acceptance criteria written as a bullet list of rules.",
+      "C) Rule-oriented acceptance criteria written as an input/output table.",
+      "D) It is not an acceptance criterion; it is a unit test case."
+    ],
+    "answer": "A",
+    "rationaleEn": "Acceptance criteria can be scenario-oriented (Given/When/Then, as used in BDD), rule-oriented (a bullet list of verification rules or an input/output table) or written in another format, as long as it is well defined and unambiguous. The example uses Given/When/Then, so it is scenario-oriented (Section 4.5.2).",
+    "rationaleSi": "Acceptance criteria can be scenario-oriented (Given/When/Then, as used in BDD), rule-oriented (a bullet list of verification rules or an input/output table) or written in another format, as long as it is well defined and unambiguous. The example uses Given/When/Then, so it is scenario-oriented (Section 4.5.2)."
+  },
+  {
+    "id": "Q-CH5-1",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.1.4",
+    "kLevel": "K3",
+    "questionEn": "Using the Three-Point Estimation technique, experts provide the following test execution estimates: Most Optimistic (a) = 10 hours, Most Likely (m) = 16 hours, and Most Pessimistic (b) = 34 hours. What are the final weighted Estimate (E) and Standard Deviation (SD)?",
+    "questionSi": "Using the Three-Point Estimation technique, experts provide the following test execution estimates: Most Optimistic (a) = 10 hours, Most Likely (m) = 16 hours, and Most Pessimistic (b) = 34 hours. What are the final weighted Estimate (E) and Standard Deviation (SD)? (Three-Point Estimation ශිල්පක්‍රමය භාවිතයෙන් විශේෂඥයින් ලබාදෙන ඇස්තමේන්තු: Optimistic (a) = පැය 10, Most Likely (m) = පැය 16, Pessimistic (b) = පැය 34 වේ. අවසාන භාරිත ඇස්තමේන්තුව (E) සහ සම්මත අපගමනය (SD) කොපමණද?)",
+    "optionsEn": [
+      "A) E = 18 hours, SD = 4 hours",
+      "B) E = 20 hours, SD = 4 hours",
+      "C) E = 18 hours, SD = 6 hours",
+      "D) E = 16 hours, SD = 2 hours"
+    ],
+    "optionsSi": [
+      "A) E = 18 hours, SD = 4 hours",
+      "B) E = 20 hours, SD = 4 hours",
+      "C) E = 18 hours, SD = 6 hours",
+      "D) E = 16 hours, SD = 2 hours"
+    ],
+    "answer": "A",
+    "rationaleEn": "Using PERT formulas: &bull; E = (a + 4m + b) / 6 = (10 + 4(16) + 34) / 6 = (10 + 64 + 34) / 6 = 108 / 6 = 18 hours &bull; SD = (b &minus; a) / 6 = (34 &minus; 10) / 6 = 24 / 6 = 4 hours Thus, the final estimate is 18 &plusmn; 4 hours (Section 5.1.4).",
+    "rationaleSi": "Using PERT formulas: &bull; E = (a + 4m + b) / 6 = (10 + 4(16) + 34) / 6 = (10 + 64 + 34) / 6 = 108 / 6 = 18 hours &bull; SD = (b &minus; a) / 6 = (34 &minus; 10) / 6 = 24 / 6 = 4 hours Thus, the final estimate is 18 &plusmn; 4 hours (Section 5.1.4)."
+  },
+  {
+    "id": "Q-CH5-2",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.1.5",
+    "kLevel": "K3",
+    "questionEn": "Test suite execution prioritization is being planned. Test Case TC1 has High risk priority, but requires prerequisite database records generated by Test Case TC2, which has Low risk priority. Test Case TC3 has Medium risk priority and is completely independent. In what order should the tests execute?",
+    "questionSi": "Test suite execution prioritization is being planned. Test Case TC1 has High risk priority, but requires prerequisite database records generated by Test Case TC2, which has Low risk priority. Test Case TC3 has Medium risk priority and is completely independent. In what order should the tests execute? (පරීක්ෂණ ක්‍රියාත්මක කිරීමේ ප්‍රමුඛතාව සැලසුම් කෙරේ. TC1 ඉහළ අවදානම් ප්‍රමුඛතාවක් ඇතත්, ඒ සඳහා අඩු ප්‍රමුඛතාවක් ඇති TC2 මඟින් සාදන දත්ත අවශ්‍ය වේ. TC3 මධ්‍යස්ථ ප්‍රමුඛතාවක් ඇති ස්වාධීන පරීක්ෂණයකි. ඒවා ධාවනය කළ යුතු නිවැරදි අනුපිළිවෙල කුමක්ද?)",
+    "optionsEn": [
+      "A) TC1 &rarr; TC3 &rarr; TC2",
+      "B) TC2 &rarr; TC1 &rarr; TC3",
+      "C) TC3 &rarr; TC1 &rarr; TC2",
+      "D) TC1 &rarr; TC2 &rarr; TC3"
+    ],
+    "optionsSi": [
+      "A) TC1 &rarr; TC3 &rarr; TC2",
+      "B) TC2 &rarr; TC1 &rarr; TC3",
+      "C) TC3 &rarr; TC1 &rarr; TC2",
+      "D) TC1 &rarr; TC2 &rarr; TC3"
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 5.1.5 states that while priority ordering is desired, test dependencies take precedence: \"If a test case with a higher priority is dependent on a test case with a lower priority, the lower priority test case must be executed first.\" Because TC1 depends on TC2, TC2 must run before TC1. TC3 (Medium) runs after the High-priority workflow completes.",
+    "rationaleSi": "Section 5.1.5 states that while priority ordering is desired, test dependencies take precedence: \"If a test case with a higher priority is dependent on a test case with a lower priority, the lower priority test case must be executed first.\" Because TC1 depends on TC2, TC2 must run before TC1. TC3 (Medium) runs after the High-priority workflow completes."
+  },
+  {
+    "id": "Q-CH5-3",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.1.6",
+    "kLevel": "K1",
+    "questionEn": "According to the Test Pyramid model, which of the following statements correctly characterizes tests located at the TOP layer?",
+    "questionSi": "According to the Test Pyramid model, which of the following statements correctly characterizes tests located at the TOP layer? (Test Pyramid ආකෘතියට අනුව, එහි ඉහළම ස්ථරයේ (TOP layer) පවතින පරීක්ෂණ නිවැරදිව විස්තර කරන්නේ කුමන ප්‍රකාශයද?)",
+    "optionsEn": [
+      "A) They have the highest test isolation and fastest execution time.",
+      "B) They check small pieces of isolated functionality, requiring many tests for coverage.",
+      "C) They are complex, end-to-end tests that generally have lower test isolation and slower execution time.",
+      "D) They represent unit tests integrated into continuous integration builds."
+    ],
+    "optionsSi": [
+      "A) They have the highest test isolation and fastest execution time.",
+      "B) They check small pieces of isolated functionality, requiring many tests for coverage.",
+      "C) They are complex, end-to-end tests that generally have lower test isolation and slower execution time.",
+      "D) They represent unit tests integrated into continuous integration builds."
+    ],
+    "answer": "C",
+    "rationaleEn": "Section 5.1.6 establishes that in the test pyramid, the higher the layer, the lower the test granularity, the lower the test isolation (higher dependency on other elements), and the higher the execution time.",
+    "rationaleSi": "Section 5.1.6 establishes that in the test pyramid, the higher the layer, the lower the test granularity, the lower the test isolation (higher dependency on other elements), and the higher the execution time."
+  },
+  {
+    "id": "Q-CH5-4",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.1.7",
+    "kLevel": "K2",
+    "questionEn": "In the Testing Quadrants model, which quadrant contains exploratory testing and usability testing?",
+    "questionSi": "In the Testing Quadrants model, which quadrant contains exploratory testing and usability testing? (Testing Quadrants ආකෘතියට අනුව Exploratory testing සහ Usability testing අයත් වන්නේ කුමන චතුර්ථකයටද?)",
+    "optionsEn": [
+      "A) Q1 (Technology facing, support the team)",
+      "B) Q2 (Business facing, support the team)",
+      "C) Q3 (Business facing, critique the product)",
+      "D) Q4 (Technology facing, critique the product)"
+    ],
+    "optionsSi": [
+      "A) Q1 (Technology facing, support the team)",
+      "B) Q2 (Business facing, support the team)",
+      "C) Q3 (Business facing, critique the product)",
+      "D) Q4 (Technology facing, critique the product)"
+    ],
+    "answer": "C",
+    "rationaleEn": "Quadrant Q3 contains business-facing tests that critique the product, specifically exploratory testing, usability testing, and user acceptance testing (Section 5.1.7).",
+    "rationaleSi": "Quadrant Q3 contains business-facing tests that critique the product, specifically exploratory testing, usability testing, and user acceptance testing (Section 5.1.7)."
+  },
+  {
+    "id": "Q-CH5-5",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.2.2",
+    "kLevel": "K2",
+    "questionEn": "Which of the following is an example of a PROJECT RISK rather than a product risk?",
+    "questionSi": "Which of the following is an example of a PROJECT RISK rather than a product risk? (පහත සඳහන් ඒවා අතුරින් නිෂ්පාදන අවදානමක් (Product risk) නොව ව්‍යාපෘති අවදානමක් (Project risk) වන්නේ කුමක්ද?)",
+    "optionsEn": [
+      "A) The web application takes more than 10 seconds to process checkout transactions under peak load.",
+      "B) A third-party test tool vendor goes bankrupt, causing delays in test environment readiness.",
+      "C) The payment calculation module incorrectly rounds tax on international currency exchanges.",
+      "D) The software interface fails to comply with industry accessibility regulations."
+    ],
+    "optionsSi": [
+      "A) The web application takes more than 10 seconds to process checkout transactions under peak load.",
+      "B) A third-party test tool vendor goes bankrupt, causing delays in test environment readiness.",
+      "C) The payment calculation module incorrectly rounds tax on international currency exchanges.",
+      "D) The software interface fails to comply with industry accessibility regulations."
+    ],
+    "answer": "B",
+    "rationaleEn": "Third-party supplier failure causing delivery delays is a project risk affecting schedule and resources (Section 5.2.2). Options A, C, and D are product quality characteristics (performance efficiency, functional correctness, regulatory compliance).",
+    "rationaleSi": "Third-party supplier failure causing delivery delays is a project risk affecting schedule and resources (Section 5.2.2). Options A, C, and D are product quality characteristics (performance efficiency, functional correctness, regulatory compliance)."
+  },
+  {
+    "id": "Q-CH5-6",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.3.2",
+    "kLevel": "K2",
+    "questionEn": "What is the primary difference between a Test Progress Report and a Test Completion Report?",
+    "questionSi": "What is the primary difference between a Test Progress Report and a Test Completion Report? (Test Progress Report එකක් සහ Test Completion Report එකක් අතර ප්‍රධාන වෙනස කුමක්ද?)",
+    "optionsEn": [
+      "A) Test progress reports evaluate exit criteria against business goals, while test completion reports issue control directives.",
+      "B) Test progress reports are generated regularly during testing to support test control, while test completion reports are produced at project milestones to evaluate overall quality.",
+      "C) Test progress reports contain documented lessons learned, while test completion reports list next week's test schedule.",
+      "D) Test progress reports are authored exclusively by project managers, while completion reports are written by external auditors."
+    ],
+    "optionsSi": [
+      "A) Test progress reports evaluate exit criteria against business goals, while test completion reports issue control directives.",
+      "B) Test progress reports are generated regularly during testing to support test control, while test completion reports are produced at project milestones to evaluate overall quality.",
+      "C) Test progress reports contain documented lessons learned, while test completion reports list next week's test schedule.",
+      "D) Test progress reports are authored exclusively by project managers, while completion reports are written by external auditors."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 5.3.2 defines that test progress reports support ongoing test control and adjustments during testing, while test completion reports consolidate experience, evaluate quality against original exit criteria, and document lessons learned at project milestones.",
+    "rationaleSi": "Section 5.3.2 defines that test progress reports support ongoing test control and adjustments during testing, while test completion reports consolidate experience, evaluate quality against original exit criteria, and document lessons learned at project milestones."
+  },
+  {
+    "id": "Q-CH5-7",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.4.1",
+    "kLevel": "K2",
+    "questionEn": "How does Configuration Management directly support the testing process?",
+    "questionSi": "How does Configuration Management directly support the testing process? (වින්‍යාස කළමනාකරණය (Configuration Management) පරීක්ෂණ ක්‍රියාවලියට සෘජුවම සහාය වන්නේ කෙසේද?)",
+    "optionsEn": [
+      "A) By executing automated regression test suites whenever developers check in source code.",
+      "B) By ensuring all test items and testware are uniquely identified, version-controlled, and tracked to maintain traceability.",
+      "C) By automatically calculating PERT three-point estimates for sprint user stories.",
+      "D) By determining whether risks should be transferred to third-party vendors."
+    ],
+    "optionsSi": [
+      "A) By executing automated regression test suites whenever developers check in source code.",
+      "B) By ensuring all test items and testware are uniquely identified, version-controlled, and tracked to maintain traceability.",
+      "C) By automatically calculating PERT three-point estimates for sprint user stories.",
+      "D) By determining whether risks should be transferred to third-party vendors."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 5.4 states that Configuration Management ensures all configuration items (including test items) are uniquely identified, version controlled, tracked for changes, and related to other items so traceability is maintained throughout the test process.",
+    "rationaleSi": "Section 5.4 states that Configuration Management ensures all configuration items (including test items) are uniquely identified, version controlled, tracked for changes, and related to other items so traceability is maintained throughout the test process."
+  },
+  {
+    "id": "Q-CH5-8",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.5.1",
+    "kLevel": "K3",
+    "questionEn": "A tester discovers that clicking \"Print Invoice\" causes an unhandled application crash on iOS devices, though Android devices function normally. Which information is CRITICAL to include in the defect report to ensure developers can reproduce and fix the bug?",
+    "questionSi": "A tester discovers that clicking \"Print Invoice\" causes an unhandled application crash on iOS devices, though Android devices function normally. Which information is CRITICAL to include in the defect report to ensure developers can reproduce and fix the bug? (ටෙස්ටර් කෙනෙකු සොයාගන්නේ iOS උපාංගවල \"Print Invoice\" ක්ලික් කළ විට App එක crash වන බවත්, Android හි සාමාන්‍ය ලෙස ක්‍රියාකරන බවත්ය. සංවර්ධකයාට මෙය නැවත ඇතිකර බලා නිවැරදි කිරීමට Defect Report එකේ අනිවාර්යයෙන්ම තිබිය යුතු තොරතුරු මොනවාද?)",
+    "optionsEn": [
+      "A) The tester's salary, the test manager's approval signature, and the total cost of quality.",
+      "B) A vague note stating \"printing doesn't work on mobile\".",
+      "C) Steps to reproduce, expected vs actual results, device OS version, and relevant system crash logs.",
+      "D) The Wideband Delphi estimate for rewriting the iOS application."
+    ],
+    "optionsSi": [
+      "A) The tester's salary, the test manager's approval signature, and the total cost of quality.",
+      "B) A vague note stating \"printing doesn't work on mobile\".",
+      "C) Steps to reproduce, expected vs actual results, device OS version, and relevant system crash logs.",
+      "D) The Wideband Delphi estimate for rewriting the iOS application."
+    ],
+    "answer": "C",
+    "rationaleEn": "Section 5.5 outlines that a defect report logged during dynamic testing must include clear reproduction steps, test environment details (OS version), expected vs actual results, and supporting logs/screenshots.",
+    "rationaleSi": "Section 5.5 outlines that a defect report logged during dynamic testing must include clear reproduction steps, test environment details (OS version), expected vs actual results, and supporting logs/screenshots."
+  },
+  {
+    "id": "Q-CH5-9",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.1.1",
+    "kLevel": "K2",
+    "questionEn": "Which of the following is typical content of a test plan?",
+    "questionSi": "Which of the following is typical content of a test plan? (Test plan එකක සාමාන්‍ය අන්තර්ගතයක් කුමක්ද?)",
+    "optionsEn": [
+      "A) The source code of the unit tests and the detailed list of defects found.",
+      "B) A risk register, the test approach (levels, types, techniques, entry and exit criteria), stakeholders, budget and schedule.",
+      "C) Salary reviews and annual appraisals of the testers.",
+      "D) Only the final test results and the release decision."
+    ],
+    "optionsSi": [
+      "A) The source code of the unit tests and the detailed list of defects found.",
+      "B) A risk register, the test approach (levels, types, techniques, entry and exit criteria), stakeholders, budget and schedule.",
+      "C) Salary reviews and annual appraisals of the testers.",
+      "D) Only the final test results and the release decision."
+    ],
+    "answer": "B",
+    "rationaleEn": "A test plan describes the test objectives, resources and processes. Typical content (ISO/IEC/IEEE 29119-3): context (scope, objectives, test basis), assumptions and constraints, stakeholders, communication, risk register (product and project risks), test approach (levels, types, techniques, deliverables, entry/exit criteria, metrics, test data and environment needs), and budget and schedule (Section 5.1.1).",
+    "rationaleSi": "A test plan describes the test objectives, resources and processes. Typical content (ISO/IEC/IEEE 29119-3): context (scope, objectives, test basis), assumptions and constraints, stakeholders, communication, risk register (product and project risks), test approach (levels, types, techniques, deliverables, entry/exit criteria, metrics, test data and environment needs), and budget and schedule (Section 5.1.1)."
+  },
+  {
+    "id": "Q-CH5-10",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.1.2",
+    "kLevel": "K1",
+    "questionEn": "Which of the following is a way in which a tester adds value to iteration and release planning?",
+    "questionSi": "Which of the following is a way in which a tester adds value to iteration and release planning? (Iteration සහ release සැලසුම්කරණයේදී ටෙස්ටර්වරයෙකු වටිනාකමක් එකතු කරන ආකාරයක් කුමක්ද?)",
+    "optionsEn": [
+      "A) Writing the production code for the user stories.",
+      "B) Approving the release on behalf of the product owner.",
+      "C) Deciding the project budget and the sprint length alone.",
+      "D) Taking part in user story refinement (testable stories with acceptance criteria), performing product risk analysis, estimating test effort and planning the test approach."
+    ],
+    "optionsSi": [
+      "A) Writing the production code for the user stories.",
+      "B) Approving the release on behalf of the product owner.",
+      "C) Deciding the project budget and the sprint length alone.",
+      "D) Taking part in user story refinement (testable stories with acceptance criteria), performing product risk analysis, estimating test effort and planning the test approach."
+    ],
+    "answer": "D",
+    "rationaleEn": "In release and iteration planning a tester helps to write testable user stories and acceptance criteria, performs product quality risk analysis, estimates the test effort, identifies functional and non-functional aspects to be tested and plans the testing within the iteration (Section 5.1.2).",
+    "rationaleSi": "In release and iteration planning a tester helps to write testable user stories and acceptance criteria, performs product quality risk analysis, estimates the test effort, identifies functional and non-functional aspects to be tested and plans the testing within the iteration (Section 5.1.2)."
+  },
+  {
+    "id": "Q-CH5-11",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.1.3",
+    "kLevel": "K2",
+    "questionEn": "Statement 1: \"The test environment and test data are available.\" Statement 2: \"The planned coverage level has been reached and the number of open critical defects is within the agreed limit.\" How are they correctly classified?",
+    "questionSi": "Statement 1: \"The test environment and test data are available.\" Statement 2: \"The planned coverage level has been reached and the number of open critical defects is within the agreed limit.\" How are they correctly classified? (ප්‍රකාශ 1: \"පරීක්ෂණ පරිසරය සහ පරීක්ෂණ දත්ත ලබාගත හැකිය.\" ප්‍රකාශ 2: \"සැලසුම් කළ ආවරණ මට්ටම සපුරා ඇති අතර විවෘත විවේචනාත්මක (critical) දෝෂ ගණන එකඟ වූ සීමාව තුළ පවතී.\" මේවා නිවැරදිව වර්ගීකරණය කර ඇත්තේ කෙසේද?)",
+    "optionsEn": [
+      "A) Statement 1 is an entry criterion; statement 2 is an exit criterion (in agile: Definition of Ready and Definition of Done).",
+      "B) Statement 1 is an exit criterion; statement 2 is an entry criterion.",
+      "C) Both statements are entry criteria.",
+      "D) Both statements are exit criteria."
+    ],
+    "optionsSi": [
+      "A) Statement 1 is an entry criterion; statement 2 is an exit criterion (in agile: Definition of Ready and Definition of Done).",
+      "B) Statement 1 is an exit criterion; statement 2 is an entry criterion.",
+      "C) Both statements are entry criteria.",
+      "D) Both statements are exit criteria."
+    ],
+    "answer": "A",
+    "rationaleEn": "Entry criteria are the preconditions for starting an activity (testable requirements, resources such as environments and data, initial quality of the test object). Exit criteria define what must be achieved to declare an activity complete (planned tests executed, coverage level reached, unresolved defects within an agreed limit). In agile projects they correspond to the Definition of Ready and the Definition of Done (Section 5.1.3).",
+    "rationaleSi": "Entry criteria are the preconditions for starting an activity (testable requirements, resources such as environments and data, initial quality of the test object). Exit criteria define what must be achieved to declare an activity complete (planned tests executed, coverage level reached, unresolved defects within an agreed limit). In agile projects they correspond to the Definition of Ready and the Definition of Done (Section 5.1.3)."
+  },
+  {
+    "id": "Q-CH5-12",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.2.1",
+    "kLevel": "K1",
+    "questionEn": "How is the risk level of a risk determined?",
+    "questionSi": "How is the risk level of a risk determined? (අවදානමක මට්ටම (risk level) තීරණය වන්නේ කෙසේද?)",
+    "optionsEn": [
+      "A) Only by the cost of the mitigation actions.",
+      "B) Only by the number of testers available.",
+      "C) By combining the likelihood of the risk occurring and its impact (for example with a risk matrix or numeric ratings).",
+      "D) Only by the duration of the project."
+    ],
+    "optionsSi": [
+      "A) Only by the cost of the mitigation actions.",
+      "B) Only by the number of testers available.",
+      "C) By combining the likelihood of the risk occurring and its impact (for example with a risk matrix or numeric ratings).",
+      "D) Only by the duration of the project."
+    ],
+    "answer": "C",
+    "rationaleEn": "The risk level is determined by risk likelihood (the probability that the risk occurs, greater than zero and less than one) and risk impact (the consequences of its occurrence). It can be expressed qualitatively (high/medium/low) or quantitatively (Section 5.2.1).",
+    "rationaleSi": "The risk level is determined by risk likelihood (the probability that the risk occurs, greater than zero and less than one) and risk impact (the consequences of its occurrence). It can be expressed qualitatively (high/medium/low) or quantitatively (Section 5.2.1)."
+  },
+  {
+    "id": "Q-CH5-13",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.2.3",
+    "kLevel": "K2",
+    "questionEn": "A product risk analysis rates the payment module as high risk and the \"About us\" page as low risk. How should these results influence testing?",
+    "questionSi": "A product risk analysis rates the payment module as high risk and the \"About us\" page as low risk. How should these results influence testing? (Product risk analysis මගින් ගෙවීම් මොඩියුලය ඉහළ අවදානම් ලෙසත් \"About us\" පිටුව අඩු අවදානම් ලෙසත් ඇගයී ඇත. මෙම ප්‍රතිඵල පරීක්ෂාවට බලපාන්නේ කෙසේද?)",
+    "optionsEn": [
+      "A) Both should receive identical effort to stay fair.",
+      "B) The payment module gets more thorough techniques, higher coverage and earlier testing; the \"About us\" page gets minimal effort.",
+      "C) The payment module should be skipped because high-risk items are too expensive to test.",
+      "D) The \"About us\" page should be tested first because it is the easiest."
+    ],
+    "optionsSi": [
+      "A) Both should receive identical effort to stay fair.",
+      "B) The payment module gets more thorough techniques, higher coverage and earlier testing; the \"About us\" page gets minimal effort.",
+      "C) The payment module should be skipped because high-risk items are too expensive to test.",
+      "D) The \"About us\" page should be tested first because it is the easiest."
+    ],
+    "answer": "B",
+    "rationaleEn": "Product risk analysis results are used to decide the test scope, the test levels and types, the test techniques and coverage, the test effort per task, and the priorities so that critical defects are found as early as possible; they may also point to non-testing activities that reduce risk. Higher risk means more thorough and earlier testing (Section 5.2.3).",
+    "rationaleSi": "Product risk analysis results are used to decide the test scope, the test levels and types, the test techniques and coverage, the test effort per task, and the priorities so that critical defects are found as early as possible; they may also point to non-testing activities that reduce risk. Higher risk means more thorough and earlier testing (Section 5.2.3)."
+  },
+  {
+    "id": "Q-CH5-14",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.2.4",
+    "kLevel": "K2",
+    "questionEn": "A product risk analysis identifies a high security risk. Which of the following is an appropriate response measure?",
+    "questionSi": "A product risk analysis identifies a high security risk. Which of the following is an appropriate response measure? (Product risk analysis මගින් ඉහළ security අවදානමක් හඳුනාගෙන ඇත. සුදුසු ප්‍රතිචාරාත්මක ක්‍රියාමාර්ගයක් කුමක්ද?)",
+    "optionsEn": [
+      "A) Reduce the test effort to meet the schedule, because security defects are rare.",
+      "B) Remove the security requirement from the test basis.",
+      "C) Assign testers with suitable security skills, apply security testing and static analysis, and increase the independence of testing.",
+      "D) Wait for a production incident and fix the problem afterwards."
+    ],
+    "optionsSi": [
+      "A) Reduce the test effort to meet the schedule, because security defects are rare.",
+      "B) Remove the security requirement from the test basis.",
+      "C) Assign testers with suitable security skills, apply security testing and static analysis, and increase the independence of testing.",
+      "D) Wait for a production incident and fix the problem afterwards."
+    ],
+    "answer": "C",
+    "rationaleEn": "Measures in response to analyzed product risks include: choosing testers with the right experience and skills for the risk type, applying an appropriate level of independence, performing reviews and static analysis, applying suitable test techniques and coverage levels, applying test types addressing the affected quality characteristics (such as security testing), and performing dynamic testing including regression testing (Section 5.2.4).",
+    "rationaleSi": "Measures in response to analyzed product risks include: choosing testers with the right experience and skills for the risk type, applying an appropriate level of independence, performing reviews and static analysis, applying suitable test techniques and coverage levels, applying test types addressing the affected quality characteristics (such as security testing), and performing dynamic testing including regression testing (Section 5.2.4)."
+  },
+  {
+    "id": "Q-CH5-15",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.3.1",
+    "kLevel": "K1",
+    "questionEn": "Which of the following is a TEST PROGRESS metric?",
+    "questionSi": "Which of the following is a TEST PROGRESS metric? (පහත සඳහන් ඒවායින් පරීක්ෂණ ප්‍රගති මෙට්‍රික (test progress metric) එකක් කුමක්ද?)",
+    "optionsEn": [
+      "A) Mean time to failure of the released product.",
+      "B) The number of test cases run and not run, passed and failed.",
+      "C) Defect density.",
+      "D) Cost of quality."
+    ],
+    "optionsSi": [
+      "A) Mean time to failure of the released product.",
+      "B) The number of test cases run and not run, passed and failed.",
+      "C) Defect density.",
+      "D) Cost of quality."
+    ],
+    "answer": "B",
+    "rationaleEn": "Test progress metrics include the number of test cases run / not run, passed / failed, test case implementation progress, test environment preparation progress and test execution time. Mean time to failure is a product quality metric, defect density is a defect metric and cost of quality is a cost metric (Section 5.3.1).",
+    "rationaleSi": "Test progress metrics include the number of test cases run / not run, passed / failed, test case implementation progress, test environment preparation progress and test execution time. Mean time to failure is a product quality metric, defect density is a defect metric and cost of quality is a cost metric (Section 5.3.1)."
+  },
+  {
+    "id": "Q-CH5-16",
+    "chapter": 5,
+    "chapterTitle": "Chapter 05",
+    "lo": "FL-5.3.3",
+    "kLevel": "K2",
+    "questionEn": "A distributed agile team (three countries) uses a CI/CD pipeline. Which is the most suitable way to communicate the status of testing continuously?",
+    "questionSi": "A distributed agile team (three countries) uses a CI/CD pipeline. Which is the most suitable way to communicate the status of testing continuously? (රටවල් තුනක විසිරී සිටින agile කණ්ඩායමක් CI/CD pipeline එකක් භාවිත කරයි. පරීක්ෂණ තත්ත්වය අඛණ්ඩව සන්නිවේදනය කිරීමට වඩාත් සුදුසු ක්‍රමය කුමක්ද?)",
+    "optionsEn": [
+      "A) Printing a monthly test report and sending it by post.",
+      "B) Hallway conversations only.",
+      "C) Waiting until the end of the project to present the test completion report.",
+      "D) Dashboards (for example CI/CD dashboards, task boards and burn-down charts), supported by chat, online documentation and short verbal updates."
+    ],
+    "optionsSi": [
+      "A) Printing a monthly test report and sending it by post.",
+      "B) Hallway conversations only.",
+      "C) Waiting until the end of the project to present the test completion report.",
+      "D) Dashboards (for example CI/CD dashboards, task boards and burn-down charts), supported by chat, online documentation and short verbal updates."
+    ],
+    "answer": "D",
+    "rationaleEn": "Ways to communicate test status include verbal communication, dashboards (CI/CD dashboards, task boards, burn-down charts), electronic channels (e-mail, chat), online documentation and formal test reports. The choice depends on the audience, project risk, organizational standards and whether the team is distributed. A distributed agile team benefits from continuous, shared channels such as dashboards and chat (Section 5.3.3).",
+    "rationaleSi": "Ways to communicate test status include verbal communication, dashboards (CI/CD dashboards, task boards, burn-down charts), electronic channels (e-mail, chat), online documentation and formal test reports. The choice depends on the audience, project risk, organizational standards and whether the team is distributed. A distributed agile team benefits from continuous, shared channels such as dashboards and chat (Section 5.3.3)."
+  },
+  {
+    "id": "Q-CH6-1",
+    "chapter": 6,
+    "chapterTitle": "Chapter 06",
+    "lo": "FL-6.1.1",
+    "kLevel": "K2",
+    "questionEn": "Which of the following test tools is primarily designed to evaluate code without executing it, checking for coding standard violations and calculating cyclomatic complexity?",
+    "questionSi": "Which of the following test tools is primarily designed to evaluate code without executing it, checking for coding standard violations and calculating cyclomatic complexity? (පහත සඳහන් මෙවලම් අතුරින් කේතය ක්‍රියාත්මක නොකර, කේත සම්මතයන් උල්ලංඝනය වීම් පරීක්ෂා කිරීමට සහ Cyclomatic Complexity ගණනය කිරීමට ප්‍රධාන වශයෙන් නිර්මාණය කර ඇත්තේ කුමක්ද?)",
+    "optionsEn": [
+      "A) Test execution tool",
+      "B) Dynamic performance testing tool",
+      "C) Static analysis tool",
+      "D) Test data preparation tool"
+    ],
+    "optionsSi": [
+      "A) Test execution tool",
+      "B) Dynamic performance testing tool",
+      "C) Static analysis tool",
+      "D) Test data preparation tool"
+    ],
+    "answer": "C",
+    "rationaleEn": "Static analysis tools evaluate software work products (e.g. source code) without runtime execution to detect coding standard violations, unearth syntax defects, and calculate structural metrics like cyclomatic complexity (Section 6.1). Test execution tools (A) and performance tools (B) execute running code dynamically.",
+    "rationaleSi": "Static analysis tools evaluate software work products (e.g. source code) without runtime execution to detect coding standard violations, unearth syntax defects, and calculate structural metrics like cyclomatic complexity (Section 6.1). Test execution tools (A) and performance tools (B) execute running code dynamically."
+  },
+  {
+    "id": "Q-CH6-2",
+    "chapter": 6,
+    "chapterTitle": "Chapter 06",
+    "lo": "FL-6.2.1",
+    "kLevel": "K1",
+    "questionEn": "Which of the following is an official POTENTIAL BENEFIT of test automation according to the ISTQB CTFL v4.0.1 syllabus?",
+    "questionSi": "Which of the following is an official POTENTIAL BENEFIT of test automation according to the ISTQB CTFL v4.0.1 syllabus? (ISTQB CTFL v4.0.1 විෂය නිර්දේශයට අනුව පරීක්ෂණ ස්වයංක්‍රීයකරණයේ නිල විභව ප්‍රතිලාභයක් (Potential benefit) වන්නේ පහත සඳහන් කුමක්ද?)",
+    "optionsEn": [
+      "A) Completely eliminating the requirement for human exploratory testing",
+      "B) Prevention of simple human errors through greater consistency and repeatability",
+      "C) Ensuring that test scripts never require maintenance once implemented",
+      "D) Guaranteeing 100% defect-free software releases"
+    ],
+    "optionsSi": [
+      "A) Completely eliminating the requirement for human exploratory testing",
+      "B) Prevention of simple human errors through greater consistency and repeatability",
+      "C) Ensuring that test scripts never require maintenance once implemented",
+      "D) Guaranteeing 100% defect-free software releases"
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 6.2 explicitly lists \"Prevention of simple human errors through greater consistency and repeatability\" as a primary benefit of test automation. Automation does not eliminate the need for human exploratory testing (A), test scripts require ongoing maintenance (C), and testing cannot prove the absence of defects (Principle 1 / D).",
+    "rationaleSi": "Section 6.2 explicitly lists \"Prevention of simple human errors through greater consistency and repeatability\" as a primary benefit of test automation. Automation does not eliminate the need for human exploratory testing (A), test scripts require ongoing maintenance (C), and testing cannot prove the absence of defects (Principle 1 / D)."
+  },
+  {
+    "id": "Q-CH6-3",
+    "chapter": 6,
+    "chapterTitle": "Chapter 06",
+    "lo": "FL-6.1.1",
+    "kLevel": "K2",
+    "questionEn": "A testing team uses a Microsoft Excel spreadsheet to record test case identifiers, execution steps, expected outcomes, and actual pass/fail results. How does ISTQB classify this spreadsheet?",
+    "questionSi": "A testing team uses a Microsoft Excel spreadsheet to record test case identifiers, execution steps, expected outcomes, and actual pass/fail results. How does ISTQB classify this spreadsheet? (පරීක්ෂණ කණ්ඩායමක් Test case IDs, පියවර, අපේක්ෂිත ප්‍රතිඵල සහ සැබෑ Pass/Fail ප්‍රතිඵල සටහන් කිරීමට Microsoft Excel පැතුරුම්පතක් භාවිත කරයි. ISTQB අනුව මෙම පැතුරුම්පත වර්ගීකරණය කරන්නේ කෙසේද?)",
+    "optionsEn": [
+      "A) It cannot be classified as a test tool because it is general office productivity software.",
+      "B) It is considered a test tool because any software that assists in testing qualifies as a test tool.",
+      "C) It is classified strictly as a static analysis tool.",
+      "D) It is an automated test execution harness."
+    ],
+    "optionsSi": [
+      "A) It cannot be classified as a test tool because it is general office productivity software.",
+      "B) It is considered a test tool because any software that assists in testing qualifies as a test tool.",
+      "C) It is classified strictly as a static analysis tool.",
+      "D) It is an automated test execution harness."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 6.1 explicitly notes: \"Any other tool that assists in testing (e.g., a spreadsheet is a test tool in the context of testing).\" The context of usage dictates its classification.",
+    "rationaleSi": "Section 6.1 explicitly notes: \"Any other tool that assists in testing (e.g., a spreadsheet is a test tool in the context of testing).\" The context of usage dictates its classification."
+  },
+  {
+    "id": "Q-CH6-4",
+    "chapter": 6,
+    "chapterTitle": "Chapter 06",
+    "lo": "FL-6.2.1",
+    "kLevel": "K1",
+    "questionEn": "A software organization decides to adopt an open-source test automation framework. Which of the following represents a specific POTENTIAL RISK associated with this decision?",
+    "questionSi": "A software organization decides to adopt an open-source test automation framework. Which of the following represents a specific POTENTIAL RISK associated with this decision? (මෘදුකාංග ආයතනයක් Open-source පරීක්ෂණ ස්වයංක්‍රීයකරණ රාමුවක් භාවිත කිරීමට තීරණය කරයි. මෙම තීරණය හා බැඳුණු නිශ්චිත විභව අවදානමක් (Potential risk) නිරූපණය කරන්නේ පහත කුමක්ද?)",
+    "optionsEn": [
+      "A) The open-source project may be abandoned by its maintainers, resulting in no further updates or bug fixes.",
+      "B) Open-source tools always cost more in initial licensing fees than commercial enterprise tools.",
+      "C) Open-source tools can only be executed by developers and never by testers.",
+      "D) Open-source software cannot be integrated into DevOps CI/CD delivery pipelines."
+    ],
+    "optionsSi": [
+      "A) The open-source project may be abandoned by its maintainers, resulting in no further updates or bug fixes.",
+      "B) Open-source tools always cost more in initial licensing fees than commercial enterprise tools.",
+      "C) Open-source tools can only be executed by developers and never by testers.",
+      "D) Open-source software cannot be integrated into DevOps CI/CD delivery pipelines."
+    ],
+    "answer": "A",
+    "rationaleEn": "Section 6.2 identifies the following risk: \"Using an open-source software which may be abandoned, meaning that no further updates are available, or its internal components may require quite frequent updates as a further development.\"",
+    "rationaleSi": "Section 6.2 identifies the following risk: \"Using an open-source software which may be abandoned, meaning that no further updates are available, or its internal components may require quite frequent updates as a further development.\""
+  },
+  {
+    "id": "Q-CH6-5",
+    "chapter": 6,
+    "chapterTitle": "Chapter 06",
+    "lo": "FL-6.2.1",
+    "kLevel": "K1",
+    "questionEn": "Management at a tech startup expects that purchasing an advanced test automation tool will immediately reduce all testing effort to zero within the first month. Which test automation risk does this scenario demonstrate?",
+    "questionSi": "Management at a tech startup expects that purchasing an advanced test automation tool will immediately reduce all testing effort to zero within the first month. Which test automation risk does this scenario demonstrate? (නව තාක්ෂණික සමාගමක කළමනාකාරිත්වය අපේක්ෂා කරන්නේ උසස් ස්වයංක්‍රීයකරණ මෙවලමක් මිලදී ගැනීමෙන් පළමු මාසය තුළම සියලු පරීක්ෂණ පරිශ්‍රමය බිංදුව දක්වා අඩුකරගත හැකි බවයි. මෙම තත්ත්වයෙන් පෙන්නුම් කරන්නේ කුමන අවදානමද?)",
+    "optionsEn": [
+      "A) The automation tool is not compatible with the development platform.",
+      "B) Choosing an unsuitable tool that fails to comply with safety regulations.",
+      "C) Unrealistic expectations about the benefits of a tool and inaccurate estimations of effort.",
+      "D) The tool vendor going out of business or being acquired by a competitor."
+    ],
+    "optionsSi": [
+      "A) The automation tool is not compatible with the development platform.",
+      "B) Choosing an unsuitable tool that fails to comply with safety regulations.",
+      "C) Unrealistic expectations about the benefits of a tool and inaccurate estimations of effort.",
+      "D) The tool vendor going out of business or being acquired by a competitor."
+    ],
+    "answer": "C",
+    "rationaleEn": "Expecting instantaneous zero testing effort demonstrates unrealistic expectations regarding tool capabilities and underestimating the effort required to introduce, configure, script, and train for the tool (Section 6.2).",
+    "rationaleSi": "Expecting instantaneous zero testing effort demonstrates unrealistic expectations regarding tool capabilities and underestimating the effort required to introduce, configure, script, and train for the tool (Section 6.2)."
+  },
+  {
+    "id": "Q-CH6-6",
+    "chapter": 6,
+    "chapterTitle": "Chapter 06",
+    "lo": "FL-6.1.1",
+    "kLevel": "K2",
+    "questionEn": "Which tool category is essential when an organization needs to simulate 50,000 concurrent user requests hitting a payment gateway to measure response latency and server CPU saturation?",
+    "questionSi": "Which tool category is essential when an organization needs to simulate 50,000 concurrent user requests hitting a payment gateway to measure response latency and server CPU saturation? (ගෙවීම් පද්ධතියකට එකවර පරිශීලකයින් 50,000 කගේ ඉල්ලීම් ලැබෙන විට ප්‍රතිචාර කාලය සහ Server CPU භාවිතය මැනීමට ආයතනයකට අත්‍යවශ්‍ය වන මෙවලම් කාණ්ඩය කුමක්ද?)",
+    "optionsEn": [
+      "A) Static code linters",
+      "B) Collaboration messaging tools",
+      "C) Non-functional testing tools (performance/load)",
+      "D) Review management tools"
+    ],
+    "optionsSi": [
+      "A) Static code linters",
+      "B) Collaboration messaging tools",
+      "C) Non-functional testing tools (performance/load)",
+      "D) Review management tools"
+    ],
+    "answer": "C",
+    "rationaleEn": "Non-functional testing tools allow testers to evaluate characteristics such as performance efficiency, load capacity, and reliability that are physically impossible to execute or measure manually (Section 6.1).",
+    "rationaleSi": "Non-functional testing tools allow testers to evaluate characteristics such as performance efficiency, load capacity, and reliability that are physically impossible to execute or measure manually (Section 6.1)."
+  },
+  {
+    "id": "Q-CH6-7",
+    "chapter": 6,
+    "chapterTitle": "Chapter 06",
+    "lo": "FL-6.2.1",
+    "kLevel": "K1",
+    "questionEn": "Which of the following is a benefit of test automation regarding test management and reporting?",
+    "questionSi": "Which of the following is a benefit of test automation regarding test management and reporting? (පරීක්ෂණ කළමනාකරණය සහ වාර්තාකරණය සම්බන්ධයෙන් පරීක්ෂණ ස්වයංක්‍රීයකරණයේ නිල ප්‍රතිලාභයක් වන්නේ පහත කුමක්ද?)",
+    "optionsEn": [
+      "A) It completely eliminates the need for test progress reports.",
+      "B) It provides easier access to statistics, graphs, and aggregated data regarding test progress and failure rates.",
+      "C) It automatically rewrites the business requirements when test cases fail.",
+      "D) It ensures that test managers no longer need to make control decisions."
+    ],
+    "optionsSi": [
+      "A) It completely eliminates the need for test progress reports.",
+      "B) It provides easier access to statistics, graphs, and aggregated data regarding test progress and failure rates.",
+      "C) It automatically rewrites the business requirements when test cases fail.",
+      "D) It ensures that test managers no longer need to make control decisions."
+    ],
+    "answer": "B",
+    "rationaleEn": "Section 6.2 states that test automation provides \"easier access to information about testing to support test management and test reporting (e.g., statistics, graphs, and aggregated data about test progress, failure rates, and test execution duration).\"",
+    "rationaleSi": "Section 6.2 states that test automation provides \"easier access to information about testing to support test management and test reporting (e.g., statistics, graphs, and aggregated data about test progress, failure rates, and test execution duration).\""
+  },
+  {
+    "id": "Q-CH6-8",
+    "chapter": 6,
+    "chapterTitle": "Chapter 06",
+    "lo": "FL-6.1.1",
+    "kLevel": "K2",
+    "questionEn": "How do DevOps tools directly support software testing activities in modern software organizations?",
+    "questionSi": "How do DevOps tools directly support software testing activities in modern software organizations? (නූතන මෘදුකාංග ආයතන තුළ DevOps මෙවලම් මෘදුකාංග පරීක්ෂණ කටයුතුවලට සෘජුවම සහාය වන්නේ කෙසේද?)",
+    "optionsEn": [
+      "A) By supporting the delivery pipeline, workflow tracking, automated build processes, and CI/CD testing gates.",
+      "B) By automatically resolving and fixing all syntax errors found in developer source code.",
+      "C) By replacing the need for defect management processes.",
+      "D) By guaranteeing that no third-party libraries have security vulnerabilities."
+    ],
+    "optionsSi": [
+      "A) By supporting the delivery pipeline, workflow tracking, automated build processes, and CI/CD testing gates.",
+      "B) By automatically resolving and fixing all syntax errors found in developer source code.",
+      "C) By replacing the need for defect management processes.",
+      "D) By guaranteeing that no third-party libraries have security vulnerabilities."
+    ],
+    "answer": "A",
+    "rationaleEn": "Section 6.1 defines that DevOps tools \"support the DevOps delivery pipeline, workflow tracking, automated build process(es), CI/CD\" which automatically trigger and gate testing.",
+    "rationaleSi": "Section 6.1 defines that DevOps tools \"support the DevOps delivery pipeline, workflow tracking, automated build process(es), CI/CD\" which automatically trigger and gate testing."
+  }
+]

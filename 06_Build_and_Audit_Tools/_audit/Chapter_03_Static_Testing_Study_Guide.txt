@@ -1,0 +1,805 @@
+CHAPTER 03: STATIC TESTING
+
+1. Core Syllabus Concepts & In-Depth Notes
+
+3.1 Static Testing Basics FL-3.1.1 FL-3.1.2 FL-3.1.3
+
+Formal Definition: In static testing, the software under test is NOT executed. Code, process
+specifications, system architecture specifications, or other work products are evaluated through manual
+examination (e.g., reviews) or with the help of a tool (e.g., static analysis).
+
+Static testing assesses characteristics such as readability, completeness, correctness, testability, and
+consistency. Crucially, static testing can be applied for both verification (checking conformity to
+specifications) and validation (checking fulfillment of user and stakeholder needs in operational reality).
+
+Static Testing in Agile Development:
+
+Testers, developers, and business representatives
+(Product Owners, Business Analysts) collaborate
+during example mapping, user story writing, and
+backlog refinement. Review techniques verify
+that user stories meet the Definition of Ready
+(DoR) and contain clear, testable acceptance
+criteria.
+
+Tool-Driven Static Analysis:
+
+Automated tools scan code without test cases or
+execution. Typically integrated into CI/CD
+frameworks to enforce coding standards,
+evaluate code maintainability, and uncover
+security vulnerabilities. Spelling and grammar
+checkers are also static analysis tools.
+
+3.1.1 Work Products Examinable by Static Testing FL-3.1.1 (K1)
+
+Almost any work product generated during the software lifecycle can be examined through static testing:
+
+Static Test Approach Work Products That CAN Be Examined Prerequisites & Conditions
+
+Manual Reviews • Requirements specifications & User stories
+
+• Architecture and system design documents
+
+• Source code and database schemas
+
+• Test plans, test cases, test charters, test
+procedures
+
+• Product backlog items, contracts, project
+plans, models
+
+Any work product that can be
+
+read and understood by
+human beings.
+
+Automated Static
+Analysis
+
+• Source code and scripts
+
+• Data models and software architectures
+
+• Formal text specifications with standardized
+grammar
+
+Requires a formal structure
+or syntax against which
+automated rules can check.
+
+EXAM ALERT — What Work Products are NOT Appropriate for Static Testing?
+
+Work products that are difficult to interpret by human beings AND should not be analyzed by tools. A prime
+example is 3rd-party executable binary code (commercial off-the-shelf compiled software) due to legal,
+licensing, or intellectual property restrictions.
+
+=====PAGE 1=====
+3.1.2 Value of Static Testing FL-3.1.2 (K2)
+
+Static testing provides exceptional organizational and economic value throughout the SDLC:
+
+Earliest Defect Detection (Shift Left): Finds defects in early requirements and design phases before
+implementation starts, embodying Principle 3 (Early testing saves time and money).
+
+Detects Defects Undetectable by Dynamic Testing:
+
+Unreachable / dead code: Code blocks that can never be executed during runtime.
+
+Architectural / design pattern violations: Inappropriate design patterns or poor modularity.
+
+Defects in non-executable artifacts: Ambiguities, contradictions, and omissions in requirements
+specifications, contracts, and test plans.
+
+Reduced Total Cost of Quality: Although reviews require upfront time and effort, total project costs are
+significantly lower than without reviews because downstream rework costs drop dramatically.
+
+Shared Understanding & Communication: Bringing diverse stakeholders together early fosters mutual
+alignment, shared vision, and eliminates requirements misunderstandings.
+
+3.1.3 Differences between Static Testing and Dynamic Testing FL-3.1.3 (K2)
+
+Static testing and dynamic testing are complementary disciplines with similar goals (detecting defects and
+evaluating quality), but distinct mechanisms:
+
+Dimension Static Testing (Reviews & Static
+Analysis)
+
+Dynamic Testing (Execution Based)
+
+Execution of Code Software is NOT executed. Software MUST be executed with
+inputs.
+
+Defect
+Identification
+
+Finds defects directly in the work
+product.
+
+Causes failures; defects are found via
+debugging.
+
+Applicability Applies to executable AND non-
+executable work products.
+
+Applies only to executable work
+products.
+
+Rare Paths
+Coverage
+
+Easily detects defects on rarely executed
+or hard-to-reach paths.
+
+Difficult to trigger obscure edge-case
+execution paths.
+
+Quality Focus Measures non-runtime characteristics
+(e.g., maintainability, consistency).
+
+Measures runtime characteristics (e.g.,
+
+performance efficiency, reliability).
+
+Typical Defects Easier & Cheaper to Find Through Static Testing:
+
+Requirements & Design Flaws:
+
+Inconsistencies, ambiguities, and
+contradictions.
+
+Omissions, inaccuracies, and unnecessary
+duplications.
+
+Inefficient database structures and poor
+modularization.
+
+Gaps or inaccuracies in test basis coverage.
+
+Code & Interface Defects:
+
+Undefined or undeclared variables.
+
+Unreachable, dead, or duplicated code.
+
+Excessive code complexity and standard
+violations.
+
+Mismatched interface parameters (number,
+type, order).
+
+Security vulnerabilities (e.g., buffer overflows).
+
+=====PAGE 2=====
+1.2 Feedback and Review Process
+
+3.2.1 Benefits of Early and Frequent Stakeholder Feedback FL-3.2.1 (K1)
+
+Continuous stakeholder involvement prevents divergence from customer expectations. If stakeholder
+engagement is minimal, the delivered product may deviate from business goals, resulting in expensive
+rework, missed deadlines, blame games, or project cancellation. Early feedback clarifies requirements
+changes early and ensures teams focus on features delivering the highest value and mitigating critical risks.
+
+3.2.2 Review Process Activities (ISO/IEC 20246) FL-3.2.2 (K2)
+
+The international standard ISO/IEC 20246 defines a generic review framework tailored to project formality.
+For large work products, the review process is invoked multiple times across small chunks:
+
+1. Planning
+
+2. Review Initiation
+
+3. Individual Review
+
+4. Communication & Analysis
+
+5. Fixing & Reporting
+
+Activity Core Tasks & Responsibilities Primary Purpose
+
+1. Planning Defines review scope: purpose, work product to
+review, quality characteristics to evaluate, areas to
+focus on, exit criteria, supporting documents
+(standards), effort, and timeframes.
+
+Establish review boundaries,
+criteria, and logistics.
+
+2. Review Initiation Ensures everyone and everything is prepared to start:
+distributes work product under review, verifies access,
+clarifies roles/responsibilities, and provides
+supporting review materials.
+
+Ensure all participants are
+ready and equipped.
+
+3. Individual Review Each reviewer individually assesses the work product.
+Identifies anomalies, recommendations, and
+questions using techniques (checklists, scenarios).
+Reviewers log all identified items.
+
+Uncover anomalies
+independently without
+groupthink.
+
+4. Communication
+& Analysis
+
+Anomalies are discussed (anomalies are not
+necessarily defects!). Decisions are made on status,
+ownership, and required actions. Evaluates product
+quality level and determines if follow-up review is
+needed.
+
+Analyze anomalies, assign
+fixes, determine quality
+status.
+
+5. Fixing &
+Reporting
+
+Defect reports are created for confirmed defects so
+corrective actions are followed up. Author fixes work
+product. Work product accepted once exit criteria are
+met. Review results are reported.
+
+Remediate defects, confirm
+exit criteria, report
+outcomes.
+
+=====PAGE 3=====
+EXAM ALERT — Anomalies vs. Defects in Reviews: An anomaly is any potential issue, question, or
+deviation noted during an individual review. During the Communication and Analysis meeting, anomalies
+are evaluated; only confirmed flaws become official defects requiring corrective action.
+
+3.2.3 Roles and Responsibilities in Reviews FL-3.2.3 (K1)
+
+Reviews involve multiple stakeholders, each assuming specific responsibilities according to ISO/IEC 20246:
+
+Principal Role Core Responsibilities & Syllabus Definition Exam Key Takeaways
+
+Manager Decides what is to be reviewed and provides
+resources, such as staff, funding, and time for the
+review.
+
+Allocates resources; does NOT
+conduct the technical meeting.
+
+Author Creates and fixes the work product under review. Resolves defects; in
+inspections, CANNOT act as
+Review Leader or Scribe!
+
+Moderator
+
+(Facilitator)
+
+Ensures the effective running of review meetings,
+including mediation, time management, and
+maintaining a safe review environment in which
+everyone can speak freely.
+
+Leads the meeting discussions;
+neutral mediator.
+
+Scribe
+
+(Recorder)
+
+Collates anomalies from reviewers and records review
+information, including decisions and new anomalies
+identified during the review meeting.
+
+Documents review outcomes;
+keeps the official review
+record.
+
+Reviewer Performs reviews by examining the work product to
+identify anomalies. May be a team member, Subject
+Matter Expert (SME), or stakeholder.
+
+Applies critical thinking to
+detect potential defects.
+
+Review Leader Takes overall responsibility for the review: decides
+who participates, and organizes when and where the
+review will take place.
+
+Administrative and
+organizational owner of the
+review.
+
+Inspection Independence Rule (CRITICAL):
+
+In formal Inspections, the Author CANNOT act
+as the Review Leader or Scribe. This preserves
+objectivity, prevents defensive bias, and ensures
+impartial documentation of defect data.
+
+Role Sharing & Flexibility:
+
+In less formal reviews, roles may be combined
+(e.g., the Review Leader may also act as
+Moderator or Reviewer). However, separation of
+duties increases objectivity in formal audits.
+
+3.2.4 The Four Review Types FL-3.2.4 (K2)
+
+Reviews range from informal pair check-ins to rigorous formal inspections. The required level of formality
+depends on SDLC maturity, product criticality, regulatory standards, and audit requirements:
+
+=====PAGE 4=====
+Review Type Formality &
+Process
+
+Meeting
+Leadership
+
+Primary Objectives Key Distinguishing
+Traits
+
+Informal
+Review
+
+Low formality;
+no defined
+formal
+process.
+
+Typically
+informal (e.g.,
+peer, pair).
+
+Detecting anomalies. No formal documented
+output required;
+inexpensive and agile.
+
+Walkthrough Low to
+medium
+formality.
+
+Led by the
+Author of the
+work product.
+
+Evaluate quality, build
+confidence, educate
+reviewers, gain
+consensus, generate new
+ideas, motivate author,
+detect anomalies.
+
+Author explains work
+product step-by-step;
+individual prep is
+
+optional.
+
+Technical
+Review
+
+Medium to
+high formality.
+
+Led by a trained
+
+Moderator.
+
+Gain consensus and
+make decisions
+regarding a technical
+problem; detect
+anomalies; evaluate
+quality.
+
+Conducted by
+
+technically qualified
+reviewers; individual
+review preparation is
+expected.
+
+Inspection Most formal
+
+review type.
+Follows
+complete ISO
+20246
+process.
+
+Led by a trained
+
+Moderator /
+Review Leader.
+
+Find the maximum
+number of anomalies;
+evaluate quality; build
+confidence; collect
+process improvement
+metrics.
+
+Uses entry/exit criteria,
+formal checklists and
+rules; metrics collected;
+
+Author cannot be leader
+or scribe!
+
+Choosing the Right Review Type (Context-
+Driven):
+
+The same work product can undergo multiple
+review types over its lifecycle (e.g., an informal
+peer review first, followed by a formal inspection
+prior to regulatory submission). Selection
+depends on: project risks, available budget,
+regulatory/legal audit needs, and organizational
+maturity.
+
+Individual Review Techniques (ISO/IEC 20246):
+
+During individual review, reviewers apply specific
+techniques:
+
+• Ad hoc: Unstructured reading with little or no
+guidance.
+
+• Checklist-based: Systematically checking
+against predefined defect types.
+
+• Scenarios & Dry Runs: Simulating execution
+using realistic use cases.
+
+• Role-based: Evaluating from specific
+stakeholder roles (e.g. operator).
+
+• Perspective-based Reading (PBR): Adopting
+distinct viewpoints (user, designer, tester) and
+drafting artifacts (e.g. tests). Empirically yields
+highest defect detection.
+
+=====PAGE 5=====
+3.2.5 Success Factors for Reviews FL-3.2.5 (K1)
+
+A successful review program depends on both organizational culture and meticulous procedural execution.
+The syllabus identifies ten critical success factors:
+
+1. Clear Objectives & Exit Criteria
+
+Define unambiguous goals and measurable exit
+criteria for every review. Crucial: Evaluation of
+participants must NEVER be an objective!
+
+2. Right Review Type for Context
+
+Select the appropriate review type to match the
+work product complexity, risks, participant skill
+set, and regulatory needs.
+
+3. Review in Small Chunks
+
+Break large work products into small chunks so
+reviewers maintain high concentration and
+vigilance during individual reviews and meetings.
+
+4. Constructive Feedback Loops
+
+Provide actionable, objective feedback to
+authors and stakeholders so work products and
+development processes are continuously
+improved.
+
+5. Adequate Preparation Time
+
+Participants must be granted sufficient dedicated
+time in their project schedule to thoroughly
+conduct individual reviews prior to meetings.
+
+6. Executive Management Support
+
+Management must actively endorse the review
+process, allocating realistic budget, scheduling
+allowance, and resourcing.
+
+7. Embedded Learning Culture
+
+Embed reviews into organizational culture as
+collaborative opportunities for team learning
+and process improvement rather than fault-
+finding.
+
+8. Participant Training
+
+Ensure all reviewers, moderators, and authors
+receive proper training on how to fulfill their
+specific roles effectively.
+
+9. Effective Meeting Facilitation & Psychological Safety:
+
+Review meetings must be mediated by a skilled moderator who manages time, mediates conflicts, and
+establishes a safe psychological environment where all participants speak openly without fear of
+criticism.
+
+CRITICAL EXAM TRAP: Participant Evaluation is Forbidden!
+
+Reviews are exclusively designed to evaluate the quality of the work product. Using review metrics (e.g.
+defects found) to appraise or evaluate participant performance poisons team trust, breeds defensive
+behaviors, and destroys the review culture.
+
+=====PAGE 6=====
+2. High-Yield Exam Flashpoints & Key Distinctions
+
+TOP 10 ISTQB CTFL v4.0.1 CHAPTER 3 EXAM TRAPS & DISTRACTORS:
+
+1. "Static testing cannot perform validation" → FALSE! Static testing supports both verification and
+validation (e.g., validating user stories against user operational needs).
+
+2. "Static analysis requires test cases" → FALSE! Static analysis examines code and models using
+automated rule-sets without executing code or designing test cases.
+
+3. "Individual preparation is mandatory in walkthroughs" → FALSE! While reviewers *might* review
+individually beforehand, individual preparation is optional in walkthroughs.
+
+4. "Anomalies found in reviews are always defects" → FALSE! Anomalies are questions, ambiguities,
+or deviations; only after discussion in the meeting are confirmed issues logged as defects.
+
+5. "The author can lead an inspection" → FALSE! In formal inspections, the author cannot act as the
+Review Leader or Scribe. Walkthroughs, however, are author-led!
+
+6. "Review metrics should be used to evaluate employee performance" → FALSE! Participant
+evaluation must never be an objective; reviews evaluate product quality only.
+
+7. "Static testing replaces dynamic testing" → FALSE! Static and dynamic testing are complementary;
+each finds distinct defect classes (e.g., dynamic finds runtime performance issues).
+
+8. "Inspections have no formal entry or exit criteria" → FALSE! Inspections are the most formal
+review type and strictly enforce documented entry and exit criteria.
+
+9. "Third-party compiled binary code is ideal for static analysis" → FALSE! Binary code lacking
+source access is unsuitable for static analysis due to legal and interpretability limits.
+
+10. "Technical reviews are led by the author" → FALSE! Technical reviews are led by a trained
+
+Moderator and performed by technically qualified peers.
+
+Rapid Comparison Matrix (Core Review Types & Roles)
+
+Review Type Leader /
+Facilitator
+
+Individual Preparation Core Objective
+
+Informal Review Peer / Author Not required Detecting anomalies quickly without
+formal documentation.
+
+Walkthrough Author Optional Educate reviewers, build consensus,
+motivate author, detect anomalies.
+
+Technical Review Moderator Expected /
+Recommended
+
+Gain consensus and resolve
+technical architectural problems.
+
+Inspection Moderator /
+Leader
+
+Mandatory Find maximum number of
+anomalies, enforce rules, collect
+metrics.
+
+=====PAGE 7=====
+High-Yield Memory Mnemonics for Revision:
+
+5 Review Steps: Plan → Initiate → Individual Review → Communicate & Analyze → Fix & Report.
+
+4 Review Types: Informal (No rules) • Walkthrough (Author-led) • Technical (Tech consensus) •
+Inspection (Max formal).
+
+Key Role Rules: Manager (Resources) • Moderator (Meeting safe/on time) • Scribe (Records) • Leader
+(Overall review owner).
+
+3. Complete Chapter 3 Keyword Lexicon (All 10 Official Terms)
+
+Anomaly Any condition that deviates from
+expectation based on requirements specifications,
+design documents, user documents, standards, or
+experience.
+
+Dynamic Testing Testing that involves the
+execution of the software of a component or
+system.
+
+Formal Review A form of review that follows a
+defined process with a documented output, formal
+roles, and defined entry/exit criteria (e.g., an
+inspection).
+
+Informal Review A review that does not follow a
+defined process and does not require a formal
+documented output.
+
+Inspection The most formal type of review, based
+on visual examination of work products to detect
+anomalies, using rules, checklists, metrics, and
+entry/exit criteria.
+
+Review An evaluation of a work product to detect
+anomalies, improve quality, and ensure conformity
+with standards and requirements.
+
+Static Analysis The process of evaluating a
+component or system without executing the
+software, based on its form, structure, content, or
+security properties.
+
+Static Testing Testing a work product without code
+being executed, comprising reviews and static
+analysis.
+
+Technical Review A formal review by technically
+qualified reviewers, led by a moderator, to gain
+consensus on a technical problem and detect
+anomalies.
+
+Walkthrough A review led by the author of the
+work product to evaluate quality, build confidence,
+educate reviewers, and detect anomalies.
+
+Key Terminology Relationship:
+
+Static Testing is the umbrella discipline comprising both Human Reviews (Informal, Walkthrough,
+Technical Review, Inspection) and Static Analysis (automated linting, complexity checks, security
+scanning).
+
+=====PAGE 8=====
+STUDENT NOTES & EXAM FLASHCARD REMINDERS (HANDWRITTEN STUDY SPACE)
+
+4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 1)
+
+Question 1 [K1 - FL-3.1.1]: Which of the following work products is LEAST APPROPRIATE for
+examination using static testing?
+
+A) A software architecture diagram detailing microservice dependencies.
+
+B) A third-party proprietary compiled executable binary where source code is legally inaccessible.
+
+C) A product backlog containing user stories and acceptance criteria.
+
+D) An automated test execution script written in Python.
+
+Correct Answer: B
+
+Rationale: Section 3.1.1 explicitly states that work products not appropriate for static testing are those
+that are difficult to interpret by humans and should not be analyzed by tools, such as third-party
+executable code due to legal restrictions. Architecture, user stories, and test scripts are all prime
+candidates for static testing.
+
+Question 2 [K2 - FL-3.1.2]: Which of the following defects is TYPICALLY detected by static testing
+but CANNOT be detected by dynamic testing?
+
+A) Excessive memory leakage occurring after 48 hours of continuous server load.
+
+B) An unreachable block of dead source code that can never be executed.
+
+C) Slow database query response times during peak holiday transaction traffic.
+
+D) Inaccurate calculations triggered by unexpected floating-point precision errors during runtime.
+
+Correct Answer: B
+
+Rationale: Dynamic testing requires code execution; therefore, code that is unreachable (dead code)
+can never be executed or detected dynamically. Static analysis identifies dead code directly without
+execution (Section 3.1.2). Memory leaks, response times, and calculation errors during execution are
+dynamic phenomena.
+
+=====PAGE 9=====
+Question 3 [K2 - FL-3.1.3]: How does static testing fundamentally differ from dynamic testing
+regarding defect detection?
+
+A) Static testing triggers failures from which defects are diagnosed, whereas dynamic testing identifies
+defects directly.
+
+B) Static testing finds defects directly in work products, whereas dynamic testing causes runtime failures
+from which defects are determined.
+
+C) Static testing can only be applied to executable code, whereas dynamic testing applies to
+documentation.
+
+D) Static testing measures performance efficiency, whereas dynamic testing evaluates code maintainability.
+
+Correct Answer: B
+
+Rationale: Section 3.1.3 explains that static testing detects defects directly in the examined artifact,
+whereas dynamic testing triggers observable runtime failures, requiring subsequent debugging to
+isolate the defect.
+
+Question 4 [K1 - FL-3.2.1]: What is a primary benefit of gathering early and frequent stakeholder
+feedback during the SDLC?
+
+A) It guarantees that the system will achieve 100% statement and branch code coverage.
+
+B) It eliminates the need to perform component and system integration testing.
+
+C) It prevents misunderstandings regarding requirements and ensures changes are implemented before
+expensive rework is required.
+
+D) It ensures that the author of the code acts as both moderator and scribe during formal reviews.
+
+Correct Answer: C
+
+Rationale: Frequent feedback prevents misunderstandings about requirements, ensures changes are
+understood earlier, and avoids costly rework and missed deadlines (Section 3.2.1).
+
+=====PAGE 10=====
+4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 2)
+
+Question 5 [K2 - FL-3.2.2]: During which activity of the review process (ISO/IEC 20246) are
+anomalies discussed, their status decided, and ownership assigned?
+
+A) Review initiation
+
+B) Individual review
+
+C) Communication and analysis
+
+D) Planning
+
+Correct Answer: C
+
+Rationale: Section 3.2.2 explicitly defines that during Communication and analysis, participants analyze
+and discuss logged anomalies, make decisions on their status and ownership, and decide on necessary
+corrective actions.
+
+Question 6 [K1 - FL-3.2.3]: In an inspection, which two roles MUST NOT be performed by the
+author of the work product?
+
+A) Reviewer and Manager
+
+B) Review Leader and Scribe
+
+C) Moderator and Reviewer
+
+D) Scribe and Reviewer
+
+Correct Answer: B
+
+Rationale: Section 3.2.4 strictly stipulates: "In inspections, the author cannot act as the review leader or
+scribe." This prevents conflict of interest and ensures impartial documentation of defects.
+
+Question 7 [K2 - FL-3.2.4]: Which review type is led by the AUTHOR of the work product and has
+multiple objectives including educating reviewers, building consensus, and gathering new ideas?
+
+A) Walkthrough
+
+B) Inspection
+
+C) Technical Review
+
+D) Informal Review
+
+Correct Answer: A
+
+Rationale: Section 3.2.4 defines a Walkthrough as being led by the author, serving objectives such as
+educating reviewers, building consensus, generating new ideas, and detecting anomalies.
+
+=====PAGE 11=====
+Question 8 [K1 - FL-3.2.5]: Which of the following is an ANTI-PATTERN that directly undermines
+the success of a review program?
+
+A) Conducting reviews on small chunks to avoid reviewer fatigue.
+
+B) Using defect metrics gathered from reviews to evaluate the performance of participating authors.
+
+C) Providing adequate preparation time for participants to perform individual reviews.
+
+D) Having a trained moderator facilitate review meetings to maintain a safe environment.
+
+Correct Answer: B
+
+Rationale: Section 3.2.5 explicitly emphasizes: "Evaluation of participants should never be an objective."
+Using reviews to appraise employee performance creates fear and ruins the review culture.
+
+ISTQB® Certified Tester Foundation Level (CTFL) v4.0.1 • Chapter 3: Static Testing • Master Study Guide • Generated for Exam Success
+
+=====PAGE 12=====

@@ -1,0 +1,2564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISTQB CTFL v4.0.1 - Chapter 4: Test Analysis and Design Master Study Guide</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232563eb%22/><path d=%22M26 50 L42 66 L74 34%22 stroke=%22white%22 stroke-width=%2212%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 fill=%22none%22/></svg>">
+<meta name="theme-color" content="#1e293b">
+<!-- Google Fonts: Inter & Noto Sans Sinhala for razor-sharp typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* Base Reset & Print-Optimized Large Typography */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  @page {
+    size: A4 portrait;
+    /* Generous margins: 16mm left for binding, 22mm right for handwritten notes */
+    margin: 14mm 22mm 14mm 16mm;
+  }
+
+  body {
+    font-family: "Inter", "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #000000; /* Pure black for maximum print clarity and contrast */
+    background-color: #ffffff;
+    line-height: 1.68;
+    font-size: 14.8px; /* Upgraded from 12.2px for easy readability */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Headings: Crisp Black with Solid Rules & Generous Vertical Spacing */
+  h1, h2, h3, h4 {
+    color: #000000;
+    font-weight: 700;
+    line-height: 1.32;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h1 { 
+    font-size: 21px; 
+    margin-bottom: 7px; 
+    letter-spacing: -0.2px; 
+  }
+  
+  h2 {
+    font-size: 16.5px; /* Upgraded from 15px */
+    margin-top: 18px;
+    margin-bottom: 9px;
+    border-bottom: 2.5px solid #000000;
+    padding-bottom: 4px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  h3 { 
+    font-size: 14.8px; /* Upgraded from 13.5px */
+    margin-top: 14px; 
+    margin-bottom: 7px; 
+    color: #000000; 
+  }
+  
+  h4 { 
+    font-size: 13.8px; /* Upgraded from 12.5px */
+    margin-top: 11px; 
+    margin-bottom: 5px; 
+    color: #1f2937; 
+  }
+
+  p { 
+    margin-bottom: 9px; 
+    text-align: justify; 
+    font-size: 13.5px; /* Upgraded from 12.2px */
+    line-height: 1.65;
+    color: #000000; 
+  }
+  
+  ul, ol { 
+    margin-left: 20px; 
+    margin-bottom: 9px; 
+    font-size: 13.5px; /* Upgraded from 12.2px */
+    line-height: 1.62;
+    color: #000000; 
+  }
+  
+  li { 
+    margin-bottom: 4px; 
+  }
+  
+  strong { 
+    color: #000000; 
+    font-weight: 700; 
+  }
+  
+  code {
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 2px 5.5px;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 12.5px; /* Upgraded from 11.2px */
+    color: #000000;
+  }
+
+  /* Badges - Crisp High-Contrast Outlines */
+  .badge {
+    display: inline-block;
+    padding: 2.5px 6.5px;
+    border-radius: 3px;
+    font-size: 12.2px; /* Upgraded from 10px */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-right: 3px;
+    vertical-align: middle;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1.2px solid #374151;
+  }
+  .badge-k1 { background-color: #f3f4f6; color: #000000; border: 1.2px solid #4b5563; }
+  .badge-k2 { background-color: #ffffff; color: #000000; border: 1.2px solid #000000; }
+  .badge-k3 { background-color: #f3f4f6; color: #000000; border: 1.5px solid #000000; font-weight: 800; }
+  .badge-keyword { background-color: #ffffff; color: #000000; border: 1px dashed #374151; }
+
+  /* Page Break Utilities */
+  .page-start {
+    page-break-before: auto;
+    break-before: auto;
+    margin-top: 14px;
+  }
+  .avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Cards & Callouts - Large Readable Text with Solid Contrast */
+  .card {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-radius: 4px;
+    padding: 10px 13px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 13.2px; /* Upgraded from 11.8px/12px */
+    line-height: 1.62;
+    color: #1e293b;
+  }
+  
+  .callout {
+    border-left: 4px solid #3b82f6;
+    border-top: 1.2px solid #d1d5db;
+    border-right: 1.2px solid #d1d5db;
+    border-bottom: 1.2px solid #d1d5db;
+    background: #f8fafc;
+    padding: 9px 13px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 13.2px; /* Upgraded from 11.8px/12px */
+    line-height: 1.62;
+    color: #1e293b;
+  }
+  .callout-info { border-left-color: #1e293b; }
+  .callout-warning { border-left-color: #f59e0b; }
+  .callout-danger { border-left-color: #1e293b; }
+  .callout-success { border-left-color: #1e293b; }
+  .callout-exam { border-left-color: #1e293b; }
+
+  /* Tables - Large, Crisp Typography & Generous Cell Padding */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 13px 0;
+    font-size: 12.8px; /* Upgraded from 11.5px */
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  th, td {
+    padding: 7px 10px; /* Upgraded from 4.5px 6.5px */
+    border: 1.2px solid #4b5563;
+    text-align: left;
+    vertical-align: top;
+    color: #1e293b;
+    line-height: 1.58;
+    font-size: 12.8px; /* Upgraded from 11.5px */
+  }
+  th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 13.2px; /* Upgraded from 11.8px */
+    letter-spacing: 0.1px;
+    border-bottom: 2.2px solid #000000;
+  }
+  tr:nth-child(even) { background-color: #f8fafc; }
+
+  /* Grids with Comfortable Spacing */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 9px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 9px;
+    margin-bottom: 9px;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 9px;
+  }
+
+  /* Tool Categories Showcase */
+  .tool-box {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-top: 3.5px solid #000000;
+    border-radius: 4px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .tool-box-title {
+    font-size: 13.8px; /* Upgraded from 12.2px */
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tool-box-desc {
+    font-size: 13.2px; /* Upgraded from 11.6px */
+    color: #0f172a;
+    line-height: 1.58;
+  }
+  .tool-examples {
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px dashed #9ca3af;
+    font-size: 12.2px; /* Upgraded from 10.8px */
+    color: #475569;
+  }
+
+  /* Practice Exam Questions - Large, Clear Typography */
+  .quiz-card {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-left: 4px solid #000000;
+    border-radius: 4px;
+    padding: 10px 13px;
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .quiz-q {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 7px;
+    font-size: 13.5px; /* Upgraded from 11.8px/12px */
+    line-height: 1.52;
+  }
+  .quiz-options {
+    margin-left: 5px;
+    margin-bottom: 7px;
+    font-size: 13px; /* Upgraded from 11.5px */
+  }
+  .quiz-opt {
+    margin-bottom: 4px;
+    color: #0f172a;
+    line-height: 1.50;
+    font-size: 13px; /* Upgraded from 11.5px */
+  }
+  .quiz-answer {
+    background: #f8fafc;
+    border-top: 1.2px dashed #9ca3af;
+    padding: 8px 11px;
+    border-radius: 0 0 4px 4px;
+    font-size: 13px; /* Upgraded from 11.6px */
+    color: #1e293b;
+    line-height: 1.60;
+    margin-top: 5px;
+  }
+
+  /* Glossary Grid */
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 7px;
+    margin-bottom: 9px;
+  }
+  .glossary-item {
+    background: #ffffff;
+    border: 1.2px solid #9ca3af;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-size: 13px; /* Upgraded from 11.6px */
+    line-height: 1.55;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    color: #1e293b;
+  }
+  .glossary-term {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 13.5px; /* Upgraded from 11.8px/12px */
+    margin-bottom: 2.5px;
+    border-bottom: 1.2px dotted #6b7280;
+    display: inline-block;
+  }
+
+  /* Ruled Handwriting / Student Notes Box */
+  .notes-box {
+    border: 1.5px dashed #6b7280;
+    border-radius: 4px;
+    background: #fafafa;
+    padding: 9px 13px;
+    margin: 14px 0 16px 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .notes-box-header {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #374151;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+  .notes-box-header span:first-child {
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .notes-box-header span:last-child {
+    font-weight: 600;
+    white-space: nowrap;
+    text-transform: none;
+    color: #4b5563;
+  }
+  .notes-box-lines {
+    height: 90px;
+    background-image: repeating-linear-gradient(transparent, transparent 17px, #d1d5db 17px, #d1d5db 18px);
+  }
+
+  .footer-note {
+    font-size: 12px; /* Upgraded from 10px */
+    color: #475569;
+    text-align: center;
+    border-top: 1px solid #d1d5db;
+    padding-top: 5px;
+    margin-top: 12px;
+  }
+
+/* ================= ISTQB MASTER STUDY DESIGN SYSTEM ================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+h1, h2, h3, h4, .notes-box, .quiz-card, [id^="sec-"] {
+  scroll-margin-top: 65px;
+}
+
+/* ================= SCREEN READING CONTAINER & GUTTERS ================= */
+@media screen {
+  body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+  }
+
+  body.dark-reading-mode {
+    background-color: #060a12 !important;
+    color: #f1f5f9 !important;
+  }
+
+  .study-main-wrapper {
+    width: 95%;
+    max-width: 1540px;
+    margin: 14px auto 50px auto;
+    padding: 26px 36px 44px 36px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  body.dark-reading-mode .study-main-wrapper {
+    background-color: #0b1120 !important;
+    border: 1px solid #1e293b !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .study-main-wrapper {
+    width: 96%;
+    margin: 12px auto 40px auto;
+    padding: 20px 24px 34px 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .study-main-wrapper {
+    width: 98%;
+    margin: 8px auto 28px auto;
+    padding: 16px 14px 24px 14px;
+    border-radius: 8px;
+  }
+}
+
+
+
+/* Base Utility Classes for Enhanced Semantics */
+.si-question-sub {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 13px;
+  color: #475569;
+  margin-top: 4px;
+  line-height: 1.55;
+}
+
+.ch-subtitle-text {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-top: 3px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.card-subtle {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 6px 0;
+}
+
+.card-center-callout {
+  background: #f8fafc;
+  border: 1.5px solid #94a3b8;
+  border-radius: 6px;
+  padding: 10px 14px;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.card-accent-left {
+  border-left: 4px solid #3b82f6 !important;
+}
+
+.card-accent-dark {
+  border-left: 4px solid #1e293b !important;
+}
+
+.metric-pill {
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 2.5px 8px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.progress-bar-fill {
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-weight: 700;
+  text-align: center;
+  display: inline-block;
+}
+
+/* ================= ISTQB STUDY NAVIGATOR ================= */
+#study-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  background: #0f172a;
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Sinhala", sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid #3b82f6;
+  font-size: 13px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.study-nav-container {
+  max-width: 1540px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.study-nav-left, .study-nav-center, .study-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.study-nav-brand {
+  font-weight: 800;
+  color: #60a5fa !important;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #1e293b;
+  border: 1px solid #3b82f6;
+  transition: all 0.2s ease;
+}
+.study-nav-brand span {
+  color: #93c5fd !important;
+}
+.study-nav-brand strong {
+  color: #ffffff !important;
+}
+.study-nav-brand:hover {
+  background: rgba(59, 130, 246, 0.3);
+  color: #93c5fd !important;
+}
+
+.study-nav-pill-group {
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  padding: 3px 4px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  gap: 2px;
+}
+
+.study-nav-pill {
+  color: #cbd5e1 !important;
+  text-decoration: none;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.study-nav-pill:hover {
+  color: #ffffff !important;
+  background: #334155;
+}
+.study-nav-pill.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.study-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #f1f5f9 !important;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.study-nav-btn:hover {
+  background: #334155;
+  border-color: #64748b;
+  color: #ffffff !important;
+}
+
+.study-nav-lang-btn {
+  background: #065f46;
+  border-color: #059669;
+  color: #ecfdf5 !important;
+  font-weight: 700;
+}
+.study-nav-lang-btn:hover {
+  background: #047857;
+  border-color: #10b981;
+}
+
+.study-nav-select {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  max-width: 220px;
+}
+.study-nav-select:focus {
+  border-color: #3b82f6;
+}
+
+/* Floating Actions */
+.floating-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+.floating-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  border: 2px solid #60a5fa;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.floating-btn:hover {
+  transform: translateY(-3px);
+  background: #1d4ed8;
+}
+
+/* Chapter Navigation Footer */
+.chapter-nav-footer {
+  margin-top: 36px;
+  border-top: 2px solid #e2e8f0;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.nav-footer-card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  text-decoration: none !important;
+  color: #1e293b !important;
+  transition: all 0.2s ease;
+}
+.nav-footer-card:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
+.nav-footer-label {
+  font-size: 11.5px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.nav-footer-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Interactive Quiz Tools */
+.quiz-toggle-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  gap: 8px;
+}
+.quiz-toggle-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.quiz-toggle-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+@media screen {
+/* ================= ULTRA-CLEAR HIGH-CONTRAST NIGHT READING THEME ================= */
+body.dark-reading-mode {
+  background-color: #0b1120 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Headings */
+body.dark-reading-mode h1 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+body.dark-reading-mode h2 {
+  color: #93c5fd !important;
+  border-bottom: 2px solid #3b82f6 !important;
+  padding-bottom: 4px;
+}
+body.dark-reading-mode h3 {
+  color: #f8fafc !important;
+}
+body.dark-reading-mode h4,
+body.dark-reading-mode h5 {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .page-start > div,
+body.dark-reading-mode [style*="border-bottom: 2.5px solid"] {
+  border-bottom-color: #3b82f6 !important;
+}
+
+/* Paragraphs, Lists & Body Text */
+body.dark-reading-mode p,
+body.dark-reading-mode li,
+body.dark-reading-mode dd,
+body.dark-reading-mode dt {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode strong,
+body.dark-reading-mode b,
+body.dark-reading-mode th strong,
+body.dark-reading-mode td strong {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+body.dark-reading-mode em,
+body.dark-reading-mode i {
+  color: #f1f5f9 !important;
+}
+body.dark-reading-mode .si-term {
+  color: #38bdf8 !important;
+  font-weight: 600;
+}
+body.dark-reading-mode .si-question-sub {
+  color: #cbd5e1 !important;
+}
+body.dark-reading-mode .ch-subtitle-text {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode code {
+  background-color: #030712 !important;
+  color: #38bdf8 !important;
+  border-color: #1e293b !important;
+}
+body.dark-reading-mode a:not(.study-nav-btn):not(.study-nav-pill):not(.nav-footer-card) {
+  color: #60a5fa !important;
+}
+body.dark-reading-mode a:not(.study-nav-btn):not(.study-nav-pill):not(.nav-footer-card):hover {
+  color: #93c5fd !important;
+}
+
+/* Cards & Containers */
+body.dark-reading-mode .card,
+body.dark-reading-mode .card-subtle,
+body.dark-reading-mode .card-center-callout {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45) !important;
+}
+body.dark-reading-mode .card-accent-left {
+  border-left-color: #3b82f6 !important;
+}
+body.dark-reading-mode .card-accent-dark {
+  border-left-color: #60a5fa !important;
+}
+
+/* Callouts */
+body.dark-reading-mode .callout {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  border-left: 4px solid #3b82f6 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-info {
+  background-color: #0c1e38 !important;
+  border-left-color: #38bdf8 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-exam {
+  background-color: #122147 !important;
+  border-left-color: #3b82f6 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-warning,
+body.dark-reading-mode .callout-trap {
+  background-color: #2b1704 !important;
+  border-left-color: #f59e0b !important;
+  color: #fef3c7 !important;
+}
+body.dark-reading-mode .callout-warning *,
+body.dark-reading-mode .callout-trap * {
+  color: #fef3c7 !important;
+}
+body.dark-reading-mode .callout-warning strong,
+body.dark-reading-mode .callout-trap strong {
+  color: #fde68a !important;
+}
+body.dark-reading-mode .callout-danger {
+  background-color: #2b0b0b !important;
+  border-left-color: #ef4444 !important;
+  color: #fee2e2 !important;
+}
+body.dark-reading-mode .callout-danger * {
+  color: #fee2e2 !important;
+}
+body.dark-reading-mode .callout-danger strong {
+  color: #fca5a5 !important;
+}
+body.dark-reading-mode .callout-success {
+  background-color: #05281a !important;
+  border-left-color: #10b981 !important;
+  color: #d1fae5 !important;
+}
+body.dark-reading-mode .callout-success * {
+  color: #d1fae5 !important;
+}
+body.dark-reading-mode .callout-success strong {
+  color: #6ee7b7 !important;
+}
+
+/* Tables */
+body.dark-reading-mode table {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3) !important;
+}
+body.dark-reading-mode th {
+  background-color: #1a273e !important;
+  color: #93c5fd !important;
+  border-color: #22324e !important;
+  border-bottom: 2px solid #3b82f6 !important;
+}
+body.dark-reading-mode td {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+  border-color: #1e293b !important;
+}
+body.dark-reading-mode tr:nth-child(even) td {
+  background-color: #131d31 !important;
+}
+body.dark-reading-mode tr:hover td {
+  background-color: #1e2d4a !important;
+}
+
+/* Badges & Metrics */
+body.dark-reading-mode .badge {
+  background-color: #1e293b !important;
+  color: #93c5fd !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .badge-k1 {
+  background-color: #0f2b5c !important;
+  color: #93c5fd !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .badge-k2 {
+  background-color: #2e1065 !important;
+  color: #d8b4fe !important;
+  border-color: #8b5cf6 !important;
+}
+body.dark-reading-mode .badge-k3 {
+  background-color: #431407 !important;
+  color: #fdba74 !important;
+  border-color: #f97316 !important;
+}
+body.dark-reading-mode .badge-keyword {
+  background-color: #064e3b !important;
+  color: #6ee7b7 !important;
+  border-color: #10b981 !important;
+}
+body.dark-reading-mode .metric-pill {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .progress-bar-fill {
+  background: linear-gradient(90deg, #2563eb, #38bdf8) !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+
+/* Tool Boxes */
+body.dark-reading-mode .tool-box {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  border-left: 4px solid #3b82f6 !important;
+}
+body.dark-reading-mode .tool-box-title {
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .tool-box-desc {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .tool-examples {
+  border-top-color: #22324e !important;
+  color: #94a3b8 !important;
+}
+
+/* Glossary */
+body.dark-reading-mode .glossary-item {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .glossary-term {
+  color: #60a5fa !important;
+  border-bottom-color: #3b82f6 !important;
+}
+
+/* Practice Questions */
+body.dark-reading-mode .quiz-card {
+  background-color: #131d31 !important;
+  border: 1.5px solid #22324e !important;
+  border-left: 5px solid #3b82f6 !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+}
+body.dark-reading-mode .quiz-q {
+  color: #ffffff !important;
+}
+body.dark-reading-mode .quiz-opt {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .quiz-opt:hover {
+  background-color: #1e2d4a !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .quiz-answer {
+  background-color: #0b1222 !important;
+  border-top: 1.5px dashed #38bdf8 !important;
+  color: #f1f5f9 !important;
+}
+body.dark-reading-mode .quiz-toggle-btn {
+  background-color: #1e2d4a !important;
+  border-color: #3b82f6 !important;
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .quiz-toggle-btn:hover {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+}
+
+/* Ruled Handwriting Notes Box */
+body.dark-reading-mode .notes-box {
+  background-color: #0b1222 !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .notes-box-header {
+  color: #93c5fd !important;
+  border-bottom-color: #22324e !important;
+}
+body.dark-reading-mode .notes-box-header span {
+  color: #cbd5e1 !important;
+}
+body.dark-reading-mode .notes-box-lines {
+  background-image: repeating-linear-gradient(transparent, transparent 17px, #263859 17px, #263859 18px) !important;
+}
+
+/* Quadrants, Formulas & Footer */
+body.dark-reading-mode .quadrant-card {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .formula-box {
+  background-color: #0b1222 !important;
+  border-color: #3b82f6 !important;
+  color: #38bdf8 !important;
+}
+body.dark-reading-mode .footer-note {
+  color: #94a3b8 !important;
+  border-top-color: #22324e !important;
+}
+
+/* Study Navbar in Dark Mode */
+body.dark-reading-mode #study-navbar {
+  background: #060a12 !important;
+  border-bottom-color: #3b82f6 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+}
+body.dark-reading-mode .study-nav-brand {
+  background: #1e293b !important;
+  color: #60a5fa !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-brand span {
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .study-nav-brand strong {
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-pill-group {
+  background: #0d1527 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-pill {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode .study-nav-pill:hover {
+  background: #1e2d4a !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-pill.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-select {
+  background-color: #131d31 !important;
+  color: #ffffff !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-select option {
+  background: #0b1120 !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-btn {
+  background: #131d31 !important;
+  color: #cbd5e1 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-btn:hover {
+  background: #1e2d4a !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-lang-btn {
+  background: #064e3b !important;
+  color: #6ee7b7 !important;
+  border-color: #059669 !important;
+}
+body.dark-reading-mode .study-nav-lang-btn:hover {
+  background: #047857 !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode #theme-toggle-btn {
+  background: #facc15 !important;
+  color: #000000 !important;
+  border-color: #eab308 !important;
+  font-weight: 700 !important;
+}
+body.dark-reading-mode #theme-toggle-btn:hover {
+  background: #fef08a !important;
+}
+
+/* Floating Actions & Footer */
+body.dark-reading-mode .floating-btn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+body.dark-reading-mode .chapter-nav-footer {
+  border-top-color: #22324e !important;
+}
+body.dark-reading-mode .nav-footer-card {
+  background: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+}
+body.dark-reading-mode .nav-footer-card:hover {
+  background: #1e2d4a !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+}
+body.dark-reading-mode .nav-footer-label {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode .nav-footer-title {
+  color: #60a5fa !important;
+}
+
+/* Fallback Universal Overrides */
+body.dark-reading-mode [style*="color: #111827"],
+body.dark-reading-mode [style*="color: #374151"],
+body.dark-reading-mode [style*="color: #4b5563"],
+body.dark-reading-mode [style*="color: #000000"],
+body.dark-reading-mode [style*="color: black"],
+body.dark-reading-mode [style*="color:#111827"],
+body.dark-reading-mode [style*="color:#374151"] {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode strong[style*="color:"],
+body.dark-reading-mode b[style*="color:"] {
+  color: #ffffff !important;
+}
+}
+
+/* ================= AUTHORITATIVE PUBLICATION-GRADE PRINT STYLES ================= */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm 14mm 14mm;
+  }
+
+  /* Universal reset to high-contrast ink-friendly black on pure white */
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  html,
+  body,
+  body.dark-reading-mode {
+    padding-top: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: block !important;
+    font-family: "Inter", "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.68 !important;
+    font-weight: 450 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Reset layout wrapper to full print width with pure white background */
+  .study-main-wrapper,
+  body.dark-reading-mode .study-main-wrapper,
+  body .study-main-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Completely suppress interactive and navigation UI */
+  #study-navbar,
+  .floating-actions,
+  .chapter-nav-footer,
+  .quiz-toggle-bar,
+  .btn-reveal-answer,
+  .study-nav-btn,
+  .format-btn,
+  button {
+    display: none !important;
+  }
+
+  /* Headings: Razor sharp solid black with clean dividers */
+  h1, h2, h3, h4, h5 {
+    color: #000000 !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    font-family: "Inter", "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  }
+
+  h1 {
+    font-size: 22px !important;
+    border-bottom: 2.5px solid #000000 !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 12px !important;
+    font-weight: 800 !important;
+    color: #000000 !important;
+  }
+
+  h2 {
+    font-size: 17px !important;
+    border-bottom: 1.8px solid #000000 !important;
+    padding-bottom: 4px !important;
+    margin-top: 18px !important;
+    margin-bottom: 10px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  h3 {
+    font-size: 15.5px !important;
+    margin-top: 14px !important;
+    margin-bottom: 6px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  h4, h5 {
+    font-size: 14.5px !important;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  /* Body Text, Paragraphs, Lists: Large, crystal clear & comfortable */
+  p, li, dd, dt {
+    font-size: 14.8px !important;
+    line-height: 1.68 !important;
+    color: #000000 !important;
+    margin-bottom: 8px !important;
+  }
+
+  span, em, i, b, label, small {
+    color: #000000 !important;
+  }
+
+  strong {
+    color: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Override any inline colored borders or title accents to crisp black */
+  .page-start > div,
+  [style*="border-bottom: 2.5px solid"],
+  [style*="border-bottom:2.5px solid"] {
+    border-bottom-color: #000000 !important;
+  }
+
+  /* All Containers: Pure White Background with Crisp High-Contrast Black Borders */
+  .card,
+  .card-subtle,
+  .card-center-callout,
+  .callout,
+  .tool-box,
+  .glossary-item,
+  .quiz-card,
+  .formula-box,
+  .quadrant-card {
+    border: 1.2px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 14.5px !important;
+    line-height: 1.65 !important;
+    color: #000000 !important;
+  }
+
+  /* Callouts: Bold Solid Black Left Accent Bar */
+  .callout,
+  .callout-info,
+  .callout-warning,
+  .callout-danger,
+  .callout-success,
+  .callout-exam,
+  .callout-trap,
+  .card-accent-left,
+  .card-accent-dark {
+    border: 1.2px solid #000000 !important;
+    border-left: 4.5px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .callout *,
+  .callout-warning *,
+  .callout-trap *,
+  .callout-danger *,
+  .callout-success * {
+    color: #000000 !important;
+  }
+
+  /* Practice Questions: Large, easily legible layout */
+  .quiz-card {
+    border: 1.2px solid #000000 !important;
+    border-left: 4.5px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .quiz-q {
+    color: #000000 !important;
+    font-weight: 800 !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .quiz-opt {
+    color: #000000 !important;
+    font-size: 14.2px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Practice Exam Answers: Distinct white box with black outline */
+  .quiz-answer {
+    display: block !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1.2px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    color: #000000 !important;
+    border-radius: 4px !important;
+    padding: 10px 14px !important;
+    font-size: 14.2px !important;
+    line-height: 1.65 !important;
+    margin-top: 10px !important;
+  }
+
+  .quiz-answer,
+  .quiz-answer * {
+    color: #000000 !important;
+  }
+
+  /* Badges & Tags: Sharp black outline & bold black text */
+  .badge,
+  .badge-k1,
+  .badge-k2,
+  .badge-k3,
+  .badge-keyword,
+  .metric-pill {
+    display: inline-block !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1.2px solid #000000 !important;
+    padding: 2.5px 7.5px !important;
+    border-radius: 3px !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  /* Tables: Sharp publication borders & generous padding */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 12px 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 1.5px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  th, thead th {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1.2px solid #000000 !important;
+    border-bottom: 2.5px solid #000000 !important;
+    padding: 8px 11px !important;
+    font-weight: 800 !important;
+    font-size: 14.2px !important;
+  }
+
+  td {
+    border: 1px solid #000000 !important;
+    padding: 7px 11px !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    font-size: 14px !important;
+    line-height: 1.62 !important;
+  }
+
+  tr:nth-child(even) td,
+  tr:nth-child(odd) td {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  /* Student Handwriting Note Boxes */
+  .notes-box {
+    border: 1.5px dashed #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    padding: 10px 14px !important;
+    margin-top: 14px !important;
+  }
+
+  .notes-box-header {
+    color: #000000 !important;
+    border-bottom: 1.2px solid #000000 !important;
+    font-size: 14.8px !important;
+  }
+
+  .notes-box-header span {
+    color: #000000 !important;
+  }
+
+  .notes-box-lines {
+    height: 90px !important;
+    background-image: repeating-linear-gradient(transparent, transparent 17px, #555555 17px, #555555 18px) !important;
+  }
+
+  /* Tool boxes & Glossary */
+  .tool-box-title {
+    color: #000000 !important;
+    font-size: 15.5px !important;
+    font-weight: 800 !important;
+  }
+
+  .tool-box-desc,
+  .tool-examples {
+    font-size: 14.8px !important;
+    line-height: 1.68 !important;
+    color: #000000 !important;
+  }
+
+  .glossary-term {
+    color: #000000 !important;
+    font-size: 15.5px !important;
+    font-weight: 800 !important;
+    border-bottom: 1.2px solid #000000 !important;
+  }
+
+  /* Code elements: Crisp white box with solid outline */
+  code {
+    background-color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    padding: 1.5px 5px !important;
+    border-radius: 3px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  }
+
+  /* Sinhala specific clarity */
+  .si-term {
+    color: #000000 !important;
+    font-size: 14.8px !important;
+    font-weight: 700 !important;
+  }
+
+  .si-question-sub {
+    color: #000000 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  .ch-subtitle-text {
+    color: #000000 !important;
+    font-size: 14px !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= STUDY NAVBAR ================= -->
+<nav id="study-navbar">
+  <div class="study-nav-container">
+    <div class="study-nav-left">
+      <a href="../index.html" class="study-nav-brand" title="Master Study Dashboard">
+        <strong>ISTQB® CTFL Hub</strong>
+      </a>
+      <div class="study-nav-pill-group">
+        <a href="istqb_ch1_study_guide.html" class="study-nav-pill" title="Chapter 01: Fundamentals of Testing">Ch 1</a><a href="istqb_ch2_study_guide.html" class="study-nav-pill" title="Chapter 02: Testing Throughout the SDLC">Ch 2</a><a href="istqb_ch3_study_guide.html" class="study-nav-pill" title="Chapter 03: Static Testing">Ch 3</a><a href="istqb_ch4_study_guide.html" class="study-nav-pill active" title="Chapter 04: Test Analysis and Design">Ch 4</a><a href="istqb_ch5_study_guide.html" class="study-nav-pill" title="Chapter 05: Managing the Test Activities">Ch 5</a><a href="istqb_ch6_study_guide.html" class="study-nav-pill" title="Chapter 06: Test Tools">Ch 6</a><a href="../05_Practice_Questions_and_Summaries/istqb_mock_exam_simulator.html" class="study-nav-pill" style="background: #064e3b; color: #a7f3d0 !important; border: 1px solid #059669;" title="Launch Official 40-Question Mock Exam Simulator">40Q Simulator</a><a href="../study_map.html" class="study-nav-pill" title="Library Index & Master Study Roadmap">Roadmap</a>
+      </div>
+    </div>
+
+    <div class="study-nav-center">
+      <select class="study-nav-select" onchange="jumpToSection(this)">
+        <option value="">Jump to Section...</option><option value="sec-core">1. Core Syllabus Concepts</option><option value="sec-4-1">  4.1 Test Techniques Overview</option><option value="sec-4-2">  4.2 Black-Box Test Techniques</option><option value="sec-4-3">  4.3 White-Box Test Techniques</option><option value="sec-4-4">  4.4 Experience-Based Techniques</option><option value="sec-4-5">  4.5 Collaboration-Based Approaches</option><option value="sec-flashpoints">2. High-Yield Exam Flashpoints</option><option value="sec-glossary">3. Keyword Lexicon (Official Terms)</option><option value="sec-questions">4. Practice Exam Questions & Answers</option><option value="sec-notes">5. Student Handwriting Notes</option>
+      </select>
+      <a href="istqb_ch3_study_guide.html" class="study-nav-btn" title="Go to Ch 3: Static Testing"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px;"><polyline points="15 18 9 12 15 6"></polyline></svg>Prev</a>
+      <a href="istqb_ch5_study_guide.html" class="study-nav-btn" title="Go to Ch 5: Test Management">Next<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:4px;"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+
+    <div class="study-nav-right">
+      <a href="javascript:void(0)" onclick="switchLanguage('../03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch4_study_guide_sinhala.html')" class="study-nav-btn study-nav-lang-btn" title="Switch language for Chapter 4">
+        සිංහල අනුවාදය
+      </a>
+      <button id="theme-toggle-btn" class="study-nav-btn" onclick="toggleReadingTheme()" title="Toggle Reading Theme">
+        Theme
+      </button>
+      <button class="study-nav-btn" onclick="window.print()" title="Print this guide or save as PDF">
+        Print
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Reading Document Container -->
+<div class="study-main-wrapper">
+
+
+<!-- ==================== PAGE 1: LESSON CONTENT ==================== -->
+  <div class="page-start" style="margin-top: 0;">
+    <div style="margin-bottom: 8px; border-bottom: 2.5px solid #2563eb; padding-bottom: 4px;">
+      <h1 style="font-size: 20px; font-weight: 800; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">Chapter 04: Test Analysis and Design</h1>
+    </div>
+
+    <h2 id="sec-core">1. Core Syllabus Concepts & In-Depth Notes</h2>
+
+
+    <h3 id="sec-4-1">4.1 Test Techniques Overview <span class="badge badge-k2">FL-4.1.1 (K2)</span></h3>
+    <p>
+      Test techniques support the tester during <strong>Test Analysis ("what to test")</strong> and <strong>Test Design ("how to test")</strong>. They provide a systematic method to create a relatively small but sufficient set of test cases, identify coverage items, and define precise test data (ISO/IEC/IEEE 29119-4).
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 20%;">Technique Category</th>
+          <th style="width: 38%;">Basis of Test Derivation</th>
+          <th style="width: 42%;">Core Strengths & Unique Characteristics</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Black-Box<br>(Specification-Based)</strong></td>
+          <td>Specified behavior of the test object without reference to internal code structure.</td>
+          <td>Tests are independent of implementation; if code is refactored without spec changes, tests remain valid. Detects deviations from specification.</td>
+        </tr>
+        <tr>
+          <td><strong>White-Box<br>(Structure-Based)</strong></td>
+          <td>Internal structure and processing (source code, architecture, data flows, workflows).</td>
+          <td>Takes entire implementation into account; created after design/code; enables objective code coverage measurement.</td>
+        </tr>
+        <tr>
+          <td><strong>Experience-Based</strong></td>
+          <td>Tester's knowledge, past experience, domain insight, and known developer error patterns.</td>
+          <td>Detects subtle, obscure defects often missed by black-box and white-box methods; highly complementary to formal techniques.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="sec-4-2">4.2 Black-Box Test Techniques</h3>
+
+    <h4>4.2.1 Equivalence Partitioning (EP) <span class="badge badge-k3">FL-4.2.1 (K3)</span></h4>
+    <div class="card" style="border-left: 4px solid #4b5563; margin-bottom: 5px;">
+      <strong>Core Principle:</strong> Equivalence Partitioning divides input/output data into partitions based on the assumption that <strong>all elements in a given partition are processed in the same way</strong> by the system. If one value detects a defect, all other values in that partition are expected to detect the same defect. Therefore, <em>one test per partition is sufficient</em>.
+    </div>
+
+    <ul>
+      <li>Partitions may be continuous or discrete, ordered or unordered, finite or infinite.</li>
+      <li>Partitions must be <strong>non-empty</strong> and <strong>must not overlap</strong>.</li>
+      <li><strong>Valid Partitions:</strong> Values that should be processed by the test object according to specifications.</li>
+      <li><strong>Invalid Partitions:</strong> Values that should be ignored or rejected by the test object.</li>
+    </ul>
+
+    <div class="callout callout-trap">
+      <strong>CRITICAL EXAM RULE — Isolation of Invalid Partitions (Avoid Defect Masking):</strong><br>
+      To prevent <strong>defect masking</strong> (a situation where one defect conceals another), <strong>each invalid partition MUST be tested in isolation</strong> (one invalid value per test case, combined only with valid values for other parameters). Valid partitions, by contrast, can be freely combined in a single test case.
+    </div>
+
+    <div class="formula-box">
+      EP Coverage (%) = <span class="math-frac"><span class="math-num">Partitions Exercised by at Least One Test Case</span><span class="math-den">Total Number of Identified Partitions (Valid + Invalid)</span></span> &times; 100%
+    </div>
+
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-top: 5px;">
+      <strong>Each Choice Coverage (Multiple Input Sets):</strong>
+      <p style="margin-top: 1px;">
+        When a test item has multiple input parameters, <strong>Each Choice coverage</strong> requires that each partition from each input set is exercised at least once. It does not require testing all combinations of partitions, avoiding combinatorial explosion.
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 4: 4.2.2 BOUNDARY VALUE ANALYSIS ==================== -->
+  <div class="page-start">
+    <h4>4.2.2 Boundary Value Analysis (BVA) <span class="badge badge-k3">FL-4.2.2 (K3)</span></h4>
+    <div class="card" style="border-left: 4px solid #4b5563; margin-bottom: 5px;">
+      <strong>Core Principle:</strong> BVA tests the boundaries of equivalence partitions. It is applicable <strong>ONLY to ordered partitions</strong> (numbers, sequential dates, chronological data). Developers make the most errors at boundaries (e.g., using <code>&lt;</code> instead of <code>&lt;=</code>, or off-by-one errors).
+    </div>
+
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>2-Value BVA (Craig 2002, Myers 2011)</strong>
+        <p style="margin-top: 2px;">
+          For each boundary, there are <strong>two coverage items</strong>:
+          <br>1. The <strong>boundary value</strong> itself.
+          <br>2. Its <strong>closest neighbor</strong> belonging to the adjacent partition.
+        </p>
+        <div class="card-subtle">
+          <em>Example: Valid Integer Range [1 to 10]</em><br>
+          &bull; Min boundary (1): <strong>1</strong> (valid), <strong>0</strong> (invalid)<br>
+          &bull; Max boundary (10): <strong>10</strong> (valid), <strong>11</strong> (invalid)<br>
+          <strong>Total test values: 0, 1, 10, 11 (4 tests)</strong>
+        </div>
+      </div>
+      <div class="card card-accent-left">
+        <strong>3-Value BVA (Koomen 2006, O'Regan 2019)</strong>
+        <p style="margin-top: 2px;">
+          For each boundary, there are <strong>three coverage items</strong>:
+          <br>1. The <strong>boundary value</strong> itself.
+          <br>2. <strong>Both of its immediate neighbors</strong> (left & right).
+        </p>
+        <div class="card-subtle">
+          <em>Example: Valid Integer Range [1 to 10]</em><br>
+          &bull; Lower boundary: <strong>0, 1, 2</strong><br>
+          &bull; Upper boundary: <strong>9, 10, 11</strong><br>
+          <strong>Total test values: 0, 1, 2, 9, 10, 11 (6 tests)</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-exam" style="margin-top: 6px;">
+      <strong>Why is 3-Value BVA More Rigorous than 2-Value BVA?</strong><br>
+      If code is incorrectly written as <code>if (x == 10)</code> instead of <code>if (x &lt;= 10)</code>, 2-value BVA test data ($x = 10, x = 11$) will <strong>NOT</strong> detect the flaw (both yield expected results for those inputs). However, 3-value BVA tests $x = 9$, which immediately triggers a failure!
+    </div>
+
+    <div class="formula-box">
+      BVA Coverage (%) = <span class="math-frac"><span class="math-num">Number of Boundary Values (and Neighbors) Exercised</span><span class="math-den">Total Number of Identified Boundary Values (and Neighbors)</span></span> &times; 100%
+    </div>
+
+    <h4 style="margin-top: 6px;">Visual Comparison of EP vs. 2-Value BVA vs. 3-Value BVA:</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Technique</th>
+          <th style="width: 35%;">Test Values Derived for Range [1, 10]</th>
+          <th style="width: 40%;">Total Coverage Items</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Equivalence Partitioning</strong></td>
+          <td>Any valid (e.g. 5), Any invalid low (-3), Any invalid high (15)</td>
+          <td>3 partitions (100% EP coverage requires 3 test cases)</td>
+        </tr>
+        <tr>
+          <td><strong>2-Value BVA</strong></td>
+          <td>0 (invalid), 1 (valid), 10 (valid), 11 (invalid)</td>
+          <td>4 boundary values (100% 2-val coverage requires 4 test values)</td>
+        </tr>
+        <tr>
+          <td><strong>3-Value BVA</strong></td>
+          <td>0, 1, 2 (around lower) and 9, 10, 11 (around upper)</td>
+          <td>6 boundary values & neighbors (100% 3-val coverage = 6 values)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 5: 4.2.3 DECISION TABLE TESTING ==================== -->
+  <div class="page-start">
+    <h4>4.2.3 Decision Table Testing <span class="badge badge-k3">FL-4.2.3 (K3)</span></h4>
+    <div class="card" style="border-left: 4px solid #4b5563; margin-bottom: 5px;">
+      <strong>Core Principle:</strong> Decision tables test requirements that specify how <strong>different combinations of conditions result in different outcomes</strong>. They provide an exhaustive, systematic approach to document complex business rules, preventing logic gaps and contradictions.
+    </div>
+
+    <p>
+      <strong>Structure:</strong> Conditions (inputs/causes) and Actions (outputs/effects) form the <strong>rows</strong>. Each <strong>column</strong> corresponds to a <strong>decision rule</strong> defining a unique combination of conditions and associated actions.
+    </p>
+
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>Limited-Entry Decision Tables:</strong>
+        <p style="margin-top: 2px;">
+          All conditions and actions are Boolean:
+          <br>&bull; <code>T</code> = Condition satisfied (True)
+          <br>&bull; <code>F</code> = Condition not satisfied (False)
+          <br>&bull; <code>&ndash;</code> = Condition is irrelevant for action outcome
+          <br>&bull; <code>N/A</code> = Condition combination is infeasible
+          <br>&bull; <code>X</code> = Action occurs | <em>Blank</em> = Action does not occur
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>Extended-Entry Decision Tables:</strong>
+        <p style="margin-top: 2px;">
+          Conditions or actions take on multiple values, such as ranges of numbers, equivalence partitions, or discrete enumeration categories (e.g., Bronze, Silver, Gold).
+        </p>
+      </div>
+    </div>
+
+    <h4>Worked Example: E-Commerce Free Shipping & Discount Decision Table</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 32%;">Conditions & Actions</th>
+          <th style="width: 17%;">Rule 1</th>
+          <th style="width: 17%;">Rule 2</th>
+          <th style="width: 17%;">Rule 3</th>
+          <th style="width: 17%;">Rule 4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Condition 1: VIP Member?</strong></td>
+          <td>T</td>
+          <td>T</td>
+          <td>F</td>
+          <td>F</td>
+        </tr>
+        <tr>
+          <td><strong>Condition 2: Order &gt; $100?</strong></td>
+          <td>T</td>
+          <td>F</td>
+          <td>T</td>
+          <td>F</td>
+        </tr>
+        <tr class="card-subtle">
+          <td><strong>Action 1: Free Shipping</strong></td>
+          <td>X</td>
+          <td>X</td>
+          <td>X</td>
+          <td></td>
+        </tr>
+        <tr class="card-subtle">
+          <td><strong>Action 2: 10% Discount</strong></td>
+          <td>X</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="formula-box">
+      Decision Table Coverage (%) = <span class="math-frac"><span class="math-num">Number of Feasible Columns (Rules) Exercised</span><span class="math-den">Total Number of Feasible Columns</span></span> &times; 100%
+    </div>
+
+    <div class="callout callout-exam">
+      <strong>Full vs. Minimized Decision Tables:</strong><br>
+      A full Boolean table with $n$ conditions has $2^n$ columns. To save test effort, tables are <strong>simplified</strong> by removing infeasible columns, and <strong>minimized</strong> by merging columns where certain conditions do not affect the outcome (marked with a dash <code>&ndash;</code>).
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 6: 4.2.4 STATE TRANSITION TESTING ==================== -->
+  <div class="page-start">
+    <h4>4.2.4 State Transition Testing <span class="badge badge-k3">FL-4.2.4 (K3)</span></h4>
+    <div class="card" style="border-left: 4px solid #4b5563; margin-bottom: 5px;">
+      <strong>Core Principle:</strong> A <strong>state diagram</strong> models the behavior of a system by showing its possible states and valid state transitions. Transitions are instantaneous, triggered by an event, qualified by a guard condition, and may result in an action:
+      <div style="text-align: center; margin-top: 3px; font-weight: 700;">
+        <code>event [guard condition] / action</code>
+      </div>
+    </div>
+
+    <p>
+      <strong>State Diagram vs. State Table:</strong> A state table lists current states in rows and events in columns. Table cells represent resulting transitions and actions. <em>Crucial distinction:</em> While state diagrams show only valid paths, a <strong>state table explicitly highlights invalid transitions</strong> (represented by empty cells).
+    </p>
+
+    <h4>Three Coverage Criteria for State Transition Testing:</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Coverage Criterion</th>
+          <th style="width: 45%;">Coverage Items & Requirement for 100% Coverage</th>
+          <th style="width: 30%;">Rigor & Subsumption</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. All States Coverage</strong></td>
+          <td>Coverage items are the <strong>states</strong>. Test cases must ensure that every single state is exercised at least once.</td>
+          <td><strong>Weakest criterion</strong>; can be achieved without exercising all transitions.</td>
+        </tr>
+        <tr>
+          <td><strong>2. Valid Transitions Coverage<br>(0-Switch Coverage)</strong></td>
+          <td>Coverage items are <strong>single valid transitions</strong>. Test cases must exercise every valid transition at least once.</td>
+          <td><strong>Most widely used</strong> criterion. 100% valid transitions coverage <em>guarantees 100% all states coverage</em>!</td>
+        </tr>
+        <tr>
+          <td><strong>3. All Transitions Coverage</strong></td>
+          <td>Coverage items are <strong>all transitions (valid and invalid)</strong> shown in a state table. Tests all valid transitions AND attempts all invalid transitions.</td>
+          <td><strong>Most rigorous</strong>. Mandatory for safety/mission-critical software. Guarantees both valid transitions and all states coverage!</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-trap">
+      <strong>AVOIDING DEFECT MASKING IN STATE TESTING:</strong><br>
+      When executing <strong>invalid transitions</strong>, test <strong>only ONE invalid transition in a single test case</strong>. If multiple invalid transitions are strung together, the first failure masks whether the subsequent invalid transition would have been handled properly!
+    </div>
+
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-top: 5px;">
+      <strong>Example: E-Commerce Order Lifecycle</strong>
+      <p style="margin-top: 1px;">
+        States: [Cart] &rarr; [Placed] &rarr; [Shipped] &rarr; [Delivered] or [Cancelled].
+        <br>&bull; A test covering <em>Placed &rarr; Shipped &rarr; Delivered</em> exercises 3 valid transitions.
+        <br>&bull; Attempting <em>Delivered &rarr; Cancelled</em> is an invalid transition that must be rejected.
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 7: 4.3 WHITE-BOX TECHNIQUES ==================== -->
+  <div class="page-start">
+    <h3 id="sec-4-3">4.3 White-Box Test Techniques <span class="badge badge-k2">FL-4.3.1 to FL-4.3.3 (K2)</span></h3>
+    <p>
+      White-box (structure-based) techniques derive tests from an analysis of the software's internal architecture, source code, data flows, and control logic. The syllabus focuses on two fundamental code-level techniques:
+    </p>
+
+    <h4>4.3.1 Statement Testing and Statement Coverage (FL-4.3.1)</h4>
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-bottom: 5px;">
+      <strong>Coverage Items:</strong> Executable code statements. The goal is to design test cases that execute statements until acceptable coverage is achieved.
+    </div>
+    <div class="formula-box">
+      Statement Coverage (%) = <span class="math-frac"><span class="math-num">Number of Executable Statements Exercised</span><span class="math-den">Total Number of Executable Statements in Code</span></span> &times; 100%
+    </div>
+    <p >
+      <strong>Limitation:</strong> 100% statement coverage ensures every statement executes at least once, but it does <em>not</em> ensure that all decision logic has been tested (e.g., missing an <code>else</code> branch with no statements). It also cannot detect data-dependent errors (e.g. division by zero occurring only when input is zero).
+    </p>
+
+    <h4>4.3.2 Branch Testing and Branch Coverage (FL-4.3.2)</h4>
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-bottom: 5px;">
+      <strong>Coverage Items:</strong> Branches. A <strong>branch</strong> is a transfer of control between two nodes in the control flow graph. Branches can be <strong>unconditional</strong> (straight-line sequential code) or <strong>conditional</strong> (decision outcomes: <code>True</code> / <code>False</code> from an <code>if</code> decision, switch cases, loop exits).
+    </div>
+    <div class="formula-box">
+      Branch Coverage (%) = <span class="math-frac"><span class="math-num">Number of Branches Exercised</span><span class="math-den">Total Number of Branches in Code</span></span> &times; 100%
+    </div>
+
+    <div class="callout callout-exam">
+      <strong>THE SUBSUMPTION PRINCIPLE (CRITICAL EXAM FLASHPOINT):</strong><br>
+      <strong>Branch coverage subsumes statement coverage!</strong><br>
+      Any test suite that achieves <strong>100% branch coverage</strong> is mathematically guaranteed to achieve <strong>100% statement coverage</strong>. The reverse is <strong>NOT TRUE</strong>: 100% statement coverage does NOT guarantee 100% branch coverage (an <code>if</code> without an <code>else</code> only requires one test to execute the statement, leaving the False branch untested!).
+    </div>
+
+    <h4>4.3.3 The Value of White-Box Testing (FL-4.3.3)</h4>
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>Fundamental Strengths:</strong>
+        <ul style="margin: 2px 0 0 14px;">
+          <li>Takes the entire implementation into account, uncovering defects even if specifications are vague, outdated, or incomplete.</li>
+          <li>Provides an objective, quantifiable measurement of code coverage.</li>
+          <li>Can be applied in static testing during dry runs of code, pseudocode reviews, and architecture control flow analysis.</li>
+        </ul>
+      </div>
+      <div class="card card-accent-left">
+        <strong>Corresponding Weakness:</strong>
+        <ul style="margin: 2px 0 0 14px;">
+          <li><strong>Cannot Detect Defects of Omission (Watson 1996):</strong> If a business requirement was completely omitted from the code, white-box testing can achieve 100% coverage without ever detecting that the required feature is missing!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 8: 4.4 EXPERIENCE-BASED TECHNIQUES ==================== -->
+  <div class="page-start">
+    <h3 id="sec-4-4">4.4 Experience-Based Test Techniques <span class="badge badge-k2">FL-4.4.1 to FL-4.4.3 (K2)</span></h3>
+    <p>
+      Experience-based techniques leverage the tester's knowledge, intuition, domain expertise, and past failure insights. They are highly effective at finding edge-case defects overlooked by structured black-box and white-box methods:
+    </p>
+
+    <h4>4.4.1 Error Guessing (FL-4.4.1)</h4>
+    <p>
+      Anticipates the occurrence of errors, defects, and failures based on tester knowledge: how the software worked in the past, types of mistakes developers tend to make, and failures that occurred in similar applications.
+    </p>
+    <ul>
+      <li>Errors/defects typically relate to: <em>inputs</em> (invalid characters, missing parameters), <em>outputs</em> (format errors), <em>logic</em> (missing conditions), <em>computation</em> (overflows), <em>interfaces</em> (mismatched data types), or <em>data</em> (uninitialized variables).</li>
+      <li><strong>Fault Attacks:</strong> A structured implementation of error guessing where testers compile lists of known vulnerabilities and design tests specifically to expose those faults (Whittaker 2002).</li>
+    </ul>
+
+    <h4>4.4.2 Exploratory Testing (FL-4.4.2)</h4>
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-bottom: 5px;">
+      <strong>Formal Definition:</strong> In <strong>exploratory testing</strong>, tests are simultaneously <strong>designed, executed, and evaluated</strong> while the tester actively learns about the test object.
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <strong>Session-Based Testing Framework:</strong>
+        <ul style="margin: 2px 0 0 14px;">
+          <li>Testing is conducted within an uninterrupted, defined <strong>time box</strong> (e.g., 60–90 mins).</li>
+          <li>Guided by a <strong>test charter</strong> containing high-level test objectives.</li>
+          <li>Findings and execution steps documented in <strong>test session sheets</strong>.</li>
+          <li>Followed by a <strong>debriefing</strong> meeting between tester and stakeholders.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>When is Exploratory Testing Best?</strong>
+        <ul style="margin: 2px 0 0 14px;">
+          <li>When specifications are sparse, vague, or absent.</li>
+          <li>Under severe time pressure to provide rapid quality feedback.</li>
+          <li>As a powerful complement to formal techniques.</li>
+          <li>Can incorporate other techniques (e.g. applying EP dynamically during exploration).</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>4.4.3 Checklist-Based Testing (FL-4.4.3)</h4>
+    <p>
+      Testers design and execute tests to cover test conditions from a structured checklist. Checklists are built from past experience, understanding of common failure modes, or quality heuristics (e.g., Nielsen's 10 usability heuristics).
+    </p>
+    <ul>
+      <li>Checklist items are typically phrased as questions (e.g., <em>"Are all currency fields rounded to 2 decimal places?"</em>).</li>
+      <li><strong>Maintenance:</strong> Must be updated based on defect analysis. Remove obsolete items so checklists do not become too long (Gawande 2009).</li>
+      <li><strong>Trade-Off:</strong> Provides high coverage and guidelines in the absence of detailed test cases, but allows individual tester variability (higher coverage, but less repeatability).</li>
+    </ul>
+  </div>
+
+  <!-- ==================== PAGE 9: 4.5 COLLABORATION-BASED TEST APPROACHES ==================== -->
+  <div class="page-start">
+    <h3 id="sec-4-5">4.5 Collaboration-Based Test Approaches <span class="badge badge-k2">FL-4.5.1</span> <span class="badge badge-k2">FL-4.5.2</span> <span class="badge badge-k3">FL-4.5.3</span></h3>
+    <p>
+      While traditional techniques focus on <em>defect detection</em>, collaboration-based approaches emphasize <strong>defect avoidance</strong> through shared communication and alignment across business, development, and testing.
+    </p>
+
+    <h4>4.5.1 Collaborative User Story Writing (FL-4.5.1 — K2)</h4>
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>The 3 C's of User Stories (Jeffries 2000):</strong>
+        <ul style="margin: 2px 0 0 14px;">
+          <li><strong>Card:</strong> Physical or digital medium describing the story.</li>
+          <li><strong>Conversation:</strong> Dialogue on how software will be used.</li>
+          <li><strong>Confirmation:</strong> The acceptance criteria verifying completeness.</li>
+        </ul>
+      </div>
+      <div class="card card-accent-left">
+        <strong>The INVEST Quality Model (Wake 2003):</strong>
+        <p style="margin-top: 2px;">
+          <strong>I</strong>ndependent &bull; <strong>N</strong>egotiable &bull; <strong>V</strong>aluable &bull; <strong>E</strong>stimable &bull; <strong>S</strong>mall &bull; <strong>T</strong>estable.
+          <em>(If a stakeholder cannot test a story, it lacks clarity!).</em>
+        </p>
+      </div>
+    </div>
+    <div class="card-subtle">
+      <strong>Standard User Story Template:</strong> <code>As a [role], I want [goal], so that [business value]</code>, followed by Acceptance Criteria.
+    </div>
+
+    <h4>4.5.2 Acceptance Criteria (FL-4.5.2 — K2)</h4>
+    <p>
+      Acceptance criteria define the conditions an implementation must meet to be accepted by stakeholders. They serve as <strong>test conditions</strong>. Two primary formats:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Format</th>
+          <th style="width: 45%;">Structure & Definition</th>
+          <th style="width: 30%;">Concrete Syntax Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Scenario-Oriented</strong></td>
+          <td>Expresses behavior in natural language following the BDD Given/When/Then pattern.</td>
+          <td><code>Given user has $50 balance<br>When user transfers $20<br>Then balance becomes $30</code></td>
+        </tr>
+        <tr>
+          <td><strong>Rule-Oriented</strong></td>
+          <td>Verification checklist or tabulated input-output business rules.</td>
+          <td>&bull; Passwords must be &ge; 8 characters.<br>&bull; Passwords must contain a number.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>4.5.3 Acceptance Test-Driven Development (ATDD) <span class="badge badge-k3">FL-4.5.3 (K3)</span></h4>
+    <div class="card" style="border-left: 4px solid #4b5563; margin-bottom: 5px;">
+      <strong>Core Principle:</strong> ATDD is a collaborative test-first approach where test cases are created <strong>prior to code implementation</strong> from user stories and acceptance criteria (Adzic 2009).
+    </div>
+
+    <div class="card card-center-callout">
+      <strong>The ATDD 3-Step Test Derivation Sequence:</strong>
+      <ol style="margin-left: 18px; margin-top: 2px;">
+        <li><strong>Positive Test Cases First:</strong> Confirm correct behavior without exceptions (the "happy path" where everything goes as expected).</li>
+        <li><strong>Negative Test Cases Next:</strong> Test error handling, exception flows, boundary rejections, and invalid inputs.</li>
+        <li><strong>Non-Functional Test Cases Finally:</strong> Validate performance efficiency, usability, and security constraints.</li>
+      </ol>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Executable Requirements:</strong> When automated in tools like Cucumber or Robot Framework, acceptance test cases serve as living, executable specifications that validate the software upon every build.
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 10: EXAM FLASHPOINTS, DISTINCTIONS & TRAPS ==================== -->
+  <div class="page-start">
+    <h2 id="sec-flashpoints">2. High-Yield Exam Flashpoints & Key Distinctions</h2>
+
+    <div class="callout callout-exam">
+      <strong>TOP 10 ISTQB CTFL v4.0.1 CHAPTER 4 EXAM TRAPS & DISTRACTORS:</strong>
+      <ol style="margin-left: 17px; margin-top: 4px;">
+        <li><strong>"100% statement coverage implies 100% branch coverage" &rarr; FALSE!</strong> Branch coverage subsumes statement coverage, NOT vice versa. 100% statement coverage leaves unexecuted decision outcomes.</li>
+        <li><strong>"Invalid partitions should be combined in a single test case" &rarr; FALSE!</strong> Invalid partitions must be tested <em>in isolation</em> to prevent defect masking. Valid partitions can be combined.</li>
+        <li><strong>"White-box testing finds defects of omission" &rarr; FALSE!</strong> If a required feature is never written in code, white-box coverage can be 100% without detecting the missing requirement.</li>
+        <li><strong>"2-value BVA tests the boundary and both neighbors" &rarr; FALSE!</strong> 2-value BVA tests the boundary and its <em>one</em> closest neighbor in the adjacent partition. 3-value BVA tests both neighbors.</li>
+        <li><strong>"State tables show only valid transitions" &rarr; FALSE!</strong> State diagrams show valid transitions; state tables explicitly document <em>invalid transitions</em> as empty cells.</li>
+        <li><strong>"In state testing, test multiple invalid transitions in one test case" &rarr; FALSE!</strong> Test only one invalid transition per test case to avoid defect masking.</li>
+        <li><strong>"ATDD derives negative test cases first" &rarr; FALSE!</strong> ATDD derives <em>positive tests first</em>, followed by negative tests, and finally non-functional tests.</li>
+        <li><strong>"Error guessing is an ad-hoc unstructured technique with no methods" &rarr; FALSE!</strong> Error guessing is implemented systematically through <em>fault attack lists</em>.</li>
+        <li><strong>"Exploratory testing has no documentation or structure" &rarr; FALSE!</strong> Session-based exploratory testing uses time boxes, test charters, session sheets, and debriefings.</li>
+        <li><strong>"Use case testing is part of Foundation v4.0.1" &rarr; FALSE!</strong> Use case testing was removed from Foundation Level v4.0 and moved to Advanced Test Analyst.</li>
+      </ol>
+    </div>
+
+    <h3>Rapid Comparison Matrix (Core Technique Distinctions)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Concept A</th>
+          <th style="width: 25%;">Concept B</th>
+          <th style="width: 50%;">Crucial Distinguishing Test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Statement Coverage</strong></td>
+          <td><strong>Branch Coverage</strong></td>
+          <td>Branch coverage is strictly stronger and <em>subsumes</em> statement coverage. Statement tests lines; branch tests decision outcomes.</td>
+        </tr>
+        <tr>
+          <td><strong>2-Value BVA</strong></td>
+          <td><strong>3-Value BVA</strong></td>
+          <td>2-value tests 2 points per boundary; 3-value tests 3 points (boundary + left + right) and is more rigorous against relational faults.</td>
+        </tr>
+        <tr>
+          <td><strong>State Diagram</strong></td>
+          <td><strong>State Table</strong></td>
+          <td>Diagrams visualize valid flows; Tables explicitly capture <em>invalid transitions</em> in matrix cells.</td>
+        </tr>
+        <tr>
+          <td><strong>Scenario-Oriented</strong></td>
+          <td><strong>Rule-Oriented</strong></td>
+          <td>Scenario uses <em>Given/When/Then</em> (behavior-driven); Rule uses <em>bullet lists or condition tables</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>TDD</strong></td>
+          <td><strong>ATDD</strong></td>
+          <td>TDD directs <em>unit code implementation</em>; ATDD directs <em>business feature acceptance from acceptance criteria</em>.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card card-subtle">
+      <strong>High-Yield Memory Mnemonics for Revision:</strong>
+      <ul style="margin: 3px 0 0 16px;">
+        <li><strong>Subsumption:</strong> <em>Branch &gt; Statement</em> (Branch covers all statements; statement misses branches).</li>
+        <li><strong>BVA Rule:</strong> <em>2-Value = Boundary + 1 Neighbor | 3-Value = Boundary + 2 Neighbors</em>.</li>
+        <li><strong>ATDD Order:</strong> <em>Positive &rarr; Negative &rarr; Non-Functional</em>.</li>
+        <li><strong>User Stories:</strong> <em>3 C's = Card, Conversation, Confirmation | Quality = INVEST</em>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 11: MASTER KEYWORD LEXICON (PART 1) ==================== -->
+  <div class="page-start">
+    <h2 id="sec-glossary">3. Complete Chapter 4 Keyword Lexicon (Official Terms)</h2>
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <div class="glossary-term">Acceptance Criteria</div>
+        The criteria that a component or system must satisfy in order to be accepted by a user, customer, or other authorized entity.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Acceptance Test-Driven Development (ATDD)</div>
+        A collaborative test-first approach where team members define acceptance tests prior to coding to direct development.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Black-Box Test Technique</div>
+        A test technique based on an analysis of the specification of a component or system without reference to its internal structure.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Boundary Value Analysis (BVA)</div>
+        A black-box test technique based on exercising the boundary values of ordered equivalence partitions.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Branch</div>
+        A transfer of control between two nodes in a control flow graph (conditional decision outcome or unconditional jump).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Branch Coverage</div>
+        The coverage of branches in a control flow graph exercised by executed test cases, expressed as a percentage.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Checklist-Based Testing</div>
+        An experience-based test technique where the tester designs, implements, and executes tests to cover items from a checklist.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Collaboration-Based Test Approach</div>
+        An approach focusing on defect avoidance through cross-functional communication and shared authoring of stories and acceptance criteria.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Coverage</div>
+        The degree to which specified coverage items have been determined or exercised by a test suite, expressed as a percentage.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Coverage Item</div>
+        An attribute or entity that is defined as a basis for test coverage (e.g., an equivalence partition, a boundary value, or a branch).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Decision Table Testing</div>
+        A black-box test technique in which test cases are designed to exercise the combinations of conditions and resulting actions in a decision table.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Equivalence Partitioning (EP)</div>
+        A black-box test technique in which test inputs are partitioned into mutually exclusive groups assumed to be processed in the same way.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Error Guessing</div>
+        A test technique used to anticipate the occurrence of errors, defects, and failures based on the tester's knowledge and experience.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Experience-Based Test Technique</div>
+        A test technique based on the tester's experience, knowledge, and intuition to design and execute test cases.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Exploratory Testing</div>
+        An approach to testing where the testers dynamically design and execute tests based on their knowledge, exploration, and results of previous tests.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">State Transition Testing</div>
+        A black-box test technique in which test cases are designed to exercise valid and invalid transitions between system states.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Statement Coverage</div>
+        The percentage of executable statements in source code that have been exercised by executed test cases.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Technique</div>
+        A procedure used to define test conditions, identify coverage items, and derive test cases systematically.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">White-Box Test Technique</div>
+        A test technique based on an analysis of the internal structure, code, architecture, and control flow of the test object.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 12: PRACTICE EXAM QUESTIONS 1-4 ==================== -->
+  <div class="page-start">
+    <div style="page-break-before: always; break-before: page; margin-top: 0;"></div>
+
+    <!-- Lined Student Note Space -->
+    <div id="sec-notes" class="notes-box">
+      <div class="notes-box-header">
+        <span>STUDENT NOTES & EXAM FLASHCARD REMINDERS</span>
+        <span>(Handwritten Study Space)</span>
+      </div>
+      <div class="notes-box-lines"></div>
+    </div>
+
+    <h2 id="sec-questions">4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 1)</h2>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 1 [K3 - FL-4.2.1]: An insurance application accepts an applicant's age as an integer input. Valid ages for coverage are from 18 to 65 inclusive. Ages under 18 are rejected with "Too young", and ages over 65 are rejected with "Too old". Inputs must be positive integers up to 120. Using Equivalence Partitioning, what is the MINIMUM number of test cases required to achieve 100% equivalence partition coverage?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) 2 test cases</div>
+        <div class="quiz-opt">B) 3 test cases</div>
+        <div class="quiz-opt">C) 4 test cases</div>
+        <div class="quiz-opt">D) 6 test cases</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> The input range [1 to 120] is partitioned into: (1) Invalid partition: 1 to 17 ("Too young"), (2) Valid partition: 18 to 65 ("Accepted"), and (3) Invalid partition: 66 to 120 ("Too old"). To achieve 100% EP coverage, one test case from each of the 3 identified partitions is required: e.g., 10, 30, and 70 (Section 4.2.1).
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 2 [K3 - FL-4.2.2]: For the age requirement above (valid range 18 to 65 inclusive), which set of test values achieves 100% coverage using 2-VALUE Boundary Value Analysis (BVA)?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) 17, 18, 65, 66</div>
+        <div class="quiz-opt">B) 17, 18, 19, 64, 65, 66</div>
+        <div class="quiz-opt">C) 18, 65</div>
+        <div class="quiz-opt">D) 0, 18, 65, 120</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: A</strong><br>
+        <strong>Rationale:</strong> In 2-value BVA, each boundary requires testing the boundary value and its closest neighbor in the adjacent partition. For the lower boundary (18): 18 (valid) and 17 (invalid). For the upper boundary (65): 65 (valid) and 66 (invalid). Thus, {17, 18, 65, 66} provides 100% 2-value BVA coverage (Section 4.2.2).
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 3 [K3 - FL-4.2.2]: Which set of test values represents 3-VALUE Boundary Value Analysis for the lower boundary (18) of the valid range [18 to 65]?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) 17 and 18</div>
+        <div class="quiz-opt">B) 17, 18, and 19</div>
+        <div class="quiz-opt">C) 16, 17, and 18</div>
+        <div class="quiz-opt">D) 18, 19, and 20</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> 3-value BVA requires exercising the boundary value itself and both of its immediate neighbors. For the boundary 18, the values are 17 (left neighbor), 18 (boundary value), and 19 (right neighbor) (Section 4.2.2).
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 4 [K2 - FL-4.3.2]: A program contains a single `if...then` decision statement with no `else` block. A single test case executes the condition such that it evaluates to TRUE, running the inner code. What are the resulting Statement Coverage and Branch Coverage percentages?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) 100% Statement Coverage, 100% Branch Coverage</div>
+        <div class="quiz-opt">B) 100% Statement Coverage, 50% Branch Coverage</div>
+        <div class="quiz-opt">C) 50% Statement Coverage, 50% Branch Coverage</div>
+        <div class="quiz-opt">D) 50% Statement Coverage, 100% Branch Coverage</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> All executable statements inside the `if` block were executed (100% Statement Coverage). However, an `if` decision has TWO branch outcomes: True and False. Since only the True branch was exercised, only 1 of 2 branches was covered (50% Branch Coverage). This demonstrates why 100% statement coverage does not imply 100% branch coverage (Section 4.3.2).
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 13: PRACTICE EXAM QUESTIONS 5-8 ==================== -->
+  <div class="page-start">
+    <div style="page-break-before: always; break-before: page; margin-top: 0;"></div>
+<h2>4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 2)</h2>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 5 [K3 - FL-4.2.4]: A digital banking account has three states: [Open], [Overdrawn], and [Suspended]. The system allows valid transitions: Open &rarr; Overdrawn, Overdrawn &rarr; Open, Overdrawn &rarr; Suspended, and Suspended &rarr; Open. What is the MINIMUM number of valid transitions that must be exercised to achieve 100% Valid Transitions Coverage (0-Switch)?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) 3 transitions</div>
+        <div class="quiz-opt">B) 4 transitions</div>
+        <div class="quiz-opt">C) 6 transitions</div>
+        <div class="quiz-opt">D) 9 transitions</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Valid transitions coverage (0-switch) requires exercising all single valid transitions. Since there are exactly 4 defined valid transitions (Open &rarr; Overdrawn, Overdrawn &rarr; Open, Overdrawn &rarr; Suspended, Suspended &rarr; Open), all 4 must be executed to achieve 100% valid transitions coverage (Section 4.2.4).
+      </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 6 [K2 - FL-4.3.3]: What is a primary limitation of white-box test techniques?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) They cannot provide an objective measurement of code coverage.</div>
+        <div class="quiz-opt">B) They cannot detect defects of omission where requirements were never implemented in the code.</div>
+        <div class="quiz-opt">C) They cannot be applied during static code reviews or dry runs.</div>
+        <div class="quiz-opt">D) They are independent of how the software is designed or implemented.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Section 4.3.3 highlights Watson (1996): white-box testing derives tests exclusively from existing implementation; therefore, if a requirement was completely omitted by developers, white-box testing cannot detect the omission.
+      </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 7 [K2 - FL-4.4.2]: In session-based exploratory testing, what document provides the tester with high-level test objectives to guide their time-boxed exploration?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Detailed Test Procedure</div>
+        <div class="quiz-opt">B) Test Charter</div>
+        <div class="quiz-opt">C) Decision Table</div>
+        <div class="quiz-opt">D) Traceability Matrix</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> In session-based exploratory testing, the tester uses a <strong>test charter</strong> containing test objectives to guide the exploration within a defined time box (Section 4.4.2).
+      </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 8 [K3 - FL-4.5.3]: When using Acceptance Test-Driven Development (ATDD), in what order should the team derive and design test cases?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Non-functional tests &rarr; Negative tests &rarr; Positive tests</div>
+        <div class="quiz-opt">B) Negative tests &rarr; Positive tests &rarr; White-box branch tests</div>
+        <div class="quiz-opt">C) Positive tests &rarr; Negative tests &rarr; Non-functional tests</div>
+        <div class="quiz-opt">D) Exploratory tests &rarr; Fault attacks &rarr; Acceptance tests</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Section 4.5.3 explicitly states that in ATDD: "Typically, the first test cases are positive... After the positive test cases are done, the team should perform negative testing. Finally, the team should cover non-functional quality characteristics."
+      </div>
+    </div>
+
+    <!-- PART2-QUESTIONS-START -->
+    <h3>Part 2: Additional Questions for Remaining Learning Objectives</h3>
+
+    <!-- Question 9 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 9 [K2 - FL-4.1.1]: A tester designs tests from personal experience of defects found in similar applications and knowledge of typical developer mistakes, without deriving the tests from a formal model or from the code structure. Which category of test techniques is this?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Black-box test techniques, because the tester does not look at the code.</div>
+        <div class="quiz-opt">B) White-box test techniques, because the tester uses knowledge of defects.</div>
+        <div class="quiz-opt">C) Experience-based test techniques.</div>
+        <div class="quiz-opt">D) Static test techniques.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Black-box techniques derive tests from specifications and models without referring to the internal structure. White-box techniques derive tests from the structure (code, architecture, detailed design). Experience-based techniques use the knowledge and experience of testers, developers, users and other stakeholders. Static techniques evaluate work products without executing code (Section 4.1).
+      </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 10 [K3 - FL-4.2.3]: A decision table for ATM cash withdrawal uses the conditions C1 "Card valid?", C2 "PIN correct?" and C3 "Sufficient balance?". Rules: R1 (C1=Y, C2=Y, C3=Y) dispense cash; R2 (Y, Y, N) show "insufficient funds"; R3 (Y, N, &ndash;) reject the PIN; R4 (N, &ndash;, &ndash;) retain the card. The "&ndash;" means the condition is irrelevant for that rule. What is the minimum number of test cases needed to achieve 100% decision table coverage?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) 3</div>
+        <div class="quiz-opt">B) 4</div>
+        <div class="quiz-opt">C) 5</div>
+        <div class="quiz-opt">D) 8</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Decision table coverage = number of rules (columns) exercised by at least one test case / total number of feasible rules. The table has 4 rules (the "&ndash;" values collapse the 2<sup>3</sup> = 8 possible combinations into 4 rules), so one test per rule gives 100% coverage: <b>4 test cases</b> (Section 4.2.3).
+      </div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 11 [K2 - FL-4.3.1]: Which statement about statement testing is correct?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) 100% statement coverage means every executable statement was executed at least once, but a decision's False outcome may never have been exercised.</div>
+        <div class="quiz-opt">B) 100% statement coverage guarantees that every outcome of every decision was exercised.</div>
+        <div class="quiz-opt">C) Statement coverage is the percentage of test cases that executed without failure.</div>
+        <div class="quiz-opt">D) Statement testing can only be applied to specifications, not to source code.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: A</strong><br>
+        <strong>Rationale:</strong> Statement coverage = number of statements executed by the tests / total number of executable statements (as a percentage). With 100% statement coverage every executable statement has been executed at least once, but this does not guarantee that all decision outcomes were tested (that requires branch coverage) and it may not detect defects that depend on particular data (Section 4.3.1).
+      </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 12 [K2 - FL-4.4.1]: A tester prepares a list of likely faults from experience (division by zero, empty input, leap-year dates, null values) and designs tests to trigger them. Which technique is this?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Boundary value analysis, because the tests target typical limits.</div>
+        <div class="quiz-opt">B) State transition testing, because the tester models states.</div>
+        <div class="quiz-opt">C) Statement testing, because the tester examines the code.</div>
+        <div class="quiz-opt">D) Error guessing (using a fault attack), because the tester anticipates defects from experience and designs tests to expose them.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: D</strong><br>
+        <strong>Rationale:</strong> Error guessing is a technique in which testers anticipate errors, defects and failures based on their knowledge: how the application has worked in the past, the types of errors developers make, and failures seen in other applications. A systematic approach is the fault attack: list possible errors, defects and failures, then design tests that expose them (Section 4.4.1).
+      </div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 13 [K2 - FL-4.4.3]: Which statement about checklist-based testing is TRUE?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Checklist items should be very general so that the checklist never needs updating.</div>
+        <div class="quiz-opt">B) A checklist can be derived from experience, from knowledge of what matters to users and from knowledge of how software fails; its items should be phrased so that they can be checked independently, often as questions.</div>
+        <div class="quiz-opt">C) The checklist must be completed once before testing starts and must never be changed.</div>
+        <div class="quiz-opt">D) Checklist-based testing provides precise, repeatable coverage metrics.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Checklists are built from experience, user priorities and understanding of why and how software fails. Good items are phrased as questions, are independently verifiable, do not overlap and are not too general; items that automated tools can check or that are better as entry/exit criteria should be excluded. Checklists should be updated regularly. Because checklists are high-level, repeatability and measurable coverage are limited (Section 4.4.3).
+      </div>
+    </div>
+
+    <!-- Question 14 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 14 [K2 - FL-4.5.1]: Which of the following is a well-formed user story?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) "The system shall store passwords in a relational database."</div>
+        <div class="quiz-opt">B) "Implement the password reset service using SHA-256 during sprint 3."</div>
+        <div class="quiz-opt">C) "As a registered customer, I want to reset my password by e-mail so that I can regain access without calling support."</div>
+        <div class="quiz-opt">D) "Testers must manually verify the reset feature before every release."</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> A user story has three key elements: the role, the goal (functionality) and the business value. Good user stories follow INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable) and the 3 Cs: Card, Conversation, Confirmation. Writing stories collaboratively with developers, business representatives and testers makes them testable (Section 4.5.1).
+      </div>
+    </div>
+
+    <!-- Question 15 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 15 [K2 - FL-4.5.2]: The acceptance criterion "Given a registered user with a valid password, When the user logs in, Then the dashboard is displayed" is written in which format?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Scenario-oriented acceptance criteria (Given/When/Then).</div>
+        <div class="quiz-opt">B) Rule-oriented acceptance criteria written as a bullet list of rules.</div>
+        <div class="quiz-opt">C) Rule-oriented acceptance criteria written as an input/output table.</div>
+        <div class="quiz-opt">D) It is not an acceptance criterion; it is a unit test case.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: A</strong><br>
+        <strong>Rationale:</strong> Acceptance criteria can be scenario-oriented (Given/When/Then, as used in BDD), rule-oriented (a bullet list of verification rules or an input/output table) or written in another format, as long as it is well defined and unambiguous. The example uses Given/When/Then, so it is scenario-oriented (Section 4.5.2).
+      </div>
+    </div>
+    <!-- PART2-QUESTIONS-END -->
+
+    <div class="footer-note">
+      ISTQB® Certified Tester Foundation Level (CTFL) v4.0.1 &bull; Chapter 4: Test Analysis and Design &bull; Master Study Guide &bull; Official Curriculum Preparation Edition
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- ================= CHAPTER NAVIGATION FOOTER ================= -->
+<div class="chapter-nav-footer">
+  <a href="istqb_ch3_study_guide.html" class="nav-footer-card">
+        <span class="nav-footer-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px;"><polyline points="15 18 9 12 15 6"></polyline></svg>Previous Chapter</span>
+        <span class="nav-footer-title">Chapter 03: Static Testing</span>
+       </a>
+  
+    <a href="../index.html" class="nav-footer-card" style="text-align: center; align-items: center;">
+      <span class="nav-footer-label">Master Overview</span>
+      <span class="nav-footer-title">Study Hub</span>
+    </a>
+  
+  
+    <a href="../05_Practice_Questions_and_Summaries/istqb_mock_exam_simulator.html" class="nav-footer-card" style="text-align: center; align-items: center; border-color: #334155; background: #1e293b;">
+      <span class="nav-footer-label" style="color: #60a5fa;">Test Exam Readiness</span>
+      <span class="nav-footer-title" style="color: #ffffff;">40Q Mock Simulator</span>
+    </a>
+  
+  <a href="istqb_ch5_study_guide.html" class="nav-footer-card" style="text-align: right;">
+        <span class="nav-footer-label">Next Chapter<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:4px;"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+        <span class="nav-footer-title">Chapter 05: Managing the Test Activities</span>
+       </a>
+</div>
+</div><!-- /.study-main-wrapper -->
+
+<!-- Floating Back to Top Button -->
+<div class="floating-actions">
+  <button class="floating-btn" onclick="scrollToTop()" title="Scroll to Top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+</div>
+
+
+<script>
+  function updateThemeMeta(isDark) {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', isDark ? '#0b1120' : '#1e293b');
+  }
+
+  function toggleReadingTheme() {
+    document.body.classList.toggle('dark-reading-mode');
+    const isDark = document.body.classList.contains('dark-reading-mode');
+    localStorage.setItem('istqb_reading_theme', isDark ? 'dark' : 'light');
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) btn.innerHTML = isDark ? 'Light' : 'Dark';
+    updateThemeMeta(isDark);
+  }
+
+  function jumpToSection(sel) {
+    const val = sel.value;
+    if (!val) return;
+    const target = document.getElementById(val);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.location.hash = val;
+    }
+  }
+
+  function switchLanguage(targetUrl) {
+    const hash = window.location.hash;
+    window.location.href = targetUrl + (hash ? hash : '');
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Restore user theme preference
+  document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('istqb_reading_theme');
+    const btn = document.getElementById('theme-toggle-btn');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-reading-mode');
+      if (btn) btn.innerHTML = 'Light';
+    } else {
+      document.body.classList.remove('dark-reading-mode');
+      if (btn) btn.innerHTML = 'Dark';
+    }
+    updateThemeMeta(savedTheme === 'dark');
+
+    // Add interactive Toggle Answer feature for each quiz card
+    const quizCards = document.querySelectorAll('.quiz-card');
+    quizCards.forEach(function(card) {
+      const answer = card.querySelector('.quiz-answer');
+      if (answer && !card.querySelector('.btn-reveal-answer')) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'quiz-toggle-btn btn-reveal-answer';
+        toggleBtn.textContent = 'Reveal Answer & Rationale';
+        toggleBtn.style.marginTop = '6px';
+        toggleBtn.style.display = 'inline-block';
+        
+        // Hide answer by default for active practice
+        answer.style.display = 'none';
+
+        toggleBtn.addEventListener('click', function() {
+          if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            toggleBtn.textContent = 'Hide Answer';
+          } else {
+            answer.style.display = 'none';
+            toggleBtn.textContent = 'Reveal Answer & Rationale';
+          }
+        });
+
+        card.insertBefore(toggleBtn, answer);
+      }
+    });
+
+    // Add "Reveal All Answers" button above quiz section
+    const qSection = document.getElementById('sec-questions');
+    if (qSection && !document.querySelector('.quiz-toggle-bar')) {
+      const bar = document.createElement('div');
+      bar.className = 'quiz-toggle-bar';
+      bar.innerHTML = '<button type="button" class="quiz-toggle-btn" id="btn-toggle-all-answers">Reveal All Answers</button>';
+      qSection.insertAdjacentElement('afterend', bar);
+
+      const btnAll = document.getElementById('btn-toggle-all-answers');
+      let allShown = false;
+      btnAll.addEventListener('click', function() {
+        allShown = !allShown;
+        document.querySelectorAll('.quiz-card').forEach(function(card) {
+          const ans = card.querySelector('.quiz-answer');
+          const tBtn = card.querySelector('.btn-reveal-answer');
+          if (ans) ans.style.display = allShown ? 'block' : 'none';
+          if (tBtn) tBtn.textContent = allShown ? 'Hide Answer' : 'Reveal Answer & Rationale';
+        });
+        btnAll.textContent = allShown ? 'Hide All Answers' : 'Reveal All Answers';
+      });
+    }
+  });
+
+  // Enhanced Print Lifecycle Support: Guarantee Clean Ink-Friendly Printing
+  window.addEventListener('beforeprint', function () {
+    document.body.classList.remove('dark-reading-mode');
+    document.querySelectorAll('.quiz-answer').forEach(function (el) {
+      el.style.display = 'block';
+    });
+  });
+
+  window.addEventListener('afterprint', function () {
+    if (localStorage.getItem('istqb_reading_theme') === 'dark') {
+      document.body.classList.add('dark-reading-mode');
+    }
+  });
+
+</script>
+
+</body>
+</html>

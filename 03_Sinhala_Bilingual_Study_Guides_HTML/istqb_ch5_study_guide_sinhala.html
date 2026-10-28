@@ -1,0 +1,2755 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISTQB CTFL v4.0.1 - Chapter 5: Managing the Test Activities (සිංහල + English Master Guide)</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232563eb%22/><path d=%22M26 50 L42 66 L74 34%22 stroke=%22white%22 stroke-width=%2212%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 fill=%22none%22/></svg>">
+<meta name="theme-color" content="#1e293b">
+<!-- Google Fonts: Inter & Noto Sans Sinhala for razor-sharp typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* Base Reset & Print-Optimized Bilingual Typography */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 22mm 14mm 16mm;
+  }
+
+  body {
+    font-family: "Noto Sans Sinhala", "Iskoola Pota", "Nirmala UI", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    line-height: 1.74;
+    font-size: 15.5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  h1, h2, h3, h4 {
+    color: #000000;
+    font-weight: 700;
+    line-height: 1.35;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h1 { 
+    font-size: 20px; 
+    margin-bottom: 7px; 
+    letter-spacing: -0.2px; 
+  }
+  
+  h2 {
+    font-size: 16px;
+    margin-top: 18px;
+    margin-bottom: 9px;
+    border-bottom: 2.5px solid #000000;
+    padding-bottom: 4px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  h3 { 
+    font-size: 14.5px;
+    margin-top: 14px; 
+    margin-bottom: 7px; 
+    color: #000000; 
+  }
+  
+  h4 { 
+    font-size: 13.6px;
+    margin-top: 11px; 
+    margin-bottom: 5px; 
+    color: #1f2937; 
+  }
+
+  p { 
+    margin-bottom: 9px; 
+    text-align: justify; 
+    font-size: 13.5px;
+    line-height: 1.68;
+    color: #000000; 
+  }
+  
+  ul, ol { 
+    margin-left: 20px; 
+    margin-bottom: 9px; 
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #000000; 
+  }
+  
+  li { 
+    margin-bottom: 4px; 
+  }
+  
+  strong { 
+    color: #000000; 
+    font-weight: 700; 
+  }
+  
+  code {
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 2px 5.5px;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 12.5px;
+    color: #000000;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2.5px 6.5px;
+    border-radius: 3px;
+    font-size: 12.2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-right: 3px;
+    vertical-align: middle;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1.2px solid #374151;
+  }
+  .badge-k1 { background-color: #f3f4f6; color: #000000; border: 1.2px solid #4b5563; }
+  .badge-k2 { background-color: #ffffff; color: #000000; border: 1.2px solid #000000; }
+  .badge-k3 { background-color: #f3f4f6; color: #000000; border: 1.5px solid #000000; font-weight: 800; }
+
+  .page-start {
+    page-break-before: auto;
+    break-before: auto;
+    margin-top: 14px;
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-radius: 4px;
+    padding: 10px 13px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 13.2px;
+    line-height: 1.65;
+    color: #1e293b;
+  }
+  
+  .callout {
+    border-left: 4px solid #3b82f6;
+    border-top: 1.2px solid #d1d5db;
+    border-right: 1.2px solid #d1d5db;
+    border-bottom: 1.2px solid #d1d5db;
+    background: #f8fafc;
+    padding: 9px 13px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 13.2px;
+    line-height: 1.65;
+    color: #1e293b;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 13px 0;
+    font-size: 12.8px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  th, td {
+    padding: 7px 10px;
+    border: 1.2px solid #4b5563;
+    text-align: left;
+    vertical-align: top;
+    color: #1e293b;
+    line-height: 1.60;
+    font-size: 12.8px;
+  }
+  th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 13.2px;
+    letter-spacing: 0.1px;
+    border-bottom: 2.2px solid #000000;
+  }
+  tr:nth-child(even) { background-color: #f8fafc; }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 9px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 9px;
+    margin-bottom: 9px;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 9px;
+  }
+
+  .quadrant-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  .quadrant-card {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 12.8px;
+    line-height: 1.6;
+  }
+
+  .formula-box {
+    background: #f9fafb;
+    border: 1.5px solid #1f2937;
+    border-radius: 4px;
+    padding: 8px 12px;
+    text-align: center;
+    margin: 7px 0;
+    font-size: 13.5px;
+    font-weight: 700;
+  }
+
+  .quiz-card {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-left: 4px solid #000000;
+    border-radius: 4px;
+    padding: 10px 13px;
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .quiz-q {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 7px;
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .quiz-options {
+    margin-left: 5px;
+    margin-bottom: 7px;
+    font-size: 13px;
+  }
+  .quiz-opt {
+    margin-bottom: 4px;
+    color: #0f172a;
+    line-height: 1.52;
+    font-size: 13px;
+  }
+  .quiz-answer {
+    background: #f8fafc;
+    border-top: 1.2px dashed #9ca3af;
+    padding: 8px 11px;
+    border-radius: 0 0 4px 4px;
+    font-size: 13px;
+    color: #1e293b;
+    line-height: 1.62;
+    margin-top: 5px;
+  }
+
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 7px;
+    margin-bottom: 9px;
+  }
+  .glossary-item {
+    background: #ffffff;
+    border: 1.2px solid #9ca3af;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-size: 13px;
+    line-height: 1.58;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    color: #1e293b;
+  }
+  .glossary-term {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 13.5px;
+    margin-bottom: 2.5px;
+    border-bottom: 1.2px dotted #6b7280;
+    display: inline-block;
+  }
+
+  .notes-box {
+    border: 1.5px dashed #6b7280;
+    border-radius: 4px;
+    background: #fafafa;
+    padding: 9px 13px;
+    margin: 14px 0 16px 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .notes-box-header {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #374151;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+  .notes-box-header span:first-child {
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .notes-box-header span:last-child {
+    font-weight: 600;
+    white-space: nowrap;
+    text-transform: none;
+    color: #4b5563;
+  }
+  .notes-box-lines {
+    height: 90px;
+    background-image: repeating-linear-gradient(transparent, transparent 17px, #d1d5db 17px, #d1d5db 18px);
+  }
+
+  .footer-note {
+    font-size: 12px;
+    color: #475569;
+    text-align: center;
+    border-top: 1px solid #d1d5db;
+    padding-top: 5px;
+    margin-top: 12px;
+  }
+
+/* ================= ISTQB MASTER STUDY DESIGN SYSTEM ================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+h1, h2, h3, h4, .notes-box, .quiz-card, [id^="sec-"] {
+  scroll-margin-top: 65px;
+}
+
+/* ================= SCREEN READING CONTAINER & GUTTERS ================= */
+@media screen {
+  body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+  }
+
+  body.dark-reading-mode {
+    background-color: #060a12 !important;
+    color: #f1f5f9 !important;
+  }
+
+  .study-main-wrapper {
+    width: 95%;
+    max-width: 1540px;
+    margin: 14px auto 50px auto;
+    padding: 26px 36px 44px 36px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  body.dark-reading-mode .study-main-wrapper {
+    background-color: #0b1120 !important;
+    border: 1px solid #1e293b !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .study-main-wrapper {
+    width: 96%;
+    margin: 12px auto 40px auto;
+    padding: 20px 24px 34px 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .study-main-wrapper {
+    width: 98%;
+    margin: 8px auto 28px auto;
+    padding: 16px 14px 24px 14px;
+    border-radius: 8px;
+  }
+}
+
+
+
+/* Base Utility Classes for Enhanced Semantics */
+.si-question-sub {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 13px;
+  color: #475569;
+  margin-top: 4px;
+  line-height: 1.55;
+}
+
+.ch-subtitle-text {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-top: 3px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.card-subtle {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 6px 0;
+}
+
+.card-center-callout {
+  background: #f8fafc;
+  border: 1.5px solid #94a3b8;
+  border-radius: 6px;
+  padding: 10px 14px;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.card-accent-left {
+  border-left: 4px solid #3b82f6 !important;
+}
+
+.card-accent-dark {
+  border-left: 4px solid #1e293b !important;
+}
+
+.metric-pill {
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 2.5px 8px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.progress-bar-fill {
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-weight: 700;
+  text-align: center;
+  display: inline-block;
+}
+
+/* ================= ISTQB STUDY NAVIGATOR ================= */
+#study-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  background: #0f172a;
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Sinhala", sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid #3b82f6;
+  font-size: 13px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.study-nav-container {
+  max-width: 1540px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.study-nav-left, .study-nav-center, .study-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.study-nav-brand {
+  font-weight: 800;
+  color: #60a5fa !important;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #1e293b;
+  border: 1px solid #3b82f6;
+  transition: all 0.2s ease;
+}
+.study-nav-brand span {
+  color: #93c5fd !important;
+}
+.study-nav-brand strong {
+  color: #ffffff !important;
+}
+.study-nav-brand:hover {
+  background: rgba(59, 130, 246, 0.3);
+  color: #93c5fd !important;
+}
+
+.study-nav-pill-group {
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  padding: 3px 4px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  gap: 2px;
+}
+
+.study-nav-pill {
+  color: #cbd5e1 !important;
+  text-decoration: none;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.study-nav-pill:hover {
+  color: #ffffff !important;
+  background: #334155;
+}
+.study-nav-pill.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.study-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #f1f5f9 !important;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.study-nav-btn:hover {
+  background: #334155;
+  border-color: #64748b;
+  color: #ffffff !important;
+}
+
+.study-nav-lang-btn {
+  background: #065f46;
+  border-color: #059669;
+  color: #ecfdf5 !important;
+  font-weight: 700;
+}
+.study-nav-lang-btn:hover {
+  background: #047857;
+  border-color: #10b981;
+}
+
+.study-nav-select {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  max-width: 220px;
+}
+.study-nav-select:focus {
+  border-color: #3b82f6;
+}
+
+/* Floating Actions */
+.floating-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+.floating-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  border: 2px solid #60a5fa;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.floating-btn:hover {
+  transform: translateY(-3px);
+  background: #1d4ed8;
+}
+
+/* Chapter Navigation Footer */
+.chapter-nav-footer {
+  margin-top: 36px;
+  border-top: 2px solid #e2e8f0;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.nav-footer-card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  text-decoration: none !important;
+  color: #1e293b !important;
+  transition: all 0.2s ease;
+}
+.nav-footer-card:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
+.nav-footer-label {
+  font-size: 11.5px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.nav-footer-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Interactive Quiz Tools */
+.quiz-toggle-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  gap: 8px;
+}
+.quiz-toggle-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.quiz-toggle-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+@media screen {
+/* ================= ULTRA-CLEAR HIGH-CONTRAST NIGHT READING THEME ================= */
+body.dark-reading-mode {
+  background-color: #0b1120 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Headings */
+body.dark-reading-mode h1 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+body.dark-reading-mode h2 {
+  color: #93c5fd !important;
+  border-bottom: 2px solid #3b82f6 !important;
+  padding-bottom: 4px;
+}
+body.dark-reading-mode h3 {
+  color: #f8fafc !important;
+}
+body.dark-reading-mode h4,
+body.dark-reading-mode h5 {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .page-start > div,
+body.dark-reading-mode [style*="border-bottom: 2.5px solid"] {
+  border-bottom-color: #3b82f6 !important;
+}
+
+/* Paragraphs, Lists & Body Text */
+body.dark-reading-mode p,
+body.dark-reading-mode li,
+body.dark-reading-mode dd,
+body.dark-reading-mode dt {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode strong,
+body.dark-reading-mode b,
+body.dark-reading-mode th strong,
+body.dark-reading-mode td strong {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+body.dark-reading-mode em,
+body.dark-reading-mode i {
+  color: #f1f5f9 !important;
+}
+body.dark-reading-mode .si-term {
+  color: #38bdf8 !important;
+  font-weight: 600;
+}
+body.dark-reading-mode .si-question-sub {
+  color: #cbd5e1 !important;
+}
+body.dark-reading-mode .ch-subtitle-text {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode code {
+  background-color: #030712 !important;
+  color: #38bdf8 !important;
+  border-color: #1e293b !important;
+}
+body.dark-reading-mode a:not(.study-nav-btn):not(.study-nav-pill):not(.nav-footer-card) {
+  color: #60a5fa !important;
+}
+body.dark-reading-mode a:not(.study-nav-btn):not(.study-nav-pill):not(.nav-footer-card):hover {
+  color: #93c5fd !important;
+}
+
+/* Cards & Containers */
+body.dark-reading-mode .card,
+body.dark-reading-mode .card-subtle,
+body.dark-reading-mode .card-center-callout {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45) !important;
+}
+body.dark-reading-mode .card-accent-left {
+  border-left-color: #3b82f6 !important;
+}
+body.dark-reading-mode .card-accent-dark {
+  border-left-color: #60a5fa !important;
+}
+
+/* Callouts */
+body.dark-reading-mode .callout {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  border-left: 4px solid #3b82f6 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-info {
+  background-color: #0c1e38 !important;
+  border-left-color: #38bdf8 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-exam {
+  background-color: #122147 !important;
+  border-left-color: #3b82f6 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-warning,
+body.dark-reading-mode .callout-trap {
+  background-color: #2b1704 !important;
+  border-left-color: #f59e0b !important;
+  color: #fef3c7 !important;
+}
+body.dark-reading-mode .callout-warning *,
+body.dark-reading-mode .callout-trap * {
+  color: #fef3c7 !important;
+}
+body.dark-reading-mode .callout-warning strong,
+body.dark-reading-mode .callout-trap strong {
+  color: #fde68a !important;
+}
+body.dark-reading-mode .callout-danger {
+  background-color: #2b0b0b !important;
+  border-left-color: #ef4444 !important;
+  color: #fee2e2 !important;
+}
+body.dark-reading-mode .callout-danger * {
+  color: #fee2e2 !important;
+}
+body.dark-reading-mode .callout-danger strong {
+  color: #fca5a5 !important;
+}
+body.dark-reading-mode .callout-success {
+  background-color: #05281a !important;
+  border-left-color: #10b981 !important;
+  color: #d1fae5 !important;
+}
+body.dark-reading-mode .callout-success * {
+  color: #d1fae5 !important;
+}
+body.dark-reading-mode .callout-success strong {
+  color: #6ee7b7 !important;
+}
+
+/* Tables */
+body.dark-reading-mode table {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3) !important;
+}
+body.dark-reading-mode th {
+  background-color: #1a273e !important;
+  color: #93c5fd !important;
+  border-color: #22324e !important;
+  border-bottom: 2px solid #3b82f6 !important;
+}
+body.dark-reading-mode td {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+  border-color: #1e293b !important;
+}
+body.dark-reading-mode tr:nth-child(even) td {
+  background-color: #131d31 !important;
+}
+body.dark-reading-mode tr:hover td {
+  background-color: #1e2d4a !important;
+}
+
+/* Badges & Metrics */
+body.dark-reading-mode .badge {
+  background-color: #1e293b !important;
+  color: #93c5fd !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .badge-k1 {
+  background-color: #0f2b5c !important;
+  color: #93c5fd !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .badge-k2 {
+  background-color: #2e1065 !important;
+  color: #d8b4fe !important;
+  border-color: #8b5cf6 !important;
+}
+body.dark-reading-mode .badge-k3 {
+  background-color: #431407 !important;
+  color: #fdba74 !important;
+  border-color: #f97316 !important;
+}
+body.dark-reading-mode .badge-keyword {
+  background-color: #064e3b !important;
+  color: #6ee7b7 !important;
+  border-color: #10b981 !important;
+}
+body.dark-reading-mode .metric-pill {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .progress-bar-fill {
+  background: linear-gradient(90deg, #2563eb, #38bdf8) !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+
+/* Tool Boxes */
+body.dark-reading-mode .tool-box {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  border-left: 4px solid #3b82f6 !important;
+}
+body.dark-reading-mode .tool-box-title {
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .tool-box-desc {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .tool-examples {
+  border-top-color: #22324e !important;
+  color: #94a3b8 !important;
+}
+
+/* Glossary */
+body.dark-reading-mode .glossary-item {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .glossary-term {
+  color: #60a5fa !important;
+  border-bottom-color: #3b82f6 !important;
+}
+
+/* Practice Questions */
+body.dark-reading-mode .quiz-card {
+  background-color: #131d31 !important;
+  border: 1.5px solid #22324e !important;
+  border-left: 5px solid #3b82f6 !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+}
+body.dark-reading-mode .quiz-q {
+  color: #ffffff !important;
+}
+body.dark-reading-mode .quiz-opt {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .quiz-opt:hover {
+  background-color: #1e2d4a !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .quiz-answer {
+  background-color: #0b1222 !important;
+  border-top: 1.5px dashed #38bdf8 !important;
+  color: #f1f5f9 !important;
+}
+body.dark-reading-mode .quiz-toggle-btn {
+  background-color: #1e2d4a !important;
+  border-color: #3b82f6 !important;
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .quiz-toggle-btn:hover {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+}
+
+/* Ruled Handwriting Notes Box */
+body.dark-reading-mode .notes-box {
+  background-color: #0b1222 !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .notes-box-header {
+  color: #93c5fd !important;
+  border-bottom-color: #22324e !important;
+}
+body.dark-reading-mode .notes-box-header span {
+  color: #cbd5e1 !important;
+}
+body.dark-reading-mode .notes-box-lines {
+  background-image: repeating-linear-gradient(transparent, transparent 17px, #263859 17px, #263859 18px) !important;
+}
+
+/* Quadrants, Formulas & Footer */
+body.dark-reading-mode .quadrant-card {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .formula-box {
+  background-color: #0b1222 !important;
+  border-color: #3b82f6 !important;
+  color: #38bdf8 !important;
+}
+body.dark-reading-mode .footer-note {
+  color: #94a3b8 !important;
+  border-top-color: #22324e !important;
+}
+
+/* Study Navbar in Dark Mode */
+body.dark-reading-mode #study-navbar {
+  background: #060a12 !important;
+  border-bottom-color: #3b82f6 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+}
+body.dark-reading-mode .study-nav-brand {
+  background: #1e293b !important;
+  color: #60a5fa !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-brand span {
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .study-nav-brand strong {
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-pill-group {
+  background: #0d1527 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-pill {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode .study-nav-pill:hover {
+  background: #1e2d4a !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-pill.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-select {
+  background-color: #131d31 !important;
+  color: #ffffff !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-select option {
+  background: #0b1120 !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-btn {
+  background: #131d31 !important;
+  color: #cbd5e1 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-btn:hover {
+  background: #1e2d4a !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-lang-btn {
+  background: #064e3b !important;
+  color: #6ee7b7 !important;
+  border-color: #059669 !important;
+}
+body.dark-reading-mode .study-nav-lang-btn:hover {
+  background: #047857 !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode #theme-toggle-btn {
+  background: #facc15 !important;
+  color: #000000 !important;
+  border-color: #eab308 !important;
+  font-weight: 700 !important;
+}
+body.dark-reading-mode #theme-toggle-btn:hover {
+  background: #fef08a !important;
+}
+
+/* Floating Actions & Footer */
+body.dark-reading-mode .floating-btn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+body.dark-reading-mode .chapter-nav-footer {
+  border-top-color: #22324e !important;
+}
+body.dark-reading-mode .nav-footer-card {
+  background: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+}
+body.dark-reading-mode .nav-footer-card:hover {
+  background: #1e2d4a !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+}
+body.dark-reading-mode .nav-footer-label {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode .nav-footer-title {
+  color: #60a5fa !important;
+}
+
+/* Fallback Universal Overrides */
+body.dark-reading-mode [style*="color: #111827"],
+body.dark-reading-mode [style*="color: #374151"],
+body.dark-reading-mode [style*="color: #4b5563"],
+body.dark-reading-mode [style*="color: #000000"],
+body.dark-reading-mode [style*="color: black"],
+body.dark-reading-mode [style*="color:#111827"],
+body.dark-reading-mode [style*="color:#374151"] {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode strong[style*="color:"],
+body.dark-reading-mode b[style*="color:"] {
+  color: #ffffff !important;
+}
+}
+
+/* ================= AUTHORITATIVE PUBLICATION-GRADE PRINT STYLES ================= */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm 14mm 14mm;
+  }
+
+  /* Universal reset to high-contrast ink-friendly black on pure white */
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  html,
+  body,
+  body.dark-reading-mode {
+    padding-top: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: block !important;
+    font-family: "Noto Sans Sinhala", "Iskoola Pota", "Nirmala UI", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.76 !important;
+    font-weight: 500 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Reset layout wrapper to full print width with pure white background */
+  .study-main-wrapper,
+  body.dark-reading-mode .study-main-wrapper,
+  body .study-main-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Completely suppress interactive and navigation UI */
+  #study-navbar,
+  .floating-actions,
+  .chapter-nav-footer,
+  .quiz-toggle-bar,
+  .btn-reveal-answer,
+  .study-nav-btn,
+  .format-btn,
+  button {
+    display: none !important;
+  }
+
+  /* Headings: Razor sharp solid black with clean dividers */
+  h1, h2, h3, h4, h5 {
+    color: #000000 !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    font-family: "Noto Sans Sinhala", "Iskoola Pota", "Nirmala UI", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  }
+
+  h1 {
+    font-size: 23px !important;
+    border-bottom: 2.5px solid #000000 !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 12px !important;
+    font-weight: 800 !important;
+    color: #000000 !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+    border-bottom: 1.8px solid #000000 !important;
+    padding-bottom: 4px !important;
+    margin-top: 18px !important;
+    margin-bottom: 10px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  h3 {
+    font-size: 16.5px !important;
+    margin-top: 14px !important;
+    margin-bottom: 6px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  h4, h5 {
+    font-size: 15.2px !important;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  /* Body Text, Paragraphs, Lists: Large, crystal clear & comfortable */
+  p, li, dd, dt {
+    font-size: 15.8px !important;
+    line-height: 1.76 !important;
+    color: #000000 !important;
+    margin-bottom: 8px !important;
+  }
+
+  span, em, i, b, label, small {
+    color: #000000 !important;
+  }
+
+  strong {
+    color: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Override any inline colored borders or title accents to crisp black */
+  .page-start > div,
+  [style*="border-bottom: 2.5px solid"],
+  [style*="border-bottom:2.5px solid"] {
+    border-bottom-color: #000000 !important;
+  }
+
+  /* All Containers: Pure White Background with Crisp High-Contrast Black Borders */
+  .card,
+  .card-subtle,
+  .card-center-callout,
+  .callout,
+  .tool-box,
+  .glossary-item,
+  .quiz-card,
+  .formula-box,
+  .quadrant-card {
+    border: 1.2px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 15.5px !important;
+    line-height: 1.74 !important;
+    color: #000000 !important;
+  }
+
+  /* Callouts: Bold Solid Black Left Accent Bar */
+  .callout,
+  .callout-info,
+  .callout-warning,
+  .callout-danger,
+  .callout-success,
+  .callout-exam,
+  .callout-trap,
+  .card-accent-left,
+  .card-accent-dark {
+    border: 1.2px solid #000000 !important;
+    border-left: 4.5px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .callout *,
+  .callout-warning *,
+  .callout-trap *,
+  .callout-danger *,
+  .callout-success * {
+    color: #000000 !important;
+  }
+
+  /* Practice Questions: Large, easily legible layout */
+  .quiz-card {
+    border: 1.2px solid #000000 !important;
+    border-left: 4.5px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .quiz-q {
+    color: #000000 !important;
+    font-weight: 800 !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .quiz-opt {
+    color: #000000 !important;
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Practice Exam Answers: Distinct white box with black outline */
+  .quiz-answer {
+    display: block !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1.2px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    color: #000000 !important;
+    border-radius: 4px !important;
+    padding: 10px 14px !important;
+    font-size: 15px !important;
+    line-height: 1.72 !important;
+    margin-top: 10px !important;
+  }
+
+  .quiz-answer,
+  .quiz-answer * {
+    color: #000000 !important;
+  }
+
+  /* Badges & Tags: Sharp black outline & bold black text */
+  .badge,
+  .badge-k1,
+  .badge-k2,
+  .badge-k3,
+  .badge-keyword,
+  .metric-pill {
+    display: inline-block !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1.2px solid #000000 !important;
+    padding: 2.5px 7.5px !important;
+    border-radius: 3px !important;
+    font-size: 12.8px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  /* Tables: Sharp publication borders & generous padding */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 12px 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 1.5px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  th, thead th {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1.2px solid #000000 !important;
+    border-bottom: 2.5px solid #000000 !important;
+    padding: 8px 11px !important;
+    font-weight: 800 !important;
+    font-size: 15px !important;
+  }
+
+  td {
+    border: 1px solid #000000 !important;
+    padding: 7px 11px !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    font-size: 14.8px !important;
+    line-height: 1.72 !important;
+  }
+
+  tr:nth-child(even) td,
+  tr:nth-child(odd) td {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  /* Student Handwriting Note Boxes */
+  .notes-box {
+    border: 1.5px dashed #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    padding: 10px 14px !important;
+    margin-top: 14px !important;
+  }
+
+  .notes-box-header {
+    color: #000000 !important;
+    border-bottom: 1.2px solid #000000 !important;
+    font-size: 15.8px !important;
+  }
+
+  .notes-box-header span {
+    color: #000000 !important;
+  }
+
+  .notes-box-lines {
+    height: 90px !important;
+    background-image: repeating-linear-gradient(transparent, transparent 17px, #555555 17px, #555555 18px) !important;
+  }
+
+  /* Tool boxes & Glossary */
+  .tool-box-title {
+    color: #000000 !important;
+    font-size: 16.5px !important;
+    font-weight: 800 !important;
+  }
+
+  .tool-box-desc,
+  .tool-examples {
+    font-size: 15.8px !important;
+    line-height: 1.76 !important;
+    color: #000000 !important;
+  }
+
+  .glossary-term {
+    color: #000000 !important;
+    font-size: 16.5px !important;
+    font-weight: 800 !important;
+    border-bottom: 1.2px solid #000000 !important;
+  }
+
+  /* Code elements: Crisp white box with solid outline */
+  code {
+    background-color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    padding: 1.5px 5px !important;
+    border-radius: 3px !important;
+    font-size: 13.8px !important;
+    font-weight: 600 !important;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  }
+
+  /* Sinhala specific clarity */
+  .si-term {
+    color: #000000 !important;
+    font-size: 15.8px !important;
+    font-weight: 700 !important;
+  }
+
+  .si-question-sub {
+    color: #000000 !important;
+    font-size: 14.8px !important;
+    font-weight: 600 !important;
+  }
+
+  .ch-subtitle-text {
+    color: #000000 !important;
+    font-size: 14.8px !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= STUDY NAVBAR ================= -->
+<nav id="study-navbar">
+  <div class="study-nav-container">
+    <div class="study-nav-left">
+      <a href="../index.html" class="study-nav-brand" title="Master Study Dashboard">
+        <strong>ISTQB® CTFL Hub</strong>
+      </a>
+      <div class="study-nav-pill-group">
+        <a href="istqb_ch1_study_guide_sinhala.html" class="study-nav-pill" title="Chapter 01: පරීක්ෂාවේ මූලධර්ම (Fundamentals of Testing)">Ch 1</a><a href="istqb_ch2_study_guide_sinhala.html" class="study-nav-pill" title="Chapter 02: SDLC තුළ පරීක්ෂාව (Testing Throughout SDLC)">Ch 2</a><a href="istqb_ch3_study_guide_sinhala.html" class="study-nav-pill" title="Chapter 03: ස්ථිතික පරීක්ෂාව (Static Testing)">Ch 3</a><a href="istqb_ch4_study_guide_sinhala.html" class="study-nav-pill" title="Chapter 04: පරීක්ෂණ විශ්ලේෂණය සහ සැලසුම්කරණය (Analysis & Design)">Ch 4</a><a href="istqb_ch5_study_guide_sinhala.html" class="study-nav-pill active" title="Chapter 05: පරීක්ෂණ ක්‍රියාකාරකම් කළමනාකරණය (Managing Test Activities)">Ch 5</a><a href="istqb_ch6_study_guide_sinhala.html" class="study-nav-pill" title="Chapter 06: පරීක්ෂණ මෙවලම් (Test Tools)">Ch 6</a><a href="../05_Practice_Questions_and_Summaries/istqb_mock_exam_simulator.html" class="study-nav-pill" style="background: #064e3b; color: #a7f3d0 !important; border: 1px solid #059669;" title="Launch Official 40-Question Mock Exam Simulator">40Q Simulator</a><a href="../study_map.html" class="study-nav-pill" title="Library Index & Master Study Roadmap">Roadmap</a>
+      </div>
+    </div>
+
+    <div class="study-nav-center">
+      <select class="study-nav-select" onchange="jumpToSection(this)">
+        <option value="">Jump to Section...</option><option value="sec-core">1. Core Syllabus Concepts (මූලික විෂය කරුණු)</option><option value="sec-5-1">  5.1 Test Planning (පරීක්ෂණ සැලසුම්කරණය)</option><option value="sec-5-2">  5.2 Risk Management (අවදානම් කළමනාකරණය)</option><option value="sec-5-3">  5.3 Monitoring & Control (අධීක්ෂණය)</option><option value="sec-5-4">  5.4 CM & Defect Management (දෝෂ)</option><option value="sec-flashpoints">2. High-Yield Exam Flashpoints (විශේෂ කරුණු)</option><option value="sec-glossary">3. Keyword Lexicon (නිල ශබ්දකෝෂය)</option><option value="sec-questions">4. Practice Exam Questions (අභ්‍යාස ප්‍රශ්න)</option><option value="sec-notes">5. Student Handwriting Notes</option>
+      </select>
+      <a href="istqb_ch4_study_guide_sinhala.html" class="study-nav-btn" title="Go to Ch 4: Analysis & Design"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px;"><polyline points="15 18 9 12 15 6"></polyline></svg>Prev</a>
+      <a href="istqb_ch6_study_guide_sinhala.html" class="study-nav-btn" title="Go to Ch 6: Test Tools">Next<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:4px;"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+
+    <div class="study-nav-right">
+      <a href="javascript:void(0)" onclick="switchLanguage('../02_English_Study_Guides_HTML/istqb_ch5_study_guide.html')" class="study-nav-btn study-nav-lang-btn" title="Switch language for Chapter 5">
+        English Version
+      </a>
+      <button id="theme-toggle-btn" class="study-nav-btn" onclick="toggleReadingTheme()" title="Toggle Reading Theme">
+        Theme
+      </button>
+      <button class="study-nav-btn" onclick="window.print()" title="Print this guide or save as PDF">
+        Print
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Reading Document Container -->
+<div class="study-main-wrapper">
+
+
+<!-- ==================== PAGE 1: LESSON CONTENT ==================== -->
+  <div class="page-start" style="margin-top: 0;">
+    <div style="margin-bottom: 8px; border-bottom: 2.5px solid #2563eb; padding-bottom: 4px;">
+      <h1 style="font-size: 20px; font-weight: 800; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">Chapter 05: Managing the Test Activities (පරීක්ෂණ ක්‍රියාකාරකම් කළමනාකරණය)</h1>
+      <p class="ch-subtitle-text">ISTQB CTFL v4.0.1 Syllabus &bull; Bilingual Master Study Guide (English Official Terms with Comprehensive Sinhala Explanations)</p>
+    </div>
+
+    <h2 id="sec-core">1. Core Syllabus Concepts & In-Depth Notes (මූලික විෂය කරුණු)</h2>
+
+    <h3 id="sec-5-1">5.1 Test Planning (පරීක්ෂණ සැලසුම්කරණය) <span class="badge badge-k2">FL-5.1.1</span> <span class="badge badge-k1">FL-5.1.2</span> <span class="badge badge-k2">FL-5.1.3</span></h3>
+    <div class="card card-accent-left">
+      <strong>නිල අර්ථ දැක්වීම (Formal Definition):</strong> A <strong>Test Plan</strong> describes the test objectives, resources, and processes for a test project. It guides testers' thinking, forces confrontation with future challenges (risks, schedules, costs), and serves as a vehicle of communication with stakeholders.
+      <br><span>(පරීක්ෂණ සැලැස්මක් මඟින් ව්‍යාපෘතියක පරීක්ෂණ අරමුණු, ඒ සඳහා අවශ්‍ය සම්පත් සහ ක්‍රියාවලිය පැහැදිලි කරයි. එමඟින් අනාගතයේ මුහුණ දීමට සිදුවන අවදානම් (risks), කාලසටහන් (schedules) සහ පිරිවැය (costs) කල්තියා හඳුනා ගැනීමටත් පාර්ශ්වකරුවන් සමඟ නිසි සන්නිවේදනයක් පවත්වා ගැනීමටත් උපකාරී වේ.)</span>
+    </div>
+
+    <h4>5.1.1 Purpose and Typical Content of a Test Plan (ISO/IEC/IEEE 29119-3)</h4>
+    <div class="grid-2">
+      <div class="card">
+        <strong>පරීක්ෂණ සැලසුම්කරණයේ ප්‍රධාන අරමුණු (Core Purposes):</strong>
+        <ul style="margin: 4px 0 0 14px;">
+          <li>පරීක්ෂණ අරමුණු සපුරා ගැනීමේ ක්‍රමවේදය සහ කාලසටහන ලේඛනගත කිරීම.</li>
+          <li>සිදුකරන ක්‍රියාකාරකම් ස්ථාපිත නිර්ණායක (criteria) සමඟ සැසඳෙන බව තහවුරු කිරීම.</li>
+          <li>කණ්ඩායම සහ ව්‍යාපෘති පාර්ශ්වකරුවන් (stakeholders) අතර සන්නිවේදන මාධ්‍යයක් ලෙස ක්‍රියා කිරීම.</li>
+          <li>ආයතනික පරීක්ෂණ ප්‍රතිපත්තියට (Test Policy) සහ උපාය මාර්ගයට (Test Strategy) අනුකූල බව පෙන්වීම (නොඑසේ නම් වෙනස්කම් සාධාරණීකරණය කිරීම).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>පරීක්ෂණ සැලැස්මක අඩංගු ප්‍රධාන කොටස් (Typical Sections):</strong>
+        <ul style="margin: 4px 0 0 14px;">
+          <li><strong>Context:</strong> Test scope (පරිමාව), objectives (අරමුණු), සහ test basis.</li>
+          <li><strong>Assumptions & Constraints:</strong> පූර්ව නිගමන සහ සීමාවන් (budget, deadlines).</li>
+          <li><strong>Stakeholders:</strong> වගකීම් (roles), පුහුණු කිරීම් සහ බඳවා ගැනීමේ අවශ්‍යතා.</li>
+          <li><strong>Risk Register:</strong> හඳුනාගත් Product සහ Project risks ලේඛනය.</li>
+          <li><strong>Test Approach:</strong> Test levels, types, techniques, criteria සහ tools.</li>
+          <li><strong>Budget & Schedule:</strong> වැයවන මුදල, සන්ධිස්ථාන (milestones) සහ කාලසටහන.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>5.1.2 Tester's Contribution to Iteration and Release Planning <span class="badge badge-k1">FL-5.1.2 (K1)</span></h4>
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>Release Planning (දීර්ඝකාලීන සැලසුම්කරණය):</strong>
+        <p style="margin-top: 3px;">
+          නිෂ්පාදනයක් නිකුත් කිරීම (Release) දක්වා ඇති දීර්ඝකාලීන පියවර සැලසුම් කරයි. මෙහිදී Product Backlog එක පිරිපහදු කර විශාල කතාන්දර (Epics) කුඩා User Stories වලට කඩයි. ටෙස්ටර්ගේ දායකත්වය:
+          <br>&bull; පරීක්ෂා කළ හැකි (Testable) User Stories සහ Acceptance Criteria ලිවීම.
+          <br>&bull; Project සහ Quality Risk Analysis සඳහා සහභාගී වීම.
+          <br>&bull; User Stories සඳහා වැයවන පරිශ්‍රමය (Testing Effort) ඇස්තමේන්තු කිරීම.
+          <br>&bull; සියලු Iterations හරහා ගමන් කරන පොදු පරීක්ෂණ ප්‍රවේශය (Overall Test Approach) අර්ථ දැක්වීම.
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>Iteration Planning (Sprint සැලසුම්කරණය):</strong>
+        <p style="margin-top: 3px;">
+          තනි කෙටිකාලීන Iteration එකක් (Sprint) ඉලක්ක කරගෙන සිදුකරන සැලසුම්කරණයයි. ටෙස්ටර්ගේ දායකත්වය:
+          <br>&bull; තනි තනි User Stories වල සවිස්තරාත්මක අවදානම් විශ්ලේෂණය (Detailed Risk Analysis).
+          <br>&bull; User Stories වල පරීක්ෂා කිරීමේ හැකියාව (Testability) තක්සේරු කිරීම.
+          <br>&bull; User Stories පරීක්ෂණ කාර්යයන් (Testing Tasks) වලට වෙන් කිරීම.
+          <br>&bull; එක් එක් කාර්යය සඳහා අවශ්‍ය කාලය හා පරිශ්‍රමය ඇස්තමේන්තු කිරීම.
+          <br>&bull; Functional සහ Non-functional අවශ්‍යතා නිශ්චිතව හඳුනා ගැනීම.
+        </p>
+      </div>
+    </div>
+
+    <h4>5.1.3 Entry Criteria and Exit Criteria <span class="badge badge-k2">FL-5.1.3 (K2)</span></h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 22%;">පරාමිතිය (Dimension)</th>
+          <th style="width: 39%;">Entry Criteria (Definition of Ready - DoR)</th>
+          <th style="width: 39%;">Exit Criteria (Definition of Done - DoD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>මූලික අරමුණ (Formal Purpose)</strong></td>
+          <td>යම් පරීක්ෂණ ක්‍රියාකාරකමක් ආරම්භ කිරීමට සපුරාලිය යුතු <strong>පූර්ව අවශ්‍යතා (Preconditions)</strong> වේ. මේවා නොමැතිව පරීක්ෂාව ඇරඹීම අධික අවදානමකි.</td>
+          <td>යම් ක්‍රියාකාරකමක්, පරීක්ෂණ මට්ටමක් හෝ Release එකක් <strong>අවසන් කළ බව (Completed)</strong> නිල වශයෙන් ප්‍රකාශ කිරීමට සපුරාලිය යුතු කොන්දේසි වේ.</td>
+        </tr>
+        <tr>
+          <td><strong>සාමාන්‍ය උදාහරණ (Typical Examples)</strong></td>
+          <td>
+            &bull; Testware සූදානම් වීම (පැහැදිලි requirements, test cases)<br>
+            &bull; Test Environment, Data, Tools සහ Staff ලබාගත හැකි වීම<br>
+            &bull; මූලික Smoke Tests සාර්ථකව සමත් වීම
+          </td>
+          <td>
+            &bull; ආවරණය සපුරා ගැනීම (Achieved coverage, e.g. 100% statement)<br>
+            &bull; විසඳා නොමැති බරපතල දෝෂ නොමැති වීම (Zero critical defects)<br>
+            &bull; සියලු Regression tests ස්වයංක්‍රීයව ක්‍රියාත්මක වීම
+          </td>
+        </tr>
+        <tr>
+          <td><strong>අයවැය / කාල සීමා යථාර්ථය (Budget & Schedule Reality)</strong></td>
+          <td>අසම්පූර්ණ හෝ බිඳවැටුණු build එකක් පරීක්ෂා කිරීමට වඩා Entry criteria සපුරන තෙක් ප්‍රමාද කිරීම වඩාත් සුදුසුය.</td>
+          <td><strong>කාලය හෝ මුදල් අවසන් වීමද Exit Criterion එකක් විය හැකිය</strong> — එහෙත් ඒ සඳහා ඉතිරිව ඇති අවදානම (Residual Risk) පාර්ශ්වකරුවන් විසින් පිළිගත යුතුය!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 2: 5.1.4 TEST ESTIMATION TECHNIQUES ==================== -->
+  <div class="page-start">
+    <h3>5.1.4 Test Effort Estimation Techniques (පරීක්ෂණ පරිශ්‍රමය ඇස්තමේන්තු කිරීමේ ශිල්පක්‍රම) <span class="badge badge-k3">FL-5.1.4 (K3)</span></h3>
+    <p>
+      පරීක්ෂණ අරමුණු සපුරා ගැනීම සඳහා වැයවන වැඩ කොටස (Effort) කල්තියා ගණනය කිරීම මෙහිදී සිදුකෙරේ. විශාල කාර්යයන් කුඩා කොටස්වලට කඩා (Decomposition) ඇස්තමේන්තු කිරීම ඉතා නිවැරදි ප්‍රතිඵල ලබා දෙයි.
+    </p>
+
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>1. Estimation Based on Ratios (අනුපාත මත පදනම් වූ - Metrics-Based):</strong>
+        <p style="margin-top: 2px;">
+          ආයතනයේ පෙර ව්‍යාපෘතිවල දත්ත රැස්කර සම්මත අනුපාතයක් නිර්මාණය කරගැනීම.
+          <br><strong>ගණනය කිරීමේ උදාහරණය:</strong> Development සහ Testing අතර අතීත අනුපාතය <strong>3 : 2</strong> නම්, නව ව්‍යාපෘතියේ Dev effort එක <strong>දින 600</strong> ක් ලෙස තක්සේරු කර ඇත්නම්:
+          <br><span style="display: block; margin: 3px 0; font-weight: 700;">Test Effort = 600 &times; (2 / 3) = දින 400 (Person-days)</span>
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>2. Extrapolation (බාහිර නිස්සාරණය - Metrics-Based):</strong>
+        <p style="margin-top: 2px;">
+          වත්මන් ව්‍යාපෘතියේ ආරම්භක අදියරවලින් රැස්කරගත් මිනුම් අනාගතය සඳහා ගණිතමය වශයෙන් දිගු කිරීම. Agile/Iterative ක්‍රමවේද සඳහා වඩාත් යෝග්‍ය වේ.
+          <br><strong>ගණනය කිරීමේ උදාහරණය:</strong> Sprint 1, 2, 3 සඳහා සැබෑ පරීක්ෂණ කාලය දින 18, 22, 20 ක් වූයේ නම්, Sprint 4 හි සාමාන්‍යය:
+          <br><span style="display: block; margin: 3px 0; font-weight: 700;">Sprint 4 Effort = (18 + 22 + 20) / 3 = දින 20 (Person-days)</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 5px;">
+      <div class="card card-accent-left">
+        <strong>3. Wideband Delphi (විශේෂඥ එකඟතා ක්‍රමය - Expert-Based):</strong>
+        <p style="margin-top: 2px;">
+          විශේෂඥයින් කිහිපදෙනෙකු වෙන් වෙන්ව ස්වාධීනව ඇස්තමේන්තු ඉදිරිපත් කරයි. එම ඇස්තමේන්තු සසඳා බලා වෙනස්කම් සාකච්ඡා කර, එකඟතාවයක් (Consensus) ලැබෙන තෙක් නැවත නැවත රහසිගතව ඇස්තමේන්තු සකස් කරයි.
+          <br>&bull; <strong>Planning Poker:</strong> Story points කාඩ්පත් භාවිතයෙන් සිදුකරන Agile ආකෘතියයි.
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>4. Three-Point Estimation / PERT (Expert-Based):</strong>
+        <p style="margin-top: 2px;">
+          විශේෂඥයින් විසින් ඇස්තමේන්තු තුනක් ලබා දෙයි:
+          <br>&bull; <em>a</em> = Most optimistic (වඩාත්ම සුබවාදී / අවම කාලය)
+          <br>&bull; <em>m</em> = Most likely (වඩාත්ම ඉඩකඩ ඇති කාලය)
+          <br>&bull; <em>b</em> = Most pessimistic (වඩාත්ම අසුබවාදී / උපරිම කාලය)
+          <br>භාරිත සාමාන්‍යය (<em>E</em>) සහ සම්මත අපගමනය (<em>SD</em>):
+        </p>
+        <div class="formula-box" style="margin: 3px 0;">
+          <strong>E = (a + 4m + b) / 6</strong> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>SD = (b &minus; a) / 6</strong>
+        </div>
+      </div>
+    </div>
+
+    <h4>විභාග ගණනය කිරීමේ උදාහරණය: Three-Point Estimation Calculation</h4>
+    <div class="card card-center-callout">
+      <p style="line-height: 1.55;">
+        <strong>ගැටලුව:</strong> ගෙවීම් පද්ධතියක් පරීක්ෂා කිරීමට විශේෂඥයින් තක්සේරු කරන්නේ: Optimistic <em>a</em> = පැය 6, Most likely <em>m</em> = පැය 9, Pessimistic <em>b</em> = පැය 18.
+        <br><strong>පියවර 1 (භාරිත ඇස්තමේන්තුව E ගණනය කිරීම):</strong>
+        <br>&nbsp;&nbsp;&bull; <em>E</em> = (6 + 4(9) + 18) / 6 = (6 + 36 + 18) / 6 = 60 / 6 = <strong>පැය 10 (Person-hours)</strong>
+        <br><strong>පියවර 2 (මිනුම් දෝෂය / සම්මත අපගමනය SD ගණනය කිරීම):</strong>
+        <br>&nbsp;&nbsp;&bull; <em>SD</em> = (18 &minus; 6) / 6 = 12 / 6 = <strong>පැය 2 (Person-hours)</strong>
+        <br><strong>අවසාන වාර්තාගත ඇස්තමේන්තුව:</strong> <span class="metric-pill">පැය 10 &plusmn; 2</span> (විශ්වාසනීය පරාසය: පැය <strong>8</strong> ත් <strong>12</strong> ත් අතර).
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 3: 5.1.5 PRIORITIZATION & 5.1.6 TEST PYRAMID ==================== -->
+  <div class="page-start">
+    <h3>5.1.5 Test Case Prioritization (පරීක්ෂණ අවස්ථා ප්‍රමුඛතාකරණය) <span class="badge badge-k3">FL-5.1.5 (K3)</span></h3>
+    <p>
+      Test cases සහ procedures එකතු කර Test Suites සාදන විට, ඒවා ධාවනය කරන අනුපිළිවෙල (Execution Schedule) තීරණය කිරීමට ප්‍රධාන ප්‍රවේශ තුනක් භාවිත කරයි:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">ප්‍රමුඛතාකරණ උපායමාර්ගය (Strategy)</th>
+          <th style="width: 45%;">අනුපිළිවෙල තීරණය කරන යාන්ත්‍රණය (Ordering Mechanism)</th>
+          <th style="width: 30%;">ප්‍රායෝගික යෙදවුම (Application)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Risk-Based Prioritization</strong></td>
+          <td>නිෂ්පාදන අවදානම (Product Risk) මූලික වේ. ඉහළම අවදානම් සහිත Test cases පළමුව ධාවනය කරයි.</td>
+          <td>ආරක්ෂක (Security) සහ ගෙවීම් පද්ධති පරීක්ෂාව පළමු දිනයේම සිදුකිරීම.</td>
+        </tr>
+        <tr>
+          <td><strong>Coverage-Based Prioritization</strong></td>
+          <td>කේත හෝ අවශ්‍යතා ආවරණය (Coverage) මත තීරණය වේ. <em>Additional Coverage Prioritization</em> හිදී උපරිම ආවරණයක් ලබාදෙන test cases මුලින්ම run කරයි.</td>
+          <td>සීමිත කාලයක් තුළ උපරිම කේත ආවරණයක් තහවුරු කිරීමට අවශ්‍ය වූ විට.</td>
+        </tr>
+        <tr>
+          <td><strong>Requirements-Based Prioritization</strong></td>
+          <td>පාර්ශ්වකරුවන් විසින් අදාළ අවශ්‍යතාවලට ලබාදී ඇති ව්‍යාපාරික වැදගත්කම (Business Priority) මත පදනම් වේ.</td>
+          <td>MoSCoW ක්‍රමය අනුව "Must-Have" අවශ්‍යතා මුලින්ම පරීක්ෂා කිරීම.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>අතිශය තීරණාත්මක විභාග රීතිය: Test Dependencies & Resource Constraints:</strong><br>
+      යම් Test Case එකක් ඉහළම ප්‍රමුඛතාවක් සහිත එකක් වුවද, <strong>එය ක්‍රියාත්මක වීමට අඩු ප්‍රමුඛතාවක් ඇති වෙනත් Test Case එකක් මත තාක්ෂණිකව රඳා පවතින්නේ නම් (Dependency), අනිවාර්යයෙන්ම අඩු ප්‍රමුඛතා Test Case එක පළමුව ධාවනය කළ යුතුය!</strong> (උදා: Login හෝ Data create කිරීමේ test එක මුලින්ම run විය යුතුය).
+    </div>
+
+    <h3>5.1.6 The Test Pyramid (පරීක්ෂණ පිරමිඩය) <span class="badge badge-k1">FL-5.1.6 (K1)</span></h3>
+    <div class="card card-accent-left">
+      <strong>මූලික සංකල්පය (Mike Cohn):</strong> පරීක්ෂණ පිරමිඩය මඟින් විවිධ පරීක්ෂණ මට්ටම්වල පවතින විභේදනය (granularity), හුදකලා බව (isolation) සහ ස්වයංක්‍රීයකරණයේ ප්‍රමාණය නිරූපණය කරයි.
+    </div>
+
+    <div class="card card-center-callout">
+      <div style="font-weight: 700; margin-bottom: 4px;">THE TEST PYRAMID LAYERS</div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+        <div style="width: 42%;" class="progress-bar-fill">
+          Level 3 (Top): UI & End-to-End Tests (ස්වල්පයයි, සංකීර්ණයි, සෙමෙන් ධාවනය වේ, Low Isolation)
+        </div>
+        <div style="width: 65%;" class="progress-bar-fill">
+          Level 2 (Middle): Service & Integration Tests (මධ්‍යස්ථ වේගය සහ හුදකලා බව)
+        </div>
+        <div style="width: 88%;" class="progress-bar-fill">
+          Level 1 (Base): Unit & Component Tests (ඉතා විශාල සංඛ්‍යාවක්, කුඩායි, ක්ෂණිකයි, High Isolation)
+        </div>
+      </div>
+    </div>
+
+    <h4>පිරමිඩයේ ප්‍රධාන රීති (Syllabus Rules):</h4>
+    <ul>
+      <li><strong>Bottom Layer (Unit):</strong> පරීක්ෂණ කුඩාය, ඉතා හුදකලාය (isolated), ඉතා වේගවත්ය. ප්‍රමාණවත් ආවරණයක් සඳහා විශාල පරීක්ෂණ ගණනක් අවශ්‍ය වේ.</li>
+      <li><strong>Top Layer (UI / E2E):</strong> පද්ධතියම එකවර පරීක්ෂා කරන සංකීර්ණ පරීක්ෂණ වේ. සෙමෙන් ධාවනය වන අතර, අවශ්‍ය වන්නේ සුළු සංඛ්‍යාවකි.</li>
+      <li><strong>විභාග රීතිය:</strong> <em>පිරමිඩයේ ඉහළට යත්ම, Granularity අඩු වේ, Isolation අඩු වේ (අනෙක් කොටස් මත යැපීම වැඩි වේ), සහ Execution Time එක වැඩි වේ!</em></li>
+    </ul>
+  </div>
+
+  <!-- ==================== PAGE 4: 5.1.7 TESTING QUADRANTS ==================== -->
+  <div class="page-start">
+    <h3>5.1.7 The Testing Quadrants (පරීක්ෂණ චතුර්ථක) <span class="badge badge-k2">FL-5.1.7 (K2)</span></h3>
+    <div class="card card-accent-left">
+      <strong>මූලික අරමුණ (Brian Marick):</strong> Agile ක්‍රමවේද තුළ පරීක්ෂණ මට්ටම්, වර්ග සහ ශිල්පක්‍රම එකමුතු කර නිසි ආවරණයක් ලබාගැනීමටත්, තාක්ෂණික හා ව්‍යාපාරික සාමාජිකයන් අතර සන්නිවේදනය පහසු කිරීමටත් මෙම ආකෘතිය උපකාරී වේ.
+    </div>
+
+    <p>
+      මෙම ආකෘතිය ප්‍රධාන අක්ෂ දෙකක් ඔස්සේ බෙදා ඇත: (1) <strong>Business Facing vs. Technology Facing</strong>, සහ (2) <strong>Supporting the Team (කණ්ඩායමට මඟ පෙන්වීම) vs. Critiquing the Product (නිෂ්පාදනය විවේචනාත්මකව ඇගයීම)</strong>:
+    </p>
+
+    <div class="quadrant-grid">
+      <!-- Q1 -->
+      <div class="quadrant-card" style="border-top: 4px solid #4b5563;">
+        <strong>Quadrant Q1: Technology Facing &bull; Support Team</strong>
+        <p style="margin-top: 2px;">
+          &bull; <strong>පරීක්ෂණ වර්ග:</strong> Component testing (unit) සහ Component integration testing.
+          <br>&bull; <strong>ස්වභාවය:</strong> ඉතා ඉහළ ස්වයංක්‍රීයකරණයක් සහිතයි; CI/CD pipeline තුළට සෘජුවම බද්ධ කර ඇත.
+          <br>&bull; <strong>ඉලක්කය:</strong> කේතයේ මූලික නිරවද්‍යතාව තහවුරු කරමින් සංවර්ධකයාට මඟ පෙන්වීම.
+        </p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quadrant-card" style="border-top: 4px solid #4b5563;">
+        <strong>Quadrant Q2: Business Facing &bull; Support Team</strong>
+        <p style="margin-top: 2px;">
+          &bull; <strong>පරීක්ෂණ වර්ග:</strong> Functional tests, User story tests, API testing, UX prototypes, Simulations.
+          <br>&bull; <strong>ස්වභාවය:</strong> User stories වල acceptance criteria සනාථ කරයි; Manual හෝ Automated විය හැක.
+          <br>&bull; <strong>ඉලක්කය:</strong> ව්‍යාපාරික අවශ්‍යතාවලට ගැලපෙන ලෙස මෘදුකාංගය තැනීමට උපකාරී වීම.
+        </p>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quadrant-card" style="border-top: 4px solid #4b5563;">
+        <strong>Quadrant Q3: Business Facing &bull; Critique Product</strong>
+        <p style="margin-top: 2px;">
+          &bull; <strong>පරීක්ෂණ වර්ග:</strong> Exploratory testing, Usability testing, User Acceptance Testing (UAT).
+          <br>&bull; <strong>ස්වභාවය:</strong> සැබෑ පරිශීලකයාගේ ඇසින් බලන මානව ඇගයීමකි; ප්‍රධාන වශයෙන් <strong>Manual</strong> වේ.
+          <br>&bull; <strong>ඉලක්කය:</strong> පරිශීලක අත්දැකීම (UX) සහ ව්‍යාපාරික යෝග්‍යතාවය පරීක්ෂා කිරීම.
+        </p>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quadrant-card" style="border-top: 4px solid #4b5563;">
+        <strong>Quadrant Q4: Technology Facing &bull; Critique Product</strong>
+        <p style="margin-top: 2px;">
+          &bull; <strong>පරීක්ෂණ වර්ග:</strong> Smoke tests සහ Non-functional tests (Performance, Load, Security, Reliability).
+          <br>&bull; <strong>සුවිශේෂී රීතිය:</strong> Usability පරීක්ෂාව Q3 හි පවතින අතර, අනෙකුත් <strong>සියලු non-functional පරීක්ෂණ අයත් වන්නේ Q4 වෙතයි!</strong>
+          <br>&bull; <strong>ස්වභාවය:</strong> මෙවලම් මඟින් මෙහෙයවන ස්වයංක්‍රීය පරීක්ෂණ (Tool-driven, Automated).
+        </p>
+      </div>
+    </div>
+
+    <h4>Testing Quadrants සාරාංශ වගුව:</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 15%;">Quadrant</th>
+          <th style="width: 30%;">දිශානතිය සහ අරමුණ</th>
+          <th style="width: 38%;">අයත් වන පරීක්ෂණ වර්ග</th>
+          <th style="width: 17%;">ක්‍රියාත්මක වන ආකාරය</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Q1</strong></td>
+          <td>Technology-facing &bull; Support team</td>
+          <td>Component (Unit) tests, Unit integration tests</td>
+          <td>Automated (CI)</td>
+        </tr>
+        <tr>
+          <td><strong>Q2</strong></td>
+          <td>Business-facing &bull; Support team</td>
+          <td>Functional tests, User story tests, API tests, Prototypes</td>
+          <td>Manual or Automated</td>
+        </tr>
+        <tr>
+          <td><strong>Q3</strong></td>
+          <td>Business-facing &bull; Critique product</td>
+          <td>Exploratory testing, Usability testing, UAT</td>
+          <td>Predominantly Manual</td>
+        </tr>
+        <tr>
+          <td><strong>Q4</strong></td>
+          <td>Technology-facing &bull; Critique product</td>
+          <td>Smoke tests, Performance, Load, Security, Reliability</td>
+          <td>Predominantly Automated</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 5: 5.2 RISK MANAGEMENT ==================== -->
+  <div class="page-start">
+    <h2 id="sec-5-2">1.2 Risk Management (අවදානම් කළමනාකරණය)</h2>
+    <div class="card card-accent-left">
+      <strong>නිල අර්ථ දැක්වීම (ISO 31000):</strong> A <strong>Risk</strong> is a potential event, hazard, threat, or situation whose occurrence causes an adverse effect. (අවදානමක් යනු අනාගතයේ සිදුවුවහොත් අහිතකර බලපෑමක් ඇතිකළ හැකි විභව සිදුවීමකි). අවදානම් විශ්ලේෂණය මත පදනම්ව පරීක්ෂණ සැලසුම් කිරීම <strong>Risk-Based Testing</strong> ලෙස හැඳින්වේ.
+    </div>
+
+    <h4>5.2.1 Risk Definition and Attributes <span class="badge badge-k1">FL-5.2.1 (K1)</span></h4>
+    <p>අවදානමක් ප්‍රධාන සාධක දෙකකින් සමන්විත වේ:</p>
+    <ul>
+      <li><strong>Risk Likelihood:</strong> අවදානම සිදුවීමේ සම්භාවිතාව (0 &lt; Likelihood &lt; 1).</li>
+      <li><strong>Risk Impact (Harm):</strong> එය සිදුවුවහොත් සිදුවන හානිය හෝ ප්‍රතිවිපාකය.</li>
+      <li><strong>Risk Level:</strong> අවදානම් මට්ටම ගණනය කරනුයේ: <span class="metric-pill">Risk Level = Likelihood &times; Impact</span></li>
+    </ul>
+
+    <h4>5.2.2 Project Risks vs. Product Risks <span class="badge badge-k2">FL-5.2.2 (K2)</span></h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 22%;">පරාමිතිය (Dimension)</th>
+          <th style="width: 39%;">Project Risks (ව්‍යාපෘති අවදානම් - Management)</th>
+          <th style="width: 39%;">Product Risks (නිෂ්පාදන අවදානම් - Quality)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>මූලික අර්ථය</strong></td>
+          <td>ව්‍යාපෘතියේ කළමනාකරණයට සහ පාලනයට බලපාන අවදානම් (කාලසටහන, අයවැය, කාර්ය මණ්ඩලය).</td>
+          <td>මෘදුකාංග නිෂ්පාදනයේ ගුණාත්මක ලක්ෂණවලට (Quality characteristics) බලපාන අවදානම්.</td>
+        </tr>
+        <tr>
+          <td><strong>ආයතනික ගැටලු (Organizational)</strong></td>
+          <td>ලියකියවිලි ප්‍රමාද වීම, වැරදි ඇස්තමේන්තු, අයවැය කප්පාදු කිරීම්.</td>
+          <td>දුර්වල මෘදුකාංග නිර්මාණ ශිල්පය (Architecture), නඩත්තු කිරීමට අපහසු වීම.</td>
+        </tr>
+        <tr>
+          <td><strong>මානව සම්පත් (People Issues)</strong></td>
+          <td>කාර්ය මණ්ඩල හිඟය, කුසලතා ඌනතා, කණ්ඩායම් ගැටුම්, සන්නිවේදන බිඳවැටීම්.</td>
+          <td>පරිශීලක අතෘප්තිය, දුර්වල පරිශීලක අත්දැකීම (Bad UX).</td>
+        </tr>
+        <tr>
+          <td><strong>තාක්ෂණික ගැටලු (Technical Issues)</strong></td>
+          <td>Scope creep, ප්‍රමාණවත් test tools නොමැතිකම, test environment ප්‍රමාද වීම.</td>
+          <td>ක්‍රියාකාරී දෝෂ (Functional bugs), System crashes, ආරක්ෂක සිදුරු (Vulnerabilities).</td>
+        </tr>
+        <tr>
+          <td><strong>සැපයුම්කරුවන් (Supplier Issues)</strong></td>
+          <td>තෙවන පාර්ශ්ව ආයතනය බිඳවැටීම හෝ tool licenses ප්‍රමාද වීම.</td>
+          <td>තෙවන පාර්ශ්ව API මඟින් දත්ත විකෘති වීම හෝ timeout වීම.</td>
+        </tr>
+        <tr>
+          <td><strong>ප්‍රතිවිපාක (Consequences)</strong></td>
+          <td>මුදල් නාස්තිය, ව්‍යාපෘතිය අත්හැරීමට සිදුවීම, Deadlines මඟහැරීම.</td>
+          <td>පාරිභෝගික මූල්‍ය පාඩු, නීතිමය ගැටලු, ජීවිත හෝ ශාරීරික හානි සිදුවීම.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>විභාගයේදී වෙන්කර හඳුනාගැනීම (Exam Classification):</strong><br>
+      &bull; <em>"Test environment එක සති 3 කින් ප්‍රමාද විය"</em> &rarr; <strong>Project Risk</strong> (කාලසටහනට තර්ජනයක්).<br>
+      &bull; <em>"GPS භාවිතයේදී Mobile App එකෙන් Battery එක වේගයෙන් බැසයයි"</em> &rarr; <strong>Product Risk</strong> (මෘදුකාංගයේ ගුණාත්මක අඩුපාඩුවක්).
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 6: 5.2.3 RISK ANALYSIS & 5.2.4 RISK CONTROL ==================== -->
+  <div class="page-start">
+    <h3>5.2.3 Product Risk Analysis (නිෂ්පාදන අවදානම් විශ්ලේෂණය) <span class="badge badge-k2">FL-5.2.3 (K2)</span></h3>
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-bottom: 6px;">
+      <strong>මූලික අරමුණ:</strong> ඉතිරිවන අවදානම (Residual Risk) අවම කිරීම සඳහා පරීක්ෂණ කටයුතු නිසි ලෙස යොමු කිරීම. මෙහි උප-ක්‍රියාකාරකම් දෙකකි: <strong>Risk Identification</strong> (අවදානම් හඳුනාගැනීම) සහ <strong>Risk Assessment</strong> (අවදානම් තක්සේරු කිරීම).
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <strong>1. Risk Identification:</strong>
+        <p style="margin-top: 2px;">
+          Brainstorming සැසි, පාර්ශ්වකරුවන්ගේ සම්මුඛ සාකච්ඡා, checklists සහ අතීත අත්දැකීම් භාවිත කර ඇතිවිය හැකි සියලු අවදානම් ලැයිස්තුගත කිරීම.
+        </p>
+      </div>
+      <div class="card">
+        <strong>2. Risk Assessment:</strong>
+        <p style="margin-top: 2px;">
+          හඳුනාගත් අවදානම් වර්ගීකරණය කර, ඒවායේ Likelihood සහ Impact තක්සේරු කර Risk Level එක ගණනය කිරීම.
+          <br>&bull; <em>Quantitative:</em> සංඛ්‍යාත්මක අගයන් ගුණ කිරීම.
+          <br>&bull; <em>Qualitative:</em> Risk Matrix (High, Med, Low) භාවිතය.
+        </p>
+      </div>
+    </div>
+
+    <h4>Product Risk Analysis මඟින් පරීක්ෂණ ක්‍රියාවලිය මෙහෙයවන ආකාරය:</h4>
+    <ul>
+      <li><strong>Test Scope තීරණය කිරීම:</strong> අධික අවදානම් සහිත කොටස් පුළුල් ලෙස පරීක්ෂා කරන අතර, අඩු අවදානම් කොටස් සඳහා සුළු පරීක්ෂාවක් සිදුකරයි.</li>
+      <li><strong>Test Levels සහ Types තීරණය කිරීම:</strong> දැඩි ආරක්ෂක අවදානම් පවතී නම්, විශේෂිත Penetration testing සිදුකිරීමට තීරණය කිරීම.</li>
+      <li><strong>Test Techniques තෝරාගැනීම:</strong> ඉහළ අවදානම් සඳහා 3-value BVA සහ Branch coverage භාවිත කරන අතර, සාමාන්‍ය අවදානම් සඳහා Exploratory testing භාවිතය.</li>
+      <li><strong>ප්‍රමුඛතාව ලබාදීම (Prioritization):</strong> තීරණාත්මක දෝෂ කල්තියා හඳුනාගැනීම සඳහා ඉහළ අවදානම් පරීක්ෂණ පළමුව run කිරීම.</li>
+    </ul>
+
+    <h3>5.2.4 Product Risk Control (අවදානම් පාලනය) <span class="badge badge-k2">FL-5.2.4 (K2)</span></h3>
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-bottom: 6px;">
+      <strong>මූලික අරමුණ:</strong> තක්සේරු කළ අවදානම්වලට ප්‍රතිචාර දැක්වීම. මෙයට <strong>Risk Mitigation</strong> (අවදානම අවම කිරීමේ පියවර ගැනීම) සහ <strong>Risk Monitoring</strong> (පියවරවල සඵලතාවය පරීක්ෂා කිරීම හා නව අවදානම් නිරීක්ෂණය) අයත් වේ.
+    </div>
+
+    <p>අවදානමකට ප්‍රතිචාර දැක්වීමේ මූලික විකල්ප 4 (Response Options):</p>
+    <div class="grid-4">
+      <div class="card">
+        <strong>1. Risk Mitigation</strong>
+        <p style="margin-top: 1px;">පරීක්ෂාව (Testing) හරහා අවදානම අවම කිරීමේ සෘජු ක්‍රියාමාර්ග ගැනීම.</p>
+      </div>
+      <div class="card">
+        <strong>2. Risk Acceptance</strong>
+        <p style="margin-top: 1px;">අවදානම හිතාමතාම පිළිගැනීම (හානිය අවම සුළු අවදානම් සඳහා).</p>
+      </div>
+      <div class="card">
+        <strong>3. Risk Transfer</strong>
+        <p style="margin-top: 1px;">තෙවන පාර්ශ්වයකට අවදානම පැවරීම (රක්ෂණාවරණ, Vendor contracts).</p>
+      </div>
+      <div class="card">
+        <strong>4. Contingency Plan</strong>
+        <p style="margin-top: 1px;">අවදානම සිදුවුවහොත් ක්‍රියාත්මක වීමට හදිසි සැලැස්මක් සකස් කර තැබීම.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 7: 5.3 MONITORING, CONTROL & REPORTS ==================== -->
+  <div class="page-start">
+    <h2 id="sec-5-3">1.3 Test Monitoring, Test Control and Test Completion</h2>
+
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>Test Monitoring (පරීක්ෂණ නිරීක්ෂණය):</strong>
+        <p style="margin-top: 2px;">
+          පරීක්ෂණ ප්‍රගතිය පිළිබඳ දත්ත අඛණ්ඩව එක්රැස් කිරීම, සැලැස්මට (Test Plan) සාපේක්ෂව සත්‍ය තත්ත්වය ඇගයීම සහ Exit Criteria සපුරා ඇත්දැයි නිරීක්ෂණය කිරීම.
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>Test Control (පරීක්ෂණ පාලනය):</strong>
+        <p style="margin-top: 2px;">
+          නිරීක්ෂණ දත්ත අනුව අපගමනයන් සිදුවී ඇත්නම්, පරීක්ෂණ අරමුණු සපුරා ගැනීම සඳහා ගන්නා නිවැරදි කිරීමේ පියවර (Corrective Actions / Directives) වේ (උදා: සම්පත් නැවත බෙදාහැරීම).
+        </p>
+      </div>
+    </div>
+
+    <h4>5.3.1 Metrics Used in Testing (පරීක්ෂාවේදී භාවිත වන මිනුම්) <span class="badge badge-k1">FL-5.3.1 (K1)</span></h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">මිනුම් කාණ්ඩය (Category)</th>
+          <th style="width: 75%;">නිශ්චිත උදාහරණ සහ අරමුණ (Specific Metrics & Purpose)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Project Progress</strong></td>
+          <td>කාර්යයන් අවසන් වීමේ ප්‍රතිශතය (%), සම්පත් භාවිත අනුපාතය, සැලසුම් කළ vs සත්‍ය වැයවූ පරිශ්‍රමය.</td>
+        </tr>
+        <tr>
+          <td><strong>Test Progress</strong></td>
+          <td>Test cases සූදානම් වීමේ ප්‍රගතිය, Run කළ / Passed / Failed වූ ගණන, Execution කාලය.</td>
+        </tr>
+        <tr>
+          <td><strong>Product Quality</strong></td>
+          <td>පද්ධතිය ක්‍රියාකාරීව පවතින කාලය (Availability), Response times, දෝෂ ඝනත්වය (Defect density).</td>
+        </tr>
+        <tr>
+          <td><strong>Defect Metrics</strong></td>
+          <td>හමුවූ සහ නිවැරදි කළ දෝෂ ගණන, Defect Detection Percentage (DDP), දෝෂ විසඳීමේ වේගය.</td>
+        </tr>
+        <tr>
+          <td><strong>Coverage Metrics</strong></td>
+          <td>Requirements coverage %, Code coverage % (Statement, Branch coverage).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>5.3.2 Test Reports: Progress vs. Completion Reports <span class="badge badge-k2">FL-5.3.2 (K2)</span></h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 20%;">පරාමිතිය</th>
+          <th style="width: 40%;">Test Progress Report (තත්ත්ව වාර්තාව)</th>
+          <th style="width: 40%;">Test Completion Report (සමාප්ති වාර්තාව)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>වාර්තා කරන අවස්ථාව</strong></td>
+          <td>පරීක්ෂණ ක්‍රියාවලිය අතරතුර නිතිපතා (දිනපතා, සතිපතා හෝ sprint එකක් පාසා).</td>
+          <td>ව්‍යාපෘති සන්ධිස්ථානයකදී (Milestone), Sprint එකක් අවසානයේ හෝ Release එකකදී එක්වරක් පමණි.</td>
+        </tr>
+        <tr>
+          <td><strong>ප්‍රධාන අරමුණ</strong></td>
+          <td>අඛණ්ඩ Test Control සඳහා සහාය වීම; සම්පත් හා සැලසුම් වෙනස් කිරීමට තොරතුරු සැපයීම.</td>
+          <td>පරීක්ෂණ ක්‍රියාවලිය සාරාංශ කිරීම, මෘදුකාංග ගුණාත්මකභාවය ඇගයීම, නිල නිමාව සනිටුහන් කිරීම.</td>
+        </tr>
+        <tr>
+          <td><strong>අඩංගු වන කරුණු</strong></td>
+          <td>
+            &bull; වත්මන් පරීක්ෂණ ප්‍රගතිය (කාලසටහනට පෙරද / පසුපසද)<br>
+            &bull; Passed/Failed test metrics සහ ඉතිරි වැඩ<br>
+            &bull; බාධාවන් (Blockers) සහ මඟහැරීමේ ක්‍රම (Workarounds)<br>
+            &bull; ඉදිරි කාලසීමාවේ සැලැස්ම
+          </td>
+          <td>
+            &bull; සමස්ත පරීක්ෂණ සාරාංශය සහ ගුණාත්මක ඇගයීම<br>
+            &bull; සැලැස්මෙන් සිදුවූ අපගමනයන් (කාලය, අයවැය)<br>
+            &bull; විසඳා නොමැති දෝෂ (Unresolved defects) සහ අවදානම්<br>
+            &bull; උගත් පාඩම් (Lessons Learned) සහ වැඩිදියුණු කිරීම්
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>5.3.3 Communicating the Status of Testing (පරීක්ෂණ තත්ත්වය සන්නිවේදනය කිරීම) <span class="badge badge-k2">FL-5.3.3 (K2)</span></h4>
+    <p>
+      පරීක්ෂණ වාර්තාකරණයේ මූලික අරමුණ වන්නේ ව්‍යාපෘති පාර්ශ්වකරුවන්ට (Stakeholders) නිවැරදි, අදාළ සහ කාලෝචිත තොරතුරු සැපයීමයි. සන්නිවේදන ක්‍රම 5ක් භාවිත වේ:
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <strong>1. Verbal Communication:</strong>
+        <br>&bull; Daily stand-up meetings, කණ්ඩායම් සාකච්ඡා (Sync meetings).
+        <br><strong>2. Dashboards (දෘශ්‍ය පුවරු):</strong>
+        <br>&bull; CI/CD pipeline තත්ත්වය, Defect tracking dashboards, Kanban boards, Burndown charts.
+        <br><strong>3. Electronic Channels:</strong>
+        <br>&bull; විද්‍යුත් තැපෑල (Email), ක්ෂණික පණිවිඩ (Slack, Teams chat).
+      </div>
+      <div class="card">
+        <strong>4. Online Documentation:</strong>
+        <br>&bull; Shared team wikis (Confluence), Test management tools (Jira, TestRail).
+        <br><strong>5. Formal Test Reports:</strong>
+        <br>&bull; විධිමත් Progress Reports සහ Completion Reports (ISO/IEC/IEEE 29119-3 සම්මතයට අනුව).
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 8: 5.4 CONFIG MANAGEMENT & 5.5 DEFECT MANAGEMENT ==================== -->
+  <div class="page-start">
+    <h2 id="sec-5-4">1.4 Configuration Management & Defect Management</h2>
+
+    <h3>5.4 Configuration Management (CM - වින්‍යාස කළමනාකරණය) <span class="badge badge-k2">FL-5.4.1 (K2)</span></h3>
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-bottom: 6px;">
+      <strong>මූලික අරමුණ:</strong> පරීක්ෂණ ලියකියවිලි, Test Cases, Scripts, Data, සහ Build පරිසරයන් <strong>Configuration Items</strong> ලෙස නම් කර, ඒවායේ අනුවාදයන් (Versions) සහ වෙනස්වීම් නිවැරදිව පාලනය කිරීම.
+    </div>
+
+    <ul>
+      <li><strong>Baselines:</strong> අනුමත කරන ලද මට්ටමක් Baseline එකක් ලෙස නම් කෙරේ. පෙර ප්‍රතිඵල නැවත තහවුරු කිරීමට පෙර Baseline වෙත ආපසු යා හැක.</li>
+      <li><strong>Traceability Support:</strong> අවශ්‍යතා, කේතය සහ පරීක්ෂණ අතර ද්වි-දිශා සබඳතාව (Bidirectional Traceability) ආරක්ෂා කරයි.</li>
+      <li><strong>DevOps Integration:</strong> ස්වයංක්‍රීය CI/CD deployment pipelines සඳහා Configuration Management අත්‍යවශ්‍ය පදනමකි.</li>
+    </ul>
+
+    <h3>5.5 Defect Management (දෝෂ කළමනාකරණය) <span class="badge badge-k3">FL-5.5.1 (K3)</span></h3>
+    <p>
+      දෝෂයක් හඳුනාගැනීමේ සිට එය විශ්ලේෂණය, නිවැරදි කිරීම, නැවත පරීක්ෂා කිරීම (Confirmation testing) සහ අවසන් කිරීම දක්වා ක්‍රමවත් කාර්ය ප්‍රවාහයකි.
+    </p>
+
+    <div class="card card-center-callout">
+      <div style="font-weight: 700;">DEFECT LIFECYCLE WORKFLOW (දෝෂ ජීවන චක්‍රය)</div>
+      <div style="display: flex; justify-content: space-around; margin-top: 3px; font-weight: 600;">
+        <span>1. Log Anomaly</span> &rarr;
+        <span>2. Analyze & Classify</span> &rarr;
+        <span>3. Assign / Fix</span> &rarr;
+        <span>4. Retest (Confirm)</span> &rarr;
+        <span>5. Close Report</span>
+      </div>
+    </div>
+
+    <h4>Severity vs. Priority: තීරණාත්මක වෙනස (The Fundamental Distinction):</h4>
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>Severity (තාක්ෂණික බරපතලකම):</strong>
+        <p style="margin-top: 2px;">
+          දෝෂය මඟින් පද්ධතියේ ක්‍රියාකාරිත්වයට සිදුවන <strong>තාක්ෂණික හානියේ තරම</strong> (e.g. Minor, Major, Critical, Blocker).
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>Priority (ව්‍යාපාරික හදිසිභාවය):</strong>
+        <p style="margin-top: 2px;">
+          ව්‍යාපාරික අවශ්‍යතා මත දෝෂය <strong>කොතරම් ඉක්මනින් නිවැරදි කළ යුතුද</strong> යන හදිසිභාවය (e.g. Low, Medium, High, Immediate).
+        </p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>විභාග සම්භාව්‍ය උදාහරණය:</strong> සමාගමේ ප්‍රධාන වෙබ් අඩවියේ මුල් පිටුවේ සමාගම් නාමයේ අකුරු වැරදීමක් (Typo) ඇත.
+      <br>&bull; <strong>Severity: Low</strong> (පද්ධතිය crash වන්නේ නැත, තාක්ෂණික හානියක් නැත).
+      <br>&bull; <strong>Priority: Immediate / High</strong> (සමාගමේ කීර්තිනාමයට හානිවන බැවින් වහාම නිවැරදි කළ යුතුය).
+    </div>
+
+    <h4>Defect Report එකක අනිවාර්යයෙන් තිබිය යුතු තොරතුරු (ISO 29119-3 / FL-5.5.1):</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">ක්ෂේත්‍රය (Field)</th>
+          <th style="width: 75%;">විස්තරය සහ අරමුණ (Description & Purpose)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Unique Identifier</strong></td>
+          <td>දෝෂ කළමනාකරණ පද්ධතියෙන් ස්වයංක්‍රීයව ලැබෙන අනන්‍ය අංකය.</td>
+        </tr>
+        <tr>
+          <td><strong>Title & Summary</strong></td>
+          <td>නිරීක්ෂණය වූ ගැටලුව පිළිබඳ කෙටි, පැහැදිලි සාරාංශය.</td>
+        </tr>
+        <tr>
+          <td><strong>Date, Author, Role</strong></td>
+          <td>දෝෂය සොයාගත් දිනය, වාර්තා කළ පුද්ගලයාගේ නම සහ තනතුර.</td>
+        </tr>
+        <tr>
+          <td><strong>Test Object & Environment</strong></td>
+          <td>නිශ්චිත Build version එක, Module එක, OS, Browser සහ Hardware තොරතුරු.</td>
+        </tr>
+        <tr>
+          <td><strong>Reproduction Steps</strong></td>
+          <td>දෝෂය නැවත ඇතිකිරීමට අනුගමනය කළ යුතු පියවර (Screenshots, Logs සමඟ).</td>
+        </tr>
+        <tr>
+          <td><strong>Expected vs. Actual</strong></td>
+          <td>සිදුවිය යුතුව තිබූ නිවැරදි ප්‍රතිඵලය සහ සැබවින්ම සිදුවූ වැරදි ප්‍රතිඵලය.</td>
+        </tr>
+        <tr>
+          <td><strong>Severity & Priority</strong></td>
+          <td>තාක්ෂණික බරපතලකම (Severity) සහ නිවැරදි කිරීමේ හදිසිභාවය (Priority).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 9: EXAM FLASHPOINTS & COMPARISONS ==================== -->
+  <div class="page-start">
+    <h2 id="sec-flashpoints">2. High-Yield Exam Flashpoints & Key Distinctions (විභාග විශේෂ කරුණු)</h2>
+
+    <div class="callout">
+      <strong>TOP 8 ISTQB CTFL v4.0.1 CHAPTER 5 EXAM TRAPS:</strong>
+      <ol style="margin-left: 17px; margin-top: 4px;">
+        <li><strong>"The Test Pyramid states top-layer tests have highest isolation" &rarr; අසත්‍යයකි!</strong> පිරමිඩයේ ඉහළම (UI/E2E) ස්ථරයේ ඇත්තේ අවම isolation එකකි (Lowest isolation). උපරිම isolation එක ඇත්තේ පහළම unit tests වලයි.</li>
+        <li><strong>"Usability testing belongs in Quadrant Q4" &rarr; අසත්‍යයකි!</strong> Performance සහ Security අයත් වන්නේ Q4 (Technology-facing) වෙත වුවද, Usability testing අයත් වන්නේ <strong>Q3</strong> (Business-facing, Critique product) වෙතයි.</li>
+        <li><strong>"Running out of time is never a valid exit criterion" &rarr; අසත්‍යයකි!</strong> පාර්ශ්වකරුවන් ඉතිරි අවදානම (Residual Risk) නිල වශයෙන් පිළිගන්නේ නම් කාලය හෝ මුදල් අවසන් වීම වලංගු exit criterion එකකි.</li>
+        <li><strong>"Higher priority tests always run before lower priority tests" &rarr; අසත්‍යයකි!</strong> ඉහළ ප්‍රමුඛතා test එකක් අඩු ප්‍රමුඛතා test එකක් මත රඳා පවතින්නේ නම් (Dependency), අඩු ප්‍රමුඛතා test එක පළමුව ධාවනය විය යුතුය.</li>
+        <li><strong>"Severity and Priority are identical" &rarr; අසත්‍යයකි!</strong> Severity යනු තාක්ෂණික බරපතලකමයි; Priority යනු ව්‍යාපාරික හදිසිභාවයයි.</li>
+        <li><strong>"Three-point estimation uses simple unweighted average" &rarr; අසත්‍යයකි!</strong> එය භාරිත සාමාන්‍යයකි: <b>E = (a + 4m + b) / 6</b>.</li>
+        <li><strong>"All anomalies reported in testing are defects" &rarr; අසත්‍යයකි!</strong> වාර්තා වන සමහර දෝෂ False-positives (වැරදි පරිසර සැකසුම් ආදිය) විය හැක.</li>
+        <li><strong>"Test Progress Reports occur only once at the end" &rarr; අසත්‍යයකි!</strong> Progress reports පරීක්ෂාව අතරතුර නිතර නිකුත් කෙරේ; Completion reports නිකුත් කරන්නේ සන්ධිස්ථානවලදී එක්වරක් පමණි.</li>
+      </ol>
+    </div>
+
+    <h3>Rapid Comparison Matrix</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">සංකල්පය A</th>
+          <th style="width: 25%;">සංකල්පය B</th>
+          <th style="width: 50%;">ප්‍රධාන වෙන්කර හඳුනාගැනීමේ ලක්ෂණය</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Entry Criteria (DoR)</strong></td>
+          <td><strong>Exit Criteria (DoD)</strong></td>
+          <td>Entry criteria මඟින් <em>ආරම්භ කළ යුත්තේ කවදාද</em> යන්නත්, Exit criteria මඟින් <em>අවසන් කළ යුත්තේ කවදාද</em> යන්නත් තීරණය කරයි.</td>
+        </tr>
+        <tr>
+          <td><strong>Project Risk</strong></td>
+          <td><strong>Product Risk</strong></td>
+          <td>Project risk මඟින් <em>කාලසටහන, අයවැය සහ කණ්ඩායමට</em> තර්ජන එල්ල වන අතර; Product risk මඟින් <em>මෘදුකාංගයේ ගුණාත්මකභාවයට</em> හානි වේ.</td>
+        </tr>
+        <tr>
+          <td><strong>Severity</strong></td>
+          <td><strong>Priority</strong></td>
+          <td>Severity මඟින් <em>තාක්ෂණික හානිය</em> මනින අතර, Priority මඟින් <em>විසඳීමේ ව්‍යාපාරික හදිසිභාවය</em> මනියි.</td>
+        </tr>
+        <tr>
+          <td><strong>Q1 (Tech-Support)</strong></td>
+          <td><strong>Q4 (Tech-Critique)</strong></td>
+          <td>Q1 සංවර්ධකයාට <em>Unit tests</em> මඟින් උදවු වන අතර, Q4 මඟින් <em>Performance/Security tools</em> මඟින් පද්ධතිය විවේචනය කරයි.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 10: COMPLETE KEYWORD LEXICON ==================== -->
+  <div class="page-start">
+    <h2 id="sec-glossary">3. Complete Chapter 5 Keyword Lexicon (නිල පාරිභාෂික ශබ්දකෝෂය)</h2>
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <div class="glossary-term">Defect Management</div>
+        දෝෂ හඳුනාගැනීම, වාර්තා කිරීම, වර්ගීකරණය, විමර්ශනය, විසඳීම සහ අවසන් කිරීමේ ක්‍රමානුකූල ක්‍රියාවලිය.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Defect Report</div>
+        පරීක්ෂාවේදී නිරීක්ෂණය වූ විෂමතාවක් (anomaly) පිළිබඳ ලේඛනගත වාර්තාව.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Entry Criteria</div>
+        යම් පරීක්ෂණ කාර්යයක් නිල වශයෙන් ආරම්භ කිරීමට සපුරාලිය යුතු කොන්දේසි මාලාව (Definition of Ready).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Exit Criteria</div>
+        යම් පරීක්ෂණ කාර්යයක් නිල වශයෙන් අවසන් කළ බව ප්‍රකාශ කිරීමට සපුරාලිය යුතු කොන්දේසි මාලාව (Definition of Done).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Product Risk</div>
+        මෘදුකාංග නිෂ්පාදනයේ ගුණාත්මක ලක්ෂණවලට (Quality characteristics) බලපාන විභව අවදානම්.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Project Risk</div>
+        ව්‍යාපෘතියේ කළමනාකරණයට සහ පාලනයට (කාලසටහන, අයවැය, කාර්ය මණ්ඩලය) බලපාන විභව අවදානම්.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk</div>
+        අනාගතයේ අහිතකර ප්‍රතිවිපාක ඇතිකළ හැකි සිදුවීමක් (Likelihood සහ Impact මඟින් තීරණය වේ).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Analysis</div>
+        අවදානම් හඳුනාගැනීම (Identification) සහ තක්සේරු කිරීම (Assessment) ඇතුළත් සමස්ත ක්‍රියාවලිය.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Assessment</div>
+        හඳුනාගත් අවදානම්වල Likelihood සහ Impact තක්සේරු කර Risk Level එක ගණනය කිරීම.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Control</div>
+        අවදානම් අවම කිරීම (Mitigation) සහ නිරීක්ෂණය කිරීම (Monitoring) ඇතුළත් ක්‍රියාවලිය.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Identification</div>
+        ඇතිවිය හැකි විභව අවදානම් හඳුනාගැනීම සහ විස්තර කිරීම.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Level</div>
+        Likelihood සහ Impact ගුණ කිරීමෙන් ලබාගන්නා අවදානම් මට්ටමේ මිනුම.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Mitigation</div>
+        අවදානමක් සිදුවීමේ ඉඩකඩ හෝ හානිය අවම කිරීමට පරීක්ෂණ පියවර ගැනීම.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk-Based Testing</div>
+        අවදානම් විශ්ලේෂණය සහ පාලනය මත පදනම්ව පරීක්ෂණ සැලසුම් කිරීම හා ප්‍රමුඛතාකරණය කිරීම.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Approach</div>
+        විශේෂිත ව්‍යාපෘතියක් සඳහා Test Strategy ක්‍රියාත්මක කරන ප්‍රායෝගික ආකාරය (Levels, Types, Techniques).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Completion Report</div>
+        ව්‍යාපෘති සන්ධිස්ථානයකදී පරීක්ෂණ ක්‍රියාවලිය සහ ගුණාත්මකභාවය සාරාංශ කර සකසන නිල වාර්තාව.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Control</div>
+        නිරීක්ෂණ දත්ත අනුව අපගමනයන් නිවැරදි කරමින් පරීක්ෂාව ඉලක්කය කරා ගෙනයාමට ගන්නා ක්‍රියාමාර්ග.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Monitoring</div>
+        සැලැස්මට සාපේක්ෂව සත්‍ය පරීක්ෂණ ප්‍රගතිය අඛණ්ඩව මැන බැලීම.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Plan</div>
+        පරීක්ෂණ ව්‍යාපෘතියක අරමුණු, සම්පත්, ප්‍රවේශය සහ කාලසටහන ලේඛනගත කළ ප්‍රධාන සැලැස්ම.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Progress Report</div>
+        පරීක්ෂණ අතරතුර වත්මන් තත්ත්වය සහ බාධාවන් දැක්වීමට නිතිපතා නිකුත් කරන වාර්තාව.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Pyramid</div>
+        පරීක්ෂණ මට්ටම්වල granularity, isolation සහ වේගය නිරූපණය කරන ත්‍රිකෝණාකාර ආකෘතිය.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Testing Quadrants</div>
+        Business/Technology සහ Support/Critique මානයන් ඔස්සේ පරීක්ෂණ වර්ග බෙදා දක්වන ආකෘතිය.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 11: PRACTICE EXAM QUESTIONS 1-4 ==================== -->
+  <div class="page-start">
+    <!-- Lined Student Note Space -->
+    <div id="sec-notes" class="notes-box">
+      <div class="notes-box-header">
+        <span>STUDENT NOTES & EXAM FLASHCARD REMINDERS</span>
+        <span>(සිසු සටහන් සඳහා ඉඩ)</span>
+      </div>
+      <div class="notes-box-lines"></div>
+    </div>
+
+    <h2 id="sec-questions">4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 1)</h2>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 1 [K3 - FL-5.1.4]: Using the Three-Point Estimation technique, experts provide the following test execution estimates: Most Optimistic (a) = 10 hours, Most Likely (m) = 16 hours, and Most Pessimistic (b) = 34 hours. What are the final weighted Estimate (E) and Standard Deviation (SD)?<br><span class="si-question-sub">(Three-Point Estimation ශිල්පක්‍රමය භාවිතයෙන් විශේෂඥයින් ලබාදෙන ඇස්තමේන්තු: Optimistic (a) = පැය 10, Most Likely (m) = පැය 16, Pessimistic (b) = පැය 34 වේ. අවසාන භාරිත ඇස්තමේන්තුව (E) සහ සම්මත අපගමනය (SD) කොපමණද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) E = 18 hours, SD = 4 hours</div>
+        <div class="quiz-opt">B) E = 20 hours, SD = 4 hours</div>
+        <div class="quiz-opt">C) E = 18 hours, SD = 6 hours</div>
+        <div class="quiz-opt">D) E = 16 hours, SD = 2 hours</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: A</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        PERT සූත්‍ර භාවිතයෙන් ගණනය කළ විට:<br>
+        &bull; <b>E</b> = (a + 4m + b) / 6 = (10 + 4(16) + 34) / 6 = (10 + 64 + 34) / 6 = 108 / 6 = <b>පැය 18</b>.<br>
+        &bull; <b>SD</b> = (b &minus; a) / 6 = (34 &minus; 10) / 6 = 24 / 6 = <b>පැය 4</b>.<br>
+        එබැවින් අවසාන ඇස්තමේන්තුව වන්නේ <strong>18 &plusmn; 4 hours</strong> (පැය 14 සිට 22 දක්වා පරාසය) වේ.
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 2 [K3 - FL-5.1.5]: Test suite execution prioritization is being planned. Test Case TC1 has High risk priority, but requires prerequisite database records generated by Test Case TC2, which has Low risk priority. Test Case TC3 has Medium risk priority and is completely independent. In what order should the tests execute?<br><span class="si-question-sub">(පරීක්ෂණ ක්‍රියාත්මක කිරීමේ ප්‍රමුඛතාව සැලසුම් කෙරේ. TC1 ඉහළ අවදානම් ප්‍රමුඛතාවක් ඇතත්, ඒ සඳහා අඩු ප්‍රමුඛතාවක් ඇති TC2 මඟින් සාදන දත්ත අවශ්‍ය වේ. TC3 මධ්‍යස්ථ ප්‍රමුඛතාවක් ඇති ස්වාධීන පරීක්ෂණයකි. ඒවා ධාවනය කළ යුතු නිවැරදි අනුපිළිවෙල කුමක්ද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) TC1 &rarr; TC3 &rarr; TC2</div>
+        <div class="quiz-opt">B) TC2 &rarr; TC1 &rarr; TC3</div>
+        <div class="quiz-opt">C) TC3 &rarr; TC1 &rarr; TC2</div>
+        <div class="quiz-opt">D) TC1 &rarr; TC2 &rarr; TC3</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        ISTQB විෂය නිර්දේශයේ 5.1.5 වගන්තියට අනුව: <em>"If a test case with a higher priority is dependent on a test case with a lower priority, the lower priority test case must be executed first."</em> (ඉහළ ප්‍රමුඛතා පරීක්ෂණයක් අඩු ප්‍රමුඛතා පරීක්ෂණයක් මත යැපෙන්නේ නම්, අනිවාර්යයෙන්ම අඩු ප්‍රමුඛතා පරීක්ෂණය පළමුව ධාවනය විය යුතුය). TC1 සාර්ථකව run වීමට TC2 අවශ්‍ය බැවින් TC2 පළමුවද, ඉන්පසු High priority ඇති TC1 ද, අවසානයට Medium priority ඇති TC3 ද ධාවනය කළ යුතුය.
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 3 [K1 - FL-5.1.6]: According to the Test Pyramid model, which of the following statements correctly characterizes tests located at the TOP layer?<br><span class="si-question-sub">(Test Pyramid ආකෘතියට අනුව, එහි ඉහළම ස්ථරයේ (TOP layer) පවතින පරීක්ෂණ නිවැරදිව විස්තර කරන්නේ කුමන ප්‍රකාශයද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) They have the highest test isolation and fastest execution time.</div>
+        <div class="quiz-opt">B) They check small pieces of isolated functionality, requiring many tests for coverage.</div>
+        <div class="quiz-opt">C) They are complex, end-to-end tests that generally have lower test isolation and slower execution time.</div>
+        <div class="quiz-opt">D) They represent unit tests integrated into continuous integration builds.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        පරීක්ෂණ පිරමිඩයේ ඉහළට යත්ම පරීක්ෂණ වඩාත් සංකීර්ණ වේ (Complex), හුදකලා බව අඩු වේ (Lower isolation), සහ ධාවනය වීමට වැඩි කාලයක් ගනී (Slower execution time). Option A, B, සහ D යනු පහළම ස්ථරයේ පවතින Component (Unit) tests වල ලක්ෂණ වේ.
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 4 [K2 - FL-5.1.7]: In the Testing Quadrants model, which quadrant contains exploratory testing and usability testing?<br><span class="si-question-sub">(Testing Quadrants ආකෘතියට අනුව Exploratory testing සහ Usability testing අයත් වන්නේ කුමන චතුර්ථකයටද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Q1 (Technology facing, support the team)</div>
+        <div class="quiz-opt">B) Q2 (Business facing, support the team)</div>
+        <div class="quiz-opt">C) Q3 (Business facing, critique the product)</div>
+        <div class="quiz-opt">D) Q4 (Technology facing, critique the product)</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        චතුර්ථක Q3 හි අඩංගු වන්නේ ව්‍යාපාරික දිශානතිය සහිත සහ නිෂ්පාදනය විවේචනාත්මකව ඇගයීමට ලක්කරන (Business-facing, Critique the product) පරීක්ෂණ වේ. Exploratory testing, Usability testing සහ UAT අයත් වන්නේ Q3 වෙතයි.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 12: PRACTICE EXAM QUESTIONS 5-8 ==================== -->
+  <div class="page-start">
+    <h2>4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 2)</h2>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 5 [K2 - FL-5.2.2]: Which of the following is an example of a PROJECT RISK rather than a product risk?<br><span class="si-question-sub">(පහත සඳහන් ඒවා අතුරින් නිෂ්පාදන අවදානමක් (Product risk) නොව ව්‍යාපෘති අවදානමක් (Project risk) වන්නේ කුමක්ද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) The web application takes more than 10 seconds to process checkout transactions under peak load.</div>
+        <div class="quiz-opt">B) A third-party test tool vendor goes bankrupt, causing delays in test environment readiness.</div>
+        <div class="quiz-opt">C) The payment calculation module incorrectly rounds tax on international currency exchanges.</div>
+        <div class="quiz-opt">D) The software interface fails to comply with industry accessibility regulations.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        තෙවන පාර්ශ්ව සැපයුම්කරුවෙකු බිඳවැටීම නිසා පරිසරය සූදානම් වීම ප්‍රමාද වීම යනු ව්‍යාපෘතියේ කාලසටහනට හා සම්පත්වලට බලපාන <strong>Project Risk</strong> එකකි. A, C, සහ D යනු මෘදුකාංගයේ ගුණාත්මකභාවය, කාර්ය සාධනය සහ නීතිමය අනුකූලතාවයට බලපාන <strong>Product Risks</strong> වේ.
+      </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 6 [K2 - FL-5.3.2]: What is the primary difference between a Test Progress Report and a Test Completion Report?<br><span class="si-question-sub">(Test Progress Report එකක් සහ Test Completion Report එකක් අතර ප්‍රධාන වෙනස කුමක්ද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Test progress reports evaluate exit criteria against business goals, while test completion reports issue control directives.</div>
+        <div class="quiz-opt">B) Test progress reports are generated regularly during testing to support test control, while test completion reports are produced at project milestones to evaluate overall quality.</div>
+        <div class="quiz-opt">C) Test progress reports contain documented lessons learned, while test completion reports list next week's test schedule.</div>
+        <div class="quiz-opt">D) Test progress reports are authored exclusively by project managers, while completion reports are written by external auditors.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        Test Progress Report යනු පරීක්ෂණ අතරතුර අඛණ්ඩ පාලනය (Test control) සඳහා නිතිපතා නිකුත් කරන වාර්තාවකි. Test Completion Report යනු ව්‍යාපෘති සන්ධිස්ථානයකදී (Release/Milestone) සමස්ත පරීක්ෂණ ක්‍රියාවලිය සහ මෘදුකාංගයේ ගුණාත්මකභාවය ඇගයීමට නිකුත් කරන අවසන් වාර්තාවයි.
+      </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 7 [K2 - FL-5.4.1]: How does Configuration Management directly support the testing process?<br><span class="si-question-sub">(වින්‍යාස කළමනාකරණය (Configuration Management) පරීක්ෂණ ක්‍රියාවලියට සෘජුවම සහාය වන්නේ කෙසේද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) By executing automated regression test suites whenever developers check in source code.</div>
+        <div class="quiz-opt">B) By ensuring all test items and testware are uniquely identified, version-controlled, and tracked to maintain traceability.</div>
+        <div class="quiz-opt">C) By automatically calculating PERT three-point estimates for sprint user stories.</div>
+        <div class="quiz-opt">D) By determining whether risks should be transferred to third-party vendors.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        වින්‍යාස කළමනාකරණය මඟින් සියලුම පරීක්ෂණ අයිතමයන් (Test items) සහ Testware අනන්‍යව හඳුනාගෙන, ඒවායේ අනුවාදයන් (Versions) සහ වෙනස්වීම් පාලනය කරමින් Traceability ආරක්ෂා කරයි.
+      </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 8 [K3 - FL-5.5.1]: A tester discovers that clicking "Print Invoice" causes an unhandled application crash on iOS devices, though Android devices function normally. Which information is CRITICAL to include in the defect report to ensure developers can reproduce and fix the bug?<br><span class="si-question-sub">(ටෙස්ටර් කෙනෙකු සොයාගන්නේ iOS උපාංගවල "Print Invoice" ක්ලික් කළ විට App එක crash වන බවත්, Android හි සාමාන්‍ය ලෙස ක්‍රියාකරන බවත්ය. සංවර්ධකයාට මෙය නැවත ඇතිකර බලා නිවැරදි කිරීමට Defect Report එකේ අනිවාර්යයෙන්ම තිබිය යුතු තොරතුරු මොනවාද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) The tester's salary, the test manager's approval signature, and the total cost of quality.</div>
+        <div class="quiz-opt">B) A vague note stating "printing doesn't work on mobile".</div>
+        <div class="quiz-opt">C) Steps to reproduce, expected vs actual results, device OS version, and relevant system crash logs.</div>
+        <div class="quiz-opt">D) The Wideband Delphi estimate for rewriting the iOS application.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        දෝෂයක් නැවත ප්‍රතිනිර්මාණය කිරීමට (Reproduction) සංවර්ධකයෙකුට අවශ්‍ය වන්නේ: නිශ්චිත පියවර (Steps to reproduce), අපේක්ෂිත සහ සත්‍ය ප්‍රතිඵල (Expected vs Actual), පරිසරය (Device OS version), සහ Crash logs / screenshots වේ.
+      </div>
+    </div>
+
+    <!-- PART2-QUESTIONS-START -->
+    <h3>Part 2: Additional Questions for Remaining Learning Objectives (ඉතිරි ඉගෙනුම් අරමුණු සඳහා අමතර ප්‍රශ්න)</h3>
+
+    <!-- Question 9 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 9 [K2 - FL-5.1.1]: Which of the following is typical content of a test plan?<br><span class="si-question-sub">(Test plan එකක සාමාන්‍ය අන්තර්ගතයක් කුමක්ද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) The source code of the unit tests and the detailed list of defects found.</div>
+        <div class="quiz-opt">B) A risk register, the test approach (levels, types, techniques, entry and exit criteria), stakeholders, budget and schedule.</div>
+        <div class="quiz-opt">C) Salary reviews and annual appraisals of the testers.</div>
+        <div class="quiz-opt">D) Only the final test results and the release decision.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        නිවැරදි පිළිතුර B. Test plan එක පරීක්ෂණ අරමුණු, සම්පත් සහ ක්‍රියාවලි විස්තර කරයි. සාමාන්‍ය අන්තර්ගතය: සන්දර්භය (scope, අරමුණු, test basis), උපකල්පන සහ සීමාවන්, පාර්ශ්වකරුවන් (stakeholders), සන්නිවේදනය, risk register (product සහ project අවදානම්), test approach (පරීක්ෂණ මට්ටම්, වර්ග, තාක්ෂණ, entry/exit criteria, metrics, test data සහ පරිසර අවශ්‍යතා) සහ අයවැය සහ කාලසටහන.
+        <br><em>English:</em> A test plan describes the test objectives, resources and processes. Typical content (ISO/IEC/IEEE 29119-3): context (scope, objectives, test basis), assumptions and constraints, stakeholders, communication, risk register (product and project risks), test approach (levels, types, techniques, deliverables, entry/exit criteria, metrics, test data and environment needs), and budget and schedule (Section 5.1.1).
+      </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 10 [K1 - FL-5.1.2]: Which of the following is a way in which a tester adds value to iteration and release planning?<br><span class="si-question-sub">(Iteration සහ release සැලසුම්කරණයේදී ටෙස්ටර්වරයෙකු වටිනාකමක් එකතු කරන ආකාරයක් කුමක්ද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Writing the production code for the user stories.</div>
+        <div class="quiz-opt">B) Approving the release on behalf of the product owner.</div>
+        <div class="quiz-opt">C) Deciding the project budget and the sprint length alone.</div>
+        <div class="quiz-opt">D) Taking part in user story refinement (testable stories with acceptance criteria), performing product risk analysis, estimating test effort and planning the test approach.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: D</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        නිවැරදි පිළිතුර D. ටෙස්ටර්වරයා user story පිරිපහදු කිරීමට (acceptance criteria සහිත පරීක්ෂා කළ හැකි stories) සහභාගී වේ, product risk analysis කරයි, පරීක්ෂණ උත්සාහය (effort) ඇස්තමේන්තු කරයි, පරීක්ෂා කළ යුතු ක්‍රියාකාරී සහ non-functional අංග හඳුනාගනී සහ iteration එක තුළ පරීක්ෂණ ප්‍රවේශය සැලසුම් කරයි.
+        <br><em>English:</em> In release and iteration planning a tester helps to write testable user stories and acceptance criteria, performs product quality risk analysis, estimates the test effort, identifies functional and non-functional aspects to be tested and plans the testing within the iteration (Section 5.1.2).
+      </div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 11 [K2 - FL-5.1.3]: Statement 1: "The test environment and test data are available." Statement 2: "The planned coverage level has been reached and the number of open critical defects is within the agreed limit." How are they correctly classified?<br><span class="si-question-sub">(ප්‍රකාශ 1: "පරීක්ෂණ පරිසරය සහ පරීක්ෂණ දත්ත ලබාගත හැකිය." ප්‍රකාශ 2: "සැලසුම් කළ ආවරණ මට්ටම සපුරා ඇති අතර විවෘත විවේචනාත්මක (critical) දෝෂ ගණන එකඟ වූ සීමාව තුළ පවතී." මේවා නිවැරදිව වර්ගීකරණය කර ඇත්තේ කෙසේද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Statement 1 is an entry criterion; statement 2 is an exit criterion (in agile: Definition of Ready and Definition of Done).</div>
+        <div class="quiz-opt">B) Statement 1 is an exit criterion; statement 2 is an entry criterion.</div>
+        <div class="quiz-opt">C) Both statements are entry criteria.</div>
+        <div class="quiz-opt">D) Both statements are exit criteria.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: A</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        නිවැරදි පිළිතුර A. Entry criteria යනු ක්‍රියාකාරකමක් ආරම්භ කිරීමට පෙර සපුරා තිබිය යුතු පූර්ව කොන්දේසි (පරීක්ෂා කළ හැකි අවශ්‍යතා, පරිසරය, දත්ත වැනි සම්පත්, test object එකේ ආරම්භක quality මට්ටම). Exit criteria යනු ක්‍රියාකාරකමක් සම්පූර්ණ බව ප්‍රකාශ කිරීමට සපුරාලිය යුතු දේ (සැලසුම් කළ පරීක්ෂණ ක්‍රියාත්මක කිරීම, ආවරණ මට්ටම, විසඳා නොමැති දෝෂ සීමාව). Agile හි මේවා Definition of Ready (entry) සහ Definition of Done (exit) ලෙස හැඳින්වේ.
+        <br><em>English:</em> Entry criteria are the preconditions for starting an activity (testable requirements, resources such as environments and data, initial quality of the test object). Exit criteria define what must be achieved to declare an activity complete (planned tests executed, coverage level reached, unresolved defects within an agreed limit). In agile projects they correspond to the Definition of Ready and the Definition of Done (Section 5.1.3).
+      </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 12 [K1 - FL-5.2.1]: How is the risk level of a risk determined?<br><span class="si-question-sub">(අවදානමක මට්ටම (risk level) තීරණය වන්නේ කෙසේද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Only by the cost of the mitigation actions.</div>
+        <div class="quiz-opt">B) Only by the number of testers available.</div>
+        <div class="quiz-opt">C) By combining the likelihood of the risk occurring and its impact (for example with a risk matrix or numeric ratings).</div>
+        <div class="quiz-opt">D) Only by the duration of the project.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        නිවැරදි පිළිතුර C. Risk level එක තීරණය වන්නේ අවදානම සිදුවීමේ ඉඩකඩ (likelihood — සම්භාවිතාව, 0 ට වැඩි 1 ට අඩු) සහ එහි බලපෑම (impact — සිදුවීමේ ප්‍රතිවිපාක) ඒකාබද්ධ කිරීමෙනි; මෙය ගුණාත්මකව (high/medium/low) හෝ සංඛ්‍යාත්මකව ප්‍රකාශ කළ හැකිය.
+        <br><em>English:</em> The risk level is determined by risk likelihood (the probability that the risk occurs, greater than zero and less than one) and risk impact (the consequences of its occurrence). It can be expressed qualitatively (high/medium/low) or quantitatively (Section 5.2.1).
+      </div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 13 [K2 - FL-5.2.3]: A product risk analysis rates the payment module as high risk and the "About us" page as low risk. How should these results influence testing?<br><span class="si-question-sub">(Product risk analysis මගින් ගෙවීම් මොඩියුලය ඉහළ අවදානම් ලෙසත් "About us" පිටුව අඩු අවදානම් ලෙසත් ඇගයී ඇත. මෙම ප්‍රතිඵල පරීක්ෂාවට බලපාන්නේ කෙසේද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Both should receive identical effort to stay fair.</div>
+        <div class="quiz-opt">B) The payment module gets more thorough techniques, higher coverage and earlier testing; the "About us" page gets minimal effort.</div>
+        <div class="quiz-opt">C) The payment module should be skipped because high-risk items are too expensive to test.</div>
+        <div class="quiz-opt">D) The "About us" page should be tested first because it is the easiest.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        නිවැරදි පිළිතුර B. Risk analysis ප්‍රතිඵල මගින් පරීක්ෂණ විෂය පථය, මට්ටම් සහ වර්ග, භාවිත කළ යුතු තාක්ෂණ සහ ආවරණ මට්ටම, කාර්යයකට අවශ්‍ය උත්සාහය සහ ප්‍රමුඛතා (විවේචනාත්මක දෝෂ හැකිතාක් කලින් සොයාගැනීමට) තීරණය කෙරේ. ඉහළ අවදානම් ගෙවීම් මොඩියුලයට වඩා ගැඹුරු පරීක්ෂාවක් සහ කලින් පරීක්ෂාවක් ද, අඩු අවදානම් පිටුවට අවම උත්සාහයක් ද ලැබේ.
+        <br><em>English:</em> Product risk analysis results are used to decide the test scope, the test levels and types, the test techniques and coverage, the test effort per task, and the priorities so that critical defects are found as early as possible; they may also point to non-testing activities that reduce risk. Higher risk means more thorough and earlier testing (Section 5.2.3).
+      </div>
+    </div>
+
+    <!-- Question 14 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 14 [K2 - FL-5.2.4]: A product risk analysis identifies a high security risk. Which of the following is an appropriate response measure?<br><span class="si-question-sub">(Product risk analysis මගින් ඉහළ security අවදානමක් හඳුනාගෙන ඇත. සුදුසු ප්‍රතිචාරාත්මක ක්‍රියාමාර්ගයක් කුමක්ද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Reduce the test effort to meet the schedule, because security defects are rare.</div>
+        <div class="quiz-opt">B) Remove the security requirement from the test basis.</div>
+        <div class="quiz-opt">C) Assign testers with suitable security skills, apply security testing and static analysis, and increase the independence of testing.</div>
+        <div class="quiz-opt">D) Wait for a production incident and fix the problem afterwards.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        නිවැරදි පිළිතුර C. අවදානම්වලට ප්‍රතිචාර ලෙස: අදාළ අවදානම් වර්ගයට සුදුසු අත්දැකීම් සහ කුසලතා ඇති ටෙස්ටර්වරුන් තෝරා ගැනීම, සුදුසු ස්වාධීනත්ව මට්ටමක් යෙදීම, reviews සහ static analysis කිරීම, සුදුසු තාක්ෂණ සහ ආවරණ මට්ටම් භාවිතය, බලපෑමට ලක්වන quality ලක්ෂණ ආවරණය කරන පරීක්ෂණ වර්ග (security testing වැනි) යෙදීම, සහ regression testing ඇතුළු dynamic testing සිදු කිරීම.
+        <br><em>English:</em> Measures in response to analyzed product risks include: choosing testers with the right experience and skills for the risk type, applying an appropriate level of independence, performing reviews and static analysis, applying suitable test techniques and coverage levels, applying test types addressing the affected quality characteristics (such as security testing), and performing dynamic testing including regression testing (Section 5.2.4).
+      </div>
+    </div>
+
+    <!-- Question 15 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 15 [K1 - FL-5.3.1]: Which of the following is a TEST PROGRESS metric?<br><span class="si-question-sub">(පහත සඳහන් ඒවායින් පරීක්ෂණ ප්‍රගති මෙට්‍රික (test progress metric) එකක් කුමක්ද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Mean time to failure of the released product.</div>
+        <div class="quiz-opt">B) The number of test cases run and not run, passed and failed.</div>
+        <div class="quiz-opt">C) Defect density.</div>
+        <div class="quiz-opt">D) Cost of quality.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        නිවැරදි පිළිතුර B. Test progress metrics: ක්‍රියාත්මක කළ/නොකළ test cases ගණන, pass/fail ගණන, test case implementation ප්‍රගතිය, test environment සූදානම සහ test execution කාලය. Mean time to failure යනු product quality metric එකකි; defect density යනු defect metric එකකි; cost of quality යනු cost metric එකකි.
+        <br><em>English:</em> Test progress metrics include the number of test cases run / not run, passed / failed, test case implementation progress, test environment preparation progress and test execution time. Mean time to failure is a product quality metric, defect density is a defect metric and cost of quality is a cost metric (Section 5.3.1).
+      </div>
+    </div>
+
+    <!-- Question 16 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 16 [K2 - FL-5.3.3]: A distributed agile team (three countries) uses a CI/CD pipeline. Which is the most suitable way to communicate the status of testing continuously?<br><span class="si-question-sub">(රටවල් තුනක විසිරී සිටින agile කණ්ඩායමක් CI/CD pipeline එකක් භාවිත කරයි. පරීක්ෂණ තත්ත්වය අඛණ්ඩව සන්නිවේදනය කිරීමට වඩාත් සුදුසු ක්‍රමය කුමක්ද?)</span></div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Printing a monthly test report and sending it by post.</div>
+        <div class="quiz-opt">B) Hallway conversations only.</div>
+        <div class="quiz-opt">C) Waiting until the end of the project to present the test completion report.</div>
+        <div class="quiz-opt">D) Dashboards (for example CI/CD dashboards, task boards and burn-down charts), supported by chat, online documentation and short verbal updates.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: D</strong><br>
+        <strong>Rationale (සිංහල + English):</strong><br>
+        නිවැරදි පිළිතුර D. පරීක්ෂණ තත්ත්වය සන්නිවේදනය කළ හැකි ක්‍රම: වාචික සන්නිවේදනය, dashboards (CI/CD dashboards, task boards, burn-down charts), ඉලෙක්ට්‍රොනික නාලිකා (email, chat), online ලේඛන සහ විධිමත් test reports. ක්‍රමය තෝරාගැනීම ප්‍රේක්ෂකයින්, ව්‍යාපෘති අවදානම, සංවිධාන ප්‍රමිතීන් සහ කණ්ඩායම විසිරී පවතීද යන්න මත රඳා පවතී. විසිරුණු agile කණ්ඩායමකට dashboards සහ chat වැනි අඛණ්ඩ ක්‍රම වඩාත් සුදුසුය.
+        <br><em>English:</em> Ways to communicate test status include verbal communication, dashboards (CI/CD dashboards, task boards, burn-down charts), electronic channels (e-mail, chat), online documentation and formal test reports. The choice depends on the audience, project risk, organizational standards and whether the team is distributed. A distributed agile team benefits from continuous, shared channels such as dashboards and chat (Section 5.3.3).
+      </div>
+    </div>
+    <!-- PART2-QUESTIONS-END -->
+
+    <div class="footer-note">
+      ISTQB® Certified Tester Foundation Level (CTFL) v4.0.1 &bull; Chapter 5: Managing the Test Activities &bull; Bilingual Sinhala + English Guide &bull; Exam Success
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- ================= CHAPTER NAVIGATION FOOTER ================= -->
+<div class="chapter-nav-footer">
+  <a href="istqb_ch4_study_guide_sinhala.html" class="nav-footer-card">
+        <span class="nav-footer-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px;"><polyline points="15 18 9 12 15 6"></polyline></svg>Previous Chapter</span>
+        <span class="nav-footer-title">Chapter 04: පරීක්ෂණ විශ්ලේෂණය සහ සැලසුම්කරණය (Analysis & Design)</span>
+       </a>
+  
+    <a href="../index.html" class="nav-footer-card" style="text-align: center; align-items: center;">
+      <span class="nav-footer-label">Master Overview</span>
+      <span class="nav-footer-title">Study Hub</span>
+    </a>
+  
+  
+    <a href="../05_Practice_Questions_and_Summaries/istqb_mock_exam_simulator.html" class="nav-footer-card" style="text-align: center; align-items: center; border-color: #334155; background: #1e293b;">
+      <span class="nav-footer-label" style="color: #60a5fa;">Test Exam Readiness</span>
+      <span class="nav-footer-title" style="color: #ffffff;">40Q Mock Simulator</span>
+    </a>
+  
+  <a href="istqb_ch6_study_guide_sinhala.html" class="nav-footer-card" style="text-align: right;">
+        <span class="nav-footer-label">Next Chapter<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:4px;"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+        <span class="nav-footer-title">Chapter 06: පරීක්ෂණ මෙවලම් (Test Tools)</span>
+       </a>
+</div>
+</div><!-- /.study-main-wrapper -->
+
+<!-- Floating Back to Top Button -->
+<div class="floating-actions">
+  <button class="floating-btn" onclick="scrollToTop()" title="Scroll to Top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+</div>
+
+
+<script>
+  function updateThemeMeta(isDark) {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', isDark ? '#0b1120' : '#1e293b');
+  }
+
+  function toggleReadingTheme() {
+    document.body.classList.toggle('dark-reading-mode');
+    const isDark = document.body.classList.contains('dark-reading-mode');
+    localStorage.setItem('istqb_reading_theme', isDark ? 'dark' : 'light');
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) btn.innerHTML = isDark ? 'Light' : 'Dark';
+    updateThemeMeta(isDark);
+  }
+
+  function jumpToSection(sel) {
+    const val = sel.value;
+    if (!val) return;
+    const target = document.getElementById(val);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.location.hash = val;
+    }
+  }
+
+  function switchLanguage(targetUrl) {
+    const hash = window.location.hash;
+    window.location.href = targetUrl + (hash ? hash : '');
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Restore user theme preference
+  document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('istqb_reading_theme');
+    const btn = document.getElementById('theme-toggle-btn');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-reading-mode');
+      if (btn) btn.innerHTML = 'Light';
+    } else {
+      document.body.classList.remove('dark-reading-mode');
+      if (btn) btn.innerHTML = 'Dark';
+    }
+    updateThemeMeta(savedTheme === 'dark');
+
+    // Add interactive Toggle Answer feature for each quiz card
+    const quizCards = document.querySelectorAll('.quiz-card');
+    quizCards.forEach(function(card) {
+      const answer = card.querySelector('.quiz-answer');
+      if (answer && !card.querySelector('.btn-reveal-answer')) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'quiz-toggle-btn btn-reveal-answer';
+        toggleBtn.textContent = 'Reveal Answer & Rationale';
+        toggleBtn.style.marginTop = '6px';
+        toggleBtn.style.display = 'inline-block';
+        
+        // Hide answer by default for active practice
+        answer.style.display = 'none';
+
+        toggleBtn.addEventListener('click', function() {
+          if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            toggleBtn.textContent = 'Hide Answer';
+          } else {
+            answer.style.display = 'none';
+            toggleBtn.textContent = 'Reveal Answer & Rationale';
+          }
+        });
+
+        card.insertBefore(toggleBtn, answer);
+      }
+    });
+
+    // Add "Reveal All Answers" button above quiz section
+    const qSection = document.getElementById('sec-questions');
+    if (qSection && !document.querySelector('.quiz-toggle-bar')) {
+      const bar = document.createElement('div');
+      bar.className = 'quiz-toggle-bar';
+      bar.innerHTML = '<button type="button" class="quiz-toggle-btn" id="btn-toggle-all-answers">Reveal All Answers</button>';
+      qSection.insertAdjacentElement('afterend', bar);
+
+      const btnAll = document.getElementById('btn-toggle-all-answers');
+      let allShown = false;
+      btnAll.addEventListener('click', function() {
+        allShown = !allShown;
+        document.querySelectorAll('.quiz-card').forEach(function(card) {
+          const ans = card.querySelector('.quiz-answer');
+          const tBtn = card.querySelector('.btn-reveal-answer');
+          if (ans) ans.style.display = allShown ? 'block' : 'none';
+          if (tBtn) tBtn.textContent = allShown ? 'Hide Answer' : 'Reveal Answer & Rationale';
+        });
+        btnAll.textContent = allShown ? 'Hide All Answers' : 'Reveal All Answers';
+      });
+    }
+  });
+
+  // Enhanced Print Lifecycle Support: Guarantee Clean Ink-Friendly Printing
+  window.addEventListener('beforeprint', function () {
+    document.body.classList.remove('dark-reading-mode');
+    document.querySelectorAll('.quiz-answer').forEach(function (el) {
+      el.style.display = 'block';
+    });
+  });
+
+  window.addEventListener('afterprint', function () {
+    if (localStorage.getItem('istqb_reading_theme') === 'dark') {
+      document.body.classList.add('dark-reading-mode');
+    }
+  });
+
+</script>
+
+</body>
+</html>

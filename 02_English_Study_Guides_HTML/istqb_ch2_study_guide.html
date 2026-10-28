@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISTQB CTFL v4.0.1 - Chapter 2: Testing Throughout the SDLC Master Study Guide</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232563eb%22/><path d=%22M26 50 L42 66 L74 34%22 stroke=%22white%22 stroke-width=%2212%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 fill=%22none%22/></svg>">
+<meta name="theme-color" content="#1e293b">
+<!-- Google Fonts: Inter & Noto Sans Sinhala for razor-sharp typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* Base Reset & Print-Optimized Large Typography */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  @page {
+    size: A4 portrait;
+    /* Generous margins: 16mm left for binding, 22mm right for handwritten notes */
+    margin: 14mm 22mm 14mm 16mm;
+  }
+
+  body {
+    font-family: "Inter", "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #000000; /* Pure black for maximum print clarity and contrast */
+    background-color: #ffffff;
+    line-height: 1.68;
+    font-size: 14.8px; /* Upgraded from 12.2px for easy readability */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Headings: Crisp Black with Solid Rules & Generous Vertical Spacing */
+  h1, h2, h3, h4 {
+    color: #000000;
+    font-weight: 700;
+    line-height: 1.32;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h1 { 
+    font-size: 21px; 
+    margin-bottom: 7px; 
+    letter-spacing: -0.2px; 
+  }
+  
+  h2 {
+    font-size: 16.5px; /* Upgraded from 15px */
+    margin-top: 18px;
+    margin-bottom: 9px;
+    border-bottom: 2.5px solid #000000;
+    padding-bottom: 4px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  h3 { 
+    font-size: 14.8px; /* Upgraded from 13.5px */
+    margin-top: 14px; 
+    margin-bottom: 7px; 
+    color: #000000; 
+  }
+  
+  h4 { 
+    font-size: 13.8px; /* Upgraded from 12.5px */
+    margin-top: 11px; 
+    margin-bottom: 5px; 
+    color: #1f2937; 
+  }
+
+  p { 
+    margin-bottom: 9px; 
+    text-align: justify; 
+    font-size: 13.5px; /* Upgraded from 12.2px */
+    line-height: 1.65;
+    color: #000000; 
+  }
+  
+  ul, ol { 
+    margin-left: 20px; 
+    margin-bottom: 9px; 
+    font-size: 13.5px; /* Upgraded from 12.2px */
+    line-height: 1.62;
+    color: #000000; 
+  }
+  
+  li { 
+    margin-bottom: 4px; 
+  }
+  
+  strong { 
+    color: #000000; 
+    font-weight: 700; 
+  }
+  
+  code {
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 2px 5.5px;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 12.5px; /* Upgraded from 11.2px */
+    color: #000000;
+  }
+
+  /* Badges - Crisp High-Contrast Outlines */
+  .badge {
+    display: inline-block;
+    padding: 2.5px 6.5px;
+    border-radius: 3px;
+    font-size: 12.2px; /* Upgraded from 10px */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-right: 3px;
+    vertical-align: middle;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1.2px solid #374151;
+  }
+  .badge-k1 { background-color: #f3f4f6; color: #000000; border: 1.2px solid #4b5563; }
+  .badge-k2 { background-color: #ffffff; color: #000000; border: 1.2px solid #000000; }
+  .badge-k3 { background-color: #f3f4f6; color: #000000; border: 1.5px solid #000000; font-weight: 800; }
+  .badge-keyword { background-color: #ffffff; color: #000000; border: 1px dashed #374151; }
+
+  /* Page Break Utilities */
+  .page-start {
+    page-break-before: auto;
+    break-before: auto;
+    margin-top: 14px;
+  }
+  .avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Cards & Callouts - Large Readable Text with Solid Contrast */
+  .card {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-radius: 4px;
+    padding: 10px 13px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 13.2px; /* Upgraded from 11.8px/12px */
+    line-height: 1.62;
+    color: #1e293b;
+  }
+  
+  .callout {
+    border-left: 4px solid #3b82f6;
+    border-top: 1.2px solid #d1d5db;
+    border-right: 1.2px solid #d1d5db;
+    border-bottom: 1.2px solid #d1d5db;
+    background: #f8fafc;
+    padding: 9px 13px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 13.2px; /* Upgraded from 11.8px/12px */
+    line-height: 1.62;
+    color: #1e293b;
+  }
+  .callout-info { border-left-color: #1e293b; }
+  .callout-warning { border-left-color: #f59e0b; }
+  .callout-danger { border-left-color: #1e293b; }
+  .callout-success { border-left-color: #1e293b; }
+  .callout-exam { border-left-color: #1e293b; }
+
+  /* Tables - Large, Crisp Typography & Generous Cell Padding */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 13px 0;
+    font-size: 12.8px; /* Upgraded from 11.5px */
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  th, td {
+    padding: 7px 10px; /* Upgraded from 4.5px 6.5px */
+    border: 1.2px solid #4b5563;
+    text-align: left;
+    vertical-align: top;
+    color: #1e293b;
+    line-height: 1.58;
+    font-size: 12.8px; /* Upgraded from 11.5px */
+  }
+  th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 13.2px; /* Upgraded from 11.8px */
+    letter-spacing: 0.1px;
+    border-bottom: 2.2px solid #000000;
+  }
+  tr:nth-child(even) { background-color: #f8fafc; }
+
+  /* Grids with Comfortable Spacing */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 9px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 9px;
+    margin-bottom: 9px;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 9px;
+  }
+
+  /* Tool Categories Showcase */
+  .tool-box {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-top: 3.5px solid #000000;
+    border-radius: 4px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .tool-box-title {
+    font-size: 13.8px; /* Upgraded from 12.2px */
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tool-box-desc {
+    font-size: 13.2px; /* Upgraded from 11.6px */
+    color: #0f172a;
+    line-height: 1.58;
+  }
+  .tool-examples {
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px dashed #9ca3af;
+    font-size: 12.2px; /* Upgraded from 10.8px */
+    color: #475569;
+  }
+
+  /* Practice Exam Questions - Large, Clear Typography */
+  .quiz-card {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-left: 4px solid #000000;
+    border-radius: 4px;
+    padding: 10px 13px;
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .quiz-q {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 7px;
+    font-size: 13.5px; /* Upgraded from 11.8px/12px */
+    line-height: 1.52;
+  }
+  .quiz-options {
+    margin-left: 5px;
+    margin-bottom: 7px;
+    font-size: 13px; /* Upgraded from 11.5px */
+  }
+  .quiz-opt {
+    margin-bottom: 4px;
+    color: #0f172a;
+    line-height: 1.50;
+    font-size: 13px; /* Upgraded from 11.5px */
+  }
+  .quiz-answer {
+    background: #f8fafc;
+    border-top: 1.2px dashed #9ca3af;
+    padding: 8px 11px;
+    border-radius: 0 0 4px 4px;
+    font-size: 13px; /* Upgraded from 11.6px */
+    color: #1e293b;
+    line-height: 1.60;
+    margin-top: 5px;
+  }
+
+  /* Glossary Grid */
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 7px;
+    margin-bottom: 9px;
+  }
+  .glossary-item {
+    background: #ffffff;
+    border: 1.2px solid #9ca3af;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-size: 13px; /* Upgraded from 11.6px */
+    line-height: 1.55;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    color: #1e293b;
+  }
+  .glossary-term {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 13.5px; /* Upgraded from 11.8px/12px */
+    margin-bottom: 2.5px;
+    border-bottom: 1.2px dotted #6b7280;
+    display: inline-block;
+  }
+
+  /* Ruled Handwriting / Student Notes Box */
+  .notes-box {
+    border: 1.5px dashed #6b7280;
+    border-radius: 4px;
+    background: #fafafa;
+    padding: 9px 13px;
+    margin: 14px 0 16px 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .notes-box-header {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #374151;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+  .notes-box-header span:first-child {
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .notes-box-header span:last-child {
+    font-weight: 600;
+    white-space: nowrap;
+    text-transform: none;
+    color: #4b5563;
+  }
+  .notes-box-lines {
+    height: 90px;
+    background-image: repeating-linear-gradient(transparent, transparent 17px, #d1d5db 17px, #d1d5db 18px);
+  }
+
+  .footer-note {
+    font-size: 12px; /* Upgraded from 10px */
+    color: #475569;
+    text-align: center;
+    border-top: 1px solid #d1d5db;
+    padding-top: 5px;
+    margin-top: 12px;
+  }
+
+/* ================= ISTQB MASTER STUDY DESIGN SYSTEM ================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+h1, h2, h3, h4, .notes-box, .quiz-card, [id^="sec-"] {
+  scroll-margin-top: 65px;
+}
+
+/* ================= SCREEN READING CONTAINER & GUTTERS ================= */
+@media screen {
+  body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+  }
+
+  body.dark-reading-mode {
+    background-color: #060a12 !important;
+    color: #f1f5f9 !important;
+  }
+
+  .study-main-wrapper {
+    width: 95%;
+    max-width: 1540px;
+    margin: 14px auto 50px auto;
+    padding: 26px 36px 44px 36px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  body.dark-reading-mode .study-main-wrapper {
+    background-color: #0b1120 !important;
+    border: 1px solid #1e293b !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .study-main-wrapper {
+    width: 96%;
+    margin: 12px auto 40px auto;
+    padding: 20px 24px 34px 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .study-main-wrapper {
+    width: 98%;
+    margin: 8px auto 28px auto;
+    padding: 16px 14px 24px 14px;
+    border-radius: 8px;
+  }
+}
+
+
+
+/* Base Utility Classes for Enhanced Semantics */
+.si-question-sub {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 13px;
+  color: #475569;
+  margin-top: 4px;
+  line-height: 1.55;
+}
+
+.ch-subtitle-text {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-top: 3px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.card-subtle {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 6px 0;
+}
+
+.card-center-callout {
+  background: #f8fafc;
+  border: 1.5px solid #94a3b8;
+  border-radius: 6px;
+  padding: 10px 14px;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.card-accent-left {
+  border-left: 4px solid #3b82f6 !important;
+}
+
+.card-accent-dark {
+  border-left: 4px solid #1e293b !important;
+}
+
+.metric-pill {
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 2.5px 8px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.progress-bar-fill {
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-weight: 700;
+  text-align: center;
+  display: inline-block;
+}
+
+/* ================= ISTQB STUDY NAVIGATOR ================= */
+#study-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  background: #0f172a;
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Sinhala", sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid #3b82f6;
+  font-size: 13px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.study-nav-container {
+  max-width: 1540px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.study-nav-left, .study-nav-center, .study-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.study-nav-brand {
+  font-weight: 800;
+  color: #60a5fa !important;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #1e293b;
+  border: 1px solid #3b82f6;
+  transition: all 0.2s ease;
+}
+.study-nav-brand span {
+  color: #93c5fd !important;
+}
+.study-nav-brand strong {
+  color: #ffffff !important;
+}
+.study-nav-brand:hover {
+  background: rgba(59, 130, 246, 0.3);
+  color: #93c5fd !important;
+}
+
+.study-nav-pill-group {
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  padding: 3px 4px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  gap: 2px;
+}
+
+.study-nav-pill {
+  color: #cbd5e1 !important;
+  text-decoration: none;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.study-nav-pill:hover {
+  color: #ffffff !important;
+  background: #334155;
+}
+.study-nav-pill.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.study-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #f1f5f9 !important;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.study-nav-btn:hover {
+  background: #334155;
+  border-color: #64748b;
+  color: #ffffff !important;
+}
+
+.study-nav-lang-btn {
+  background: #065f46;
+  border-color: #059669;
+  color: #ecfdf5 !important;
+  font-weight: 700;
+}
+.study-nav-lang-btn:hover {
+  background: #047857;
+  border-color: #10b981;
+}
+
+.study-nav-select {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  max-width: 220px;
+}
+.study-nav-select:focus {
+  border-color: #3b82f6;
+}
+
+/* Floating Actions */
+.floating-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+.floating-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  border: 2px solid #60a5fa;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.floating-btn:hover {
+  transform: translateY(-3px);
+  background: #1d4ed8;
+}
+
+/* Chapter Navigation Footer */
+.chapter-nav-footer {
+  margin-top: 36px;
+  border-top: 2px solid #e2e8f0;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.nav-footer-card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  text-decoration: none !important;
+  color: #1e293b !important;
+  transition: all 0.2s ease;
+}
+.nav-footer-card:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
+.nav-footer-label {
+  font-size: 11.5px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.nav-footer-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Interactive Quiz Tools */
+.quiz-toggle-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  gap: 8px;
+}
+.quiz-toggle-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.quiz-toggle-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+@media screen {
+/* ================= ULTRA-CLEAR HIGH-CONTRAST NIGHT READING THEME ================= */
+body.dark-reading-mode {
+  background-color: #0b1120 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Headings */
+body.dark-reading-mode h1 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+body.dark-reading-mode h2 {
+  color: #93c5fd !important;
+  border-bottom: 2px solid #3b82f6 !important;
+  padding-bottom: 4px;
+}
+body.dark-reading-mode h3 {
+  color: #f8fafc !important;
+}
+body.dark-reading-mode h4,
+body.dark-reading-mode h5 {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .page-start > div,
+body.dark-reading-mode [style*="border-bottom: 2.5px solid"] {
+  border-bottom-color: #3b82f6 !important;
+}
+
+/* Paragraphs, Lists & Body Text */
+body.dark-reading-mode p,
+body.dark-reading-mode li,
+body.dark-reading-mode dd,
+body.dark-reading-mode dt {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode strong,
+body.dark-reading-mode b,
+body.dark-reading-mode th strong,
+body.dark-reading-mode td strong {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+body.dark-reading-mode em,
+body.dark-reading-mode i {
+  color: #f1f5f9 !important;
+}
+body.dark-reading-mode .si-term {
+  color: #38bdf8 !important;
+  font-weight: 600;
+}
+body.dark-reading-mode .si-question-sub {
+  color: #cbd5e1 !important;
+}
+body.dark-reading-mode .ch-subtitle-text {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode code {
+  background-color: #030712 !important;
+  color: #38bdf8 !important;
+  border-color: #1e293b !important;
+}
+body.dark-reading-mode a:not(.study-nav-btn):not(.study-nav-pill):not(.nav-footer-card) {
+  color: #60a5fa !important;
+}
+body.dark-reading-mode a:not(.study-nav-btn):not(.study-nav-pill):not(.nav-footer-card):hover {
+  color: #93c5fd !important;
+}
+
+/* Cards & Containers */
+body.dark-reading-mode .card,
+body.dark-reading-mode .card-subtle,
+body.dark-reading-mode .card-center-callout {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45) !important;
+}
+body.dark-reading-mode .card-accent-left {
+  border-left-color: #3b82f6 !important;
+}
+body.dark-reading-mode .card-accent-dark {
+  border-left-color: #60a5fa !important;
+}
+
+/* Callouts */
+body.dark-reading-mode .callout {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  border-left: 4px solid #3b82f6 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-info {
+  background-color: #0c1e38 !important;
+  border-left-color: #38bdf8 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-exam {
+  background-color: #122147 !important;
+  border-left-color: #3b82f6 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-warning,
+body.dark-reading-mode .callout-trap {
+  background-color: #2b1704 !important;
+  border-left-color: #f59e0b !important;
+  color: #fef3c7 !important;
+}
+body.dark-reading-mode .callout-warning *,
+body.dark-reading-mode .callout-trap * {
+  color: #fef3c7 !important;
+}
+body.dark-reading-mode .callout-warning strong,
+body.dark-reading-mode .callout-trap strong {
+  color: #fde68a !important;
+}
+body.dark-reading-mode .callout-danger {
+  background-color: #2b0b0b !important;
+  border-left-color: #ef4444 !important;
+  color: #fee2e2 !important;
+}
+body.dark-reading-mode .callout-danger * {
+  color: #fee2e2 !important;
+}
+body.dark-reading-mode .callout-danger strong {
+  color: #fca5a5 !important;
+}
+body.dark-reading-mode .callout-success {
+  background-color: #05281a !important;
+  border-left-color: #10b981 !important;
+  color: #d1fae5 !important;
+}
+body.dark-reading-mode .callout-success * {
+  color: #d1fae5 !important;
+}
+body.dark-reading-mode .callout-success strong {
+  color: #6ee7b7 !important;
+}
+
+/* Tables */
+body.dark-reading-mode table {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3) !important;
+}
+body.dark-reading-mode th {
+  background-color: #1a273e !important;
+  color: #93c5fd !important;
+  border-color: #22324e !important;
+  border-bottom: 2px solid #3b82f6 !important;
+}
+body.dark-reading-mode td {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+  border-color: #1e293b !important;
+}
+body.dark-reading-mode tr:nth-child(even) td {
+  background-color: #131d31 !important;
+}
+body.dark-reading-mode tr:hover td {
+  background-color: #1e2d4a !important;
+}
+
+/* Badges & Metrics */
+body.dark-reading-mode .badge {
+  background-color: #1e293b !important;
+  color: #93c5fd !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .badge-k1 {
+  background-color: #0f2b5c !important;
+  color: #93c5fd !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .badge-k2 {
+  background-color: #2e1065 !important;
+  color: #d8b4fe !important;
+  border-color: #8b5cf6 !important;
+}
+body.dark-reading-mode .badge-k3 {
+  background-color: #431407 !important;
+  color: #fdba74 !important;
+  border-color: #f97316 !important;
+}
+body.dark-reading-mode .badge-keyword {
+  background-color: #064e3b !important;
+  color: #6ee7b7 !important;
+  border-color: #10b981 !important;
+}
+body.dark-reading-mode .metric-pill {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .progress-bar-fill {
+  background: linear-gradient(90deg, #2563eb, #38bdf8) !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+
+/* Tool Boxes */
+body.dark-reading-mode .tool-box {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  border-left: 4px solid #3b82f6 !important;
+}
+body.dark-reading-mode .tool-box-title {
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .tool-box-desc {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .tool-examples {
+  border-top-color: #22324e !important;
+  color: #94a3b8 !important;
+}
+
+/* Glossary */
+body.dark-reading-mode .glossary-item {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .glossary-term {
+  color: #60a5fa !important;
+  border-bottom-color: #3b82f6 !important;
+}
+
+/* Practice Questions */
+body.dark-reading-mode .quiz-card {
+  background-color: #131d31 !important;
+  border: 1.5px solid #22324e !important;
+  border-left: 5px solid #3b82f6 !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+}
+body.dark-reading-mode .quiz-q {
+  color: #ffffff !important;
+}
+body.dark-reading-mode .quiz-opt {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .quiz-opt:hover {
+  background-color: #1e2d4a !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .quiz-answer {
+  background-color: #0b1222 !important;
+  border-top: 1.5px dashed #38bdf8 !important;
+  color: #f1f5f9 !important;
+}
+body.dark-reading-mode .quiz-toggle-btn {
+  background-color: #1e2d4a !important;
+  border-color: #3b82f6 !important;
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .quiz-toggle-btn:hover {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+}
+
+/* Ruled Handwriting Notes Box */
+body.dark-reading-mode .notes-box {
+  background-color: #0b1222 !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .notes-box-header {
+  color: #93c5fd !important;
+  border-bottom-color: #22324e !important;
+}
+body.dark-reading-mode .notes-box-header span {
+  color: #cbd5e1 !important;
+}
+body.dark-reading-mode .notes-box-lines {
+  background-image: repeating-linear-gradient(transparent, transparent 17px, #263859 17px, #263859 18px) !important;
+}
+
+/* Quadrants, Formulas & Footer */
+body.dark-reading-mode .quadrant-card {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .formula-box {
+  background-color: #0b1222 !important;
+  border-color: #3b82f6 !important;
+  color: #38bdf8 !important;
+}
+body.dark-reading-mode .footer-note {
+  color: #94a3b8 !important;
+  border-top-color: #22324e !important;
+}
+
+/* Study Navbar in Dark Mode */
+body.dark-reading-mode #study-navbar {
+  background: #060a12 !important;
+  border-bottom-color: #3b82f6 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+}
+body.dark-reading-mode .study-nav-brand {
+  background: #1e293b !important;
+  color: #60a5fa !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-brand span {
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .study-nav-brand strong {
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-pill-group {
+  background: #0d1527 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-pill {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode .study-nav-pill:hover {
+  background: #1e2d4a !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-pill.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-select {
+  background-color: #131d31 !important;
+  color: #ffffff !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-select option {
+  background: #0b1120 !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-btn {
+  background: #131d31 !important;
+  color: #cbd5e1 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-btn:hover {
+  background: #1e2d4a !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-lang-btn {
+  background: #064e3b !important;
+  color: #6ee7b7 !important;
+  border-color: #059669 !important;
+}
+body.dark-reading-mode .study-nav-lang-btn:hover {
+  background: #047857 !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode #theme-toggle-btn {
+  background: #facc15 !important;
+  color: #000000 !important;
+  border-color: #eab308 !important;
+  font-weight: 700 !important;
+}
+body.dark-reading-mode #theme-toggle-btn:hover {
+  background: #fef08a !important;
+}
+
+/* Floating Actions & Footer */
+body.dark-reading-mode .floating-btn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+body.dark-reading-mode .chapter-nav-footer {
+  border-top-color: #22324e !important;
+}
+body.dark-reading-mode .nav-footer-card {
+  background: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+}
+body.dark-reading-mode .nav-footer-card:hover {
+  background: #1e2d4a !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+}
+body.dark-reading-mode .nav-footer-label {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode .nav-footer-title {
+  color: #60a5fa !important;
+}
+
+/* Fallback Universal Overrides */
+body.dark-reading-mode [style*="color: #111827"],
+body.dark-reading-mode [style*="color: #374151"],
+body.dark-reading-mode [style*="color: #4b5563"],
+body.dark-reading-mode [style*="color: #000000"],
+body.dark-reading-mode [style*="color: black"],
+body.dark-reading-mode [style*="color:#111827"],
+body.dark-reading-mode [style*="color:#374151"] {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode strong[style*="color:"],
+body.dark-reading-mode b[style*="color:"] {
+  color: #ffffff !important;
+}
+}
+
+/* ================= AUTHORITATIVE PUBLICATION-GRADE PRINT STYLES ================= */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm 14mm 14mm;
+  }
+
+  /* Universal reset to high-contrast ink-friendly black on pure white */
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  html,
+  body,
+  body.dark-reading-mode {
+    padding-top: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: block !important;
+    font-family: "Inter", "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.68 !important;
+    font-weight: 450 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Reset layout wrapper to full print width with pure white background */
+  .study-main-wrapper,
+  body.dark-reading-mode .study-main-wrapper,
+  body .study-main-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Completely suppress interactive and navigation UI */
+  #study-navbar,
+  .floating-actions,
+  .chapter-nav-footer,
+  .quiz-toggle-bar,
+  .btn-reveal-answer,
+  .study-nav-btn,
+  .format-btn,
+  button {
+    display: none !important;
+  }
+
+  /* Headings: Razor sharp solid black with clean dividers */
+  h1, h2, h3, h4, h5 {
+    color: #000000 !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    font-family: "Inter", "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  }
+
+  h1 {
+    font-size: 22px !important;
+    border-bottom: 2.5px solid #000000 !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 12px !important;
+    font-weight: 800 !important;
+    color: #000000 !important;
+  }
+
+  h2 {
+    font-size: 17px !important;
+    border-bottom: 1.8px solid #000000 !important;
+    padding-bottom: 4px !important;
+    margin-top: 18px !important;
+    margin-bottom: 10px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  h3 {
+    font-size: 15.5px !important;
+    margin-top: 14px !important;
+    margin-bottom: 6px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  h4, h5 {
+    font-size: 14.5px !important;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  /* Body Text, Paragraphs, Lists: Large, crystal clear & comfortable */
+  p, li, dd, dt {
+    font-size: 14.8px !important;
+    line-height: 1.68 !important;
+    color: #000000 !important;
+    margin-bottom: 8px !important;
+  }
+
+  span, em, i, b, label, small {
+    color: #000000 !important;
+  }
+
+  strong {
+    color: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Override any inline colored borders or title accents to crisp black */
+  .page-start > div,
+  [style*="border-bottom: 2.5px solid"],
+  [style*="border-bottom:2.5px solid"] {
+    border-bottom-color: #000000 !important;
+  }
+
+  /* All Containers: Pure White Background with Crisp High-Contrast Black Borders */
+  .card,
+  .card-subtle,
+  .card-center-callout,
+  .callout,
+  .tool-box,
+  .glossary-item,
+  .quiz-card,
+  .formula-box,
+  .quadrant-card {
+    border: 1.2px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 14.5px !important;
+    line-height: 1.65 !important;
+    color: #000000 !important;
+  }
+
+  /* Callouts: Bold Solid Black Left Accent Bar */
+  .callout,
+  .callout-info,
+  .callout-warning,
+  .callout-danger,
+  .callout-success,
+  .callout-exam,
+  .callout-trap,
+  .card-accent-left,
+  .card-accent-dark {
+    border: 1.2px solid #000000 !important;
+    border-left: 4.5px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .callout *,
+  .callout-warning *,
+  .callout-trap *,
+  .callout-danger *,
+  .callout-success * {
+    color: #000000 !important;
+  }
+
+  /* Practice Questions: Large, easily legible layout */
+  .quiz-card {
+    border: 1.2px solid #000000 !important;
+    border-left: 4.5px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .quiz-q {
+    color: #000000 !important;
+    font-weight: 800 !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .quiz-opt {
+    color: #000000 !important;
+    font-size: 14.2px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Practice Exam Answers: Distinct white box with black outline */
+  .quiz-answer {
+    display: block !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1.2px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    color: #000000 !important;
+    border-radius: 4px !important;
+    padding: 10px 14px !important;
+    font-size: 14.2px !important;
+    line-height: 1.65 !important;
+    margin-top: 10px !important;
+  }
+
+  .quiz-answer,
+  .quiz-answer * {
+    color: #000000 !important;
+  }
+
+  /* Badges & Tags: Sharp black outline & bold black text */
+  .badge,
+  .badge-k1,
+  .badge-k2,
+  .badge-k3,
+  .badge-keyword,
+  .metric-pill {
+    display: inline-block !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1.2px solid #000000 !important;
+    padding: 2.5px 7.5px !important;
+    border-radius: 3px !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  /* Tables: Sharp publication borders & generous padding */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 12px 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 1.5px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  th, thead th {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1.2px solid #000000 !important;
+    border-bottom: 2.5px solid #000000 !important;
+    padding: 8px 11px !important;
+    font-weight: 800 !important;
+    font-size: 14.2px !important;
+  }
+
+  td {
+    border: 1px solid #000000 !important;
+    padding: 7px 11px !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    font-size: 14px !important;
+    line-height: 1.62 !important;
+  }
+
+  tr:nth-child(even) td,
+  tr:nth-child(odd) td {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  /* Student Handwriting Note Boxes */
+  .notes-box {
+    border: 1.5px dashed #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    padding: 10px 14px !important;
+    margin-top: 14px !important;
+  }
+
+  .notes-box-header {
+    color: #000000 !important;
+    border-bottom: 1.2px solid #000000 !important;
+    font-size: 14.8px !important;
+  }
+
+  .notes-box-header span {
+    color: #000000 !important;
+  }
+
+  .notes-box-lines {
+    height: 90px !important;
+    background-image: repeating-linear-gradient(transparent, transparent 17px, #555555 17px, #555555 18px) !important;
+  }
+
+  /* Tool boxes & Glossary */
+  .tool-box-title {
+    color: #000000 !important;
+    font-size: 15.5px !important;
+    font-weight: 800 !important;
+  }
+
+  .tool-box-desc,
+  .tool-examples {
+    font-size: 14.8px !important;
+    line-height: 1.68 !important;
+    color: #000000 !important;
+  }
+
+  .glossary-term {
+    color: #000000 !important;
+    font-size: 15.5px !important;
+    font-weight: 800 !important;
+    border-bottom: 1.2px solid #000000 !important;
+  }
+
+  /* Code elements: Crisp white box with solid outline */
+  code {
+    background-color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    padding: 1.5px 5px !important;
+    border-radius: 3px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  }
+
+  /* Sinhala specific clarity */
+  .si-term {
+    color: #000000 !important;
+    font-size: 14.8px !important;
+    font-weight: 700 !important;
+  }
+
+  .si-question-sub {
+    color: #000000 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  .ch-subtitle-text {
+    color: #000000 !important;
+    font-size: 14px !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= STUDY NAVBAR ================= -->
+<nav id="study-navbar">
+  <div class="study-nav-container">
+    <div class="study-nav-left">
+      <a href="../index.html" class="study-nav-brand" title="Master Study Dashboard">
+        <strong>ISTQB® CTFL Hub</strong>
+      </a>
+      <div class="study-nav-pill-group">
+        <a href="istqb_ch1_study_guide.html" class="study-nav-pill" title="Chapter 01: Fundamentals of Testing">Ch 1</a><a href="istqb_ch2_study_guide.html" class="study-nav-pill active" title="Chapter 02: Testing Throughout the SDLC">Ch 2</a><a href="istqb_ch3_study_guide.html" class="study-nav-pill" title="Chapter 03: Static Testing">Ch 3</a><a href="istqb_ch4_study_guide.html" class="study-nav-pill" title="Chapter 04: Test Analysis and Design">Ch 4</a><a href="istqb_ch5_study_guide.html" class="study-nav-pill" title="Chapter 05: Managing the Test Activities">Ch 5</a><a href="istqb_ch6_study_guide.html" class="study-nav-pill" title="Chapter 06: Test Tools">Ch 6</a><a href="../05_Practice_Questions_and_Summaries/istqb_mock_exam_simulator.html" class="study-nav-pill" style="background: #064e3b; color: #a7f3d0 !important; border: 1px solid #059669;" title="Launch Official 40-Question Mock Exam Simulator">40Q Simulator</a><a href="../study_map.html" class="study-nav-pill" title="Library Index & Master Study Roadmap">Roadmap</a>
+      </div>
+    </div>
+
+    <div class="study-nav-center">
+      <select class="study-nav-select" onchange="jumpToSection(this)">
+        <option value="">Jump to Section...</option><option value="sec-core">1. Core Syllabus Concepts</option><option value="sec-2-1">  2.1 Testing in Context of SDLC</option><option value="sec-2-2">  2.2 The 5 Test Levels & 4 Test Types</option><option value="sec-2-3">  2.3 Maintenance Testing</option><option value="sec-flashpoints">2. High-Yield Exam Flashpoints</option><option value="sec-glossary">3. Keyword Lexicon (Official Terms)</option><option value="sec-questions">4. Practice Exam Questions & Answers</option><option value="sec-notes">5. Student Handwriting Notes</option>
+      </select>
+      <a href="istqb_ch1_study_guide.html" class="study-nav-btn" title="Go to Ch 1: Fundamentals"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px;"><polyline points="15 18 9 12 15 6"></polyline></svg>Prev</a>
+      <a href="istqb_ch3_study_guide.html" class="study-nav-btn" title="Go to Ch 3: Static Testing">Next<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:4px;"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+
+    <div class="study-nav-right">
+      <a href="javascript:void(0)" onclick="switchLanguage('../03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch2_study_guide_sinhala.html')" class="study-nav-btn study-nav-lang-btn" title="Switch language for Chapter 2">
+        සිංහල අනුවාදය
+      </a>
+      <button id="theme-toggle-btn" class="study-nav-btn" onclick="toggleReadingTheme()" title="Toggle Reading Theme">
+        Theme
+      </button>
+      <button class="study-nav-btn" onclick="window.print()" title="Print this guide or save as PDF">
+        Print
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Reading Document Container -->
+<div class="study-main-wrapper">
+
+
+<!-- ==================== PAGE 1: LESSON CONTENT ==================== -->
+  <div class="page-start" style="margin-top: 0;">
+    <div style="margin-bottom: 8px; border-bottom: 2.5px solid #2563eb; padding-bottom: 4px;">
+      <h1 style="font-size: 20px; font-weight: 800; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">Chapter 02: Testing Throughout the SDLC</h1>
+    </div>
+
+    <h2 id="sec-core">1. Core Syllabus Concepts & In-Depth Notes</h2>
+
+
+    <h3 id="sec-2-1">2.1 Testing in the Context of a Software Development Lifecycle (SDLC)</h3>
+    <div class="card card-accent-left">
+      <strong>Formal Definition:</strong> An <strong>SDLC model</strong> is an abstract, high-level representation of the software development process. It defines how different development phases and activities relate to each other, both <em>logically</em> and <em>chronologically</em>.
+    </div>
+
+    <h4>2.1.1 Impact of the SDLC on Testing (FL-2.1.1 — K2)</h4>
+    <p>
+      Testing must be adapted to the chosen SDLC to succeed. The choice of SDLC directly dictates: (1) Scope and timing of test activities, (2) Level of detail of test documentation, (3) Choice of test techniques and approaches, (4) Extent of test automation, and (5) Roles and responsibilities of testers.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 22%;">SDLC Category</th>
+          <th style="width: 28%;">Model Examples</th>
+          <th style="width: 50%;">Testing Characteristics & Dynamics</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sequential Models</strong></td>
+          <td>Waterfall Model, V-Model</td>
+          <td>
+            &bull; Testers participate early in requirements reviews, test analysis, and test design.<br>
+            &bull; Executable code is created in later phases; dynamic testing cannot start early.<br>
+            &bull; Strict phase gates: exit criteria of one phase often form entry criteria for the next.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Iterative & Incremental Models</strong></td>
+          <td>Spiral Model, Prototyping, Unified Process (UP)</td>
+          <td>
+            &bull; Each iteration delivers a working prototype or product increment.<br>
+            &bull; Static and dynamic testing are performed across all test levels in every iteration.<br>
+            &bull; Requires rapid feedback and extensive regression testing as features accumulate.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Agile Software Development</strong></td>
+          <td>Scrum, Kanban, Extreme Programming (XP), Lean IT, FDD</td>
+          <td>
+            &bull; Assumes continuous change throughout the project lifecycle.<br>
+            &bull; Lightweight work product documentation favored over heavy formal test plans.<br>
+            &bull; Heavy reliance on automated regression testing and CI/CD pipelines.<br>
+            &bull; Manual testing relies heavily on experience-based techniques (exploratory testing).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>2.1.2 Software Development Lifecycle and Good Testing Practices <span class="badge badge-k1">FL-2.1.2 (K1)</span></h4>
+    <p>
+      Regardless of which SDLC model an organization adopts, four universal testing practices must always be implemented:
+    </p>
+
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>1. Corresponding Test Activities</strong>
+        <p style="margin-top: 2px;">
+          For <strong>every</strong> software development activity, there is a corresponding test activity, ensuring that all development work products are subject to quality control.
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>2. Distinct Test Level Objectives</strong>
+        <p style="margin-top: 2px;">
+          Different test levels have specific and different test objectives, enabling comprehensive testing while avoiding wasteful duplication and redundancy.
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>3. Early Test Analysis & Design</strong>
+        <p style="margin-top: 2px;">
+          Test analysis and design for a given test level begin during the corresponding development phase of the SDLC (adhering to Principle 3: Early Testing).
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>4. Early Review Involvement (Shift Left)</strong>
+        <p style="margin-top: 2px;">
+          Testers are involved in reviewing work products as soon as early drafts are available, detecting defects before implementation begins.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 4: 2.1.3 TEST-FIRST & 2.1.4 DEVOPS ==================== -->
+  <div class="page-start">
+    <h3>2.1.3 Testing as a Driver for Software Development <span class="badge badge-k1">FL-2.1.3 (K1)</span></h3>
+    <p>
+      In test-first approaches, tests are defined <strong>before</strong> the code is written. This embodies the principle of early testing and shift-left, directing development and supporting iterative lifecycles.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Approach</th>
+          <th style="width: 45%;">Core Mechanism & Definition</th>
+          <th style="width: 30%;">Academic Citation & Format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Test-Driven Development (TDD)</strong></td>
+          <td>Directs coding through test cases rather than extensive upfront software design. Developer writes an automated unit test &rarr; writes minimal code to pass &rarr; refactors code and tests.</td>
+          <td><strong>Beck (2003)</strong><br><em>Cycle: Red &rarr; Green &rarr; Refactor</em></td>
+        </tr>
+        <tr>
+          <td><strong>Acceptance Test-Driven Development (ATDD)</strong></td>
+          <td>Derives tests from customer acceptance criteria during system design. Tests are created collaboratively by business, developers, and testers before features are coded.</td>
+          <td><strong>G&auml;rtner (2011)</strong><br><em>Collaborative Specification Workshops</em></td>
+        </tr>
+        <tr>
+          <td><strong>Behavior-Driven Development (BDD)</strong></td>
+          <td>Expresses application behavior using simple natural language scenarios that all stakeholders understand. Scenarios are automatically translated into executable tests.</td>
+          <td><strong>Chelimsky (2010)</strong><br><em>Given / When / Then format</em></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-info">
+      <strong>Persistence as Automated Regression Tests:</strong> In all three approaches (TDD, ATDD, BDD), the authored tests persist as an automated test suite that guards against regressions during future code modifications and refactoring.
+    </div>
+
+    <h3>2.1.4 DevOps and Testing <span class="badge badge-k2">FL-2.1.4 (K2)</span></h3>
+    <p>
+      <strong>DevOps</strong> is an organizational approach creating synergy by getting development (including testing) and operations to collaborate toward common goals (Kim 2016). It represents a cultural shift bridging silos with shared accountability, continuous integration (CI), continuous delivery (CD), and automated deployment pipelines.
+    </p>
+
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>Testing Benefits in DevOps:</strong>
+        <ul style="margin: 3px 0 0 14px;">
+          <li><strong>Fast Quality Feedback:</strong> Immediate visibility into code health and whether changes break existing functionality.</li>
+          <li><strong>CI Promotes Shift Left:</strong> Encourages developers to commit high-quality code accompanied by component tests and static analysis.</li>
+          <li><strong>Stable Test Environments:</strong> Automated CI/CD provisioning creates reliable, reproducible test environments on demand.</li>
+          <li><strong>Non-Functional Visibility:</strong> Early automated checks for performance efficiency, reliability, and security in the pipeline.</li>
+          <li><strong>Reduced Manual Burden:</strong> Automating repetitive regression execution frees testers for high-value exploratory testing.</li>
+          <li><strong>Minimized Regression Risk:</strong> Comprehensive test suites run continuously on every commit.</li>
+        </ul>
+      </div>
+      <div class="card card-accent-left">
+        <strong>DevOps Risks & Challenges:</strong>
+        <ul style="margin: 3px 0 0 14px;">
+          <li><strong>Pipeline Complexity:</strong> Establishing and maintaining delivery pipelines requires substantial technical infrastructure.</li>
+          <li><strong>Toolchain Overhead:</strong> Integrating and managing diverse CI/CD tools demands specialized expertise.</li>
+          <li><strong>Automation Maintenance:</strong> Creating and maintaining automated test suites is resource-intensive and expensive.</li>
+          <li><strong>Manual Testing Still Vital:</strong> Manual testing—especially from the end-user's perspective (usability, exploratory)—remains essential.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 5: 2.1.5 SHIFT LEFT & 2.1.6 RETROSPECTIVES ==================== -->
+  <div class="page-start">
+    <h3>2.1.5 Shift Left <span class="badge badge-k2">FL-2.1.5 (K2)</span></h3>
+    <div class="card card-accent-left">
+      <strong>Concept:</strong> "Shift Left" is the practical implementation of <strong>Principle 3 (Early Testing saves time and money)</strong>. It means performing testing earlier in the SDLC timeline, rather than waiting for code implementation or component integration. <em>It does NOT mean neglecting testing later in the SDLC!</em>
+    </div>
+
+    <h4>Five Good Practices to Achieve Shift Left:</h4>
+    <div class="grid-2">
+      <div class="card">
+        <strong>1. Reviewing Specifications Early</strong>
+        <p style="margin-top: 2px;">
+          Testers review requirements, user stories, and specifications to identify ambiguities, omissions, and contradictions before development begins.
+        </p>
+      </div>
+      <div class="card">
+        <strong>2. Authoring Tests Before Code (TDD/ATDD)</strong>
+        <p style="margin-top: 2px;">
+          Writing test cases prior to implementation so code can be executed against test harnesses during development.
+        </p>
+      </div>
+      <div class="card">
+        <strong>3. Automated CI/CD Testing</strong>
+        <p style="margin-top: 2px;">
+          Using Continuous Integration to provide instant feedback with automated component tests whenever code is committed.
+        </p>
+      </div>
+      <div class="card">
+        <strong>4. Early Static Code Analysis</strong>
+        <p style="margin-top: 2px;">
+          Running automated static analysis on source code prior to dynamic testing to detect code complexity and vulnerabilities.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin: 6px 0;">
+      <strong>5. Early Non-Functional Testing at Component Level:</strong>
+      <p style="margin-top: 2px;">
+        Conducting performance efficiency and security tests early at the component level rather than waiting for a fully assembled system in late staging environments.
+      </p>
+    </div>
+
+    <div class="callout callout-exam">
+      <strong>Shift-Left Trade-Off & Stakeholder Buy-In:</strong> Shift left requires upfront investment in training, tooling, and effort earlier in the lifecycle, but generates massive downstream cost savings. Stakeholders must be convinced and bought into this concept.
+    </div>
+
+    <h3>2.1.6 Retrospectives and Process Improvement <span class="badge badge-k2">FL-2.1.6 (K2)</span></h3>
+    <p>
+      Retrospectives (often held at sprint ends, release milestones, or post-project) bring together cross-functional participants (testers, developers, architects, product owner, business analysts) to drive <strong>continuous improvement</strong>.
+    </p>
+
+    <div class="card card-center-callout">
+      <div style="display: flex; justify-content: space-around; font-weight: 700;">
+        <span>1. What was successful, and should be retained?</span>
+        <span>2. What was not successful, and could be improved?</span>
+        <span>3. How to incorporate improvements in the future?</span>
+      </div>
+    </div>
+
+    <h4>Five Key Benefits of Retrospectives for Testing:</h4>
+    <ul>
+      <li><strong>Increased Test Effectiveness & Efficiency:</strong> Implementing agreed process improvements streamlines testing workflows.</li>
+      <li><strong>Higher Quality Testware:</strong> Jointly reviewing testing practices leads to better test cases, test data, and scripts.</li>
+      <li><strong>Team Bonding & Psychological Safety:</strong> Provides an open forum to discuss challenges constructively without blame.</li>
+      <li><strong>Improved Quality of the Test Basis:</strong> Deficiencies in user stories or requirements are identified and resolved upstream.</li>
+      <li><strong>Enhanced Collaboration:</strong> Strengthens mutual trust and empathy between developers and testers.</li>
+    </ul>
+    <p >
+      <em>Note: Retrospective findings and action items are officially recorded in the <strong>Test Completion Report</strong>.</em>
+    </p>
+  </div>
+
+  <!-- ==================== PAGE 6: 2.2 TEST LEVELS MASTER MATRIX ==================== -->
+  <div class="page-start">
+    <h2 id="sec-2-2">1.2 Test Levels and Test Types</h2>
+
+    <h3>2.2.1 The Five Test Levels <span class="badge badge-k2">FL-2.2.1 (K2)</span></h3>
+    <div class="card card-accent-left">
+      <strong>Formal Definition:</strong> <strong>Test levels</strong> are groups of test activities that are organized and managed together. Each level is an instance of the test process performed in relation to software at a given development phase (from unit to systems of systems).
+    </div>
+
+    <div class="level-ribbon">
+      <div class="level-pill">1. Component Testing</div>
+      <div class="level-pill">2. Component Integration</div>
+      <div class="level-pill">3. System Testing</div>
+      <div class="level-pill">4. System Integration</div>
+      <div class="level-pill">5. Acceptance Testing</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 17%;">Test Level</th>
+          <th style="width: 25%;">Test Object & Basis</th>
+          <th style="width: 33%;">Focus & Objectives</th>
+          <th style="width: 25%;">Typical Responsibilities & Tools</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Component Testing<br>(Unit Testing)</strong></td>
+          <td><strong>Object:</strong> Components, units, modules, classes, code.<br><strong>Basis:</strong> Detailed design, component specs, code.</td>
+          <td>Focuses on testing components in isolation. Verifies functional logic, data flows, and code structure. Finds code defects, calculation errors.</td>
+          <td><strong>Who:</strong> Developers in dev environment.<br><strong>Tools:</strong> Unit test frameworks (JUnit, NUnit), mock frameworks, test harnesses.</td>
+        </tr>
+        <tr>
+          <td><strong>Component Integration Testing</strong></td>
+          <td><strong>Object:</strong> Interactions between components, APIs, database interfaces.<br><strong>Basis:</strong> Software architecture, interface design.</td>
+          <td>Focuses on interfaces and communications between components. Detects interface mismatches, incorrect data encoding, communication protocol flaws.</td>
+          <td><strong>Who:</strong> Developers / Technical testers.<br><strong>Approaches:</strong> Top-down, bottom-up, big-bang (risky).</td>
+        </tr>
+        <tr>
+          <td><strong>System Testing</strong></td>
+          <td><strong>Object:</strong> Entire integrated product/system.<br><strong>Basis:</strong> System/software requirements, use cases, functional specs.</td>
+          <td>Evaluates end-to-end tasks, overall capabilities, business flows, and non-functional quality characteristics against system specifications.</td>
+          <td><strong>Who:</strong> Independent test team.<br><strong>Environment:</strong> Dedicated, representative test environment.</td>
+        </tr>
+        <tr>
+          <td><strong>System Integration Testing</strong></td>
+          <td><strong>Object:</strong> Interactions between system under test and other external systems/services.<br><strong>Basis:</strong> System architecture, external interface specs.</td>
+          <td>Focuses on interfaces between systems, microservices, cloud APIs, external third-party services, hardware interfaces.</td>
+          <td><strong>Who:</strong> Dedicated test team / integration engineers.<br><strong>Environment:</strong> Close to operational environment.</td>
+        </tr>
+        <tr>
+          <td><strong>Acceptance Testing</strong></td>
+          <td><strong>Object:</strong> Complete system, business processes, user workflows.<br><strong>Basis:</strong> Business requirements, user stories, contracts, regulations.</td>
+          <td>Focuses on <strong>validation</strong> and demonstrating readiness for deployment. Checks whether the system satisfies business goals and user needs.</td>
+          <td><strong>Who:</strong> Intended end users, customers, system operators, business representatives.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-top: 6px;">
+      <strong>Five Distinguishing Attributes of Test Levels (Avoids Overlap):</strong>
+      <div style="margin-top: 2px;">
+        1. <strong>Test Object</strong> (what is tested) &bull; 2. <strong>Test Objectives</strong> (goals) &bull; 3. <strong>Test Basis</strong> (reference specs) &bull; 4. <strong>Defects and Failures</strong> (types of flaws expected) &bull; 5. <strong>Approach and Responsibilities</strong> (who tests and how).
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 7: ACCEPTANCE TESTING FORMS & 4 TEST TYPES ==================== -->
+  <div class="page-start">
+    <h4>Forms of Acceptance Testing (FL-2.2.1)</h4>
+    <div class="grid-3">
+      <div class="card">
+        <strong>1. User Acceptance (UAT)</strong>
+        <p style="margin-top: 2px;">Intended business users evaluate the system to confirm it supports everyday business processes.</p>
+      </div>
+      <div class="card">
+        <strong>2. Operational Acceptance (OAT)</strong>
+        <p style="margin-top: 2px;">Sysadmins test backup/restore, disaster recovery, failover, maintenance tasks, and security.</p>
+      </div>
+      <div class="card">
+        <strong>3. Contractual & Regulatory</strong>
+        <p style="margin-top: 2px;">Verifies custom software meets contract terms or complies with statutory laws and safety standards.</p>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 5px;">
+      <div class="card card-accent-left">
+        <strong>4. Alpha Testing:</strong>
+        <p style="margin-top: 2px;">Performed at the <strong>developer's site</strong> by potential users or independent test teams not involved in development.</p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>5. Beta Testing:</strong>
+        <p style="margin-top: 2px;">Performed by potential or existing customers at their <strong>own operational locations</strong> in real-world conditions.</p>
+      </div>
+    </div>
+
+    <h3>2.2.2 The Four Test Types <span class="badge badge-k2">FL-2.2.2 (K2)</span></h3>
+    <div class="card card-accent-left">
+      <strong>Formal Definition:</strong> A <strong>test type</strong> is a group of test activities related to specific quality characteristics. <em>Crucial rule: All four test types can be performed at EVERY test level!</em>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 22%;">Test Type</th>
+          <th style="width: 38%;">Core Focus & Main Objectives</th>
+          <th style="width: 40%;">Key Details & Standards</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Functional Testing</strong></td>
+          <td>Evaluates functions the system should perform (<strong>"WHAT"</strong> the test object does). Checks completeness, correctness, and appropriateness.</td>
+          <td>Specification-based. Can be executed at all test levels (e.g. unit calculation, system checkout flow).</td>
+        </tr>
+        <tr>
+          <td><strong>Non-Functional Testing</strong></td>
+          <td>Evaluates <strong>"HOW WELL"</strong> the system behaves. Measures quality attributes against defined constraints.</td>
+          <td>Based on <strong>ISO/IEC 25010</strong>. Often derived from functional tests adding constraints (e.g. execution speed, load).</td>
+        </tr>
+        <tr>
+          <td><strong>Black-Box Testing</strong></td>
+          <td>Specification-based. Tests derived without reference to internal code structure. Checks behavior against specs.</td>
+          <td>Test cases remain valid even if internal code implementation is refactored (as long as specs don't change).</td>
+        </tr>
+        <tr>
+          <td><strong>White-Box Testing</strong></td>
+          <td>Structure-based. Tests derived from internal implementation (code, architecture, data/control flows).</td>
+          <td>Measures objective structural code coverage (statements, branches). Created after design or implementation.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>ISO/IEC 25010 (2023) Quality Characteristics for Non-Functional Testing:</h4>
+    <div class="grid-4">
+      <div class="card">
+        <strong>1. Performance</strong>
+        <p style="margin-top: 1px;">Speed, response time, resource utilization, throughput.</p>
+      </div>
+      <div class="card">
+        <strong>2. Compatibility</strong>
+        <p style="margin-top: 1px;">Co-existence and interoperability with other systems.</p>
+      </div>
+      <div class="card">
+        <strong>3. Usability</strong>
+        <p style="margin-top: 1px;">Interaction capability, learnability, error protection.</p>
+      </div>
+      <div class="card">
+        <strong>4. Reliability</strong>
+        <p style="margin-top: 1px;">Maturity, availability, fault tolerance, recoverability.</p>
+      </div>
+      <div class="card">
+        <strong>5. Security</strong>
+        <p style="margin-top: 1px;">Confidentiality, integrity, non-repudiation, authentication.</p>
+      </div>
+      <div class="card">
+        <strong>6. Maintainability</strong>
+        <p style="margin-top: 1px;">Modularity, reusability, analyzability, modifiability, testability.</p>
+      </div>
+      <div class="card">
+        <strong>7. Portability</strong>
+        <p style="margin-top: 1px;">Flexibility, adaptability, installability, replaceability.</p>
+      </div>
+      <div class="card">
+        <strong>8. Safety</strong>
+        <p style="margin-top: 1px;">Absence of unacceptable risk of harm to people or environment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 8: CONFIRMATION/REGRESSION & MAINTENANCE TESTING ==================== -->
+  <div class="page-start">
+    <h3>2.2.3 Confirmation Testing and Regression Testing <span class="badge badge-k2">FL-2.2.3 (K2)</span></h3>
+    <p>
+      When software changes to fix defects or add features, both confirmation and regression testing must be performed:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 20%;">Dimension</th>
+          <th style="width: 40%;">Confirmation Testing (Re-testing)</th>
+          <th style="width: 40%;">Regression Testing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Objective</strong></td>
+          <td>Confirms that an original defect has been successfully fixed and the failure no longer occurs.</td>
+          <td>Confirms that no adverse side effects have been caused by a change in unchanged parts of the software.</td>
+        </tr>
+        <tr>
+          <td><strong>Scope</strong></td>
+          <td>Targeted: re-executing failed tests and tests covering bug-fix modifications.</td>
+          <td>Broad: unchanged features in the same component, other subsystems, or connected environments.</td>
+        </tr>
+        <tr>
+          <td><strong>Tester Assignment</strong></td>
+          <td><strong>Best practice:</strong> Done by the <em>same person</em> who performed the initial test and logged the defect.</td>
+          <td>Can be executed by any tester or run automatically via CI/CD test automation pipelines.</td>
+        </tr>
+        <tr>
+          <td><strong>Automation Role</strong></td>
+          <td>Often executed manually or via targeted unit tests.</td>
+          <td><strong>Strongest candidate for automation</strong> because regression suites grow and run repeatedly.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-exam">
+      <strong>Impact Analysis in Regression Testing:</strong> Prior to regression testing, testers should perform <strong>impact analysis</strong> to identify all areas of the software and environment potentially affected by the modification, scoping tests efficiently.
+    </div>
+
+    <h3 id="sec-2-3">2.3 Maintenance Testing <span class="badge badge-k2">FL-2.3.1 (K2)</span></h3>
+    <p>
+      Maintenance testing evaluates changes to an operational system or checks for regressions in unchanged parts (which usually constitute most of the system). Governed by <strong>ISO/IEC/IEEE 14764</strong> (corrective, adaptive, perfective maintenance).
+    </p>
+
+    <h4>What Determines the Scope of Maintenance Testing? (3 Factors):</h4>
+    <div class="grid-3">
+      <div class="card" style="text-align: center;">
+        <strong>1. Risk of the Change</strong>
+        <p style="margin-top: 2px;">Criticality of modified component and potential financial/safety impact of failure.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <strong>2. Size of Existing System</strong>
+        <p style="margin-top: 2px;">Larger systems possess complex interdependencies requiring wider regression checks.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <strong>3. Size of the Change</strong>
+        <p style="margin-top: 2px;">Minor emergency bug fix vs complete architectural microservice overhaul.</p>
+      </div>
+    </div>
+
+    <h4>The Three Triggers for Maintenance Testing:</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Maintenance Trigger</th>
+          <th style="width: 45%;">Real-World Practical Scenarios</th>
+          <th style="width: 30%;">Required Testing Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Modifications</strong></td>
+          <td>Planned enhancements, new user stories, corrective bug fixes, emergency production hot fixes.</td>
+          <td>Confirmation testing of fixes + regression testing of affected and related components.</td>
+        </tr>
+        <tr>
+          <td><strong>2. Upgrades or Migrations</strong></td>
+          <td>Migrating software to a new OS, cloud host, database engine, or migrating legacy database records into a new schema.</td>
+          <td>Environment compatibility tests, data conversion verification, and operational checks.</td>
+        </tr>
+        <tr>
+          <td><strong>3. Retirement</strong></td>
+          <td>Decommissioning an application at the end of its operational lifecycle.</td>
+          <td>Testing data archiving procedures, retention compliance, and data restore/retrieval capabilities.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 9: EXAM FLASHPOINTS, DISTINCTIONS & TRAPS ==================== -->
+  <div class="page-start">
+    <h2 id="sec-flashpoints">2. High-Yield Exam Flashpoints & Key Distinctions</h2>
+
+    <div class="callout callout-exam">
+      <strong>TOP 10 ISTQB CTFL v4.0.1 CHAPTER 2 EXAM TRAPS & DISTRACTORS:</strong>
+      <ol style="margin-left: 17px; margin-top: 4px;">
+        <li><strong>"Component Integration and System Integration are the same test level" &rarr; FALSE!</strong> v4.0.1 explicitly splits them. Component Integration tests interfaces between code units; System Integration tests interfaces between independent systems and external services.</li>
+        <li><strong>"Non-functional testing can only be performed at System Testing" &rarr; FALSE!</strong> Non-functional testing (e.g. performance efficiency, security) can and should be conducted at <em>every</em> test level, including component testing (Shift Left).</li>
+        <li><strong>"White-box testing is only used at the component test level" &rarr; FALSE!</strong> White-box techniques can be applied at integration and system levels (e.g. business process workflows, API call flows).</li>
+        <li><strong>"Confirmation testing and regression testing are synonyms" &rarr; FALSE!</strong> Confirmation testing verifies that a specific defect is fixed; regression testing checks that unchanged code didn't break.</li>
+        <li><strong>"Regression testing should only be done manually" &rarr; FALSE!</strong> Regression test suites grow over time and run repeatedly, making them the strongest candidate for automation in CI/CD.</li>
+        <li><strong>"DevOps eliminates the need for manual testing" &rarr; FALSE!</strong> Although DevOps relies heavily on automation, manual testing (especially user-oriented usability and exploratory) is still essential.</li>
+        <li><strong>"Shift-left means eliminating testing late in the SDLC" &rarr; FALSE!</strong> Shift-left introduces testing earlier (e.g., reviews, pre-code tests), but does not replace or neglect system/acceptance testing.</li>
+        <li><strong>"Acceptance testing must always be performed by independent testers" &rarr; FALSE!</strong> Acceptance testing should ideally be performed by intended business users, customers, or system operators.</li>
+        <li><strong>"Retrospectives are only attended by testers" &rarr; FALSE!</strong> Retrospectives require cross-functional attendance: developers, testers, architects, product owners, and business analysts.</li>
+        <li><strong>"Maintenance testing only occurs after emergency bugs" &rarr; FALSE!</strong> Maintenance testing is triggered by planned modifications, environment migrations/upgrades, and system retirement.</li>
+      </ol>
+    </div>
+
+    <h3>Rapid Comparison Matrix (Core Syllabic Contrasts)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Concept A</th>
+          <th style="width: 25%;">Concept B</th>
+          <th style="width: 50%;">Crucial Distinguishing Test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Component Integration</strong></td>
+          <td><strong>System Integration</strong></td>
+          <td>Component Integration tests interactions between <em>internal modules</em>; System Integration tests interactions with <em>external systems/APIs</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>Alpha Testing</strong></td>
+          <td><strong>Beta Testing</strong></td>
+          <td>Alpha testing occurs at the <em>developer's site</em>; Beta testing occurs at the <em>customer's own location</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>User Acceptance (UAT)</strong></td>
+          <td><strong>Operational Acceptance (OAT)</strong></td>
+          <td>UAT validates <em>business workflows</em>; OAT validates <em>operational readiness (backup, restore, disaster recovery)</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>TDD</strong></td>
+          <td><strong>ATDD</strong></td>
+          <td>TDD directs <em>unit code implementation</em>; ATDD directs <em>feature acceptance based on user acceptance criteria</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>Functional Testing</strong></td>
+          <td><strong>Non-Functional Testing</strong></td>
+          <td>Functional tests <em>"WHAT the system does"</em>; Non-Functional tests <em>"HOW WELL the system behaves"</em>.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card card-subtle">
+      <strong>High-Yield Memory Mnemonics for Revision:</strong>
+      <ul style="margin: 3px 0 0 16px;">
+        <li><strong>5 Test Levels:</strong> <em>Component &rarr; Component Integration &rarr; System &rarr; System Integration &rarr; Acceptance</em>.</li>
+        <li><strong>4 Test Types:</strong> <em>Functional ("What") | Non-Functional ("How Well") | Black-Box (Spec) | White-Box (Structure)</em>.</li>
+        <li><strong>3 Maintenance Triggers:</strong> <em>Modifications &bull; Migrations &bull; Retirement</em>.</li>
+        <li><strong>3 Test-First Approaches:</strong> <em>TDD (Code-first) | ATDD (Criteria-first) | BDD (Behavior Given/When/Then)</em>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 10: COMPLETE GLOSSARY ==================== -->
+  <div class="page-start">
+    <h2 id="sec-glossary">3. Complete Chapter 2 Keyword Lexicon (All 17 Official Terms)</h2>
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <div class="glossary-term">Acceptance Testing</div>
+        A test level that focuses on determining whether to accept the system, validating readiness for deployment and meeting business needs.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Black-Box Testing</div>
+        Testing, either functional or non-functional, without reference to the internal structure of the component or system.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Component Integration Testing</div>
+        Testing the interfaces and interactions between integrated components in isolation from the rest of the system.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Component Testing</div>
+        Testing individual hardware or software components in isolation (also known as unit testing).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Confirmation Testing (Re-testing)</div>
+        Dynamic testing conducted after a defect fix to confirm that the failure caused by the original defect does not recur.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Functional Testing</div>
+        Testing conducted to evaluate the compliance of a component or system with functional requirements ("what it does").
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Integration Testing</div>
+        Testing designed to discover defects in the interfaces and interactions between components or systems.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Maintenance Testing</div>
+        Testing the changes to an operational system or the impact of changes to the operational environment.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Non-Functional Testing</div>
+        Testing conducted to evaluate quality characteristics other than functionality ("how well the system behaves").
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Regression Testing</div>
+        Testing of a previously tested program following modification to ensure that defects have not been introduced in unchanged areas.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Shift Left</div>
+        An approach where testing activities are performed earlier in the software development lifecycle.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">System Integration Testing</div>
+        Testing the interfaces and interactions between the system under test and other external systems or services.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">System Testing</div>
+        Testing an integrated system to verify that it meets specified requirements and capabilities.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Level</div>
+        A specific instantiation of the test process performed against software at a given phase of development.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Object</div>
+        The work product that is being tested.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Type</div>
+        A group of test activities related to specific quality characteristics (e.g., functional, reliability, security).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">White-Box Testing</div>
+        Testing based on an analysis of the internal structure of the component or system (code, architecture, workflows).
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 11: PRACTICE QUESTIONS 1-4 ==================== -->
+  <div class="page-start">
+    <div style="page-break-before: always; break-before: page; margin-top: 0;"></div>
+
+    <!-- Lined Student Note Space -->
+    <div id="sec-notes" class="notes-box">
+      <div class="notes-box-header">
+        <span>STUDENT NOTES & EXAM FLASHCARD REMINDERS</span>
+        <span>(Handwritten Study Space)</span>
+      </div>
+      <div class="notes-box-lines"></div>
+    </div>
+
+    <h2 id="sec-questions">4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 1)</h2>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 1 [K2 - FL-2.1.1]: How does testing in an Agile development model typically differ from testing in a sequential V-model?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Agile testing produces more comprehensive test documentation than sequential testing.</div>
+        <div class="quiz-opt">B) In Agile, dynamic testing is executed at all test levels in each iteration, whereas in sequential models, dynamic testing occurs mainly in later phases.</div>
+        <div class="quiz-opt">C) Agile projects do not require regression testing, whereas sequential projects automate all regression tests.</div>
+        <div class="quiz-opt">D) In sequential models, testers perform only non-functional testing, while developers perform functional testing.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> In iterative/Agile models, each iteration produces a working increment, meaning static and dynamic testing occur at all test levels in every iteration (Section 2.1.1). Sequential models defer dynamic testing until executable code is built in later phases.
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 2 [K1 - FL-2.1.2]: Which of the following is a recognized GOOD TESTING PRACTICE that applies to ALL software development lifecycles?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Test execution must be completely automated before coding starts.</div>
+        <div class="quiz-opt">B) Different test levels must have identical test objectives to ensure complete overlap.</div>
+        <div class="quiz-opt">C) For every software development activity, there is a corresponding test activity.</div>
+        <div class="quiz-opt">D) Non-functional testing should only be performed during User Acceptance Testing.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Section 2.1.2 explicitly identifies that a universal practice across all SDLCs is: "For every software development activity, there is a corresponding test activity, so that all development activities are subject to quality control."
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 3 [K1 - FL-2.1.3]: In which test-first approach are test cases written in a simple natural language using the Given/When/Then format?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Test-Driven Development (TDD)</div>
+        <div class="quiz-opt">B) Behavior-Driven Development (BDD)</div>
+        <div class="quiz-opt">C) Acceptance Test-Driven Development (ATDD)</div>
+        <div class="quiz-opt">D) Feature-Driven Development (FDD)</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> BDD (Behavior-Driven Development) expresses the desired behavior of an application with test cases written in natural language using the Given/When/Then format (Chelimsky 2010, Section 2.1.3).
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 4 [K2 - FL-2.1.5]: Which of the following actions is an example of applying the "SHIFT LEFT" approach in testing?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Postponing performance testing until the entire system is deployed to production.</div>
+        <div class="quiz-opt">B) Reviewing requirements and user stories from a tester's perspective before code implementation begins.</div>
+        <div class="quiz-opt">C) Replacing all automated regression testing with manual user acceptance testing.</div>
+        <div class="quiz-opt">D) Having developers execute system integration testing without requirements.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Section 2.1.5 lists reviewing specifications from the perspective of testers early in the SDLC as a prime example of achieving shift left to detect defects before code is written.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 12: PRACTICE QUESTIONS 5-8 ==================== -->
+  <div class="page-start">
+    <div style="page-break-before: always; break-before: page; margin-top: 0;"></div>
+<h2>4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 2)</h2>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 5 [K2 - FL-2.2.1]: Which test level focuses specifically on testing the interactions between the system under test and other external systems and cloud services?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Component Testing</div>
+        <div class="quiz-opt">B) Component Integration Testing</div>
+        <div class="quiz-opt">C) System Integration Testing</div>
+        <div class="quiz-opt">D) User Acceptance Testing</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Section 2.2.1 states: "System integration testing focuses on testing the interfaces of the system under test and other systems and external services." Component integration tests interfaces between internal components.
+      </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 6 [K2 - FL-2.2.2]: Which of the following statements about test types is TRUE?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Functional testing evaluates how well the system behaves, while non-functional testing evaluates what it does.</div>
+        <div class="quiz-opt">B) Non-functional testing can only be conducted during system testing.</div>
+        <div class="quiz-opt">C) Black-box, white-box, functional, and non-functional testing can all be applied at all test levels.</div>
+        <div class="quiz-opt">D) White-box testing derives test cases from user stories and business requirements.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Section 2.2.2 explicitly affirms: "All the four above mentioned test types can be applied to all test levels, although the focus will be different at each level."
+      </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 7 [K2 - FL-2.2.3]: A tester executes a test case that previously failed to confirm that a bug fix resolved the issue. Simultaneously, an automated test suite executes across the entire application to ensure unchanged modules were not corrupted. What types of testing are being performed?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Regression testing followed by maintenance testing.</div>
+        <div class="quiz-opt">B) Confirmation testing and regression testing, respectively.</div>
+        <div class="quiz-opt">C) System integration testing and alpha testing.</div>
+        <div class="quiz-opt">D) Non-functional testing and confirmation testing.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Testing to confirm that an original defect was fixed is <em>Confirmation Testing (re-testing)</em>. Running tests to ensure no adverse consequences affected unchanged code is <em>Regression Testing</em> (Section 2.2.3).
+      </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 8 [K2 - FL-2.3.1]: An enterprise migrates its customer database from an on-premise Oracle server to an AWS cloud-hosted PostgreSQL database. Which type of testing is triggered, and what is its primary focus?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Component testing to rewrite database algorithms.</div>
+        <div class="quiz-opt">B) Maintenance testing triggered by an upgrade/migration, focusing on tests of the new environment and data conversion.</div>
+        <div class="quiz-opt">C) Retirement testing to delete legacy customer data permanently.</div>
+        <div class="quiz-opt">D) System integration testing focused exclusively on user interface styling.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Operational environment migrations/upgrades are a primary trigger for maintenance testing, requiring testing of the new environment and data conversion/migration validation (Section 2.3).
+      </div>
+    </div>
+
+    <!-- PART2-QUESTIONS-START -->
+    <h3>Part 2: Additional Questions for Remaining Learning Objectives</h3>
+
+    <!-- Question 9 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 9 [K2 - FL-2.1.4]: Which of the following is a typical impact of DevOps on testing?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Automated regression tests in the CI/CD pipeline give fast feedback on quality and reduce the risk of regression defects.</div>
+        <div class="quiz-opt">B) Because deployment is continuous, non-functional characteristics no longer need to be tested.</div>
+        <div class="quiz-opt">C) Test automation is no longer necessary because the pipeline tests itself.</div>
+        <div class="quiz-opt">D) Testing is moved to the very end of the pipeline so that development is never slowed down.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: A</strong><br>
+        <strong>Rationale:</strong> DevOps benefits for testing: fast feedback on quality, CI promoting shift-left, stable test environments through CI/CD automation, more focus on non-functional characteristics (e.g. performance, reliability), less repetitive manual testing and a lower regression risk. Risks: the delivery pipeline must be defined and established, CI/CD tools must be introduced and maintained, and test automation needs extra resources and can be hard to build and maintain (Section 2.1.4).
+      </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 10 [K2 - FL-2.1.6]: How can retrospectives be used as a mechanism for process improvement?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Management alone holds them before the project starts in order to assign blame for earlier failures.</div>
+        <div class="quiz-opt">B) They automatically re-run all regression tests to compare the results of two iterations.</div>
+        <div class="quiz-opt">C) The team discusses what was successful and what could be improved, agrees how to incorporate improvements, and records the results (for example in the test completion report).</div>
+        <div class="quiz-opt">D) They replace test completion reports and are never documented.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Retrospectives are held at the end of a project or iteration, at a release milestone, or when needed. Participants discuss what to retain, what to improve and how to incorporate improvements; the results should be recorded, typically in the test completion report. Benefits for testing: higher test effectiveness and efficiency, better testware quality, team bonding and learning, better test basis quality and better cooperation between development and testing (Section 2.1.6).
+      </div>
+    </div>
+    <!-- PART2-QUESTIONS-END -->
+
+    <div class="footer-note">
+      ISTQB® Certified Tester Foundation Level (CTFL) v4.0.1 &bull; Chapter 2: Testing Throughout the SDLC &bull; Master Study Guide &bull; Official Curriculum Preparation Edition
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- ================= CHAPTER NAVIGATION FOOTER ================= -->
+<div class="chapter-nav-footer">
+  <a href="istqb_ch1_study_guide.html" class="nav-footer-card">
+        <span class="nav-footer-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px;"><polyline points="15 18 9 12 15 6"></polyline></svg>Previous Chapter</span>
+        <span class="nav-footer-title">Chapter 01: Fundamentals of Testing</span>
+       </a>
+  
+    <a href="../index.html" class="nav-footer-card" style="text-align: center; align-items: center;">
+      <span class="nav-footer-label">Master Overview</span>
+      <span class="nav-footer-title">Study Hub</span>
+    </a>
+  
+  
+    <a href="../05_Practice_Questions_and_Summaries/istqb_mock_exam_simulator.html" class="nav-footer-card" style="text-align: center; align-items: center; border-color: #334155; background: #1e293b;">
+      <span class="nav-footer-label" style="color: #60a5fa;">Test Exam Readiness</span>
+      <span class="nav-footer-title" style="color: #ffffff;">40Q Mock Simulator</span>
+    </a>
+  
+  <a href="istqb_ch3_study_guide.html" class="nav-footer-card" style="text-align: right;">
+        <span class="nav-footer-label">Next Chapter<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:4px;"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+        <span class="nav-footer-title">Chapter 03: Static Testing</span>
+       </a>
+</div>
+</div><!-- /.study-main-wrapper -->
+
+<!-- Floating Back to Top Button -->
+<div class="floating-actions">
+  <button class="floating-btn" onclick="scrollToTop()" title="Scroll to Top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+</div>
+
+
+<script>
+  function updateThemeMeta(isDark) {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', isDark ? '#0b1120' : '#1e293b');
+  }
+
+  function toggleReadingTheme() {
+    document.body.classList.toggle('dark-reading-mode');
+    const isDark = document.body.classList.contains('dark-reading-mode');
+    localStorage.setItem('istqb_reading_theme', isDark ? 'dark' : 'light');
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) btn.innerHTML = isDark ? 'Light' : 'Dark';
+    updateThemeMeta(isDark);
+  }
+
+  function jumpToSection(sel) {
+    const val = sel.value;
+    if (!val) return;
+    const target = document.getElementById(val);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.location.hash = val;
+    }
+  }
+
+  function switchLanguage(targetUrl) {
+    const hash = window.location.hash;
+    window.location.href = targetUrl + (hash ? hash : '');
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Restore user theme preference
+  document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('istqb_reading_theme');
+    const btn = document.getElementById('theme-toggle-btn');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-reading-mode');
+      if (btn) btn.innerHTML = 'Light';
+    } else {
+      document.body.classList.remove('dark-reading-mode');
+      if (btn) btn.innerHTML = 'Dark';
+    }
+    updateThemeMeta(savedTheme === 'dark');
+
+    // Add interactive Toggle Answer feature for each quiz card
+    const quizCards = document.querySelectorAll('.quiz-card');
+    quizCards.forEach(function(card) {
+      const answer = card.querySelector('.quiz-answer');
+      if (answer && !card.querySelector('.btn-reveal-answer')) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'quiz-toggle-btn btn-reveal-answer';
+        toggleBtn.textContent = 'Reveal Answer & Rationale';
+        toggleBtn.style.marginTop = '6px';
+        toggleBtn.style.display = 'inline-block';
+        
+        // Hide answer by default for active practice
+        answer.style.display = 'none';
+
+        toggleBtn.addEventListener('click', function() {
+          if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            toggleBtn.textContent = 'Hide Answer';
+          } else {
+            answer.style.display = 'none';
+            toggleBtn.textContent = 'Reveal Answer & Rationale';
+          }
+        });
+
+        card.insertBefore(toggleBtn, answer);
+      }
+    });
+
+    // Add "Reveal All Answers" button above quiz section
+    const qSection = document.getElementById('sec-questions');
+    if (qSection && !document.querySelector('.quiz-toggle-bar')) {
+      const bar = document.createElement('div');
+      bar.className = 'quiz-toggle-bar';
+      bar.innerHTML = '<button type="button" class="quiz-toggle-btn" id="btn-toggle-all-answers">Reveal All Answers</button>';
+      qSection.insertAdjacentElement('afterend', bar);
+
+      const btnAll = document.getElementById('btn-toggle-all-answers');
+      let allShown = false;
+      btnAll.addEventListener('click', function() {
+        allShown = !allShown;
+        document.querySelectorAll('.quiz-card').forEach(function(card) {
+          const ans = card.querySelector('.quiz-answer');
+          const tBtn = card.querySelector('.btn-reveal-answer');
+          if (ans) ans.style.display = allShown ? 'block' : 'none';
+          if (tBtn) tBtn.textContent = allShown ? 'Hide Answer' : 'Reveal Answer & Rationale';
+        });
+        btnAll.textContent = allShown ? 'Hide All Answers' : 'Reveal All Answers';
+      });
+    }
+  });
+
+  // Enhanced Print Lifecycle Support: Guarantee Clean Ink-Friendly Printing
+  window.addEventListener('beforeprint', function () {
+    document.body.classList.remove('dark-reading-mode');
+    document.querySelectorAll('.quiz-answer').forEach(function (el) {
+      el.style.display = 'block';
+    });
+  });
+
+  window.addEventListener('afterprint', function () {
+    if (localStorage.getItem('istqb_reading_theme') === 'dark') {
+      document.body.classList.add('dark-reading-mode');
+    }
+  });
+
+</script>
+
+</body>
+</html>

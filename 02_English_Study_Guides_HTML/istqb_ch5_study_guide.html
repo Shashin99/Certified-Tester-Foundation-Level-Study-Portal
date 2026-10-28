@@ -1,0 +1,2803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISTQB CTFL v4.0.1 - Chapter 5: Managing the Test Activities Master Study Guide</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232563eb%22/><path d=%22M26 50 L42 66 L74 34%22 stroke=%22white%22 stroke-width=%2212%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 fill=%22none%22/></svg>">
+<meta name="theme-color" content="#1e293b">
+<!-- Google Fonts: Inter & Noto Sans Sinhala for razor-sharp typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* Base Reset & Print-Optimized Large Typography */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  @page {
+    size: A4 portrait;
+    /* Generous margins: 16mm left for binding, 22mm right for handwritten notes */
+    margin: 14mm 22mm 14mm 16mm;
+  }
+
+  body {
+    font-family: "Inter", "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #000000; /* Pure black for maximum print clarity and contrast */
+    background-color: #ffffff;
+    line-height: 1.68;
+    font-size: 14.8px; /* Upgraded from 12.2px for easy readability */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Headings: Crisp Black with Solid Rules & Generous Vertical Spacing */
+  h1, h2, h3, h4 {
+    color: #000000;
+    font-weight: 700;
+    line-height: 1.32;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h1 { 
+    font-size: 21px; 
+    margin-bottom: 7px; 
+    letter-spacing: -0.2px; 
+  }
+  
+  h2 {
+    font-size: 16.5px; /* Upgraded from 15px */
+    margin-top: 18px;
+    margin-bottom: 9px;
+    border-bottom: 2.5px solid #000000;
+    padding-bottom: 4px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  h3 { 
+    font-size: 14.8px; /* Upgraded from 13.5px */
+    margin-top: 14px; 
+    margin-bottom: 7px; 
+    color: #000000; 
+  }
+  
+  h4 { 
+    font-size: 13.8px; /* Upgraded from 12.5px */
+    margin-top: 11px; 
+    margin-bottom: 5px; 
+    color: #1f2937; 
+  }
+
+  p { 
+    margin-bottom: 9px; 
+    text-align: justify; 
+    font-size: 13.5px; /* Upgraded from 12.2px */
+    line-height: 1.65;
+    color: #000000; 
+  }
+  
+  ul, ol { 
+    margin-left: 20px; 
+    margin-bottom: 9px; 
+    font-size: 13.5px; /* Upgraded from 12.2px */
+    line-height: 1.62;
+    color: #000000; 
+  }
+  
+  li { 
+    margin-bottom: 4px; 
+  }
+  
+  strong { 
+    color: #000000; 
+    font-weight: 700; 
+  }
+  
+  code {
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 2px 5.5px;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 12.5px; /* Upgraded from 11.2px */
+    color: #000000;
+  }
+
+  /* Badges - Crisp High-Contrast Outlines */
+  .badge {
+    display: inline-block;
+    padding: 2.5px 6.5px;
+    border-radius: 3px;
+    font-size: 12.2px; /* Upgraded from 10px */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-right: 3px;
+    vertical-align: middle;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1.2px solid #374151;
+  }
+  .badge-k1 { background-color: #f3f4f6; color: #000000; border: 1.2px solid #4b5563; }
+  .badge-k2 { background-color: #ffffff; color: #000000; border: 1.2px solid #000000; }
+  .badge-k3 { background-color: #f3f4f6; color: #000000; border: 1.5px solid #000000; font-weight: 800; }
+  .badge-keyword { background-color: #ffffff; color: #000000; border: 1px dashed #374151; }
+
+  /* Page Break Utilities */
+  .page-start {
+    page-break-before: auto;
+    break-before: auto;
+    margin-top: 14px;
+  }
+  .avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Cards & Callouts - Large Readable Text with Solid Contrast */
+  .card {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-radius: 4px;
+    padding: 10px 13px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 13.2px; /* Upgraded from 11.8px/12px */
+    line-height: 1.62;
+    color: #1e293b;
+  }
+  
+  .callout {
+    border-left: 4px solid #3b82f6;
+    border-top: 1.2px solid #d1d5db;
+    border-right: 1.2px solid #d1d5db;
+    border-bottom: 1.2px solid #d1d5db;
+    background: #f8fafc;
+    padding: 9px 13px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 13.2px; /* Upgraded from 11.8px/12px */
+    line-height: 1.62;
+    color: #1e293b;
+  }
+  .callout-info { border-left-color: #1e293b; }
+  .callout-warning { border-left-color: #f59e0b; }
+  .callout-danger { border-left-color: #1e293b; }
+  .callout-success { border-left-color: #1e293b; }
+  .callout-exam { border-left-color: #1e293b; }
+
+  /* Tables - Large, Crisp Typography & Generous Cell Padding */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 13px 0;
+    font-size: 12.8px; /* Upgraded from 11.5px */
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  th, td {
+    padding: 7px 10px; /* Upgraded from 4.5px 6.5px */
+    border: 1.2px solid #4b5563;
+    text-align: left;
+    vertical-align: top;
+    color: #1e293b;
+    line-height: 1.58;
+    font-size: 12.8px; /* Upgraded from 11.5px */
+  }
+  th {
+    background: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+    font-size: 13.2px; /* Upgraded from 11.8px */
+    letter-spacing: 0.1px;
+    border-bottom: 2.2px solid #000000;
+  }
+  tr:nth-child(even) { background-color: #f8fafc; }
+
+  /* Grids with Comfortable Spacing */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 9px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 9px;
+    margin-bottom: 9px;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 9px;
+  }
+
+  /* Tool Categories Showcase */
+  .tool-box {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-top: 3.5px solid #000000;
+    border-radius: 4px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .tool-box-title {
+    font-size: 13.8px; /* Upgraded from 12.2px */
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tool-box-desc {
+    font-size: 13.2px; /* Upgraded from 11.6px */
+    color: #0f172a;
+    line-height: 1.58;
+  }
+  .tool-examples {
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px dashed #9ca3af;
+    font-size: 12.2px; /* Upgraded from 10.8px */
+    color: #475569;
+  }
+
+  /* Practice Exam Questions - Large, Clear Typography */
+  .quiz-card {
+    background: #ffffff;
+    border: 1.2px solid #6b7280;
+    border-left: 4px solid #000000;
+    border-radius: 4px;
+    padding: 10px 13px;
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .quiz-q {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 7px;
+    font-size: 13.5px; /* Upgraded from 11.8px/12px */
+    line-height: 1.52;
+  }
+  .quiz-options {
+    margin-left: 5px;
+    margin-bottom: 7px;
+    font-size: 13px; /* Upgraded from 11.5px */
+  }
+  .quiz-opt {
+    margin-bottom: 4px;
+    color: #0f172a;
+    line-height: 1.50;
+    font-size: 13px; /* Upgraded from 11.5px */
+  }
+  .quiz-answer {
+    background: #f8fafc;
+    border-top: 1.2px dashed #9ca3af;
+    padding: 8px 11px;
+    border-radius: 0 0 4px 4px;
+    font-size: 13px; /* Upgraded from 11.6px */
+    color: #1e293b;
+    line-height: 1.60;
+    margin-top: 5px;
+  }
+
+  /* Glossary Grid */
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 7px;
+    margin-bottom: 9px;
+  }
+  .glossary-item {
+    background: #ffffff;
+    border: 1.2px solid #9ca3af;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-size: 13px; /* Upgraded from 11.6px */
+    line-height: 1.55;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    color: #1e293b;
+  }
+  .glossary-term {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 13.5px; /* Upgraded from 11.8px/12px */
+    margin-bottom: 2.5px;
+    border-bottom: 1.2px dotted #6b7280;
+    display: inline-block;
+  }
+
+  /* Ruled Handwriting / Student Notes Box */
+  .notes-box {
+    border: 1.5px dashed #6b7280;
+    border-radius: 4px;
+    background: #fafafa;
+    padding: 9px 13px;
+    margin: 14px 0 16px 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .notes-box-header {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #374151;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+  .notes-box-header span:first-child {
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .notes-box-header span:last-child {
+    font-weight: 600;
+    white-space: nowrap;
+    text-transform: none;
+    color: #4b5563;
+  }
+  .notes-box-lines {
+    height: 90px;
+    background-image: repeating-linear-gradient(transparent, transparent 17px, #d1d5db 17px, #d1d5db 18px);
+  }
+
+  .footer-note {
+    font-size: 12px; /* Upgraded from 10px */
+    color: #475569;
+    text-align: center;
+    border-top: 1px solid #d1d5db;
+    padding-top: 5px;
+    margin-top: 12px;
+  }
+
+/* ================= ISTQB MASTER STUDY DESIGN SYSTEM ================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+h1, h2, h3, h4, .notes-box, .quiz-card, [id^="sec-"] {
+  scroll-margin-top: 65px;
+}
+
+/* ================= SCREEN READING CONTAINER & GUTTERS ================= */
+@media screen {
+  body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    min-height: 100vh;
+  }
+
+  body.dark-reading-mode {
+    background-color: #060a12 !important;
+    color: #f1f5f9 !important;
+  }
+
+  .study-main-wrapper {
+    width: 95%;
+    max-width: 1540px;
+    margin: 14px auto 50px auto;
+    padding: 26px 36px 44px 36px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  body.dark-reading-mode .study-main-wrapper {
+    background-color: #0b1120 !important;
+    border: 1px solid #1e293b !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .study-main-wrapper {
+    width: 96%;
+    margin: 12px auto 40px auto;
+    padding: 20px 24px 34px 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .study-main-wrapper {
+    width: 98%;
+    margin: 8px auto 28px auto;
+    padding: 16px 14px 24px 14px;
+    border-radius: 8px;
+  }
+}
+
+
+
+/* Base Utility Classes for Enhanced Semantics */
+.si-question-sub {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 13px;
+  color: #475569;
+  margin-top: 4px;
+  line-height: 1.55;
+}
+
+.ch-subtitle-text {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-top: 3px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.card-subtle {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 6px 0;
+}
+
+.card-center-callout {
+  background: #f8fafc;
+  border: 1.5px solid #94a3b8;
+  border-radius: 6px;
+  padding: 10px 14px;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.card-accent-left {
+  border-left: 4px solid #3b82f6 !important;
+}
+
+.card-accent-dark {
+  border-left: 4px solid #1e293b !important;
+}
+
+.metric-pill {
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 2.5px 8px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.progress-bar-fill {
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-weight: 700;
+  text-align: center;
+  display: inline-block;
+}
+
+/* ================= ISTQB STUDY NAVIGATOR ================= */
+#study-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  background: #0f172a;
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Sinhala", sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid #3b82f6;
+  font-size: 13px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.study-nav-container {
+  max-width: 1540px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.study-nav-left, .study-nav-center, .study-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.study-nav-brand {
+  font-weight: 800;
+  color: #60a5fa !important;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #1e293b;
+  border: 1px solid #3b82f6;
+  transition: all 0.2s ease;
+}
+.study-nav-brand span {
+  color: #93c5fd !important;
+}
+.study-nav-brand strong {
+  color: #ffffff !important;
+}
+.study-nav-brand:hover {
+  background: rgba(59, 130, 246, 0.3);
+  color: #93c5fd !important;
+}
+
+.study-nav-pill-group {
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  padding: 3px 4px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  gap: 2px;
+}
+
+.study-nav-pill {
+  color: #cbd5e1 !important;
+  text-decoration: none;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.study-nav-pill:hover {
+  color: #ffffff !important;
+  background: #334155;
+}
+.study-nav-pill.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.study-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #f1f5f9 !important;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.study-nav-btn:hover {
+  background: #334155;
+  border-color: #64748b;
+  color: #ffffff !important;
+}
+
+.study-nav-lang-btn {
+  background: #065f46;
+  border-color: #059669;
+  color: #ecfdf5 !important;
+  font-weight: 700;
+}
+.study-nav-lang-btn:hover {
+  background: #047857;
+  border-color: #10b981;
+}
+
+.study-nav-select {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  max-width: 220px;
+}
+.study-nav-select:focus {
+  border-color: #3b82f6;
+}
+
+/* Floating Actions */
+.floating-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+.floating-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  border: 2px solid #60a5fa;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.floating-btn:hover {
+  transform: translateY(-3px);
+  background: #1d4ed8;
+}
+
+/* Chapter Navigation Footer */
+.chapter-nav-footer {
+  margin-top: 36px;
+  border-top: 2px solid #e2e8f0;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.nav-footer-card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  text-decoration: none !important;
+  color: #1e293b !important;
+  transition: all 0.2s ease;
+}
+.nav-footer-card:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
+.nav-footer-label {
+  font-size: 11.5px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.nav-footer-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Interactive Quiz Tools */
+.quiz-toggle-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  gap: 8px;
+}
+.quiz-toggle-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.quiz-toggle-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+@media screen {
+/* ================= ULTRA-CLEAR HIGH-CONTRAST NIGHT READING THEME ================= */
+body.dark-reading-mode {
+  background-color: #0b1120 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Headings */
+body.dark-reading-mode h1 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+body.dark-reading-mode h2 {
+  color: #93c5fd !important;
+  border-bottom: 2px solid #3b82f6 !important;
+  padding-bottom: 4px;
+}
+body.dark-reading-mode h3 {
+  color: #f8fafc !important;
+}
+body.dark-reading-mode h4,
+body.dark-reading-mode h5 {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .page-start > div,
+body.dark-reading-mode [style*="border-bottom: 2.5px solid"] {
+  border-bottom-color: #3b82f6 !important;
+}
+
+/* Paragraphs, Lists & Body Text */
+body.dark-reading-mode p,
+body.dark-reading-mode li,
+body.dark-reading-mode dd,
+body.dark-reading-mode dt {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode strong,
+body.dark-reading-mode b,
+body.dark-reading-mode th strong,
+body.dark-reading-mode td strong {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+body.dark-reading-mode em,
+body.dark-reading-mode i {
+  color: #f1f5f9 !important;
+}
+body.dark-reading-mode .si-term {
+  color: #38bdf8 !important;
+  font-weight: 600;
+}
+body.dark-reading-mode .si-question-sub {
+  color: #cbd5e1 !important;
+}
+body.dark-reading-mode .ch-subtitle-text {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode code {
+  background-color: #030712 !important;
+  color: #38bdf8 !important;
+  border-color: #1e293b !important;
+}
+body.dark-reading-mode a:not(.study-nav-btn):not(.study-nav-pill):not(.nav-footer-card) {
+  color: #60a5fa !important;
+}
+body.dark-reading-mode a:not(.study-nav-btn):not(.study-nav-pill):not(.nav-footer-card):hover {
+  color: #93c5fd !important;
+}
+
+/* Cards & Containers */
+body.dark-reading-mode .card,
+body.dark-reading-mode .card-subtle,
+body.dark-reading-mode .card-center-callout {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45) !important;
+}
+body.dark-reading-mode .card-accent-left {
+  border-left-color: #3b82f6 !important;
+}
+body.dark-reading-mode .card-accent-dark {
+  border-left-color: #60a5fa !important;
+}
+
+/* Callouts */
+body.dark-reading-mode .callout {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  border-left: 4px solid #3b82f6 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-info {
+  background-color: #0c1e38 !important;
+  border-left-color: #38bdf8 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-exam {
+  background-color: #122147 !important;
+  border-left-color: #3b82f6 !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .callout-warning,
+body.dark-reading-mode .callout-trap {
+  background-color: #2b1704 !important;
+  border-left-color: #f59e0b !important;
+  color: #fef3c7 !important;
+}
+body.dark-reading-mode .callout-warning *,
+body.dark-reading-mode .callout-trap * {
+  color: #fef3c7 !important;
+}
+body.dark-reading-mode .callout-warning strong,
+body.dark-reading-mode .callout-trap strong {
+  color: #fde68a !important;
+}
+body.dark-reading-mode .callout-danger {
+  background-color: #2b0b0b !important;
+  border-left-color: #ef4444 !important;
+  color: #fee2e2 !important;
+}
+body.dark-reading-mode .callout-danger * {
+  color: #fee2e2 !important;
+}
+body.dark-reading-mode .callout-danger strong {
+  color: #fca5a5 !important;
+}
+body.dark-reading-mode .callout-success {
+  background-color: #05281a !important;
+  border-left-color: #10b981 !important;
+  color: #d1fae5 !important;
+}
+body.dark-reading-mode .callout-success * {
+  color: #d1fae5 !important;
+}
+body.dark-reading-mode .callout-success strong {
+  color: #6ee7b7 !important;
+}
+
+/* Tables */
+body.dark-reading-mode table {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3) !important;
+}
+body.dark-reading-mode th {
+  background-color: #1a273e !important;
+  color: #93c5fd !important;
+  border-color: #22324e !important;
+  border-bottom: 2px solid #3b82f6 !important;
+}
+body.dark-reading-mode td {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+  border-color: #1e293b !important;
+}
+body.dark-reading-mode tr:nth-child(even) td {
+  background-color: #131d31 !important;
+}
+body.dark-reading-mode tr:hover td {
+  background-color: #1e2d4a !important;
+}
+
+/* Badges & Metrics */
+body.dark-reading-mode .badge {
+  background-color: #1e293b !important;
+  color: #93c5fd !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .badge-k1 {
+  background-color: #0f2b5c !important;
+  color: #93c5fd !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .badge-k2 {
+  background-color: #2e1065 !important;
+  color: #d8b4fe !important;
+  border-color: #8b5cf6 !important;
+}
+body.dark-reading-mode .badge-k3 {
+  background-color: #431407 !important;
+  color: #fdba74 !important;
+  border-color: #f97316 !important;
+}
+body.dark-reading-mode .badge-keyword {
+  background-color: #064e3b !important;
+  color: #6ee7b7 !important;
+  border-color: #10b981 !important;
+}
+body.dark-reading-mode .metric-pill {
+  background-color: #1e293b !important;
+  color: #38bdf8 !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .progress-bar-fill {
+  background: linear-gradient(90deg, #2563eb, #38bdf8) !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+
+/* Tool Boxes */
+body.dark-reading-mode .tool-box {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  border-left: 4px solid #3b82f6 !important;
+}
+body.dark-reading-mode .tool-box-title {
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .tool-box-desc {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .tool-examples {
+  border-top-color: #22324e !important;
+  color: #94a3b8 !important;
+}
+
+/* Glossary */
+body.dark-reading-mode .glossary-item {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .glossary-term {
+  color: #60a5fa !important;
+  border-bottom-color: #3b82f6 !important;
+}
+
+/* Practice Questions */
+body.dark-reading-mode .quiz-card {
+  background-color: #131d31 !important;
+  border: 1.5px solid #22324e !important;
+  border-left: 5px solid #3b82f6 !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+}
+body.dark-reading-mode .quiz-q {
+  color: #ffffff !important;
+}
+body.dark-reading-mode .quiz-opt {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode .quiz-opt:hover {
+  background-color: #1e2d4a !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .quiz-answer {
+  background-color: #0b1222 !important;
+  border-top: 1.5px dashed #38bdf8 !important;
+  color: #f1f5f9 !important;
+}
+body.dark-reading-mode .quiz-toggle-btn {
+  background-color: #1e2d4a !important;
+  border-color: #3b82f6 !important;
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .quiz-toggle-btn:hover {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+}
+
+/* Ruled Handwriting Notes Box */
+body.dark-reading-mode .notes-box {
+  background-color: #0b1222 !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .notes-box-header {
+  color: #93c5fd !important;
+  border-bottom-color: #22324e !important;
+}
+body.dark-reading-mode .notes-box-header span {
+  color: #cbd5e1 !important;
+}
+body.dark-reading-mode .notes-box-lines {
+  background-image: repeating-linear-gradient(transparent, transparent 17px, #263859 17px, #263859 18px) !important;
+}
+
+/* Quadrants, Formulas & Footer */
+body.dark-reading-mode .quadrant-card {
+  background-color: #131d31 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .formula-box {
+  background-color: #0b1222 !important;
+  border-color: #3b82f6 !important;
+  color: #38bdf8 !important;
+}
+body.dark-reading-mode .footer-note {
+  color: #94a3b8 !important;
+  border-top-color: #22324e !important;
+}
+
+/* Study Navbar in Dark Mode */
+body.dark-reading-mode #study-navbar {
+  background: #060a12 !important;
+  border-bottom-color: #3b82f6 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+}
+body.dark-reading-mode .study-nav-brand {
+  background: #1e293b !important;
+  color: #60a5fa !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-brand span {
+  color: #93c5fd !important;
+}
+body.dark-reading-mode .study-nav-brand strong {
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-pill-group {
+  background: #0d1527 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-pill {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode .study-nav-pill:hover {
+  background: #1e2d4a !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-pill.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-select {
+  background-color: #131d31 !important;
+  color: #ffffff !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-select option {
+  background: #0b1120 !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode .study-nav-btn {
+  background: #131d31 !important;
+  color: #cbd5e1 !important;
+  border-color: #22324e !important;
+}
+body.dark-reading-mode .study-nav-btn:hover {
+  background: #1e2d4a !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+}
+body.dark-reading-mode .study-nav-lang-btn {
+  background: #064e3b !important;
+  color: #6ee7b7 !important;
+  border-color: #059669 !important;
+}
+body.dark-reading-mode .study-nav-lang-btn:hover {
+  background: #047857 !important;
+  color: #ffffff !important;
+}
+body.dark-reading-mode #theme-toggle-btn {
+  background: #facc15 !important;
+  color: #000000 !important;
+  border-color: #eab308 !important;
+  font-weight: 700 !important;
+}
+body.dark-reading-mode #theme-toggle-btn:hover {
+  background: #fef08a !important;
+}
+
+/* Floating Actions & Footer */
+body.dark-reading-mode .floating-btn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+body.dark-reading-mode .chapter-nav-footer {
+  border-top-color: #22324e !important;
+}
+body.dark-reading-mode .nav-footer-card {
+  background: #131d31 !important;
+  border-color: #22324e !important;
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+}
+body.dark-reading-mode .nav-footer-card:hover {
+  background: #1e2d4a !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+}
+body.dark-reading-mode .nav-footer-label {
+  color: #94a3b8 !important;
+}
+body.dark-reading-mode .nav-footer-title {
+  color: #60a5fa !important;
+}
+
+/* Fallback Universal Overrides */
+body.dark-reading-mode [style*="color: #111827"],
+body.dark-reading-mode [style*="color: #374151"],
+body.dark-reading-mode [style*="color: #4b5563"],
+body.dark-reading-mode [style*="color: #000000"],
+body.dark-reading-mode [style*="color: black"],
+body.dark-reading-mode [style*="color:#111827"],
+body.dark-reading-mode [style*="color:#374151"] {
+  color: #e2e8f0 !important;
+}
+body.dark-reading-mode strong[style*="color:"],
+body.dark-reading-mode b[style*="color:"] {
+  color: #ffffff !important;
+}
+}
+
+/* ================= AUTHORITATIVE PUBLICATION-GRADE PRINT STYLES ================= */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm 14mm 14mm;
+  }
+
+  /* Universal reset to high-contrast ink-friendly black on pure white */
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  html,
+  body,
+  body.dark-reading-mode {
+    padding-top: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: block !important;
+    font-family: "Inter", "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.68 !important;
+    font-weight: 450 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Reset layout wrapper to full print width with pure white background */
+  .study-main-wrapper,
+  body.dark-reading-mode .study-main-wrapper,
+  body .study-main-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Completely suppress interactive and navigation UI */
+  #study-navbar,
+  .floating-actions,
+  .chapter-nav-footer,
+  .quiz-toggle-bar,
+  .btn-reveal-answer,
+  .study-nav-btn,
+  .format-btn,
+  button {
+    display: none !important;
+  }
+
+  /* Headings: Razor sharp solid black with clean dividers */
+  h1, h2, h3, h4, h5 {
+    color: #000000 !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    font-family: "Inter", "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  }
+
+  h1 {
+    font-size: 22px !important;
+    border-bottom: 2.5px solid #000000 !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 12px !important;
+    font-weight: 800 !important;
+    color: #000000 !important;
+  }
+
+  h2 {
+    font-size: 17px !important;
+    border-bottom: 1.8px solid #000000 !important;
+    padding-bottom: 4px !important;
+    margin-top: 18px !important;
+    margin-bottom: 10px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  h3 {
+    font-size: 15.5px !important;
+    margin-top: 14px !important;
+    margin-bottom: 6px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  h4, h5 {
+    font-size: 14.5px !important;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  /* Body Text, Paragraphs, Lists: Large, crystal clear & comfortable */
+  p, li, dd, dt {
+    font-size: 14.8px !important;
+    line-height: 1.68 !important;
+    color: #000000 !important;
+    margin-bottom: 8px !important;
+  }
+
+  span, em, i, b, label, small {
+    color: #000000 !important;
+  }
+
+  strong {
+    color: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Override any inline colored borders or title accents to crisp black */
+  .page-start > div,
+  [style*="border-bottom: 2.5px solid"],
+  [style*="border-bottom:2.5px solid"] {
+    border-bottom-color: #000000 !important;
+  }
+
+  /* All Containers: Pure White Background with Crisp High-Contrast Black Borders */
+  .card,
+  .card-subtle,
+  .card-center-callout,
+  .callout,
+  .tool-box,
+  .glossary-item,
+  .quiz-card,
+  .formula-box,
+  .quadrant-card {
+    border: 1.2px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 14.5px !important;
+    line-height: 1.65 !important;
+    color: #000000 !important;
+  }
+
+  /* Callouts: Bold Solid Black Left Accent Bar */
+  .callout,
+  .callout-info,
+  .callout-warning,
+  .callout-danger,
+  .callout-success,
+  .callout-exam,
+  .callout-trap,
+  .card-accent-left,
+  .card-accent-dark {
+    border: 1.2px solid #000000 !important;
+    border-left: 4.5px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .callout *,
+  .callout-warning *,
+  .callout-trap *,
+  .callout-danger *,
+  .callout-success * {
+    color: #000000 !important;
+  }
+
+  /* Practice Questions: Large, easily legible layout */
+  .quiz-card {
+    border: 1.2px solid #000000 !important;
+    border-left: 4.5px solid #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .quiz-q {
+    color: #000000 !important;
+    font-weight: 800 !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .quiz-opt {
+    color: #000000 !important;
+    font-size: 14.2px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Practice Exam Answers: Distinct white box with black outline */
+  .quiz-answer {
+    display: block !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1.2px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    color: #000000 !important;
+    border-radius: 4px !important;
+    padding: 10px 14px !important;
+    font-size: 14.2px !important;
+    line-height: 1.65 !important;
+    margin-top: 10px !important;
+  }
+
+  .quiz-answer,
+  .quiz-answer * {
+    color: #000000 !important;
+  }
+
+  /* Badges & Tags: Sharp black outline & bold black text */
+  .badge,
+  .badge-k1,
+  .badge-k2,
+  .badge-k3,
+  .badge-keyword,
+  .metric-pill {
+    display: inline-block !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1.2px solid #000000 !important;
+    padding: 2.5px 7.5px !important;
+    border-radius: 3px !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  /* Tables: Sharp publication borders & generous padding */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 12px 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 1.5px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  th, thead th {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1.2px solid #000000 !important;
+    border-bottom: 2.5px solid #000000 !important;
+    padding: 8px 11px !important;
+    font-weight: 800 !important;
+    font-size: 14.2px !important;
+  }
+
+  td {
+    border: 1px solid #000000 !important;
+    padding: 7px 11px !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    font-size: 14px !important;
+    line-height: 1.62 !important;
+  }
+
+  tr:nth-child(even) td,
+  tr:nth-child(odd) td {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+
+  /* Student Handwriting Note Boxes */
+  .notes-box {
+    border: 1.5px dashed #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    padding: 10px 14px !important;
+    margin-top: 14px !important;
+  }
+
+  .notes-box-header {
+    color: #000000 !important;
+    border-bottom: 1.2px solid #000000 !important;
+    font-size: 14.8px !important;
+  }
+
+  .notes-box-header span {
+    color: #000000 !important;
+  }
+
+  .notes-box-lines {
+    height: 90px !important;
+    background-image: repeating-linear-gradient(transparent, transparent 17px, #555555 17px, #555555 18px) !important;
+  }
+
+  /* Tool boxes & Glossary */
+  .tool-box-title {
+    color: #000000 !important;
+    font-size: 15.5px !important;
+    font-weight: 800 !important;
+  }
+
+  .tool-box-desc,
+  .tool-examples {
+    font-size: 14.8px !important;
+    line-height: 1.68 !important;
+    color: #000000 !important;
+  }
+
+  .glossary-term {
+    color: #000000 !important;
+    font-size: 15.5px !important;
+    font-weight: 800 !important;
+    border-bottom: 1.2px solid #000000 !important;
+  }
+
+  /* Code elements: Crisp white box with solid outline */
+  code {
+    background-color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    padding: 1.5px 5px !important;
+    border-radius: 3px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  }
+
+  /* Sinhala specific clarity */
+  .si-term {
+    color: #000000 !important;
+    font-size: 14.8px !important;
+    font-weight: 700 !important;
+  }
+
+  .si-question-sub {
+    color: #000000 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  .ch-subtitle-text {
+    color: #000000 !important;
+    font-size: 14px !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= STUDY NAVBAR ================= -->
+<nav id="study-navbar">
+  <div class="study-nav-container">
+    <div class="study-nav-left">
+      <a href="../index.html" class="study-nav-brand" title="Master Study Dashboard">
+        <strong>ISTQB® CTFL Hub</strong>
+      </a>
+      <div class="study-nav-pill-group">
+        <a href="istqb_ch1_study_guide.html" class="study-nav-pill" title="Chapter 01: Fundamentals of Testing">Ch 1</a><a href="istqb_ch2_study_guide.html" class="study-nav-pill" title="Chapter 02: Testing Throughout the SDLC">Ch 2</a><a href="istqb_ch3_study_guide.html" class="study-nav-pill" title="Chapter 03: Static Testing">Ch 3</a><a href="istqb_ch4_study_guide.html" class="study-nav-pill" title="Chapter 04: Test Analysis and Design">Ch 4</a><a href="istqb_ch5_study_guide.html" class="study-nav-pill active" title="Chapter 05: Managing the Test Activities">Ch 5</a><a href="istqb_ch6_study_guide.html" class="study-nav-pill" title="Chapter 06: Test Tools">Ch 6</a><a href="../05_Practice_Questions_and_Summaries/istqb_mock_exam_simulator.html" class="study-nav-pill" style="background: #064e3b; color: #a7f3d0 !important; border: 1px solid #059669;" title="Launch Official 40-Question Mock Exam Simulator">40Q Simulator</a><a href="../study_map.html" class="study-nav-pill" title="Library Index & Master Study Roadmap">Roadmap</a>
+      </div>
+    </div>
+
+    <div class="study-nav-center">
+      <select class="study-nav-select" onchange="jumpToSection(this)">
+        <option value="">Jump to Section...</option><option value="sec-core">1. Core Syllabus Concepts</option><option value="sec-5-1">  5.1 Test Planning</option><option value="sec-5-2">  5.2 Risk Management</option><option value="sec-5-3">  5.3 Test Monitoring & Control</option><option value="sec-5-4">  5.4 Configuration & Defect Management</option><option value="sec-flashpoints">2. High-Yield Exam Flashpoints</option><option value="sec-glossary">3. Keyword Lexicon (Official Terms)</option><option value="sec-questions">4. Practice Exam Questions & Answers</option><option value="sec-notes">5. Student Handwriting Notes</option>
+      </select>
+      <a href="istqb_ch4_study_guide.html" class="study-nav-btn" title="Go to Ch 4: Analysis & Design"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px;"><polyline points="15 18 9 12 15 6"></polyline></svg>Prev</a>
+      <a href="istqb_ch6_study_guide.html" class="study-nav-btn" title="Go to Ch 6: Test Tools">Next<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:4px;"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+
+    <div class="study-nav-right">
+      <a href="javascript:void(0)" onclick="switchLanguage('../03_Sinhala_Bilingual_Study_Guides_HTML/istqb_ch5_study_guide_sinhala.html')" class="study-nav-btn study-nav-lang-btn" title="Switch language for Chapter 5">
+        සිංහල අනුවාදය
+      </a>
+      <button id="theme-toggle-btn" class="study-nav-btn" onclick="toggleReadingTheme()" title="Toggle Reading Theme">
+        Theme
+      </button>
+      <button class="study-nav-btn" onclick="window.print()" title="Print this guide or save as PDF">
+        Print
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Reading Document Container -->
+<div class="study-main-wrapper">
+
+
+<!-- ==================== PAGE 1: LESSON CONTENT ==================== -->
+  <div class="page-start" style="margin-top: 0;">
+    <div style="margin-bottom: 8px; border-bottom: 2.5px solid #2563eb; padding-bottom: 4px;">
+      <h1 style="font-size: 20px; font-weight: 800; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">Chapter 05: Managing the Test Activities</h1>
+    </div>
+
+    <h2 id="sec-core">1. Core Syllabus Concepts & In-Depth Notes</h2>
+
+
+    <h3 id="sec-5-1">5.1 Test Planning <span class="badge badge-k2">FL-5.1.1</span> <span class="badge badge-k1">FL-5.1.2</span> <span class="badge badge-k2">FL-5.1.3</span></h3>
+    <div class="card" style="border-left: 4px solid #4b5563; margin-bottom: 5px;">
+      <strong>Formal Definition:</strong> A <strong>test plan</strong> describes the test objectives, resources, and processes for a test project. It guides testers' thinking, forces confrontation with future challenges (risks, schedules, costs), and serves as a vehicle of communication with stakeholders.
+    </div>
+
+    <h4>5.1.1 Purpose and Typical Content of a Test Plan (ISO/IEC/IEEE 29119-3)</h4>
+    <div class="grid-2">
+      <div class="card">
+        <strong>Core Purposes of Test Planning:</strong>
+        <ul style="margin: 2px 0 0 14px;">
+          <li>Documents means and schedule for achieving test objectives.</li>
+          <li>Ensures performed activities meet established criteria.</li>
+          <li>Serves as a means of communication with team and stakeholders.</li>
+          <li>Demonstrates adherence to test policy and strategy (or explains deviations).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Typical Sections in a Test Plan:</strong>
+        <ul style="margin: 2px 0 0 14px;">
+          <li><strong>Context:</strong> Test scope, objectives, test basis.</li>
+          <li><strong>Assumptions & Constraints</strong> of the project.</li>
+          <li><strong>Stakeholders:</strong> Roles, training and hiring needs.</li>
+          <li><strong>Risk Register:</strong> Product and project risks.</li>
+          <li><strong>Test Approach:</strong> Levels, types, techniques, criteria, tools.</li>
+          <li><strong>Budget and Schedule:</strong> Milestones, resource allocation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>5.1.2 Tester's Contribution to Iteration and Release Planning <span class="badge badge-k1">FL-5.1.2 (K1)</span></h4>
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>Release Planning (Long-Term Horizon):</strong>
+        <p style="margin-top: 2px;">
+          Looks ahead to product release; refines the product backlog and splits large user stories into smaller ones. Testers contribute by:
+          <br>&bull; Writing testable user stories and acceptance criteria.
+          <br>&bull; Participating in project and quality risk analyses.
+          <br>&bull; Estimating testing effort associated with user stories.
+          <br>&bull; Defining the overall test approach across all iterations.
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>Iteration Planning (Sprint Horizon):</strong>
+        <p style="margin-top: 2px;">
+          Looks ahead to a single iteration (sprint backlog). Testers contribute by:
+          <br>&bull; Detailed risk analysis of individual user stories.
+          <br>&bull; Assessing testability of user stories.
+          <br>&bull; Breaking down user stories into testing tasks.
+          <br>&bull; Estimating test effort for all testing tasks.
+          <br>&bull; Identifying functional and non-functional aspects.
+        </p>
+      </div>
+    </div>
+
+    <h4>5.1.3 Entry Criteria and Exit Criteria <span class="badge badge-k2">FL-5.1.3 (K2)</span></h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 20%;">Dimension</th>
+          <th style="width: 40%;">Entry Criteria (Definition of Ready - DoR)</th>
+          <th style="width: 40%;">Exit Criteria (Definition of Done - DoD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Formal Purpose</strong></td>
+          <td>Defines <strong>preconditions</strong> for undertaking a given test activity. If not met, activities are harder, costlier, and riskier.</td>
+          <td>Defines what must be achieved to declare an activity, test level, or release <strong>completed</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Typical Criteria Examples</strong></td>
+          <td>
+            &bull; Availability of testware (testable requirements, test cases)<br>
+            &bull; Availability of test environment, test data, tools, staff<br>
+            &bull; Initial quality gate: all smoke tests have passed
+          </td>
+          <td>
+            &bull; Thoroughness measures: achieved coverage, defect density<br>
+            &bull; Residual defect thresholds: zero unresolved critical bugs<br>
+            &bull; Binary criteria: all regression tests automated, execution 100%
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Budget/Time Realities</strong></td>
+          <td>Delaying entry is preferable to testing against broken builds.</td>
+          <td>Running out of time/budget is a valid exit criterion <em>if stakeholders review and accept the residual risk</em>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 4: 5.1.4 TEST ESTIMATION TECHNIQUES ==================== -->
+  <div class="page-start">
+    <h3>5.1.4 Test Effort Estimation Techniques <span class="badge badge-k3">FL-5.1.4 (K3)</span></h3>
+    <p>
+      Test effort estimation predicts the amount of work required to achieve test objectives. Estimating smaller decomposed tasks is significantly more accurate than estimating large tasks. The syllabus defines four core techniques:
+    </p>
+
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>1. Estimation Based on Ratios (Metrics-Based):</strong>
+        <p style="margin-top: 2px;">
+          Collects figures from previous organizational projects to establish standard ratios.
+          <br><strong>Worked Example:</strong> If historical development-to-test effort ratio is <strong>3 : 2</strong>, and current project dev effort is expected to be <strong>600 person-days</strong>:
+          <br><span style="display: block; margin: 3px 0; font-weight: 600;">Test Effort = 600 &times; (2 / 3) = 400 person-days</span>
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>2. Extrapolation (Metrics-Based):</strong>
+        <p style="margin-top: 2px;">
+          Measurements gathered early in the current project are extrapolated forward using a mathematical model. Highly suitable for iterative/Agile SDLCs.
+          <br><strong>Worked Example:</strong> If actual test effort in sprints 1, 2, and 3 was 18, 22, and 20 days, sprint 4 is estimated as the average:
+          <br><span style="display: block; margin: 3px 0; font-weight: 600;">Sprint 4 Effort = (18 + 22 + 20) / 3 = 20 person-days</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 5px;">
+      <div class="card card-accent-left">
+        <strong>3. Wideband Delphi (Expert-Based):</strong>
+        <p style="margin-top: 2px;">
+          An iterative consensus technique where experts make estimates in isolation. Results are collated. If deviations exceed agreed boundaries, experts discuss and submit revised estimates anonymously until consensus is reached.
+          <br>&bull; <strong>Planning Poker:</strong> An Agile variant of Wideband Delphi using cards representing story points or effort size.
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>4. Three-Point Estimation (PERT / Expert-Based):</strong>
+        <p style="margin-top: 2px;">
+          Experts provide three estimates:
+          <br>&bull; <em>a</em> = Most optimistic estimate
+          <br>&bull; <em>m</em> = Most likely estimate
+          <br>&bull; <em>b</em> = Most pessimistic estimate
+          <br>Weighted Mean Estimate (<em>E</em>) and Standard Deviation (<em>SD</em>):
+        </p>
+        <div class="formula-box" style="margin: 3px 0;">
+          <strong>E = (a + 4m + b) / 6</strong> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>SD = (b &minus; a) / 6</strong>
+        </div>
+      </div>
+    </div>
+
+    <h4>Worked Permutation Example: Three-Point Estimation Calculation</h4>
+    <div class="card card-center-callout">
+      <p style="line-height: 1.5;">
+        <strong>Scenario:</strong> Three experts estimate testing a payment integration. Optimistic <em>a</em> = 6 hours, Most likely <em>m</em> = 9 hours, Pessimistic <em>b</em> = 18 hours.
+        <br><strong>Step 1 (Calculate Weighted Estimate E):</strong>
+        <br>&nbsp;&nbsp;&bull; <em>E</em> = (6 + 4(9) + 18) / 6 = (6 + 36 + 18) / 6 = 60 / 6 = <strong>10 person-hours</strong>
+        <br><strong>Step 2 (Calculate Measurement Error / Standard Deviation SD):</strong>
+        <br>&nbsp;&nbsp;&bull; <em>SD</em> = (18 &minus; 6) / 6 = 12 / 6 = <strong>2 person-hours</strong>
+        <br><strong>Final Reported Estimate:</strong> <span class="metric-pill">10 &plusmn; 2 person-hours</span> (High confidence interval: between <strong>8</strong> and <strong>12</strong> hours).
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 5: 5.1.5 PRIORITIZATION & 5.1.6 TEST PYRAMID ==================== -->
+  <div class="page-start">
+    <h3>5.1.5 Test Case Prioritization <span class="badge badge-k3">FL-5.1.5 (K3)</span></h3>
+    <p>
+      Once test cases and procedures are assembled into test suites, they are arranged into an optimal <strong>test execution schedule</strong> based on one of three common prioritization strategies:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Prioritization Strategy</th>
+          <th style="width: 45%;">Ordering Mechanism</th>
+          <th style="width: 30%;">Exam Scenario Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Risk-Based Prioritization</strong></td>
+          <td>Order of execution is driven by product risk analysis. Test cases covering the highest risk levels are executed first.</td>
+          <td>Critical security and core payment transactions executed on day 1 of test run.</td>
+        </tr>
+        <tr>
+          <td><strong>Coverage-Based Prioritization</strong></td>
+          <td>Order is based on coverage (e.g. statement coverage). In <em>Additional Coverage Prioritization</em>, the test achieving highest coverage runs first, followed by tests giving highest marginal additional coverage.</td>
+          <td>Maximizing code or requirements coverage rapidly when time windows are limited.</td>
+        </tr>
+        <tr>
+          <td><strong>Requirements-Based Prioritization</strong></td>
+          <td>Order is driven by stakeholder business priority of the requirements traced back to the test cases.</td>
+          <td>Client prioritizes "Must-Have" features per MoSCoW criteria.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-trap">
+      <strong>CRITICAL EXAM OVERRIDE: Test Case Dependencies & Resource Constraints:</strong><br>
+      Even if a test case has the highest risk or requirement priority, <strong>if it has technical dependencies on a lower-priority test case, the lower-priority test case MUST be executed first!</strong> Furthermore, execution order must account for resource availability (specialized hardware, test environments, or SMEs available only in specific time windows).
+    </div>
+
+    <h3>5.1.6 The Test Pyramid <span class="badge badge-k1">FL-5.1.6 (K1)</span></h3>
+    <div class="card" style="border-left: 4px solid #4b5563; margin-bottom: 5px;">
+      <strong>Core Concept (Cohn 2009):</strong> The test pyramid models test granularity, test isolation, and effort allocation. It illustrates that different test objectives are supported by different levels of automation.
+    </div>
+
+    <div class="card card-center-callout">
+      <div style="font-weight: 700; margin-bottom: 4px;">THE TEST PYRAMID LAYERS</div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+        <div style="width: 38%;" class="progress-bar-fill">
+          Level 3 (Top): UI & End-to-End Tests (Few, Complex, Slow, Low Isolation)
+        </div>
+        <div style="width: 62%;" class="progress-bar-fill">
+          Level 2 (Middle): Service & Integration Tests (Moderate speed & isolation)
+        </div>
+        <div style="width: 88%;" class="progress-bar-fill">
+          Level 1 (Base): Unit & Component Tests (Many, Small, Fast, High Isolation)
+        </div>
+      </div>
+    </div>
+
+    <h4>Key Pyramid Mechanics (Syllabus Errata Precision):</h4>
+    <ul>
+      <li><strong>Bottom Layer (Unit):</strong> Tests are small, highly isolated, fast, and test narrow functionality. Many tests are required to achieve reasonable coverage.</li>
+      <li><strong>Top Layer (UI / E2E):</strong> Tests are complex, high-level, slow, and check large end-to-end functionality. Only a few are needed for coverage.</li>
+      <li><strong>Exam Rule:</strong> <em>The higher the layer, the lower the test granularity, the lower the test isolation, and the higher the execution time!</em></li>
+    </ul>
+  </div>
+
+  <!-- ==================== PAGE 6: 5.1.7 TESTING QUADRANTS ==================== -->
+  <div class="page-start">
+    <h3>5.1.7 The Testing Quadrants <span class="badge badge-k2">FL-5.1.7 (K2)</span></h3>
+    <div class="card" style="border-left: 4px solid #4b5563; margin-bottom: 5px;">
+      <strong>Origin & Purpose (Brian Marick 2003, Crispin 2008):</strong> The testing quadrants model groups test levels with appropriate test types, activities, and techniques in Agile software development. It enables test management to ensure that all test types are represented and communicate testing scope across business and technical team members.
+    </div>
+
+    <p>
+      The model combines two orthogonal dimensions: (1) <strong>Business Facing vs. Technology Facing</strong>, and (2) <strong>Supporting the Team (guide development) vs. Critiquing the Product (evaluating against expectations)</strong>:
+    </p>
+
+    <div class="quadrant-grid">
+      <!-- Q1 -->
+      <div class="quadrant-card" style="border-top: 4px solid #4b5563;">
+        <strong>Quadrant Q1: Technology Facing &bull; Support Team</strong>
+        <p style="margin-top: 2px;">
+          &bull; <strong>Test Types:</strong> Component testing (unit) and component integration testing.
+          <br>&bull; <strong>Characteristics:</strong> Highly automated; embedded directly into the Continuous Integration (CI) build pipeline.
+          <br>&bull; <strong>Goal:</strong> Guides developer coding and verifies fundamental code correctness.
+        </p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quadrant-card" style="border-top: 4px solid #4b5563;">
+        <strong>Quadrant Q2: Business Facing &bull; Support Team</strong>
+        <p style="margin-top: 2px;">
+          &bull; <strong>Test Types:</strong> Functional tests, examples, user story tests, user experience prototypes, API testing, simulations.
+          <br>&bull; <strong>Characteristics:</strong> Validates user story acceptance criteria; can be manual or automated.
+          <br>&bull; <strong>Goal:</strong> Guides business-aligned feature development.
+        </p>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quadrant-card" style="border-top: 4px solid #4b5563;">
+        <strong>Quadrant Q3: Business Facing &bull; Critique Product</strong>
+        <p style="margin-top: 2px;">
+          &bull; <strong>Test Types:</strong> Exploratory testing, usability testing, User Acceptance Testing (UAT).
+          <br>&bull; <strong>Characteristics:</strong> User-oriented, human evaluation; predominantly manual.
+          <br>&bull; <strong>Goal:</strong> Evaluates actual user experience and business fitness in realistic scenarios.
+        </p>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quadrant-card" style="border-top: 4px solid #4b5563;">
+        <strong>Quadrant Q4: Technology Facing &bull; Critique Product</strong>
+        <p style="margin-top: 2px;">
+          &bull; <strong>Test Types:</strong> Smoke tests and non-functional tests (performance efficiency, reliability, security, maintainability).
+          <br>&bull; <strong>Exception:</strong> Usability is in Q3; all other non-functional testing resides in Q4!
+          <br>&bull; <strong>Characteristics:</strong> Tool-driven; heavily automated.
+        </p>
+      </div>
+    </div>
+
+    <h4>Testing Quadrants Master Summary Table:</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 14%;">Quadrant</th>
+          <th style="width: 28%;">Orientation & Purpose</th>
+          <th style="width: 38%;">Included Test Types & Activities</th>
+          <th style="width: 20%;">Execution Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Q1</strong></td>
+          <td>Technology-facing &bull; Support team</td>
+          <td>Component tests, unit integration tests</td>
+          <td>Automated (CI)</td>
+        </tr>
+        <tr>
+          <td><strong>Q2</strong></td>
+          <td>Business-facing &bull; Support team</td>
+          <td>Functional tests, user story tests, API tests, prototypes</td>
+          <td>Manual or Automated</td>
+        </tr>
+        <tr>
+          <td><strong>Q3</strong></td>
+          <td>Business-facing &bull; Critique product</td>
+          <td>Exploratory testing, usability testing, UAT</td>
+          <td>Predominantly Manual</td>
+        </tr>
+        <tr>
+          <td><strong>Q4</strong></td>
+          <td>Technology-facing &bull; Critique product</td>
+          <td>Smoke tests, performance, load, security, reliability</td>
+          <td>Predominantly Automated</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 7: 5.2 RISK MANAGEMENT & RISK TYPES ==================== -->
+  <div class="page-start">
+    <h2 id="sec-5-2">1.2 Risk Management</h2>
+    <div class="card" style="border-left: 4px solid #4b5563; margin-bottom: 5px;">
+      <strong>Formal Definition (ISO 31000):</strong> A <strong>risk</strong> is a potential event, hazard, threat, or situation whose occurrence causes an adverse effect. The test approach where activities are selected, prioritized, and managed based on risk analysis and control is called <strong>risk-based testing</strong>.
+    </div>
+
+    <h4>5.2.1 Risk Definition and Attributes <span class="badge badge-k1">FL-5.2.1 (K1)</span></h4>
+    <p>A risk is defined by two fundamental factors:</p>
+    <ul>
+      <li><strong>Risk Likelihood:</strong> The probability of occurrence (0 &lt; Likelihood &lt; 1).</li>
+      <li><strong>Risk Impact (Harm):</strong> The potential damage or consequence if the event occurs.</li>
+      <li><strong>Risk Level:</strong> The quantitative or qualitative measure of risk: <span class="metric-pill">Risk Level = Likelihood &times; Impact</span></li>
+    </ul>
+
+    <h4>5.2.2 Project Risks vs. Product Risks <span class="badge badge-k2">FL-5.2.2 (K2)</span></h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 22%;">Dimension</th>
+          <th style="width: 39%;">Project Risks (Management & Delivery)</th>
+          <th style="width: 39%;">Product Risks (Quality Characteristics)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Definition</strong></td>
+          <td>Risks related to the management and control of the project that threaten schedule, budget, or scope.</td>
+          <td>Risks related to product quality characteristics (ISO 25010) that threaten customer satisfaction.</td>
+        </tr>
+        <tr>
+          <td><strong>Organizational Issues</strong></td>
+          <td>Delays in work product delivery, inaccurate estimation, budget cuts.</td>
+          <td>Poor architecture, inefficient algorithms, high maintenance costs.</td>
+        </tr>
+        <tr>
+          <td><strong>People Issues</strong></td>
+          <td>Staff shortages, skill deficits, team conflict, communication failure.</td>
+          <td>User dissatisfaction, poor user experience (UX).</td>
+        </tr>
+        <tr>
+          <td><strong>Technical Issues</strong></td>
+          <td>Scope creep, inadequate tool support, unstable environments.</td>
+          <td>Missing functionality, runtime crashes, calculation errors, security vulnerabilities.</td>
+        </tr>
+        <tr>
+          <td><strong>Supplier Issues</strong></td>
+          <td>Third-party vendor delivery failure, contractor bankruptcy.</td>
+          <td>Data corruption, third-party API integration timeouts.</td>
+        </tr>
+        <tr>
+          <td><strong>Consequences</strong></td>
+          <td>Missed deadlines, project budget overrun, reduced release scope.</td>
+          <td>Financial loss, reputation damage, help desk overload, legal penalties, physical injury/death.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-exam">
+      <strong>EXAM CLASSIFICATION FLASHPOINT:</strong><br>
+      &bull; <em>"The test environment was delivered 3 weeks late"</em> &rarr; <strong>Project Risk</strong> (threatens project schedule).<br>
+      &bull; <em>"The mobile application drains battery rapidly during GPS navigation"</em> &rarr; <strong>Product Risk</strong> (non-functional quality defect).
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 8: 5.2.3 RISK ANALYSIS & 5.2.4 RISK CONTROL ==================== -->
+  <div class="page-start">
+    <h3>5.2.3 Product Risk Analysis <span class="badge badge-k2">FL-5.2.3 (K2)</span></h3>
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-bottom: 5px;">
+      <strong>Core Purpose:</strong> Provides an awareness of product risks to focus testing in a way that <strong>minimizes residual risk</strong>. It consists of two sub-activities: <strong>Risk Identification</strong> and <strong>Risk Assessment</strong>.
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <strong>1. Risk Identification:</strong>
+        <p style="margin-top: 2px;">
+          Generating a comprehensive list of potential risks using brainstorming workshops, stakeholder interviews, expert checklists, and cause-effect diagrams.
+        </p>
+      </div>
+      <div class="card">
+        <strong>2. Risk Assessment:</strong>
+        <p style="margin-top: 2px;">
+          Categorizing risks, determining likelihood and impact, calculating risk level, and prioritizing risks.
+          <br>&bull; <em>Quantitative:</em> Multiplying numerical likelihood by impact.
+          <br>&bull; <em>Qualitative:</em> Plotting on a <strong>Risk Matrix</strong> (Low, Med, High).
+        </p>
+      </div>
+    </div>
+
+    <h4>How Product Risk Analysis Influences Testing Scope & Thoroughness:</h4>
+    <ul>
+      <li><strong>Determines Test Scope:</strong> Higher-risk features receive extensive testing; low-risk areas receive minimal or no testing.</li>
+      <li><strong>Determines Test Levels & Types:</strong> Critical security risks dictate dedicated penetration and vulnerability testing.</li>
+      <li><strong>Determines Test Techniques:</strong> High-risk logic warrants rigorous 3-value BVA and branch coverage; lower risks use exploratory testing.</li>
+      <li><strong>Estimates Effort:</strong> Guides effort allocation toward components with the highest risk ratings.</li>
+      <li><strong>Prioritizes Test Execution:</strong> High-risk tests run first to find critical defects as early as possible.</li>
+      <li><strong>Identifies Non-Testing Actions:</strong> Prompts training, prototyping, or code refactoring to reduce risk upstream.</li>
+    </ul>
+
+    <h3>5.2.4 Product Risk Control <span class="badge badge-k2">FL-5.2.4 (K2)</span></h3>
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-bottom: 5px;">
+      <strong>Core Purpose:</strong> Encompasses all measures taken in response to identified and assessed risks. Comprises <strong>Risk Mitigation</strong> (implementing actions to lower risk) and <strong>Risk Monitoring</strong> (tracking effectiveness and discovering emerging risks).
+    </div>
+
+    <p>Once risks are assessed, organizations choose from four response options (Veenendaal 2012):</p>
+    <div class="grid-4">
+      <div class="card">
+        <strong>1. Risk Mitigation</strong>
+        <p style="margin-top: 1px;">Taking active steps (e.g. testing) to reduce likelihood or impact.</p>
+      </div>
+      <div class="card">
+        <strong>2. Risk Acceptance</strong>
+        <p style="margin-top: 1px;">Consciously deciding to live with the risk without action.</p>
+      </div>
+      <div class="card">
+        <strong>3. Risk Transfer</strong>
+        <p style="margin-top: 1px;">Passing risk to third parties (insurance, vendor warranty).</p>
+      </div>
+      <div class="card">
+        <strong>4. Contingency Plan</strong>
+        <p style="margin-top: 1px;">Pre-planned response if the risk occurs (disaster recovery).</p>
+      </div>
+    </div>
+
+    <h4>Actions Taken to Mitigate Product Risk via Testing:</h4>
+    <div class="grid-2" style="margin-top: 5px;">
+      <ul style="margin-left: 14px;">
+        <li>Assigning testers with the right experience, domain skills, and technical expertise.</li>
+        <li>Applying an appropriate degree of test independence.</li>
+        <li>Performing static testing (requirements reviews, code static analysis).</li>
+      </ul>
+      <ul style="margin-left: 14px;">
+        <li>Selecting rigorous test techniques and setting high coverage thresholds.</li>
+        <li>Applying dedicated non-functional test types (load, stress, penetration).</li>
+        <li>Conducting extensive automated regression testing.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 9: 5.3 MONITORING, CONTROL & REPORTS ==================== -->
+  <div class="page-start">
+    <h2 id="sec-5-3">1.3 Test Monitoring, Test Control and Test Completion</h2>
+
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>Test Monitoring:</strong>
+        <p style="margin-top: 2px;">
+          Ongoing activity of gathering information about testing, assessing progress against the test plan, and tracking exit criteria achievement.
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>Test Control (Control Directives):</strong>
+        <p style="margin-top: 2px;">
+          Taking corrective actions based on monitoring data to guide testing toward its objectives (e.g. reprioritizing tests when risks become issues, reallocating staff).
+        </p>
+      </div>
+    </div>
+
+    <h4>5.3.1 Metrics Used in Testing <span class="badge badge-k1">FL-5.3.1 (K1)</span></h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Metric Category</th>
+          <th style="width: 75%;">Specific Metric Examples & Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Project Progress</strong></td>
+          <td>Task completion %, resource utilization rate, test effort consumed vs planned.</td>
+        </tr>
+        <tr>
+          <td><strong>Test Progress</strong></td>
+          <td>Test case preparation progress, environment readiness %, test cases run / passed / failed, execution duration.</td>
+        </tr>
+        <tr>
+          <td><strong>Product Quality</strong></td>
+          <td>Availability %, mean time to failure (MTTF), transaction response times, defect density.</td>
+        </tr>
+        <tr>
+          <td><strong>Defect Metrics</strong></td>
+          <td>Number and priority of defects found/fixed, defect density, Defect Detection Percentage (DDP).</td>
+        </tr>
+        <tr>
+          <td><strong>Risk Metrics</strong></td>
+          <td>Residual risk levels, number of high-risk items remaining untested.</td>
+        </tr>
+        <tr>
+          <td><strong>Coverage Metrics</strong></td>
+          <td>Requirements coverage %, code coverage % (statement, branch), user story acceptance criteria coverage.</td>
+        </tr>
+        <tr>
+          <td><strong>Cost Metrics</strong></td>
+          <td>Direct cost of testing, organizational cost of quality (prevention vs failure costs).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>5.3.2 Test Reports: Progress vs. Completion Reports <span class="badge badge-k2">FL-5.3.2 (K2)</span></h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 20%;">Dimension</th>
+          <th style="width: 40%;">Test Progress Report (Status Report)</th>
+          <th style="width: 40%;">Test Completion Report</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frequency & Timing</strong></td>
+          <td>Generated regularly (daily, weekly, per sprint) during ongoing testing.</td>
+          <td>Prepared once at project milestones (release, sprint end, test level closure).</td>
+        </tr>
+        <tr>
+          <td><strong>Primary Purpose</strong></td>
+          <td>Supports ongoing test control; informs modifications to schedules and resources.</td>
+          <td>Summarizes test activity, evaluates product quality, provides closure for stakeholders.</td>
+        </tr>
+        <tr>
+          <td><strong>Typical Content</strong></td>
+          <td>
+            &bull; Testing period & current progress (ahead/behind)<br>
+            &bull; Test metrics (passed/failed, remaining tests)<br>
+            &bull; Blockers/impediments & workarounds<br>
+            &bull; New and changed risks; next period plan
+          </td>
+          <td>
+            &bull; Executive test summary & product quality evaluation<br>
+            &bull; Deviations from test plan (schedule, budget, effort)<br>
+            &bull; Unmitigated risks and unresolved defects<br>
+            &bull; Documented lessons learned & improvement action items
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>5.3.3 Communicating Testing Status (FL-5.3.3):</h4>
+    <p >
+      Status communication must be tailored to stakeholder needs: (1) <strong>Verbal communication</strong> (daily stand-ups), (2) <strong>Dashboards</strong> (CI/CD pipelines, Kanban boards, burndown charts), (3) <strong>Electronic channels</strong> (email, chat), (4) <strong>Online documentation</strong> (wikis), and (5) <strong>Formal reports</strong> (ISO/IEC/IEEE 29119-3 templates).
+    </p>
+  </div>
+
+  <!-- ==================== PAGE 10: 5.4 CONFIG MANAGEMENT & 5.5 DEFECT MANAGEMENT ==================== -->
+  <div class="page-start">
+    <h2 id="sec-5-4">1.4 Configuration Management & Defect Management</h2>
+
+    <h3>5.4 Configuration Management (CM) <span class="badge badge-k2">FL-5.4.1 (K2)</span></h3>
+    <div class="card" style="border-left: 3.5px solid #4b5563; margin-bottom: 5px;">
+      <strong>Purpose:</strong> Provides a discipline for identifying, controlling, tracking, and versioning all testware items (test plans, test cases, scripts, results, environments) as <strong>configuration items</strong>.
+    </div>
+
+    <ul>
+      <li><strong>Baselines:</strong> An approved configuration item becomes a baseline that can only be altered through formal change control. Enables reverting to previous configurations to reproduce earlier test results.</li>
+      <li><strong>Traceability Support:</strong> CM ensures all test items (parts of test object) and software documentation items are uniquely identified and referenced unambiguously throughout testware.</li>
+      <li><strong>DevOps Integration:</strong> Automated configuration management is an integral foundation of automated CI/CD deployment pipelines.</li>
+    </ul>
+
+    <h3>5.5 Defect Management <span class="badge badge-k3">FL-5.5.1 (K3)</span></h3>
+    <p>
+      An established defect management process provides a standardized workflow from defect discovery through analysis, classification, remediation, and closure.
+    </p>
+
+    <div class="card card-center-callout">
+      <div style="font-weight: 700;">DEFECT LIFECYCLE WORKFLOW</div>
+      <div style="display: flex; justify-content: space-around; margin-top: 3px;  font-weight: 600;">
+        <span>1. Log Anomaly</span> &rarr;
+        <span>2. Analyze & Classify</span> &rarr;
+        <span>3. Assign / Fix</span> &rarr;
+        <span>4. Confirmation Test</span> &rarr;
+        <span>5. Close Report</span>
+      </div>
+    </div>
+
+    <h4>Severity vs. Priority: The Fundamental Distinction:</h4>
+    <div class="grid-2">
+      <div class="card card-accent-left">
+        <strong>Severity (Technical Impact):</strong>
+        <p style="margin-top: 2px;">
+          The degree of impact the defect has on system operation or user requirements (e.g. Minor, Major, Critical, Blocker).
+        </p>
+      </div>
+      <div class="card card-accent-left">
+        <strong>Priority (Business Urgency):</strong>
+        <p style="margin-top: 2px;">
+          The urgency with which the defect must be fixed based on business goals and release timelines (e.g. Low, Medium, High, Immediate).
+        </p>
+      </div>
+    </div>
+
+    <h4>Mandatory Fields in a Defect Report (ISO/IEC/IEEE 29119-3 / FL-5.5.1 — K3):</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Field</th>
+          <th style="width: 75%;">Description & Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Unique Identifier</strong></td>
+          <td>Unique tracking ID automatically assigned by the defect management tool.</td>
+        </tr>
+        <tr>
+          <td><strong>Title & Summary</strong></td>
+          <td>Short, clear, descriptive summary of the observed anomaly.</td>
+        </tr>
+        <tr>
+          <td><strong>Date, Author, Role</strong></td>
+          <td>Date of discovery, name of person logging defect, and their organizational role.</td>
+        </tr>
+        <tr>
+          <td><strong>Test Object & Environment</strong></td>
+          <td>Exact build version, module ID, hardware platform, OS, and browser details.</td>
+        </tr>
+        <tr>
+          <td><strong>Context of Defect</strong></td>
+          <td>Test activity (e.g. regression), test case executed, checklist used, test data.</td>
+        </tr>
+        <tr>
+          <td><strong>Reproduction Steps</strong></td>
+          <td>Step-by-step instructions to reproduce failure, including logs, dumps, screenshots, or videos.</td>
+        </tr>
+        <tr>
+          <td><strong>Expected vs. Actual</strong></td>
+          <td>Explicit statement of what should have occurred vs what actually occurred.</td>
+        </tr>
+        <tr>
+          <td><strong>Severity & Priority</strong></td>
+          <td>Severity (degree of technical harm) and Priority (urgency to resolve).</td>
+        </tr>
+        <tr>
+          <td><strong>Status & References</strong></td>
+          <td>Status (New, Open, In Progress, Fixed, Awaiting Retest, Closed) and linked Test Case ID.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== PAGE 11: EXAM FLASHPOINTS, DISTINCTIONS & TRAPS ==================== -->
+  <div class="page-start">
+    <h2 id="sec-flashpoints">2. High-Yield Exam Flashpoints & Key Distinctions</h2>
+
+    <div class="callout callout-exam">
+      <strong>TOP 10 ISTQB CTFL v4.0.1 CHAPTER 5 EXAM TRAPS & DISTRACTORS:</strong>
+      <ol style="margin-left: 17px; margin-top: 4px;">
+        <li><strong>"The Test Pyramid states top-layer tests have highest isolation" &rarr; FALSE!</strong> The top layer (UI/E2E) has the <em>lowest</em> isolation and slowest execution. Bottom unit tests have the highest isolation.</li>
+        <li><strong>"Usability testing belongs in Quadrant Q4" &rarr; FALSE!</strong> While performance and security belong in Q4 (technology-facing), usability testing belongs in <strong>Q3</strong> (business-facing, critique product).</li>
+        <li><strong>"Running out of time is never a valid exit criterion" &rarr; FALSE!</strong> Running out of time or budget IS a valid exit criterion if stakeholders formally review and accept the residual risk.</li>
+        <li><strong>"Higher priority tests always run before lower priority tests" &rarr; FALSE!</strong> If a higher-priority test is dependent on a lower-priority test, the lower-priority test must execute first!</li>
+        <li><strong>"Severity and Priority are identical" &rarr; FALSE!</strong> Severity is technical impact (system crash); Priority is business urgency (marketing deadline). A spelling error on the homepage has low severity but high priority!</li>
+        <li><strong>"Three-point estimation uses simple unweighted average" &rarr; FALSE!</strong> It uses a weighted arithmetic mean: <b>E = (a + 4m + b) / 6</b>.</li>
+        <li><strong>"All anomalies reported in testing are defects" &rarr; FALSE!</strong> Anomalies can turn out to be false-positives, duplicate reports, or change requests.</li>
+        <li><strong>"Project risks and product risks are managed identically" &rarr; FALSE!</strong> Project risks threaten schedule/budget; product risks threaten user quality characteristics.</li>
+        <li><strong>"Test Progress Reports occur only once at the end of testing" &rarr; FALSE!</strong> Progress reports occur regularly during testing; Test Completion Reports occur once at milestones.</li>
+        <li><strong>"Test strategy is an examinable section in Chapter 5" &rarr; FALSE!</strong> The detailed test strategy section was removed from Foundation Level v4.0 (retained only as a keyword).</li>
+      </ol>
+    </div>
+
+    <h3>Rapid Comparison Matrix (Core Management Distinctions)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Concept A</th>
+          <th style="width: 25%;">Concept B</th>
+          <th style="width: 50%;">Crucial Distinguishing Test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Entry Criteria (DoR)</strong></td>
+          <td><strong>Exit Criteria (DoD)</strong></td>
+          <td>Entry criteria define <em>when to start</em> an activity; Exit criteria define <em>when an activity is complete</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>Project Risk</strong></td>
+          <td><strong>Product Risk</strong></td>
+          <td>Project risk impacts <em>schedule, budget, team</em>; Product risk impacts <em>functional correctness & quality attributes</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>Severity</strong></td>
+          <td><strong>Priority</strong></td>
+          <td>Severity measures <em>technical impact</em>; Priority measures <em>business urgency to fix</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>Risk Mitigation</strong></td>
+          <td><strong>Risk Monitoring</strong></td>
+          <td>Mitigation implements <em>actions to reduce risk</em>; Monitoring <em>checks effectiveness & tracks emerging risks</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>Q1 (Tech-Support)</strong></td>
+          <td><strong>Q4 (Tech-Critique)</strong></td>
+          <td>Q1 supports dev with <em>unit/integration tests</em>; Q4 critiques product with <em>performance/security tools</em>.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card card-subtle">
+      <strong>High-Yield Memory Mnemonics for Revision:</strong>
+      <ul style="margin: 3px 0 0 16px;">
+        <li><strong>PERT Formulas:</strong> <b>E = (a + 4m + b) / 6</b> &nbsp;|&nbsp; <b>SD = (b &minus; a) / 6</b>.</li>
+        <li><strong>Pyramid Rule:</strong> <em>Bottom = Fast, Isolated, Many | Top = Slow, Low Isolation, Few</em>.</li>
+        <li><strong>Quadrants:</strong> <em>Q1 = Unit/CI | Q2 = User Story/API | Q3 = Exploratory/Usability | Q4 = Non-Functional/Smoke</em>.</li>
+        <li><strong>Risk Responses:</strong> <em>Mitigate (Test) &bull; Accept &bull; Transfer &bull; Contingency</em>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 12: MASTER KEYWORD LEXICON ==================== -->
+  <div class="page-start">
+    <h2 id="sec-glossary">3. Complete Chapter 5 Keyword Lexicon (All 26 Official Terms)</h2>
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <div class="glossary-term">Defect Management</div>
+        The process of recognizing, recording, classifying, investigating, resolving and disposing of defects.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Defect Report</div>
+        Documentation of the occurrence, nature, and status of a defect or anomaly detected during testing.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Entry Criteria</div>
+        The set of conditions for officially starting a defined task or test activity (Definition of Ready).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Exit Criteria</div>
+        The set of conditions for officially completing a defined task or test activity (Definition of Done).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Product Risk</div>
+        A risk impacting the quality of a product (quality characteristics, incorrect behavior, non-compliance).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Project Risk</div>
+        A risk related to the management and control of the project (schedule, budget, staffing, suppliers).
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk</div>
+        A factor that could result in future negative consequences, characterized by likelihood and impact.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Analysis</div>
+        The overall process comprising risk identification and risk assessment.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Assessment</div>
+        The process of categorizing identified risks, evaluating likelihood and impact, and determining risk level.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Control</div>
+        The overall process comprising risk mitigation and risk monitoring.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Identification</div>
+        The process of recognizing, identifying, and describing potential risks.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Level</div>
+        The qualitative or quantitative measure of a risk, determined by risk likelihood and risk impact.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Management</div>
+        The application of coordinated activities to direct and control an organization with regard to risk.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Mitigation</div>
+        The process through which decisions are reached and protective measures are implemented to reduce risk.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk Monitoring</div>
+        The process of tracking identified risks, verifying mitigation effectiveness, and finding emerging risks.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Risk-Based Testing</div>
+        Testing in which test activities are selected, prioritized, and managed based on risk analysis and control.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Approach</div>
+        The implementation of test strategy for a specific project, defining levels, types, and techniques.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Completion Report</div>
+        A report produced at completion milestones summarizing test activities and product quality evaluation.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Control</div>
+        Developing and applying corrective actions to guide a test project on track when monitoring reveals deviations.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Monitoring</div>
+        The ongoing checking of test activities and comparison of actual progress against the test plan.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Plan</div>
+        Documentation describing the test objectives, resources, approach, schedule, and constraints of a test project.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Planning</div>
+        The activity of establishing or updating the scope, approach, resources, and schedule of testing activities.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Progress Report</div>
+        A report published at regular intervals during testing to communicate current progress and impediments.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Pyramid</div>
+        A graphical model illustrating that different tests have different granularity, isolation, and execution speeds.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Test Strategy</div>
+        Documentation of the organization's high-level alignment and rules for testing across projects.
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Testing Quadrants</div>
+        A model grouping test levels with appropriate test types across business/technology and support/critique dimensions.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 13: PRACTICE EXAM QUESTIONS 1-4 ==================== -->
+  <div class="page-start">
+    <div style="page-break-before: always; break-before: page; margin-top: 0;"></div>
+
+    <!-- Lined Student Note Space -->
+    <div id="sec-notes" class="notes-box">
+      <div class="notes-box-header">
+        <span>STUDENT NOTES & EXAM FLASHCARD REMINDERS</span>
+        <span>(Handwritten Study Space)</span>
+      </div>
+      <div class="notes-box-lines"></div>
+    </div>
+
+    <h2 id="sec-questions">4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 1)</h2>
+
+    <!-- Question 1 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 1 [K3 - FL-5.1.4]: Using the Three-Point Estimation technique, experts provide the following test execution estimates: Most Optimistic (a) = 10 hours, Most Likely (m) = 16 hours, and Most Pessimistic (b) = 34 hours. What are the final weighted Estimate (E) and Standard Deviation (SD)?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) E = 18 hours, SD = 4 hours</div>
+        <div class="quiz-opt">B) E = 20 hours, SD = 4 hours</div>
+        <div class="quiz-opt">C) E = 18 hours, SD = 6 hours</div>
+        <div class="quiz-opt">D) E = 16 hours, SD = 2 hours</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: A</strong><br>
+        <strong>Rationale:</strong> Using PERT formulas:
+        <br>&bull; <b>E</b> = (a + 4m + b) / 6 = (10 + 4(16) + 34) / 6 = (10 + 64 + 34) / 6 = 108 / 6 = <b>18 hours</b>
+        <br>&bull; <b>SD</b> = (b &minus; a) / 6 = (34 &minus; 10) / 6 = 24 / 6 = <b>4 hours</b>
+        <br>Thus, the final estimate is <strong>18 &plusmn; 4 hours</strong> (Section 5.1.4).
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 2 [K3 - FL-5.1.5]: Test suite execution prioritization is being planned. Test Case TC1 has High risk priority, but requires prerequisite database records generated by Test Case TC2, which has Low risk priority. Test Case TC3 has Medium risk priority and is completely independent. In what order should the tests execute?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) TC1 &rarr; TC3 &rarr; TC2</div>
+        <div class="quiz-opt">B) TC2 &rarr; TC1 &rarr; TC3</div>
+        <div class="quiz-opt">C) TC3 &rarr; TC1 &rarr; TC2</div>
+        <div class="quiz-opt">D) TC1 &rarr; TC2 &rarr; TC3</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Section 5.1.5 states that while priority ordering is desired, test dependencies take precedence: "If a test case with a higher priority is dependent on a test case with a lower priority, the lower priority test case must be executed first." Because TC1 depends on TC2, TC2 must run before TC1. TC3 (Medium) runs after the High-priority workflow completes.
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 3 [K1 - FL-5.1.6]: According to the Test Pyramid model, which of the following statements correctly characterizes tests located at the TOP layer?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) They have the highest test isolation and fastest execution time.</div>
+        <div class="quiz-opt">B) They check small pieces of isolated functionality, requiring many tests for coverage.</div>
+        <div class="quiz-opt">C) They are complex, end-to-end tests that generally have lower test isolation and slower execution time.</div>
+        <div class="quiz-opt">D) They represent unit tests integrated into continuous integration builds.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Section 5.1.6 establishes that in the test pyramid, the higher the layer, the lower the test granularity, the lower the test isolation (higher dependency on other elements), and the higher the execution time.
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 4 [K2 - FL-5.1.7]: In the Testing Quadrants model, which quadrant contains exploratory testing and usability testing?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Q1 (Technology facing, support the team)</div>
+        <div class="quiz-opt">B) Q2 (Business facing, support the team)</div>
+        <div class="quiz-opt">C) Q3 (Business facing, critique the product)</div>
+        <div class="quiz-opt">D) Q4 (Technology facing, critique the product)</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Quadrant Q3 contains business-facing tests that critique the product, specifically exploratory testing, usability testing, and user acceptance testing (Section 5.1.7).
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 14: PRACTICE EXAM QUESTIONS 5-8 ==================== -->
+  <div class="page-start">
+    <div style="page-break-before: always; break-before: page; margin-top: 0;"></div>
+<h2>4. Realistic ISTQB Practice Exam Questions & Detailed Rationales (Part 2)</h2>
+
+    <!-- Question 5 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 5 [K2 - FL-5.2.2]: Which of the following is an example of a PROJECT RISK rather than a product risk?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) The web application takes more than 10 seconds to process checkout transactions under peak load.</div>
+        <div class="quiz-opt">B) A third-party test tool vendor goes bankrupt, causing delays in test environment readiness.</div>
+        <div class="quiz-opt">C) The payment calculation module incorrectly rounds tax on international currency exchanges.</div>
+        <div class="quiz-opt">D) The software interface fails to comply with industry accessibility regulations.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Third-party supplier failure causing delivery delays is a project risk affecting schedule and resources (Section 5.2.2). Options A, C, and D are product quality characteristics (performance efficiency, functional correctness, regulatory compliance).
+      </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 6 [K2 - FL-5.3.2]: What is the primary difference between a Test Progress Report and a Test Completion Report?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Test progress reports evaluate exit criteria against business goals, while test completion reports issue control directives.</div>
+        <div class="quiz-opt">B) Test progress reports are generated regularly during testing to support test control, while test completion reports are produced at project milestones to evaluate overall quality.</div>
+        <div class="quiz-opt">C) Test progress reports contain documented lessons learned, while test completion reports list next week's test schedule.</div>
+        <div class="quiz-opt">D) Test progress reports are authored exclusively by project managers, while completion reports are written by external auditors.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Section 5.3.2 defines that test progress reports support ongoing test control and adjustments during testing, while test completion reports consolidate experience, evaluate quality against original exit criteria, and document lessons learned at project milestones.
+      </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 7 [K2 - FL-5.4.1]: How does Configuration Management directly support the testing process?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) By executing automated regression test suites whenever developers check in source code.</div>
+        <div class="quiz-opt">B) By ensuring all test items and testware are uniquely identified, version-controlled, and tracked to maintain traceability.</div>
+        <div class="quiz-opt">C) By automatically calculating PERT three-point estimates for sprint user stories.</div>
+        <div class="quiz-opt">D) By determining whether risks should be transferred to third-party vendors.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Section 5.4 states that Configuration Management ensures all configuration items (including test items) are uniquely identified, version controlled, tracked for changes, and related to other items so traceability is maintained throughout the test process.
+      </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 8 [K3 - FL-5.5.1]: A tester discovers that clicking "Print Invoice" causes an unhandled application crash on iOS devices, though Android devices function normally. Which information is CRITICAL to include in the defect report to ensure developers can reproduce and fix the bug?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) The tester's salary, the test manager's approval signature, and the total cost of quality.</div>
+        <div class="quiz-opt">B) A vague note stating "printing doesn't work on mobile".</div>
+        <div class="quiz-opt">C) Steps to reproduce, expected vs actual results, device OS version, and relevant system crash logs.</div>
+        <div class="quiz-opt">D) The Wideband Delphi estimate for rewriting the iOS application.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Section 5.5 outlines that a defect report logged during dynamic testing must include clear reproduction steps, test environment details (OS version), expected vs actual results, and supporting logs/screenshots.
+      </div>
+    </div>
+
+    <!-- PART2-QUESTIONS-START -->
+    <h3>Part 2: Additional Questions for Remaining Learning Objectives</h3>
+
+    <!-- Question 9 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 9 [K2 - FL-5.1.1]: Which of the following is typical content of a test plan?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) The source code of the unit tests and the detailed list of defects found.</div>
+        <div class="quiz-opt">B) A risk register, the test approach (levels, types, techniques, entry and exit criteria), stakeholders, budget and schedule.</div>
+        <div class="quiz-opt">C) Salary reviews and annual appraisals of the testers.</div>
+        <div class="quiz-opt">D) Only the final test results and the release decision.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> A test plan describes the test objectives, resources and processes. Typical content (ISO/IEC/IEEE 29119-3): context (scope, objectives, test basis), assumptions and constraints, stakeholders, communication, risk register (product and project risks), test approach (levels, types, techniques, deliverables, entry/exit criteria, metrics, test data and environment needs), and budget and schedule (Section 5.1.1).
+      </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 10 [K1 - FL-5.1.2]: Which of the following is a way in which a tester adds value to iteration and release planning?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Writing the production code for the user stories.</div>
+        <div class="quiz-opt">B) Approving the release on behalf of the product owner.</div>
+        <div class="quiz-opt">C) Deciding the project budget and the sprint length alone.</div>
+        <div class="quiz-opt">D) Taking part in user story refinement (testable stories with acceptance criteria), performing product risk analysis, estimating test effort and planning the test approach.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: D</strong><br>
+        <strong>Rationale:</strong> In release and iteration planning a tester helps to write testable user stories and acceptance criteria, performs product quality risk analysis, estimates the test effort, identifies functional and non-functional aspects to be tested and plans the testing within the iteration (Section 5.1.2).
+      </div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 11 [K2 - FL-5.1.3]: Statement 1: "The test environment and test data are available." Statement 2: "The planned coverage level has been reached and the number of open critical defects is within the agreed limit." How are they correctly classified?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Statement 1 is an entry criterion; statement 2 is an exit criterion (in agile: Definition of Ready and Definition of Done).</div>
+        <div class="quiz-opt">B) Statement 1 is an exit criterion; statement 2 is an entry criterion.</div>
+        <div class="quiz-opt">C) Both statements are entry criteria.</div>
+        <div class="quiz-opt">D) Both statements are exit criteria.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: A</strong><br>
+        <strong>Rationale:</strong> Entry criteria are the preconditions for starting an activity (testable requirements, resources such as environments and data, initial quality of the test object). Exit criteria define what must be achieved to declare an activity complete (planned tests executed, coverage level reached, unresolved defects within an agreed limit). In agile projects they correspond to the Definition of Ready and the Definition of Done (Section 5.1.3).
+      </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 12 [K1 - FL-5.2.1]: How is the risk level of a risk determined?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Only by the cost of the mitigation actions.</div>
+        <div class="quiz-opt">B) Only by the number of testers available.</div>
+        <div class="quiz-opt">C) By combining the likelihood of the risk occurring and its impact (for example with a risk matrix or numeric ratings).</div>
+        <div class="quiz-opt">D) Only by the duration of the project.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> The risk level is determined by risk likelihood (the probability that the risk occurs, greater than zero and less than one) and risk impact (the consequences of its occurrence). It can be expressed qualitatively (high/medium/low) or quantitatively (Section 5.2.1).
+      </div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 13 [K2 - FL-5.2.3]: A product risk analysis rates the payment module as high risk and the "About us" page as low risk. How should these results influence testing?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Both should receive identical effort to stay fair.</div>
+        <div class="quiz-opt">B) The payment module gets more thorough techniques, higher coverage and earlier testing; the "About us" page gets minimal effort.</div>
+        <div class="quiz-opt">C) The payment module should be skipped because high-risk items are too expensive to test.</div>
+        <div class="quiz-opt">D) The "About us" page should be tested first because it is the easiest.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Product risk analysis results are used to decide the test scope, the test levels and types, the test techniques and coverage, the test effort per task, and the priorities so that critical defects are found as early as possible; they may also point to non-testing activities that reduce risk. Higher risk means more thorough and earlier testing (Section 5.2.3).
+      </div>
+    </div>
+
+    <!-- Question 14 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 14 [K2 - FL-5.2.4]: A product risk analysis identifies a high security risk. Which of the following is an appropriate response measure?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Reduce the test effort to meet the schedule, because security defects are rare.</div>
+        <div class="quiz-opt">B) Remove the security requirement from the test basis.</div>
+        <div class="quiz-opt">C) Assign testers with suitable security skills, apply security testing and static analysis, and increase the independence of testing.</div>
+        <div class="quiz-opt">D) Wait for a production incident and fix the problem afterwards.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: C</strong><br>
+        <strong>Rationale:</strong> Measures in response to analyzed product risks include: choosing testers with the right experience and skills for the risk type, applying an appropriate level of independence, performing reviews and static analysis, applying suitable test techniques and coverage levels, applying test types addressing the affected quality characteristics (such as security testing), and performing dynamic testing including regression testing (Section 5.2.4).
+      </div>
+    </div>
+
+    <!-- Question 15 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 15 [K1 - FL-5.3.1]: Which of the following is a TEST PROGRESS metric?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Mean time to failure of the released product.</div>
+        <div class="quiz-opt">B) The number of test cases run and not run, passed and failed.</div>
+        <div class="quiz-opt">C) Defect density.</div>
+        <div class="quiz-opt">D) Cost of quality.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: B</strong><br>
+        <strong>Rationale:</strong> Test progress metrics include the number of test cases run / not run, passed / failed, test case implementation progress, test environment preparation progress and test execution time. Mean time to failure is a product quality metric, defect density is a defect metric and cost of quality is a cost metric (Section 5.3.1).
+      </div>
+    </div>
+
+    <!-- Question 16 -->
+    <div class="quiz-card">
+      <div class="quiz-q">Question 16 [K2 - FL-5.3.3]: A distributed agile team (three countries) uses a CI/CD pipeline. Which is the most suitable way to communicate the status of testing continuously?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt">A) Printing a monthly test report and sending it by post.</div>
+        <div class="quiz-opt">B) Hallway conversations only.</div>
+        <div class="quiz-opt">C) Waiting until the end of the project to present the test completion report.</div>
+        <div class="quiz-opt">D) Dashboards (for example CI/CD dashboards, task boards and burn-down charts), supported by chat, online documentation and short verbal updates.</div>
+      </div>
+      <div class="quiz-answer">
+        <strong>Correct Answer: D</strong><br>
+        <strong>Rationale:</strong> Ways to communicate test status include verbal communication, dashboards (CI/CD dashboards, task boards, burn-down charts), electronic channels (e-mail, chat), online documentation and formal test reports. The choice depends on the audience, project risk, organizational standards and whether the team is distributed. A distributed agile team benefits from continuous, shared channels such as dashboards and chat (Section 5.3.3).
+      </div>
+    </div>
+    <!-- PART2-QUESTIONS-END -->
+
+    <div class="footer-note">
+      ISTQB® Certified Tester Foundation Level (CTFL) v4.0.1 &bull; Chapter 5: Managing the Test Activities &bull; Master Study Guide &bull; Official Curriculum Preparation Edition
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- ================= CHAPTER NAVIGATION FOOTER ================= -->
+<div class="chapter-nav-footer">
+  <a href="istqb_ch4_study_guide.html" class="nav-footer-card">
+        <span class="nav-footer-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:4px;"><polyline points="15 18 9 12 15 6"></polyline></svg>Previous Chapter</span>
+        <span class="nav-footer-title">Chapter 04: Test Analysis and Design</span>
+       </a>
+  
+    <a href="../index.html" class="nav-footer-card" style="text-align: center; align-items: center;">
+      <span class="nav-footer-label">Master Overview</span>
+      <span class="nav-footer-title">Study Hub</span>
+    </a>
+  
+  
+    <a href="../05_Practice_Questions_and_Summaries/istqb_mock_exam_simulator.html" class="nav-footer-card" style="text-align: center; align-items: center; border-color: #334155; background: #1e293b;">
+      <span class="nav-footer-label" style="color: #60a5fa;">Test Exam Readiness</span>
+      <span class="nav-footer-title" style="color: #ffffff;">40Q Mock Simulator</span>
+    </a>
+  
+  <a href="istqb_ch6_study_guide.html" class="nav-footer-card" style="text-align: right;">
+        <span class="nav-footer-label">Next Chapter<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:4px;"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+        <span class="nav-footer-title">Chapter 06: Test Tools</span>
+       </a>
+</div>
+</div><!-- /.study-main-wrapper -->
+
+<!-- Floating Back to Top Button -->
+<div class="floating-actions">
+  <button class="floating-btn" onclick="scrollToTop()" title="Scroll to Top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+</div>
+
+
+<script>
+  function updateThemeMeta(isDark) {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', isDark ? '#0b1120' : '#1e293b');
+  }
+
+  function toggleReadingTheme() {
+    document.body.classList.toggle('dark-reading-mode');
+    const isDark = document.body.classList.contains('dark-reading-mode');
+    localStorage.setItem('istqb_reading_theme', isDark ? 'dark' : 'light');
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) btn.innerHTML = isDark ? 'Light' : 'Dark';
+    updateThemeMeta(isDark);
+  }
+
+  function jumpToSection(sel) {
+    const val = sel.value;
+    if (!val) return;
+    const target = document.getElementById(val);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.location.hash = val;
+    }
+  }
+
+  function switchLanguage(targetUrl) {
+    const hash = window.location.hash;
+    window.location.href = targetUrl + (hash ? hash : '');
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Restore user theme preference
+  document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('istqb_reading_theme');
+    const btn = document.getElementById('theme-toggle-btn');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-reading-mode');
+      if (btn) btn.innerHTML = 'Light';
+    } else {
+      document.body.classList.remove('dark-reading-mode');
+      if (btn) btn.innerHTML = 'Dark';
+    }
+    updateThemeMeta(savedTheme === 'dark');
+
+    // Add interactive Toggle Answer feature for each quiz card
+    const quizCards = document.querySelectorAll('.quiz-card');
+    quizCards.forEach(function(card) {
+      const answer = card.querySelector('.quiz-answer');
+      if (answer && !card.querySelector('.btn-reveal-answer')) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'quiz-toggle-btn btn-reveal-answer';
+        toggleBtn.textContent = 'Reveal Answer & Rationale';
+        toggleBtn.style.marginTop = '6px';
+        toggleBtn.style.display = 'inline-block';
+        
+        // Hide answer by default for active practice
+        answer.style.display = 'none';
+
+        toggleBtn.addEventListener('click', function() {
+          if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            toggleBtn.textContent = 'Hide Answer';
+          } else {
+            answer.style.display = 'none';
+            toggleBtn.textContent = 'Reveal Answer & Rationale';
+          }
+        });
+
+        card.insertBefore(toggleBtn, answer);
+      }
+    });
+
+    // Add "Reveal All Answers" button above quiz section
+    const qSection = document.getElementById('sec-questions');
+    if (qSection && !document.querySelector('.quiz-toggle-bar')) {
+      const bar = document.createElement('div');
+      bar.className = 'quiz-toggle-bar';
+      bar.innerHTML = '<button type="button" class="quiz-toggle-btn" id="btn-toggle-all-answers">Reveal All Answers</button>';
+      qSection.insertAdjacentElement('afterend', bar);
+
+      const btnAll = document.getElementById('btn-toggle-all-answers');
+      let allShown = false;
+      btnAll.addEventListener('click', function() {
+        allShown = !allShown;
+        document.querySelectorAll('.quiz-card').forEach(function(card) {
+          const ans = card.querySelector('.quiz-answer');
+          const tBtn = card.querySelector('.btn-reveal-answer');
+          if (ans) ans.style.display = allShown ? 'block' : 'none';
+          if (tBtn) tBtn.textContent = allShown ? 'Hide Answer' : 'Reveal Answer & Rationale';
+        });
+        btnAll.textContent = allShown ? 'Hide All Answers' : 'Reveal All Answers';
+      });
+    }
+  });
+
+  // Enhanced Print Lifecycle Support: Guarantee Clean Ink-Friendly Printing
+  window.addEventListener('beforeprint', function () {
+    document.body.classList.remove('dark-reading-mode');
+    document.querySelectorAll('.quiz-answer').forEach(function (el) {
+      el.style.display = 'block';
+    });
+  });
+
+  window.addEventListener('afterprint', function () {
+    if (localStorage.getItem('istqb_reading_theme') === 'dark') {
+      document.body.classList.add('dark-reading-mode');
+    }
+  });
+
+</script>
+
+</body>
+</html>
